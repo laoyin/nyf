@@ -1,0 +1,11 @@
+1.mysql字段插入中文字符
+alter table tablename modify fieldname char(50) character set utf8(gbk);
+alter table logindemo_articles modify title char(50) character set utf8;
+
+2.导出数据库或数据库表:
+mysqldump -uusername -ppassword database table > backup_file.sql
+mysqldump -uroot -pnyf demosite loginldemo_links > logindemo_links_backup.sql
+恢复:source backup_file.sql
+
+3.修改表名:
+alter table name tablename rename to newtablename;

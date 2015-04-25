@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Register</title>
+	<style>
+		body{
+			padding:10px 150px;	
+		}
+	</style>
+	<script src="/static/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+	<script src="/static/bootstrap.min.js"></script>
+	<script>
+	function check(){
+	   alert("ok")
+	}
+	function submit(){
+		if(confirm("确定提交吗?")){
+			if($('#inputEmail3').val()==null||$('#inputEmail3').val()==""||$('#inputPassword3').val()==null|| $('#inputPassword3').val() ==""){
+				alert("用户名或密码不能为空！");
+			}
+			else{
+				$.ajax({
+					type:'get',
+					dataType:'json',
+					url:"register/",
+					data:{
+						name:$('#inputEmail3').val(),
+						password:$('#inputPassword3').val(),
+						sex:$('#sex').val(),
+						age:$('#age').val(),
+						tel:$('#tel').val(),
+						address:$('#address').val(),
+						city:$('#city').val()
+					},
+					success:function(data){
+						if (data['ret']=='1101') {
+							alert(data['info'])
+							window.location.assign("../login")
+						}
+						if (data['ret']=='1102')  alert(data['info'])
+					}
+				     })
+			}
+
+		}
+	}
+	function reset(){
+		$('#inputEmail3').val("")
+		$('#inputPassword3').val("")
+		$('#sex').val("")
+		$('#age').val("")
+		$('#tel').val("")
+		$('#address').val("")
+		$('#city').val("")
+	}
+    </script>
+</head>
+	<body>
+                <h3>注册</h3>
+		<div>
+			<label for="inputEmail3" class="col-sm-2" >用户名:</label>
+			<input  type="text"  id="inputEmail3" placeholder="UserName" name='name'  >
+			<br/>
+
+			<label for="inputPassword3" class="col-sm-2 ">密码:</label>
+			<input  type="password"  id="inputPassword3" placeholder="Password" name="password">
+			<br/>
+
+			<label for="inputEmail3" class="col-sm-2 ">性别:</label>
+			<input  type="text" id="sex" placeholder="sex" name="sex" >
+			<br/>
+
+			<label for="inputEmail3" class="col-sm-2 ">年龄:</label>
+			<input  type="text"  id="age" placeholder="age"  name="age">
+			<br/>
+
+			<label for="inputEmail3" class="col-sm-2 ">电话:</label>
+			<input  type="text"  id="tel" placeholder="tel" name="tel">
+			<br/>
+
+			<label for="inputEmail3" class="col-sm-2 ">地址:</label>
+			<input  type="text"  id="address" placeholder="address"  name="address">
+			<br/>
+
+			<label for="inputEmail3" class="col-sm-2 ">城市;</label>
+			<input  type="text"  id="city" placeholder="city"   name="city">
+			<br/>
+			<br/>
+			<button   type="button" onclick="submit()" >提交</button>
+			<button   type="button" onclick="reset()" style="margin-left:120px;">重置</button>	
+		</div>
+	</body>
+</html>

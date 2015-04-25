@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts-more.js"></script>
+    <style>
+        body {
+            padding:10px 150px;
+        }
+        #siderbar{
+               border: solid 1px #C0C0C0;
+        }
+        .left{
+              float:left;
+        }
+        .container-fluid{
+              margin-top:80px;
+              margin-left:40px;
+        }
+        #content{
+             margin-left:40px;
+        }
+        .active{
+             background-color:#C0C0C0;
+        }
+        #accidentCard{
+             margin-top:20px;
+        }
+        .margin_top{
+            margin-top:10px;
+        }
+        #LeakageSimulationDash{
+            margin-left:40px;
+        }
+    </style>
+    <script>
+        //储气井瞬时绝热扩散范围模拟
+        $(function () {
+	var ranges = [
+
+		[40, 80,90],
+		[50, 70,100],
+		[60, 30,110],
+		[70, 0,100],
+		[80, 40,92],
+		[90, 70,90],
+		[100,80,80],
+	],
+	averages = [
+
+		[40, 85],
+		[50, 85],
+		[60,70],
+		[70, 50],
+		[80, 80],
+		[90, 80],
+	];
+
+	$('#FireAndExplosionSimulationDash').highcharts({
+
+		title: {
+			text: '储气井瞬时绝热扩散范围模拟图'
+		},
+
+		xAxis: {
+			title: {
+				text: '水平距离'
+			},
+            tickPixelInterval:50,
+		},
+
+		yAxis: {
+			title: {
+				text: '垂直距离'
+			},
+			tickPixelInterval:50,
+		},
+
+		tooltip: {
+			crosshairs: true,
+			shared: true,
+			valueSuffix: 'm'
+		},
+
+		legend: {
+		    align: "center",
+            verticalAlign: "bottom",
+            x: 0,
+            y: 0 ,
+		},
+
+		series: [{
+			name: '爆炸下限范围',
+			data: ranges,
+			type: 'arearange',
+			lineWidth: 0,
+			linkedTo: ':previous',
+			color: Highcharts.getOptions().colors[0],
+			fillOpacity: 0.3,
+			zIndex: 1,
+		}]
+
+	});
+
+});
+    </script>
+  </head>
+  <body>
+
+	<!-- NAV-->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+	  <div class="container">
+        <ul class="nav nav-pills" role="tablist">
+	      <li role="presentation" ><a href="/index">首页</a></li>
+	      <li role="presentation" ><a href="/accidentStatistics">统计分析</a></li>
+	      <li role="presentation" ><a href="/simulationAnalysis">模拟分析</a></li>
+	      <li role="presentation" ><a href="/three_dim_simulation">三维动态模拟</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<!-- ENDNAV -->
+    <!-- siderbar -->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-fluid">
+                    <div class="span2 left" id="siderbar">
+                        <p class="nav-header">
+                        </p>
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+					           <h4 style="color:#C0C0C0;">模拟分析</h4>
+				            </li>
+                            <li class="active">
+                                <a href="/simulationAnalysis">管道射流泄漏扩散模拟</a>
+                            </li>
+                            <li>
+                                <a href="/simulationAnalysis/fireAndExplosionSimulation">储气井瞬时绝热扩散模拟</a>
+                            </li>
+                        </ul>
+                    </div>
+                <!-- content -->
+                    <div class="span8 left" id="FireAndExplosionSimulationDash">
+                    </div>
+                <!-- ENDcontent -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ENDsiderbar -->
+  </body>
+</html>
+
+
+

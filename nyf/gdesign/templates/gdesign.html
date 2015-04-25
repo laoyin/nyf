@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+  
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts-more.js"></script>
+    <script>
+       function showDetails(){
+           var e=window.event
+           var obj=e.srcElement
+           var id=obj.id
+           var card=$(".collapse")
+           if(card[id].style.display=="none"){
+               card[id].style.display="block"
+           }
+           else {
+              card[id].style.display="none"
+           }
+       }
+    </script>
+    <style>
+        body {
+            padding:10px 150px;
+        }
+        #siderbar{
+               border: solid 1px #C0C0C0;
+        }
+        .left{
+              float:left;
+        }
+        .container-fluid{
+              margin-top:80px;
+              margin-left:40px;
+        }
+        #content{
+             margin-left:40px;
+        }
+        .active{
+             background-color:#C0C0C0;
+        }
+        #accidentCard{
+             margin-top:20px;
+        }
+        .margin_top{
+            margin-top:10px;
+        }
+    </style>
+  </head>
+  <body>
+ 
+	<!-- NAV-->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+	  <div class="container">
+	      <ul class="nav nav-pills" role="tablist">
+	      <li role="presentation" ><a href="/index">首页</a></li>
+	      <li role="presentation" ><a href="/accidentStatistics">统计分析</a></li>
+	      <li role="presentation" ><a href="/simulationAnalysis">模拟分析</a></li>
+	      <li role="presentation" ><a href="/three_dim_simulation">三维动态模拟</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<!-- ENDNAV -->
+    <!-- siderbar -->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-fluid">
+                    <div class="span2 left" id="siderbar">
+                        <p class="nav-header">
+                        </p>
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+					           <h4 style="color:#C0C0C0;">首页</h4>
+				            </li>
+                            <li class="active">
+                                <a href="/index">事故列表</a>
+                            </li>
+                            <li>
+                                <a href="/index/stationIntroduct">加气站介绍</a>
+                            </li>
+                            <li>
+                                <a href="/index/simulationIntroduct">模拟分析介绍</a>
+                            </li>
+                            <li>
+                                <a href="/index/settings">设置</a>
+                            </li>
+                        </ul>
+                    </div>
+                <!-- content -->
+                    <div class="span8 left" id="content">
+                         <!-- head -->
+                                <div class="panel-group" id="accordion" style="margin-bottom:10px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                             <a href="#">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                                事故序号
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em>事故概要
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+			                     </a>
+			                   </h4>
+		                          </div>
+		                        <div class="panel-collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                         <!--Endhead -->
+
+                         <!--accidentCard -->
+		                <div class="panel-group" id="accordion">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                                1
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="0">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+			                     </a>
+			                   </h4>
+		                          </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+
+                        <!--accidentCard -->
+		                <div class="panel-group" id="accordion" style="margin-top:20px;margin-bottom:20px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                                2
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="1">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+		                            </a>
+		                          </h4>
+		                        </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+
+                         <!--accidentCard -->
+		                <div class="panel-group" id="accordion" style="margin-top:20px;margin-bottom:20px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                               3
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="2">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+		                            </a>
+		                          </h4>
+		                        </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+
+                         <!--accidentCard -->
+		                <div class="panel-group" id="accordion" style="margin-top:20px;margin-bottom:20px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                               4
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="3">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+		                            </a>
+		                          </h4>
+		                        </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+
+                         <!--accidentCard -->
+		                <div class="panel-group" id="accordion" style="margin-top:20px;margin-bottom:20px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                               5
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="4">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+		                            </a>
+		                          </h4>
+		                        </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+
+                        <!--accidentCard -->
+		                <div class="panel-group" id="accordion" style="margin-top:20px;margin-bottom:20px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                               6
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="5">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+		                            </a>
+		                          </h4>
+		                        </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+
+                         <!--accidentCard -->
+		                <div class="panel-group" id="accordion" style="margin-top:20px;margin-bottom:20px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                               7
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="6">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+		                            </a>
+		                          </h4>
+		                        </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+          
+                         <!--accidentCard -->
+		                <div class="panel-group" id="accordion" style="margin-top:20px;margin-bottom:20px;">
+		                      <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                          <h4 class="panel-title">
+		                         <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+		                             <a onclick="showDetails();">
+		                                  <div class="row-fluid"  id="accidentCard">
+		                                            <div class="span4 left">
+		                                               8
+		                                            </div>
+		                                            <div class="span4 left" style="margin-left:80px;">
+		                                                <p>
+		                                                    <em id="7">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+		                                                    </em>
+		                                                </p>
+		                                            </div>
+		                                            <div style="clear:both;"></div>
+		                                  </div>
+		                            </a>
+		                          </h4>
+		                        </div>
+		                        <div class="panel-collapse collapse in" style="display:none;">
+		                          <div class="panel-body">
+		                              <p>time</p>
+		                              <p>location</p>
+		                              <p>
+		                                  Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+		                            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+		                            vice lomo.<br>
+		                              </p>
+
+		                          </div>
+		                        </div>
+		                      </div>
+		                </div>
+                        <!--ENDaccidentCard -->
+                    </div>
+                <!-- ENDcontent -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ENDsiderbar -->
+  </body>
+</html>
+
+
+

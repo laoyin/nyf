@@ -1,0 +1,31 @@
+.edit_area{
+    display:none;
+    margin-top: 41px;
+}
+
+.user_area{
+    margin-top: 41px;
+}
+
+#already_got{
+    min-height: 100px;
+    background-color: #D6F3EB;
+}
+
+.got_item{
+    background-color: #4FCFC0;
+    position: relative;
+    float:left;
+    margin:3px;
+    padding:17px;
+}
+.got_item i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor:pointer;
+}
+
+.clear-both{
+    clear:both;
+}

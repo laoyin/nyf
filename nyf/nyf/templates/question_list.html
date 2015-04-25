@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{title}}</title>
+	<script src="/static/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+	<script src="/static/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              编号
+            </th>
+            <th>
+              问题描述
+            </th>
+            <th>
+              解决方案
+            </th>
+            <th>
+              上传时间
+            </th>
+          </tr>
+        </thead>
+        {% for post in posts %}
+        <tbody>
+          <tr>
+            <td>
+              {{ post.id }}
+            </td>
+            <td>
+              {{ post.question }}
+            </td>
+            <td>
+              {{ post.answer}}
+            </td>
+            <td>
+              {{post.date}}
+            </td>
+          </tr>
+        </tbody>
+    {% endfor%}
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+

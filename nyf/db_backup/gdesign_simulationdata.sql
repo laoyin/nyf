@@ -1,0 +1,37 @@
+-- MySQL dump 10.13  Distrib 5.5.41, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: gd2015
+-- ------------------------------------------------------
+-- Server version	5.5.41-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Dumping data for table `gdesign_simulationdata`
+--
+
+LOCK TABLES `gdesign_simulationdata` WRITE;
+/*!40000 ALTER TABLE `gdesign_simulationdata` DISABLE KEYS */;
+INSERT INTO `gdesign_simulationdata` VALUES (1,0,'5','100','100','27','6.899','2.6','1.609'),(2,0,'5','100','200','54','15.85','5.2','2.303'),(3,0,'5','100','300','81','25.78','7.8','2.708'),(4,0,'5','100','400','108','36.41','10.4','2.996'),(5,0,'5','100','500','135','47.59','13.0','3.219'),(6,0,'5','100','600','162','59.23','15.6','3.401'),(7,0,'5','100','700','189','71.27','18.2','3.555'),(8,0,'5','100','800','216','83.65','20.8','3.689'),(9,0,'5','100','900','243','96.35','23.4','3.807'),(10,0,'5','100','1000','270','109.3','26.0','3.912'),(11,0,'10','50','100','8.613','7.003','6.31','11'),(12,0,'10','50','200','8.7','7.09','6.397','12'),(13,0,'10','50','300','8.78','7.17','6.477','13'),(14,0,'10','50','400','8.854','7.244','6.551','14'),(15,0,'10','50','500','8.923','7.313','6.62','15'),(16,0,'10','50','600','8.987','7.378','6.685','16'),(17,0,'10','50','700','9.048','7.438','6.745','17'),(18,0,'10','50','800','9.105','7.496','6.802','18'),(19,0,'10','50','900','9.159','7.55','6.856','19'),(20,0,'10','50','1000','9.21','7.601','6.908','20');
+/*!40000 ALTER TABLE `gdesign_simulationdata` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-04-20 21:02:19

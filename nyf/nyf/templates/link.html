@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>login</title>
+			<style>
+			body {
+			padding:10px 150px;
+			}
+		</style>
+		<script src="/static/jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+		<script src="/static/bootstrap.min.js"></script>
+		<script>
+			function submit(){
+				var title=$("#inputName1").val()
+				var url=$("#inputName2").val()	
+				if( title=="" ||title==null || url==""||url==null){
+					alert("title或url不能为空!")
+				}
+				else{
+					dict={"title":title,"url":url}
+					$.post("addlink/",dict,
+                                                  function(data){
+							alert(data.message)
+							reset()
+                                        },'json')
+				}		
+			}
+			
+			//重置
+			function reset(){
+				$("#inputName1").val("")
+				$("#inputName2").val("")
+			}		
+		</script>
+	</head>
+<body>
+	<div style="margin-top:20px;">
+		<div>
+		<label class="col-sm-2">TITLE</label>
+		<input type="text" id="inputName1" placeholder="UserName" ><br/>
+		</div>
+		<div style="margin-top:10px;">
+		<label class="col-sm-2 ">URL</label>
+		<input type="text" id="inputName2" placeholder="Password"><br/>
+		</div>
+		<button   type="button" class="btn btn-default"   onclick="submit()" style="margin-left:10px;">SUBMIT</button>
+		<button   type="button" class="btn btn-default"   onclick="reset()" style="margin-left:10px;">RESET</button>
+	</div>
+</body>
+</html>

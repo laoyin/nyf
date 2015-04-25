@@ -1,0 +1,37 @@
+/*
+    Dash core styles
+*/
+
+body {
+    padding-top: 55px;
+}
+
+.dash-body {
+    margin-top: 10px;
+}
+
+.dashlet {
+    /* min-height: 350px; */
+    width: 90%;
+    margin: 5px auto;
+}
+
+a.list-subgroup {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    color: #333333;
+    background-color: #f5f5f5;
+    border: 1px solid #eeeeee;
+    text-decoration: none;
+}
+
+a.list-subgroup > .badge {
+    float: right;
+}
+
+.dash-form a {
+    text-decoration: none;
+    color: #000000;
+}

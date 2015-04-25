@@ -1,0 +1,63 @@
+简单的数据存储过程
+drop procedure if exists simpleproc ;
+delimiter $
+CREATE PROCEDURE simpleproc (OUT param1 char(10))
+BEGIN
+SELECT count(*) INTO param1 FROM SimulationAnalysis_simulationdata ;
+END$
+delimiter ;
+
+#使用游标访问数据
+drop procedure  if exists show_info ;
+delimiter $
+create procedure show_info (out param int)
+begin
+#声明变量
+declare id_temp int;
+declare flag int;
+#声明游标
+declare cursor_name CURSOR FOR 
+select id from SimulationAnalysis_simulationdata;
+declare continue handler for not found set flag=1;
+#设置结束标志
+set flag=0;
+open cursor_name;
+fetch cursor_name into param;
+while flag <> 1 do 
+fetch cursor_name into param;
+end while;
+close cursor_name;
+end$
+delimiter ;
+
+#插入数据过程
+drop procedure  if exists insertData;
+delimiter $
+CREATE PROCEDURE insertData ()
+BEGIN
+declare i int ;
+set i=1;
+while i<11 do 
+insert into test values(i,'nyf');
+set i=i+1;
+end while;
+END$
+delimiter ;
+
+#向表SimulationAnalysis_simulationdata插入数据
+drop procedure if exists insertData;
+delimiter $
+create procedure insertData()
+begin
+declare i int;
+set i=11;
+while i < 21 do
+insert into  SimulationAnalysis_simulationdata  values(i,0,10,50,i*100,i*1.2,i,i,i);
+set i=i+1;
+end while ;
+end$
+delimiter ;
+
+
+
+

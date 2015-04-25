@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{pagetitle}}</title>
+	<script src="/static/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+	<script src="/static/bootstrap.min.js"></script>
+</head>
+<body>
+	<p id="message" style="display:none;">{{message}}</p>
+	<script>
+		var message=$("#message").text()
+		if(message){
+			alert(message)	
+			dict={}
+			$.post('/articles',dict,
+			null,'json')
+		}
+	</script>
+	<p>
+		<form name="demoForm" id="demoForm" enctype="multipart/form-data" method='POST' action='/upload' > 
+			 <p><input type="file" name="file" /></p> 
+			 <p><input value="上传文件" type="submit" /></p> 
+		</form> 
+	</p> 
+	<div class="list-group">
+		<a href="#" class="list-group-item active">
+			{{order}}
+		</a>
+		{% for article in articles %}
+			<a href="no1/" class="list-group-item">{{article.title}}</a>
+		{% endfor %}
+	</div>
+</body>
+</html>

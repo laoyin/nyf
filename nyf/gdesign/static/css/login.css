@@ -1,0 +1,17 @@
+body{
+    background-image:url(../images/back.png);
+    padding-top: 55px;
+    padding-bottom: 55px;
+    margin-left:600px;
+}
+
+.file{
+    
+}
+
+.login-head {
+	padding: 2em 0;
+	background: #6D4A70;
+	position:relative;
+}
+

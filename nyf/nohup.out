@@ -1,0 +1,1529 @@
+[15/Apr/2015 17:24:44] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:44] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:44] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:44] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:44] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:44] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:44] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:24:44] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+[15/Apr/2015 17:24:45] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:46] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:24:46] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+[15/Apr/2015 17:24:46] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:46] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:46] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:24:47] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+[15/Apr/2015 17:24:47] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:47] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:24:47] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:47] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+[15/Apr/2015 17:24:47] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:47] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:24:47] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:47] "GET /static/images/2.jpg HTTP/1.1" 200 8065
+[15/Apr/2015 17:24:47] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:47] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:48] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:48] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:24:48] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:48] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[15/Apr/2015 17:24:48] "GET /static/images/2.jpg HTTP/1.1" 200 8065
+[15/Apr/2015 17:24:48] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:48] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:24:48] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.css HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+[15/Apr/2015 17:24:48] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95786
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:48] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:48] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:24:48] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 64236
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 104] Connection reset by peer
+[15/Apr/2015 17:24:48] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[15/Apr/2015 17:24:48] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:48] "GET /static/bootstrap.min.css HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:49] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /static/bootstrap.min.css HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:24:49] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[15/Apr/2015 17:24:49] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95786
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /static/bootstrap.min.css HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95786
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[15/Apr/2015 17:24:49] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[15/Apr/2015 17:24:49] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:49] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:24:49] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[15/Apr/2015 17:24:49] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[15/Apr/2015 17:24:49] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:24:50] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+Validating models...
+
+0 errors found
+April 15, 2015 - 17:24:32
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58029)
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58027)
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58033)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58035)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58039)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58037)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58045)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('121.229.45.148', 58042)
+----------------------------------------
+[15/Apr/2015 17:25:00] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:25:00] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:25:00] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:25:00] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+[15/Apr/2015 17:25:00] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:25:00] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:25:00] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+[15/Apr/2015 17:25:00] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:00] "GET /static/images/3.jpg HTTP/1.1" 200 4951
+[15/Apr/2015 17:25:00] "GET /login HTTP/1.1" 200 4812
+[15/Apr/2015 17:25:00] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:25:01] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:01] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:25:01] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:25:01] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:25:01] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 5631
+[15/Apr/2015 17:25:01] "GET /static/images/3.jpg HTTP/1.1" 304 0
+[15/Apr/2015 17:25:01] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 5628
+[15/Apr/2015 17:25:13] "GET /index/ HTTP/1.1" 200 8188
+[15/Apr/2015 17:25:14] "POST /index/requestlinkdata/ HTTP/1.1" 200 2611
+[15/Apr/2015 17:25:26] "POST /index/requestlinkdata/ HTTP/1.1" 200 2611
+[15/Apr/2015 17:25:52] "POST /index/insert_blog_url/ HTTP/1.1" 200 32
+[15/Apr/2015 17:28:44] "GET /index/ HTTP/1.1" 200 8328
+[15/Apr/2015 17:28:44] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:28:44] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[15/Apr/2015 17:28:44] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[15/Apr/2015 17:28:44] "POST /index/requestlinkdata/ HTTP/1.1" 200 2668
+[15/Apr/2015 17:49:25] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:25] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:25] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:26] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:26] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:26] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:26] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:26] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:26] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:27] "GET /manager/html HTTP/1.1" 404 5546
+[15/Apr/2015 17:49:27] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 02:07:51] "GET /index/ HTTP/1.1" 200 8328
+[16/Apr/2015 02:07:51] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[16/Apr/2015 02:07:52] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[16/Apr/2015 02:07:52] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[16/Apr/2015 02:07:53] "POST /index/requestlinkdata/ HTTP/1.1" 200 2668
+[16/Apr/2015 02:10:51] "POST /index/insert_blog_url/ HTTP/1.1" 200 32
+[16/Apr/2015 02:10:55] "GET /index/ HTTP/1.1" 200 8439
+[16/Apr/2015 02:10:55] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 02:10:55] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 02:10:55] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 02:10:55] "POST /index/requestlinkdata/ HTTP/1.1" 200 2733
+[16/Apr/2015 02:31:33] "POST /index/insert_blog_url/ HTTP/1.1" 200 32
+[16/Apr/2015 02:31:36] "GET /index/ HTTP/1.1" 200 8589
+[16/Apr/2015 02:31:36] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 02:31:36] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 02:31:36] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 02:31:36] "POST /index/requestlinkdata/ HTTP/1.1" 200 2790
+[16/Apr/2015 02:34:47] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[16/Apr/2015 05:32:29] "POST /index/insert_blog_url/ HTTP/1.1" 200 32
+[16/Apr/2015 05:32:32] "GET /index/ HTTP/1.1" 200 8738
+[16/Apr/2015 05:32:33] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 05:32:33] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 05:32:33] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 05:32:33] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 05:32:34] "GET /index/ HTTP/1.1" 200 8738
+[16/Apr/2015 05:32:34] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 05:32:34] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 05:32:34] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 05:32:34] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 05:35:23] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:23] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:23] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:24] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:24] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:24] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:24] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:24] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:24] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:24] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:25] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:25] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:25] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:25] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:26] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 05:35:27] "GET /manager/html HTTP/1.1" 404 5546
+[16/Apr/2015 11:51:27] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+Validating models...
+
+0 errors found
+April 15, 2015 - 17:24:56
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+[16/Apr/2015 14:40:26] "GET /index/ HTTP/1.1" 200 8738
+[16/Apr/2015 14:40:26] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 14:40:26] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 14:40:26] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 14:40:27] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 14:56:40] "GET /index/ HTTP/1.1" 200 8757
+[16/Apr/2015 14:56:41] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:00:22] "GET /index/ HTTP/1.1" 200 14752
+[16/Apr/2015 15:00:22] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:00:22] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:00:22] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:00:22] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:01:43] "GET /index/ HTTP/1.1" 200 14765
+[16/Apr/2015 15:01:43] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:43] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:01:43] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:44] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:01:45] "GET /index/ HTTP/1.1" 200 14765
+[16/Apr/2015 15:01:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:45] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:45] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:01:46] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:01:46] "GET /index/ HTTP/1.1" 200 14765
+[16/Apr/2015 15:01:46] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:01:46] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:46] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:46] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:01:47] "GET /index/ HTTP/1.1" 200 14765
+[16/Apr/2015 15:01:47] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:47] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:01:47] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:01:48] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:06:39] "GET /index/ HTTP/1.1" 200 14828
+[16/Apr/2015 15:06:39] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:06:39] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:06:40] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:06:40] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:08:21] "GET /index/ HTTP/1.1" 200 14845
+[16/Apr/2015 15:08:21] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:08:21] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:08:21] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:08:22] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:09:22] "GET /index/ HTTP/1.1" 200 14847
+[16/Apr/2015 15:09:22] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:09:22] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:09:22] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:09:22] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:09:24] "GET /index/ HTTP/1.1" 200 14847
+[16/Apr/2015 15:09:24] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:09:24] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:09:25] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:09:25] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:09:29] "GET /index/ HTTP/1.1" 200 14847
+[16/Apr/2015 15:09:29] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:09:29] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:09:29] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:09:30] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:11:02] "GET /index/ HTTP/1.1" 200 14915
+[16/Apr/2015 15:11:02] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:11:03] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:11:03] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:11:03] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:11:23] "GET /index/ HTTP/1.1" 200 14915
+[16/Apr/2015 15:11:23] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:11:23] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:11:23] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:11:24] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:12:39] "GET /index/ HTTP/1.1" 200 14833
+[16/Apr/2015 15:12:39] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:12:39] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:12:39] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:12:40] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:21:00] "GET /index/ HTTP/1.1" 200 14927
+[16/Apr/2015 15:21:01] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:21:01] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:21:01] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:21:01] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:21:15] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:40] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:40] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:40] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:41] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:41] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:41] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:42] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:42] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:42] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:42] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:42] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:42] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:42] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:42] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:42] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:43] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:43] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:43] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:43] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:43] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:43] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:43] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:43] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:43] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:44] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:44] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:44] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:44] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:44] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:44] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:44] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:45] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:45] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:45] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:46] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:46] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:46] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:46] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:46] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:22:47] "GET /index/ HTTP/1.1" 200 14963
+[16/Apr/2015 15:22:47] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:47] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:22:48] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:22:48] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:24:17] "GET /index/ HTTP/1.1" 200 15611
+[16/Apr/2015 15:24:17] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:17] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:24:18] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:18] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:24:18] "GET /index/ HTTP/1.1" 200 15611
+[16/Apr/2015 15:24:19] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:19] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:24:19] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:19] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:24:19] "GET /index/ HTTP/1.1" 200 15611
+[16/Apr/2015 15:24:20] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:20] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:24:20] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:20] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:24:20] "GET /index/ HTTP/1.1" 200 15611
+[16/Apr/2015 15:24:20] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:20] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:24:20] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:24:21] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:31:45] "GET /index/ HTTP/1.1" 200 18251
+[16/Apr/2015 15:31:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:31:46] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:31:46] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:31:46] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:34:59] "GET /index/ HTTP/1.1" 200 24741
+[16/Apr/2015 15:35:00] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:35:00] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:35:00] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:35:00] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:36:44] "GET /index/ HTTP/1.1" 200 24750
+[16/Apr/2015 15:36:44] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:36:44] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:36:44] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:36:45] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:42:21] "GET /index/ HTTP/1.1" 200 24750
+[16/Apr/2015 15:42:22] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:42:22] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:42:22] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:42:23] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:44:16] "GET /index/ HTTP/1.1" 200 24762
+[16/Apr/2015 15:44:16] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:44:16] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:44:16] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:44:16] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:45:10] "GET /index/ HTTP/1.1" 200 24762
+[16/Apr/2015 15:45:10] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:45:10] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:45:10] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:45:10] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:45:13] "GET /index/ HTTP/1.1" 200 24762
+[16/Apr/2015 15:45:13] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:45:13] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:45:13] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:45:14] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:45:33] "GET /index/ HTTP/1.1" 200 24762
+[16/Apr/2015 15:45:33] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:45:33] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:45:33] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:45:33] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:46:37] "GET /index/ HTTP/1.1" 200 22507
+[16/Apr/2015 15:46:37] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:46:37] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:46:37] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:46:37] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:47:35] "GET /index/ HTTP/1.1" 200 16567
+[16/Apr/2015 15:47:35] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:47:35] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:47:35] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:47:35] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:49:40] "GET /index/ HTTP/1.1" 200 21407
+[16/Apr/2015 15:49:40] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:49:40] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:49:40] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:49:40] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:49:42] "GET /index/ HTTP/1.1" 200 21407
+[16/Apr/2015 15:49:42] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:49:42] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:49:42] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:49:42] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:49:43] "GET /index/ HTTP/1.1" 200 21407
+[16/Apr/2015 15:49:43] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:49:43] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:49:43] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:49:44] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:50:05] "GET /index/ HTTP/1.1" 200 21572
+[16/Apr/2015 15:50:06] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:06] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:50:06] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:06] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:50:08] "GET /index/ HTTP/1.1" 200 21572
+[16/Apr/2015 15:50:08] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:08] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:50:08] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:08] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:50:09] "GET /index/ HTTP/1.1" 200 21572
+[16/Apr/2015 15:50:09] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:50:09] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:09] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:09] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:50:09] "GET /index/ HTTP/1.1" 200 21572
+[16/Apr/2015 15:50:10] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:50:10] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:10] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:10] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:50:19] "GET /index/ HTTP/1.1" 200 21407
+[16/Apr/2015 15:50:19] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:19] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:50:19] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:50:19] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:59:41] "GET /index/ HTTP/1.1" 200 21925
+[16/Apr/2015 15:59:42] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:59:42] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:59:42] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:59:43] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 15:59:44] "GET /index/ HTTP/1.1" 200 21925
+[16/Apr/2015 15:59:44] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 15:59:44] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:59:44] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 15:59:45] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:00:56] "GET /index/ HTTP/1.1" 200 21947
+[16/Apr/2015 16:00:56] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:00:56] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:00:56] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:00:56] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:01:13] "GET /index/ HTTP/1.1" 200 21931
+[16/Apr/2015 16:01:13] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:01:13] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:01:13] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:01:14] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:01:40] "GET /index/ HTTP/1.1" 200 21925
+[16/Apr/2015 16:01:40] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:01:40] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:01:40] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:01:40] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:03:50] "GET /index/ HTTP/1.1" 200 21949
+[16/Apr/2015 16:03:50] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:03:51] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:03:51] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:03:51] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:04:37] "GET /index/ HTTP/1.1" 200 21949
+[16/Apr/2015 16:04:37] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:04:37] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:04:37] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:04:37] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:05:07] "GET /index/ HTTP/1.1" 200 23214
+[16/Apr/2015 16:05:07] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:05:07] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:05:07] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:05:07] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:05:23] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:06:11] "GET /index/ HTTP/1.1" 200 21729
+[16/Apr/2015 16:06:11] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:06:11] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:06:11] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:06:11] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:06:13] "GET /index/ HTTP/1.1" 200 21729
+[16/Apr/2015 16:06:13] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:06:13] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:06:13] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:06:13] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:06:35] "GET /index/ HTTP/1.1" 200 21674
+[16/Apr/2015 16:06:35] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:06:35] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:06:35] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:06:35] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:07:13] "GET /index/ HTTP/1.1" 200 22004
+[16/Apr/2015 16:07:14] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:07:14] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:07:14] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:07:14] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:07:38] "GET /index/ HTTP/1.1" 200 21985
+[16/Apr/2015 16:07:38] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:07:38] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:07:38] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:07:39] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:18:37] "GET /index/ HTTP/1.1" 200 22273
+[16/Apr/2015 16:18:38] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:18:38] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:18:38] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:18:38] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:21:05] "GET /index/ HTTP/1.1" 200 22231
+[16/Apr/2015 16:21:06] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:21:06] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:21:06] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:21:06] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:22:45] "GET /index/ HTTP/1.1" 200 22263
+[16/Apr/2015 16:22:45] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:22:45] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:22:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:22:45] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:23:55] "GET /index/ HTTP/1.1" 200 22326
+[16/Apr/2015 16:23:55] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:23:55] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:23:55] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:23:56] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:25:20] "GET /index/ HTTP/1.1" 200 22390
+[16/Apr/2015 16:25:20] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:25:20] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:25:20] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:25:20] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:25:38] "GET /index/ HTTP/1.1" 200 22392
+[16/Apr/2015 16:25:38] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:25:38] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:25:38] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:25:38] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:25:40] "GET /index/ HTTP/1.1" 200 22392
+[16/Apr/2015 16:25:40] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:25:40] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:25:40] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:25:40] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:26:27] "GET /index/ HTTP/1.1" 200 22392
+[16/Apr/2015 16:26:27] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:26:27] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:26:27] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:26:27] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:26:51] "GET /index/ HTTP/1.1" 200 22390
+[16/Apr/2015 16:26:51] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:26:51] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:26:51] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:26:51] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:27:40] "GET /index/ HTTP/1.1" 200 22407
+[16/Apr/2015 16:27:40] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:27:40] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:27:40] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:27:40] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:28:13] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:30:28] "GET /index/ HTTP/1.1" 200 22382
+[16/Apr/2015 16:30:29] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:30:29] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:30:29] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:30:29] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:30:51] "GET /index/ HTTP/1.1" 200 22382
+[16/Apr/2015 16:30:51] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 16:33:59] "GET /index/ HTTP/1.1" 200 22382
+[16/Apr/2015 16:33:59] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[16/Apr/2015 16:33:59] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:33:59] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[16/Apr/2015 16:33:59] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 23:55:45] "GET /index HTTP/1.1" 301 0
+[16/Apr/2015 23:55:45] "GET /index HTTP/1.1" 301 0
+[16/Apr/2015 23:55:45] "GET /index/ HTTP/1.1" 200 22382
+[16/Apr/2015 23:55:45] "GET /index/ HTTP/1.1" 200 22382
+[16/Apr/2015 23:55:45] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[16/Apr/2015 23:55:45] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[16/Apr/2015 23:55:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[16/Apr/2015 23:55:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[16/Apr/2015 23:55:45] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[16/Apr/2015 23:55:45] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[16/Apr/2015 23:55:45] "GET /static/bootstrap.min.css HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[16/Apr/2015 23:55:47] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[16/Apr/2015 23:55:49] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[16/Apr/2015 23:55:49] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[17/Apr/2015 01:03:52] "GET /index HTTP/1.1" 301 0
+[17/Apr/2015 01:03:52] "GET /index/ HTTP/1.1" 200 22382
+[17/Apr/2015 01:03:53] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[17/Apr/2015 01:03:53] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[17/Apr/2015 01:03:53] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[17/Apr/2015 01:03:53] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[17/Apr/2015 11:45:17] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[18/Apr/2015 02:34:10] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[19/Apr/2015 03:25:26] "GET /index/ HTTP/1.1" 200 22382
+[19/Apr/2015 03:25:26] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[19/Apr/2015 03:25:26] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[19/Apr/2015 03:25:26] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[19/Apr/2015 03:25:27] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[19/Apr/2015 03:27:13] "GET /index/ HTTP/1.1" 200 22382
+[19/Apr/2015 03:29:08] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[19/Apr/2015 04:46:50] "POST /index/requestlinkdata/ HTTP/1.1" 200 2847
+[19/Apr/2015 05:31:21] "POST /index/insert_blog_url/ HTTP/1.1" 200 32
+[19/Apr/2015 05:31:24] "GET /index/ HTTP/1.1" 200 22728
+[19/Apr/2015 05:31:25] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[19/Apr/2015 05:31:25] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[19/Apr/2015 05:31:25] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[19/Apr/2015 05:31:25] "POST /index/requestlinkdata/ HTTP/1.1" 200 2890
+[19/Apr/2015 05:35:14] "POST /index/insert_blog_url/ HTTP/1.1" 200 32
+[19/Apr/2015 12:06:29] "GET /index/ HTTP/1.1" 200 23069
+[19/Apr/2015 12:06:30] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[19/Apr/2015 12:06:30] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[19/Apr/2015 12:06:30] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[19/Apr/2015 12:06:31] "POST /index/requestlinkdata/ HTTP/1.1" 200 2927
+Validating models...
+
+0 errors found
+April 16, 2015 - 16:33:53
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('58.215.136.17', 59540)
+----------------------------------------
+Validating models...
+
+0 errors found
+April 19, 2015 - 15:44:37
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Validating models...
+
+0 errors found
+April 19, 2015 - 15:50:41
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Traceback (most recent call last):
+  File "manage.py", line 10, in <module>
+    execute_from_command_line(sys.argv)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/management/__init__.py", line 399, in execute_from_command_line
+    utility.execute()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/management/__init__.py", line 392, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/management/__init__.py", line 261, in fetch_command
+    commands = get_commands()
+  File "/usr/local/lib/python2.7/dist-packages/django/core/management/__init__.py", line 107, in get_commands
+    apps = settings.INSTALLED_APPS
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 54, in __getattr__
+    self._setup(name)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 49, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/usr/local/lib/python2.7/dist-packages/django/conf/__init__.py", line 128, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 40, in import_module
+    __import__(name)
+  File "/home/nyf/youfa/nyf/nyf/settings.py", line 110, in <module>
+    Base_DIR+'/gdesign/static',
+NameError: name 'Base_DIR' is not defined
+[19/Apr/2015 17:00:57] "GET /index/ HTTP/1.1" 200 22151
+[19/Apr/2015 17:00:57] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[19/Apr/2015 17:00:58] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 97339
+[19/Apr/2015 17:00:58] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[19/Apr/2015 17:00:58] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[19/Apr/2015 17:00:59] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[19/Apr/2015 17:01:10] "GET /demosite/index/ HTTP/1.1" 500 82315
+Validating models...
+
+0 errors found
+April 19, 2015 - 17:00:00
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+> /home/nyf/youfa/nyf/demosite/views.py(41)indexload()
+-> link_list=Links.objects.all()
+(Pdb) [19/Apr/2015 17:02:54] "GET /demosite/index/ HTTP/1.1" 200 23114
+[19/Apr/2015 17:02:54] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[19/Apr/2015 17:02:54] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[19/Apr/2015 17:02:54] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[19/Apr/2015 17:02:55] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[20/Apr/2015 02:28:55] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[20/Apr/2015 09:48:42] "GET /index HTTP/1.1" 301 0
+[20/Apr/2015 09:48:42] "GET /index/ HTTP/1.1" 200 22151
+[20/Apr/2015 09:48:43] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[20/Apr/2015 09:48:43] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[20/Apr/2015 09:48:43] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 97339
+[20/Apr/2015 09:48:43] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[20/Apr/2015 09:48:44] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[20/Apr/2015 09:48:50] "GET /accidentStatistics HTTP/1.1" 200 6719
+[20/Apr/2015 09:48:54] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 09:48:55] "GET /static/js/chooseDash.js HTTP/1.1" 200 6631
+[20/Apr/2015 09:48:55] "GET /static/js/variable.js HTTP/1.1" 200 486
+[20/Apr/2015 09:49:05] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:05] "GET /static/highcharts/js/highcharts-3d.js HTTP/1.1" 200 19018
+[20/Apr/2015 09:49:06] "GET /static/highcharts/js/modules/exporting.js HTTP/1.1" 200 7246
+[20/Apr/2015 09:49:08] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:10] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:13] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:14] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:23] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:30] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:37] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:49:41] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 09:50:05] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 09:50:12] "POST /request_simulaton_data HTTP/1.1" 500 11319
+[20/Apr/2015 09:50:15] "POST /request_simulaton_data HTTP/1.1" 500 11291
+[20/Apr/2015 09:50:17] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 09:50:18] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 304 0
+[20/Apr/2015 09:50:18] "GET /static/js/chooseDash.js HTTP/1.1" 304 0
+[20/Apr/2015 09:50:18] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[20/Apr/2015 09:50:18] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[20/Apr/2015 09:50:18] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[20/Apr/2015 09:50:18] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 304 0
+[20/Apr/2015 09:50:18] "GET /static/js/variable.js HTTP/1.1" 304 0
+[20/Apr/2015 09:50:23] "POST /request_simulaton_data HTTP/1.1" 500 11319
+[20/Apr/2015 09:50:28] "POST /request_simulaton_data HTTP/1.1" 500 11291
+[20/Apr/2015 09:50:28] "POST /request_simulaton_data HTTP/1.1" 500 11291
+[20/Apr/2015 09:50:29] "POST /request_simulaton_data HTTP/1.1" 500 11291
+[20/Apr/2015 09:50:29] "POST /request_simulaton_data HTTP/1.1" 500 11291
+[20/Apr/2015 09:50:29] "GET /simulationAnalysis/fireAndExplosionSimulation HTTP/1.1" 200 4093
+[20/Apr/2015 09:50:42] "GET /accidentStatistics HTTP/1.1" 200 6719
+[20/Apr/2015 09:50:45] "GET /index/ HTTP/1.1" 200 22151
+[20/Apr/2015 09:50:55] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[20/Apr/2015 09:50:56] "GET /static/images/cng4.jpg HTTP/1.1" 200 24128
+[20/Apr/2015 09:50:56] "GET /static/images/cng1.jpg HTTP/1.1" 200 48190
+[20/Apr/2015 09:50:56] "GET /static/images/cng5.gif HTTP/1.1" 200 40635
+[20/Apr/2015 09:50:56] "GET /static/images/cng2.jpg HTTP/1.1" 200 34247
+[20/Apr/2015 09:51:01] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[20/Apr/2015 09:51:08] "GET /accidentStatistics HTTP/1.1" 200 6719
+[20/Apr/2015 09:51:14] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:51:24] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[20/Apr/2015 09:51:31] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 09:51:56] "GET /index/ HTTP/1.1" 200 22151
+[20/Apr/2015 10:44:18] "GET /index/ HTTP/1.1" 200 22151
+[20/Apr/2015 12:02:21] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[20/Apr/2015 12:42:40] "GET /demosite/index/ HTTP/1.1" 200 23114
+[20/Apr/2015 12:42:40] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[20/Apr/2015 12:42:40] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[20/Apr/2015 12:42:40] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[20/Apr/2015 12:42:41] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[20/Apr/2015 12:44:02] "GET /demosite/index/ HTTP/1.1" 200 23114
+[20/Apr/2015 12:44:02] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[20/Apr/2015 12:44:02] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[20/Apr/2015 12:44:02] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[20/Apr/2015 12:44:03] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[20/Apr/2015 12:44:08] "GET /index/ HTTP/1.1" 200 22151
+[20/Apr/2015 12:44:14] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[20/Apr/2015 12:44:15] "GET /static/images/cng4.jpg HTTP/1.1" 200 24128
+[20/Apr/2015 12:44:15] "GET /static/images/cng5.gif HTTP/1.1" 200 40635
+[20/Apr/2015 12:44:15] "GET /static/images/cng2.jpg HTTP/1.1" 200 34247
+[20/Apr/2015 12:44:15] "GET /static/images/cng1.jpg HTTP/1.1" 200 48190
+[20/Apr/2015 12:44:21] "GET /accidentStatistics HTTP/1.1" 200 6719
+[20/Apr/2015 12:44:38] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 12:44:38] "GET /static/js/variable.js HTTP/1.1" 200 486
+[20/Apr/2015 12:44:38] "GET /static/js/chooseDash.js HTTP/1.1" 200 6631
+[20/Apr/2015 12:44:45] "POST /request_simulaton_data HTTP/1.1" 500 11329
+[20/Apr/2015 12:44:51] "POST /request_simulaton_data HTTP/1.1" 500 11300
+[20/Apr/2015 12:45:02] "GET /request_simulaton_data HTTP/1.1" 500 118337
+[20/Apr/2015 12:54:22] "GET /index/ HTTP/1.1" 200 22151
+[20/Apr/2015 12:54:28] "GET /demosite/index HTTP/1.1" 301 0
+[20/Apr/2015 12:54:28] "GET /demosite/index/ HTTP/1.1" 200 23114
+[20/Apr/2015 12:54:28] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[20/Apr/2015 12:54:44] "GET /demosite/articles HTTP/1.1" 301 0
+[20/Apr/2015 12:54:44] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[20/Apr/2015 12:54:44] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[20/Apr/2015 12:54:44] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[20/Apr/2015 12:54:46] "POST /demosite/articles/getFilename/ HTTP/1.1" 200 17
+[20/Apr/2015 12:54:46] "GET /showfile/ HTTP/1.1" 404 8741
+[20/Apr/2015 12:54:49] "POST /demosite/articles/getFilename/ HTTP/1.1" 200 17
+[20/Apr/2015 12:54:49] "GET /showfile/ HTTP/1.1" 404 8741
+[20/Apr/2015 12:54:57] "GET /demosite/articles/? HTTP/1.1" 200 2148
+[20/Apr/2015 12:54:57] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[20/Apr/2015 12:54:57] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[20/Apr/2015 12:55:00] "GET /demosite/articles/? HTTP/1.1" 200 2148
+[20/Apr/2015 12:55:00] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[20/Apr/2015 12:55:01] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[20/Apr/2015 12:55:01] "GET /demosite/articles/? HTTP/1.1" 200 2148
+[20/Apr/2015 12:55:01] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[20/Apr/2015 12:55:02] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[20/Apr/2015 12:55:03] "GET /demosite/articles/? HTTP/1.1" 200 2148
+[20/Apr/2015 12:55:03] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[20/Apr/2015 12:55:03] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[20/Apr/2015 12:55:05] "GET /demosite/articles/? HTTP/1.1" 200 2148
+[20/Apr/2015 12:55:05] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[20/Apr/2015 12:55:05] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[20/Apr/2015 12:55:29] "GET http://testp3.pospr.waw.pl/testproxy.php HTTP/1.1" 404 1715
+[20/Apr/2015 13:05:59] "GET /request_simulaton_data HTTP/1.1" 500 62812
+[20/Apr/2015 13:07:07] "GET /index/ HTTP/1.1" 200 22151
+[20/Apr/2015 13:07:10] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 13:07:13] "POST /request_simulaton_data HTTP/1.1" 200 235
+[20/Apr/2015 13:07:16] "POST /request_simulaton_data HTTP/1.1" 200 362
+[20/Apr/2015 13:07:24] "POST /request_simulaton_data HTTP/1.1" 200 362
+[20/Apr/2015 13:07:34] "POST /request_simulaton_data HTTP/1.1" 200 431
+[20/Apr/2015 13:07:39] "POST /request_simulaton_data HTTP/1.1" 200 636
+[20/Apr/2015 13:07:46] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[20/Apr/2015 13:07:46] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+[20/Apr/2015 13:07:46] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 304 0
+[20/Apr/2015 13:07:46] "GET /static/js/jquery.min.js HTTP/1.1" 304 0
+[20/Apr/2015 13:07:46] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+[20/Apr/2015 13:07:46] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 304 0
+[20/Apr/2015 13:07:46] "GET /static/js/chooseDash.js HTTP/1.1" 304 0
+[20/Apr/2015 13:07:46] "GET /static/js/variable.js HTTP/1.1" 304 0
+[20/Apr/2015 13:07:50] "POST /request_simulaton_data HTTP/1.1" 200 235
+[20/Apr/2015 13:07:56] "POST /request_simulaton_data HTTP/1.1" 200 362
+[20/Apr/2015 13:08:16] "GET /demosite/index/ HTTP/1.1" 200 23114
+[20/Apr/2015 13:08:16] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[21/Apr/2015 01:09:30] "GET /index/ HTTP/1.1" 200 22151
+[21/Apr/2015 02:37:36] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[21/Apr/2015 11:40:20] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[21/Apr/2015 17:33:11] "GET http://5.61.43.116/ HTTP/1.1" 404 1644
+[22/Apr/2015 02:26:44] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[22/Apr/2015 04:08:03] "GET /index/ HTTP/1.1" 200 22151
+[22/Apr/2015 04:08:14] "GET /demosite/index HTTP/1.1" 301 0
+[22/Apr/2015 04:08:14] "GET /demosite/index/ HTTP/1.1" 200 23114
+[22/Apr/2015 04:08:15] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[22/Apr/2015 04:08:16] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[22/Apr/2015 04:08:16] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[22/Apr/2015 04:08:16] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[22/Apr/2015 04:08:32] "GET /demosite/articles HTTP/1.1" 301 0
+[22/Apr/2015 04:08:33] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[22/Apr/2015 04:08:33] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8835
+[22/Apr/2015 04:08:34] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8832
+[22/Apr/2015 04:08:41] "GET /demosite/index/ HTTP/1.1" 200 23114
+[22/Apr/2015 04:08:42] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[22/Apr/2015 04:13:32] "GET /demosite/index HTTP/1.1" 301 0
+[22/Apr/2015 04:13:32] "GET /demosite/index/ HTTP/1.1" 200 23114
+[22/Apr/2015 04:13:32] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[22/Apr/2015 04:13:32] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[22/Apr/2015 04:13:32] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[22/Apr/2015 04:13:33] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2927
+[22/Apr/2015 04:13:43] "POST /demosite/index/insert_blog_url/ HTTP/1.1" 200 32
+[22/Apr/2015 04:13:45] "GET /demosite/index/ HTTP/1.1" 200 23446
+[22/Apr/2015 04:13:46] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[22/Apr/2015 04:13:46] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[22/Apr/2015 04:13:46] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[22/Apr/2015 04:13:46] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2983
+[22/Apr/2015 04:14:01] "GET /demosite/index/ HTTP/1.1" 200 23446
+[22/Apr/2015 04:14:01] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[22/Apr/2015 04:14:01] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[22/Apr/2015 04:14:01] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[22/Apr/2015 04:14:01] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2983
+[22/Apr/2015 04:47:02] "GET /demosite/ HTTP/1.1" 404 8745
+[22/Apr/2015 04:47:05] "GET /demosite/index/ HTTP/1.1" 200 23446
+[22/Apr/2015 04:47:05] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2983
+[22/Apr/2015 11:36:27] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[22/Apr/2015 15:28:24] "GET /index/ HTTP/1.1" 200 22151
+[22/Apr/2015 15:28:25] "GET /index/ HTTP/1.1" 200 22151
+[22/Apr/2015 15:28:32] "GET /demosite/index/ HTTP/1.1" 200 23446
+[22/Apr/2015 15:28:33] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[22/Apr/2015 15:28:33] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[22/Apr/2015 15:28:33] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[22/Apr/2015 15:28:33] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 2983
+[22/Apr/2015 15:28:46] "POST /demosite/index/insert_blog_url/ HTTP/1.1" 200 32
+[23/Apr/2015 02:22:36] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[23/Apr/2015 03:12:16] "GET / HTTP/1.1" 404 8717
+[23/Apr/2015 03:12:16] "GET /robots.txt HTTP/1.1" 404 8747
+[23/Apr/2015 11:36:42] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[23/Apr/2015 19:13:10] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00TZ\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x10\x04\x01.\x05\x00\x00\x00\x00\x81I\xa8\xc0\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0x81 in position 25: ordinal not in range(128)
+[24/Apr/2015 06:25:22] "GET /demosite/index HTTP/1.1" 301 0
+[24/Apr/2015 06:25:22] "GET /demosite/index/ HTTP/1.1" 200 23772
+[24/Apr/2015 06:25:23] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[24/Apr/2015 06:25:23] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[24/Apr/2015 06:25:23] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[24/Apr/2015 06:25:25] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[24/Apr/2015 11:36:33] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[24/Apr/2015 13:21:13] "GET /demosite/index/ HTTP/1.1" 200 23772
+[24/Apr/2015 13:21:15] "GET /static/bootstrap.min.js HTTP/1.1" 304 0
+[24/Apr/2015 13:21:15] "GET /static/bootstrap.min.css HTTP/1.1" 304 0
+[24/Apr/2015 13:21:15] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[24/Apr/2015 13:21:16] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[24/Apr/2015 13:21:24] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:26:27] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:26:28] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:26:28] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:26:28] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 97339
+[24/Apr/2015 13:26:28] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[24/Apr/2015 13:26:30] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:28:18] "GET /index HTTP/1.1" 301 0
+[24/Apr/2015 13:28:19] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:28:20] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 97339
+[24/Apr/2015 13:28:20] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:28:20] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:28:21] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:28:21] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[24/Apr/2015 13:28:41] "GET /index HTTP/1.1" 301 0
+[24/Apr/2015 13:28:41] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:28:56] "GET /index HTTP/1.1" 301 0
+[24/Apr/2015 13:28:56] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:28:58] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[24/Apr/2015 13:28:58] "GET /static/images/cng5.gif HTTP/1.1" 200 40635
+[24/Apr/2015 13:28:58] "GET /static/images/cng4.jpg HTTP/1.1" 200 24128
+[24/Apr/2015 13:28:58] "GET /static/images/cng2.jpg HTTP/1.1" 200 34247
+[24/Apr/2015 13:28:59] "GET /static/images/cng1.jpg HTTP/1.1" 200 48190
+[24/Apr/2015 13:29:05] "GET /accidentStatistics HTTP/1.1" 200 6719
+[24/Apr/2015 13:29:15] "GET /accidentStatistics/locationStatistics HTTP/1.1" 200 7042
+[24/Apr/2015 13:29:43] "GET /index HTTP/1.1" 301 0
+[24/Apr/2015 13:29:43] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:29:43] "GET /index HTTP/1.1" 301 0
+[24/Apr/2015 13:29:43] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:29:43] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:29:43] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[24/Apr/2015 13:29:43] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:29:43] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 97339
+[24/Apr/2015 13:29:44] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:30:17] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:30:18] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[24/Apr/2015 13:30:18] "GET /static/images/cng5.gif HTTP/1.1" 200 40635
+[24/Apr/2015 13:30:18] "GET /static/images/cng4.jpg HTTP/1.1" 200 24128
+[24/Apr/2015 13:30:18] "GET /static/images/cng2.jpg HTTP/1.1" 200 34247
+[24/Apr/2015 13:30:18] "GET /static/images/cng1.jpg HTTP/1.1" 200 48190
+[24/Apr/2015 13:30:20] "GET /index/simulationIntroduct HTTP/1.1" 200 4827
+[24/Apr/2015 13:30:21] "GET /index/simulationIntroduct HTTP/1.1" 200 4827
+[24/Apr/2015 13:30:21] "GET /index/settings HTTP/1.1" 200 2943
+[24/Apr/2015 13:30:21] "GET /index/settings HTTP/1.1" 200 2943
+[24/Apr/2015 13:30:22] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:30:45] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[24/Apr/2015 13:31:17] "GET /accidentStatistics/locationStatistics HTTP/1.1" 200 7042
+[24/Apr/2015 13:31:20] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[24/Apr/2015 13:31:20] "GET /static/js/chooseDash.js HTTP/1.1" 200 6631
+[24/Apr/2015 13:31:20] "GET /static/js/variable.js HTTP/1.1" 200 486
+[24/Apr/2015 13:31:32] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:31:33] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[24/Apr/2015 13:31:35] "POST /request_simulaton_data HTTP/1.1" 200 235
+[24/Apr/2015 13:31:35] "GET /index/simulationIntroduct HTTP/1.1" 200 4827
+[24/Apr/2015 13:31:43] "POST /request_simulaton_data HTTP/1.1" 200 362
+[24/Apr/2015 13:32:01] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[24/Apr/2015 13:32:04] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:32:06] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[24/Apr/2015 13:32:07] "GET /index/simulationIntroduct HTTP/1.1" 200 4827
+[24/Apr/2015 13:32:09] "GET /index/settings HTTP/1.1" 200 2943
+[24/Apr/2015 13:32:12] "GET /index/ HTTP/1.1" 200 22151
+[24/Apr/2015 13:32:13] "GET /accidentStatistics HTTP/1.1" 200 6719
+[24/Apr/2015 13:32:13] "GET /accidentStatistics HTTP/1.1" 200 6719
+[24/Apr/2015 13:32:21] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[24/Apr/2015 13:32:21] "GET /static/js/chooseDash.js HTTP/1.1" 200 6631
+[24/Apr/2015 13:32:21] "GET /static/js/variable.js HTTP/1.1" 200 486
+[24/Apr/2015 13:32:27] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[24/Apr/2015 13:32:28] "GET /static/highcharts/js/highcharts-3d.js HTTP/1.1" 200 19018
+[24/Apr/2015 13:32:28] "GET /static/highcharts/js/modules/exporting.js HTTP/1.1" 200 7246
+[24/Apr/2015 13:32:31] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[24/Apr/2015 13:32:38] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[24/Apr/2015 13:32:38] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:32:38] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:32:38] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:32:39] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[24/Apr/2015 13:32:43] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[24/Apr/2015 13:33:05] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 64058
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Apr/2015 13:33:05] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Apr/2015 13:33:16] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 124358
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 86, in run
+    self.finish_response()
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 128, in finish_response
+    self.write(data)
+  File "/usr/lib/python2.7/wsgiref/handlers.py", line 217, in write
+    self._write(data)
+  File "/usr/lib/python2.7/socket.py", line 324, in write
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Apr/2015 13:33:16] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 500 59
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 710, in finish
+    self.wfile.close()
+  File "/usr/lib/python2.7/socket.py", line 279, in close
+    self.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[24/Apr/2015 13:33:54] "POST /request_simulaton_data HTTP/1.1" 200 266
+[24/Apr/2015 13:34:08] "GET /simulationAnalysis/fireAndExplosionSimulation HTTP/1.1" 200 4093
+[24/Apr/2015 13:35:33] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[24/Apr/2015 13:35:33] "GET /static/highcharts/js/highcharts-3d.js HTTP/1.1" 200 19018
+[24/Apr/2015 13:35:33] "GET /static/highcharts/js/modules/exporting.js HTTP/1.1" 200 7246
+[24/Apr/2015 13:35:40] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[24/Apr/2015 13:36:29] "GET /simulationAnalysis/fireAndExplosionSimulation HTTP/1.1" 200 4093
+[24/Apr/2015 13:41:03] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:41:03] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:41:04] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[24/Apr/2015 13:41:04] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:42:20] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:42:21] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:43:34] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:43:34] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:43:34] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:43:34] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[24/Apr/2015 13:43:50] "GET /index/stationIntroduct HTTP/1.1" 200 11823
+[24/Apr/2015 13:45:29] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:45:30] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:45:55] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[24/Apr/2015 13:45:58] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[24/Apr/2015 13:46:57] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:46:57] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:46:57] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[24/Apr/2015 13:46:58] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:54:24] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:54:24] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[24/Apr/2015 13:55:47] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[24/Apr/2015 13:55:47] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[24/Apr/2015 13:55:47] "GET /static/highcharts/js/modules/exporting.js HTTP/1.1" 200 7246
+[24/Apr/2015 13:55:47] "GET /static/highcharts/js/highcharts-3d.js HTTP/1.1" 200 19018
+[24/Apr/2015 13:55:48] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[24/Apr/2015 13:55:48] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[25/Apr/2015 09:35:47] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00TZ\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x10\x04\x01.\x05\x00\x00\x00\x00\x81I\xa8\xc0\x00')
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 117, in handle
+    if not self.parse_request(): # An error code has been sent, just exit
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 281, in parse_request
+    "Bad HTTP/0.9 request type (%r)" % command)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 368, in send_error
+    self.send_response(code, message)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 385, in send_response
+    self.log_request(code)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 422, in log_request
+    self.requestline, str(code), str(size))
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 138, in log_message
+    msg = "[%s] %s\n" % (self.log_date_time_string(), format % args)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0x81 in position 25: ordinal not in range(128)
+[25/Apr/2015 10:09:13] "GET /index/ HTTP/1.1" 200 22151
+[25/Apr/2015 10:10:15] "GET /index HTTP/1.1" 301 0
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[25/Apr/2015 10:10:20] "GET /index/ HTTP/1.1" 200 22151
+[25/Apr/2015 10:10:21] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[25/Apr/2015 10:10:21] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[25/Apr/2015 10:10:21] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[25/Apr/2015 10:10:21] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[25/Apr/2015 10:10:23] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 97339
+[25/Apr/2015 10:10:31] "GET /accidentStatistics HTTP/1.1" 200 6719
+[25/Apr/2015 10:10:39] "GET /accidentStatistics/locationStatistics HTTP/1.1" 200 7042
+[25/Apr/2015 10:10:39] "GET /accidentStatistics/locationStatistics HTTP/1.1" 200 7042
+[25/Apr/2015 10:10:45] "GET /accidentStatistics/typeStatistics HTTP/1.1" 200 4746
+[25/Apr/2015 10:10:48] "GET /accidentStatistics/typeStatistics HTTP/1.1" 200 4746
+[25/Apr/2015 10:10:50] "GET /accidentStatistics/lossStatistics HTTP/1.1" 200 5029
+[25/Apr/2015 10:10:51] "GET /static/highcharts/js/modules/exporting.js HTTP/1.1" 200 7246
+[25/Apr/2015 10:10:53] "GET /accidentStatistics HTTP/1.1" 200 6719
+[25/Apr/2015 10:11:00] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[25/Apr/2015 10:11:01] "GET /static/js/variable.js HTTP/1.1" 200 486
+[25/Apr/2015 10:11:01] "GET /static/js/chooseDash.js HTTP/1.1" 200 6631
+[25/Apr/2015 10:11:42] "GET /simulationAnalysis/fireAndExplosionSimulation HTTP/1.1" 200 4093
+[25/Apr/2015 10:11:55] "GET /simulationAnalysis/fireAndExplosionSimulation HTTP/1.1" 200 4093
+[25/Apr/2015 10:12:07] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[25/Apr/2015 10:12:07] "GET /static/highcharts/js/highcharts-3d.js HTTP/1.1" 200 19018
+[25/Apr/2015 10:12:10] "GET /three_dim_simulation HTTP/1.1" 200 7767
+[25/Apr/2015 10:12:14] "GET /simulationAnalysis HTTP/1.1" 200 11823
+[25/Apr/2015 10:12:29] "POST /request_simulaton_data HTTP/1.1" 200 235
+[25/Apr/2015 10:12:35] "POST /request_simulaton_data HTTP/1.1" 200 362
+[25/Apr/2015 10:13:17] "GET /simulationAnalysis HTTP/1.1" 200 11823
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[25/Apr/2015 10:13:17] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[25/Apr/2015 10:13:18] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[25/Apr/2015 10:13:18] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 97339
+[25/Apr/2015 10:13:18] "GET /static/js/variable.js HTTP/1.1" 200 486
+[25/Apr/2015 10:13:18] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[25/Apr/2015 10:13:19] "GET /static/js/chooseDash.js HTTP/1.1" 200 6631
+[25/Apr/2015 10:13:20] "GET /accidentStatistics/lossStatistics HTTP/1.1" 200 5029
+[25/Apr/2015 10:13:20] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[25/Apr/2015 10:13:33] "GET /simulationAnalysis/fireAndExplosionSimulation HTTP/1.1" 200 4093
+[25/Apr/2015 10:13:37] "GET /index/ HTTP/1.1" 200 22151
+[25/Apr/2015 10:13:45] "GET /accidentStatistics HTTP/1.1" 200 6719
+[25/Apr/2015 10:14:03] "GET /index/ HTTP/1.1" 200 22151
+[25/Apr/2015 10:14:21] "GET /demosite/index HTTP/1.1" 301 0
+[25/Apr/2015 10:14:22] "GET /demosite/index/ HTTP/1.1" 200 23772
+[25/Apr/2015 10:14:22] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[25/Apr/2015 10:14:25] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[25/Apr/2015 10:14:25] "GET /static/bootstrap.min.css HTTP/1.1" 200 114011
+[25/Apr/2015 10:14:26] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[25/Apr/2015 10:14:30] "GET /demosite/articles HTTP/1.1" 301 0
+[25/Apr/2015 10:14:30] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 10:14:31] "GET /fonts/glyphicons-halflings-regular.eot? HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:31] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 10:14:31] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:32] "GET /demosite/uploadFile HTTP/1.1" 301 0
+[25/Apr/2015 10:14:32] "GET /demosite/uploadFile/ HTTP/1.1" 200 1478
+[25/Apr/2015 10:14:34] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 10:14:34] "GET /fonts/glyphicons-halflings-regular.eot? HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:34] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 10:14:34] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:35] "POST /demosite/articles/getFilename/ HTTP/1.1" 200 17
+[25/Apr/2015 10:14:36] "GET /showfile HTTP/1.1" 404 8738
+[25/Apr/2015 10:14:36] "GET /showfile HTTP/1.1" 404 8738
+[25/Apr/2015 10:14:41] "GET /fonts/glyphicons-halflings-regular.eot? HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:41] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 10:14:41] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:42] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 10:14:42] "GET /fonts/glyphicons-halflings-regular.eot? HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:43] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 10:14:44] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:46] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 10:14:46] "GET /demosite/index/ HTTP/1.1" 200 23772
+[25/Apr/2015 10:14:47] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+[25/Apr/2015 10:14:47] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 10:14:47] "GET /fonts/glyphicons-halflings-regular.eot? HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:48] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 10:14:48] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 10:14:50] "GET /demosite/index/ HTTP/1.1" 200 23772
+[25/Apr/2015 10:14:50] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[25/Apr/2015 10:14:57] "GET /demosite/uploadFile HTTP/1.1" 301 0
+[25/Apr/2015 10:14:58] "GET /demosite/uploadFile/ HTTP/1.1" 200 1478
+[25/Apr/2015 10:16:21] "GET /demosite/articles HTTP/1.1" 301 0
+[25/Apr/2015 10:16:21] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 10:18:49] "GET /accidentStatistics/typeStatistics HTTP/1.1" 200 4746
+[25/Apr/2015 10:20:46] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[25/Apr/2015 10:20:46] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[25/Apr/2015 10:20:46] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[25/Apr/2015 10:20:47] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[25/Apr/2015 10:21:40] "GET /demosite/articles HTTP/1.1" 301 0
+[25/Apr/2015 10:21:40] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 10:27:04] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[25/Apr/2015 10:27:04] "GET /static/highcharts/js/modules/exporting.js HTTP/1.1" 200 7246
+[25/Apr/2015 10:27:04] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[25/Apr/2015 10:27:04] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[25/Apr/2015 10:27:05] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[25/Apr/2015 10:31:26] "GET /static/highcharts/js/highcharts-more.js HTTP/1.1" 200 21814
+[25/Apr/2015 10:31:26] "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 27726
+[25/Apr/2015 10:31:26] "GET /static/js/jquery.min.js HTTP/1.1" 200 93064
+[25/Apr/2015 10:31:27] "GET /static/highcharts/js/highcharts.js HTTP/1.1" 200 140855
+[25/Apr/2015 10:35:44] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
+[25/Apr/2015 10:35:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[25/Apr/2015 11:51:28] "GET http://www.baidu.com/ HTTP/1.1" 404 1652

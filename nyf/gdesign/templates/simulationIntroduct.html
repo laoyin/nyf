@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            padding:10px 150px;
+        }
+        #siderbar{
+               border: solid 1px #C0C0C0;
+        }
+        .left{
+              float:left;
+              margin-left:40px;
+              margin-bottom:40px;
+        }
+        .container-fluid{
+              margin-top:80px;
+              margin-left:40px;
+        }
+        #content{
+             margin-left:40px;
+        }
+        .active{
+             background-color:#C0C0C0;
+        }
+        #accidentCard{
+             margin-top:20px;
+        }
+        .margin_top{
+            margin-top:10px;
+        }
+    </style>
+  </head>
+  <body>
+
+	<!-- NAV-->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+	  <div class="container">
+	      <ul class="nav nav-pills" role="tablist">
+	      <li role="presentation" ><a href="/index">首页</a></li>
+	      <li role="presentation" ><a href="/accidentStatistics">统计分析</a></li>
+	      <li role="presentation" ><a href="/simulationAnalysis">模拟分析</a></li>
+	      <li role="presentation" ><a href="/three_dim_simulation">三维动态模拟</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<!-- ENDNAV -->
+    <!-- siderbar -->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-fluid">
+                    <div class="span2 left" id="siderbar">
+                        <p class="nav-header">
+                        </p>
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+					           <h4 style="color:#C0C0C0;">首页</h4>
+				            </li>
+                            <li class="active">
+                                <a href="/index">事故列表</a>
+                            </li>
+                            <li>
+                                <a href="/index/stationIntroduct">加气站介绍</a>
+                            </li>
+                            <li>
+                                <a href="/index/simulationIntroduct">模拟分析介绍</a>
+                            </li>
+                            <li>
+                                <a href="/index/settings">设置</a>
+                            </li>
+                        </ul>
+                    </div>
+                <!-- content -->
+                   <div class="span8 left">
+                         <div class="tabbable" id="tabs-376012">
+                            <ul class="nav nav-tabs">
+                                <li>
+                                <pre style="background-color:#ffffff;color:#000000;font-family:'AR PL UKai CN';font-size:12pt;"><a contenteditable="false" data-toggle="tab" href="#panel-44810">天然气管道射流泄漏扩散</a></pre>
+                                </li>
+                                <li>
+                                <pre style="background-color:#ffffff;color:#000000;font-family:'AR PL UKai CN';font-size:12pt;"><a contenteditable="false" data-toggle="tab" href="#panel-731687">天然气瞬时绝热扩散</a></pre>
+                                </li>
+                                <li>
+                                <pre style="background-color:#ffffff;color:#000000;font-family:'AR PL UKai CN';font-size:12pt;"><a contenteditable="false" data-toggle="tab" href="#panel-731688">火灾爆炸理论</a></pre>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane" contenteditable="flase" id="panel-44810">
+                                <p>第一部分内容.</p>
+                                </div>
+
+                                <div class="tab-pane" contenteditable="flase" id="panel-731687">
+                                <p>第二部分内容.</p>
+                                </div>
+
+                                <div class="tab-pane" contenteditable="flase" id="panel-731688">
+                                <p>第三部分内容.</p>
+                                </div>
+                            </div>
+                         </div>
+                   </div>
+                <!-- ENDcontent -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ENDsiderbar -->
+  </body>
+</html>
+
+
+

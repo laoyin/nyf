@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>customer list page</title>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+    <script src="/static/bootstrap.min.js"></script>
+  </head>
+  <body>
+    
+    
+    <table class="table-bordered table-hover">
+      <thead>
+        <tr> 
+           <th >customer table</th>
+        </tr>
+        <tr>
+          <th>customer.name</th>
+          <th>customer.password</th>
+          <th>customer.sex</th>
+          <th>customer.age</th>
+          <th>customer.tel</th>
+          <th>customer.address</th>
+          <th>customer.city</th>
+          <th>more</th>
+        </tr>
+      </thead>
+{% for customer in customers %}
+      <tbody>
+        <tr>
+          <td>{{customer.name}}</td>
+          <td>{{customer.password}}</td>
+          <td>{{customer.sex}}</td>
+          <td>{{customer.age}}</td>
+          <td>{{customer.tel}}</td>
+          <td>{{customer.address}}</td>
+          <td>{{customer.city}}</td>
+          <td><button>more</button></td>
+        </tr>
+      </tbody>
+{% endfor %}
+    </table>
+   
+  
+  </body>
+</html>

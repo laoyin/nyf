@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts-more.js"></script>
+    <style>
+        body {
+            padding:10px 100px;
+        }
+        #siderbar{
+               border: solid 1px #C0C0C0;
+        }
+        .left{
+              float:left;
+        }
+        .container-fluid{
+              margin-top:80px;
+              margin-left:40px;
+        }
+        #content{
+             margin-left:40px;
+        }
+        .active{
+             background-color:#C0C0C0;
+        }
+        #accidentCard{
+             margin-top:20px;
+        }
+        .margin_top{
+            margin-top:10px;
+        }
+        #LeakageSimulationDash{
+            margin-left:40px;
+        }
+    </style>
+    <script>
+//管道射流泄漏扩散范围模拟
+        $(function () {
+	var ranges = [
+
+		[40, 80,90],
+		[50, 70,100],
+		[60, 30,110],
+		[70, 0,100],
+		[80, 40,92],
+		[90, 70,90],
+		[100,80,80],
+	],
+	averages = [
+
+		[40, 85],
+		[50, 85],
+		[60,70],
+		[70, 50],
+		[80, 80],
+		[90, 80],
+	];
+
+	$('#LeakageSimulationDash4').highcharts({
+	
+		title: {
+			text: '管道射流泄漏扩散范围模拟图'
+		},
+		
+		xAxis: {
+			title: {
+				text: '水平距离'
+			},
+            tickPixelInterval:50,
+		},
+		
+		yAxis: {
+			title: {
+				text: '垂直距离'
+			},
+			tickPixelInterval:50,
+		},
+		
+		tooltip: {
+			crosshairs: true,
+			shared: true,
+			valueSuffix: 'm'
+		},
+		
+		legend: {
+		    align: "center",
+            verticalAlign: "bottom",
+            x: 0,
+            y: 0 ,
+		},
+		
+		series: [{
+			name: '爆炸下限范围',
+			data: ranges,
+			type: 'arearange',
+			lineWidth: 0,
+			linkedTo: ':previous',
+			color: Highcharts.getOptions().colors[0],
+			fillOpacity: 0.3,
+			zIndex: 1,
+		}]
+	
+	});
+    
+});
+//扩散速度图(单个因素影响)
+$(function () {
+    $('#LeakageSimulationDash0').highcharts({
+        title: {
+            text: '气体扩散速度沿下风向变化图',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
+        },
+        yAxis: {
+            title: {
+                text: '扩散速度m/s'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'm/s'
+        },
+        legend: {
+            align: "center",
+            verticalAlign: "bottom",
+            x: 0,
+            y: 0 ,
+        },
+        series: [{
+            name: '风速5 m/s',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: '风速10 m/s',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }, {
+            name: '泄放速度 50 m/s',
+            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+        }, {
+            name: '泄放速度 100 m/s',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+});
+//扩散浓度图
+$(function () {
+    $('#LeakageSimulationDash1').highcharts({
+        title: {
+            text: '气体扩散浓度沿下风向的变化图',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },
+        xAxis: {
+             categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
+        },
+        yAxis: {
+            title: {
+                text: '扩散浓度'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+        legend: {
+            align: "center",
+            verticalAlign: "bottom",
+            x: 0,
+            y: 0 ,
+        },
+        series: [{
+            name: '风速5 m/s',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: '风速10 m/s',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }, {
+            name: '泄放速度 50 m/s',
+            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+        }, {
+            name: '泄放速度 100 m/s',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+});
+//扩散速度图(结合风速与泄放速度)
+$(function () {
+    $('#LeakageSimulationDash2').highcharts({
+        title: {
+            text: '气体扩散速度比较图',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },
+        xAxis: {
+             categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
+        },
+        yAxis: {
+            title: {
+                text: '扩散速度 m/s'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            align: "center",
+            verticalAlign: "bottom",
+            x: 0,
+            y: 0 ,
+        },
+        series: [{
+            name: '风速5 m/s,泄放速度100 m/s',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: '风速10 m/s,泄放速度50 m/s',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }]
+    });
+});
+//扩散浓度图(结合风速和泄放速度)
+$(function () {
+    $('#LeakageSimulationDash3').highcharts({
+        title: {
+            text: '气体扩散浓度比较图',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },
+        xAxis: {
+             categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
+        },
+        yAxis: {
+            title: {
+                text: '扩散浓度'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            align: "center",
+            verticalAlign: "bottom",
+            x: 0,
+            y: 0 ,
+        },
+         series: [{
+            name: '风速5 m/s,泄放速度100 m/s',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: '风速10 m/s,泄放速度50 m/s',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }]
+    });
+});
+
+
+    </script>
+  </head>
+  <body>
+
+	<!-- NAV-->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+	  <div class="container">
+        <ul class="nav nav-pills" role="tablist">
+	      <li role="presentation" ><a href="/index">首页</a></li>
+	      <li role="presentation" ><a href="/accidentStatistics">统计分析</a></li>
+	      <li role="presentation" ><a href="/simulationAnalysis">模拟分析</a></li>
+	      <li role="presentation" ><a href="/three_dim_simulation">三维动态模拟</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<!-- ENDNAV -->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-fluid">
+                    <!-- siderbar -->
+                    <div class="span2 left" id="siderbar">
+                        <p class="nav-header">
+                        </p>
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+					           <h4 style="color:#C0C0C0;">模拟分析</h4>
+				            </li>
+                            <li class="active">
+                                <a href="/simulationAnalysis">管道射流泄漏扩散模拟</a>
+                            </li>
+                            <li>
+                                <a href="/simulationAnalysis/fireAndExplosionSimulation">储气井瞬时绝热扩散模拟</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- ENDsiderbar -->
+
+                    <!-- content -->
+                    <div id="shiftButton" class="left" style="margin-left:40px" >
+			    <a href="javascript:shiftToDefined()">
+				<p id="shiftButtonText">切换到自定义模拟</p>
+			    </a>
+	                    <div id="definedsimulationCondition" style="display:none;">
+	                             <div class="btn-group">
+						<button id="chooseDash" class="btn" contenteditable="false">选择模拟图</button>
+						<button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+						<ul class="dropdown-menu" contenteditable="false" onclick="chooseDash()">
+							<li><a id="diffusionRate" >扩散速度图</a></li>
+							<li><a id="ratelompare" href="#" >速度比较图</a></li>
+							<li><a id="diffusionConcentration" href="#">扩散浓度图</a></li>
+						    	<li><a id="ConcentrationCompare" href="#">浓度比较图</a></li> 
+						</ul>
+				    </div>
+	                    </div>
+	                    <div id="definedCondition" style="display:none;">
+	                                  <div style="margin-top:20px;">
+ 						<div id="windSpeed" style="display:none;"><p>风速:</p><input type="text" value="10"></input></div>
+	                                        <div id="dischargeSpeed" style="display:none;"><p>泄放速度:</p><input type="text"></input></div><br/>
+                                    		<input type="button" value="添加" onclick="simulationRequestData()"></input>
+					  </div>
+	                    </div>
+                    </div>   
+                    <div id="definedSimulation" class="left" style="display:none;">
+					<div class="span8">
+						<div class="span8 margin_top" id="definedDash" style="margin-bottom:40px;">
+				       		</div>
+					</div>
+		    </div>
+                    <div  class="left" style="margin-left:20px;">
+		              <div id="defaultSimulation">
+				        <div class="span8" id="LeakageSimulationDash0">
+				        </div>
+					<div class="span8 margin_top" id="LeakageSimulationDash2">
+				        </div>
+				        <div class="span8 margin_top" id="LeakageSimulationDash1">
+				        </div>
+				        <div class="span8 margin_top" id="LeakageSimulationDash3">
+				        </div>
+                                        <div class="span8">
+						<div class="span8 margin_top" id="LeakageSimulationDash4" style="margin-bottom:40px;">
+				       		</div>
+					</div>
+		              </div>	
+                    </div>
+                <!-- ENDcontent -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- JS	文件 -->
+      <script type="text/javascript" src="/static/js/chooseDash.js"></script>
+      <script type="text/javascript" src="/static/js/variable.js"></script>
+  </body>
+</html>
+
+
+

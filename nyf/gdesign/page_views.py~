@@ -1,0 +1,14 @@
+#coding=utf-8
+from django.shortcuts import render_to_response,render
+from django.conf import settings
+from django.http import *
+from django.template import Context
+import pdb
+
+#test page
+def test_page(request):
+    return render_to_response('test.html')
+
+#首页
+def index_page(request):
+    return render_to_response('index.html')

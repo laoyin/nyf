@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{title}}</title>
+	<script src="/static/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+	<script src="/static/bootstrap.min.js"></script>
+        <style>
+              body{
+    background: aliceblue;
+              }
+              .span{
+    
+margin: 10px;
+border-style: solid;
+padding: 10px 100px;
+border-color: rgb(231, 238, 240);
+border-radius: 6px;
+background-color: rgb(231, 238, 240);
+              }
+             .my_btn{
+         color: rgb(127, 168, 255);
+    height: 30px;
+    margin-left: 10px;
+             }
+        </style>
+	<script>
+		$(updatePage=function(){
+			var $link_list=$("#link_list a")
+			var length=$link_list.length
+			var dict={'message':'ok'}
+			$.post('requestlinkdata/',dict,
+		                        function(data){
+						for (var i=0;i<=length-1;i++){
+							$link_list[i].href=data['link_href'][i]
+						}	
+			},'json')
+		
+		});
+		function insertBlogURL(){
+			var blog_name=$('#blog_name').val();
+			var blog_url=$('#blog_url').val();
+			var dict={'blog_name':blog_name,'blog_url':blog_url}
+			if (blog_name || blog_url){
+				$.post('insert_blog_url/',dict,
+		                        function(data){
+						if(data.ret){
+							alert(data.message);			
+						}
+						else {
+							alert(data.message);
+						}	
+			        },'json')
+			}
+			else {alert("博客标题或地址不能为空!")}
+		}
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<ul class="nav nav-pills" role="tablist">
+				<li role="presentation" ><a href="/demosite/index">我的博客</a></li>
+				<li role="presentation" ><a href="/demosite/articles">文章</a></li>
+				<li role="presentation" ><a href="/demosite/index">图片</a></li>
+				<li role="presentation" ><a href="/demosite/uploadFile">文件上传</a></li>
+				<li role="presentation" ><a href="/demosite/knowledgeTree">知识结构树</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div  style="margin-top:60px;padding:10px 150px;">
+                <h2 style="color: rgb(58, 71, 205);">博客链接:</h2>
+			<label style="color: rgb(58, 71, 205);font-weight:100;">标题:</label><input id='blog_name' type='text' style="border-radius: 6px;"/>
+			<label style="color: rgb(58, 71, 205);font-weight:100;margin-left:30px;">网址:</label><input id='blog_url' type='text' style="border-radius: 6px;"/>
+			<input type="button" onclick="insertBlogURL()" value="提交" class="my_btn"/>
+		<div  id="link_list" style="margin-top:20px;">
+                           <div class="row"> <!--  style="padding: 40px;border-style: solid;border-radius: 6px;border-color: rgb(0, 168, 255);"> -->
+				{% for link_object in link_list %}
+                                   <div class="col-sm-3 col-md-3 col-lg-12 span">
+                                      <div class="item">
+				        <a href="#">{{link_object.title}}</a>
+                                        <p>{{link_object.time}}</p>
+                                      </div>
+                                   </div>
+				{% endfor %}
+                           </div>
+                           <div style="margin-top:30px;"></div>
+		</div>
+	<div>
+</body>
+</html>
+
+
+

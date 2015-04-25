@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>upload</title>
+   <script src="/static/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/media/jQuery-File-Upload/js/cors/jquery.postmessage-transport.js"></script>
+    <script type="text/javascript" src="/media/jQuery-File-Upload/js/cors/jquery.xdr-transport.js"></script>
+    <script type="text/javascript" src="/media/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="/media/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+    <script src="/static/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function upld()
+        {
+            var url = 'get/';
+            $('#file').fileupload({
+                url: url,
+                type:'post',
+                dataType: 'json',
+
+                success: function (data) {
+                      $.each(data.result.files, function (index, file) {
+                        $('<p>').text(file.name).appendTo('#files');
+                    });
+                   },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress').css(
+                        'width',
+                        progress + '%'
+                    );
+                    
+               }
+
+            }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+        }
+
+        function ajaxFileUpload ()
+        {
+            loading();//动态加载小图标
+            $.ajaxFileUpload ({
+            url :'upload.php',
+            secureuri :false,
+            fileElementId :'fileToUpload',
+            dataType : 'json',
+            success : function (data, status){
+            if(typeof(data.error) != 'undefined'){
+            if(data.error != ''){
+            alert(data.error);
+            }else{
+            alert(data.msg);
+            }
+            }
+            },
+            error: function (data, status, e){
+            alert(e);
+            }
+            })
+            return false;
+            }
+            function loading (){
+            $("#loading ").ajaxStart(function(){
+            $(this).show();
+            }).ajaxComplete(function(){
+            $(this).hide();
+            });
+            }
+    </script>
+</head>
+<body>
+    <input type="file" id="file" name="file" onclick="upld()"><br/><br/>
+    <div id="progress" style="background-color: red;width: 0px;height: 20px"></div>
+    <div id="files" class="files">
+
+    </div>
+    {#  已上传文件容器  #}
+</body>
+</html>

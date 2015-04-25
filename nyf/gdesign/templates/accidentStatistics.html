@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts.js"></script>
+    <script type="text/javascript" src="/static/highcharts/js/highcharts-more.js"></script>
+    <style>
+        body {
+            padding:10px 150px;
+        }
+        #siderbar{
+               border: solid 1px #C0C0C0;
+        }
+        .left{
+              float:left;
+              margin-left:40px;
+        }
+        .container-fluid{
+              margin-top:80px;
+              margin-left:40px;
+        }
+        #content{
+             margin-left:40px;
+        }
+        .active{
+             background-color:#C0C0C0;
+        }
+        #accidentCard{
+             margin-top:20px;
+        }
+        .margin_top{
+            margin-top:10px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#accidentTimeAnalysis').highcharts({
+                title: {
+                    text: '近30年事故时间分布规律',
+                    x: -20 //center
+                },
+                subtitle: {
+                    text: 'Source: www.nyf.com',
+                    x: -20
+                },
+                xAxis: {
+                    categories: ['2001', '2002', '2003', '2004', '2005', '2006','2007', '2008', '2009', '2010', '2011', '2012'],
+                    tickPixelInterval:150,
+                },
+                yAxis: {
+                    title: {
+                        text: '次数(次)'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    valueSuffix: '次'
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{
+                    name: '事故数',
+                    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                }, ]
+            });
+    });
+    $(function () {
+            $('#accidentTimeAnalysis1').highcharts({
+                title: {
+                    text: '各类型事故时间分布规律',
+                    x: -20 //center
+                },
+                subtitle: {
+                    text: 'Source: www.nyf.com',
+                    x: -20
+                },
+                xAxis: {
+                    categories: ['2001', '2002', '2003', '2004', '2005', '2006','2007', '2008', '2009', '2010', '2011', '2012'],
+                    tickPixelInterval:150,
+                },
+                yAxis: {
+                    title: {
+                        text: '次数(次)'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    valueSuffix: '次'
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{
+                    name: '类型1',
+                    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+                }, {
+                    name: '类型2',
+                    data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+                }, {
+                    name: '类型3',
+                    data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+                }, {
+                    name: '类型4',
+                    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+                }]
+            });
+    });
+    </script>
+  </head>
+  <body>
+
+	<!-- NAV-->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+	  <div class="container">
+	      <ul class="nav nav-pills" role="tablist">
+	      <li role="presentation" ><a href="/index">首页</a></li>
+	      <li role="presentation" ><a href="/accidentStatistics">统计分析</a></li>
+	      <li role="presentation" ><a href="/simulationAnalysis">模拟分析</a></li>
+	      <li role="presentation" ><a href="/three_dim_simulation">三维动态模拟</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<!-- ENDNAV -->
+    <!-- siderbar -->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-fluid">
+                    <div class="span2 left" id="siderbar">
+                        <p class="nav-header">
+                        </p>
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+					           <h4 style="color:#C0C0C0;">统计分析</h4>
+				            </li>
+                            <li class="active">
+                                <a href="/accidentStatistics">事故时间分析</a>
+                            </li>
+                            <li>
+                                <a href="/accidentStatistics/locationStatistics">事故发生位置分析</a>
+                            </li>
+                            <li>
+                                <a href="/accidentStatistics/typeStatistics">事故类型分析</a>
+                            </li>
+                            <li>
+                                <a href="/accidentStatistics/lossStatistics">事故主要损失构成</a>
+                            </li>
+                        </ul>
+                    </div>
+                <!-- content -->
+                    <div class="left">
+                        <div class="span8 " id="accidentTimeAnalysis">
+                        </div>
+                        <div class="span8" style="margin-top:40px;margin-bottom:40px;" id="accidentTimeAnalysis1">
+                        </div>
+                    </div>
+                <!-- ENDcontent -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ENDsiderbar -->
+  </body>
+</html>
+
+
+
