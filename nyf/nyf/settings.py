@@ -62,7 +62,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'master'  ,           # Or path to database file if using sqlite3.
-        'USER': 'root',
+        'USER': 'nyf',
         'PASSWORD': 'nyf',
         'HOST': '',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
@@ -70,7 +70,7 @@ DATABASES = {
     'demosite': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'demosite'   ,   # Or path to database file if using sqlite3.
-        'USER': 'root',
+        'USER': 'nyf',
         'PASSWORD': 'nyf',
         'HOST': '',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
@@ -78,7 +78,7 @@ DATABASES = {
     'gdesign': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gdesign'        ,             # Or path to database file if using sqlite3.
-        'USER': 'root',
+        'USER': 'nyf',
         'PASSWORD': 'nyf',
         'HOST': '',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.

@@ -1,0 +1,73 @@
+javascript学习笔记
+1.以$开头的变量的含义
+http://stackoverflow.com/questions/3360858/why-use-in-the-name-of-javascript-variables
+The $ in the variable name is only part of the name, but the convention is to use it to start variable names when the variable represents a jQuery object.
+变量名中的$是名字的一部分,但是约定以$开头的变量名表示一个jQuery对象.
+var $myHeaderDiv = $('#header');
+var myHeaderDiv = document.getElementById('header');
+Now later in your code, you know the $myHeaderDiv is already a jQuery object, so you can call jQuery functions:
+$myHeaderDiv.fade();
+
+To get from the DOM-variable to the jQuery variable:
+将文档变量转变为jQuery对象.
+var $myHeaderDiv = jQuery(myHeaderDiv); //assign to another variable
+jQuery(myHeaderDiv).fade(); //use directly
+
+//or, as the $ is aliased to the jQuery object if you don't specify otherwise:
+默认$为jQuery object的别名
+var $myHeaderDiv = jQuery(myHeaderDiv); //assign
+$(myHeaderDiv).fade(); //use
+To get from the jQuery variable to the DOM-variable.
+var myHeaderDiv = $myHeaderDiv.get(0);
+2.常量的声明格式,const 常量名=值;
+不加数据类型不报错
+3.未对变量赋值,默认值为undefined的字符串
+4.<pre></pre>标签内文本为格式化文本,转移字符起作用
+5.undefined,null,0,""的区别
+6.javascript函数:函数定义,函数调用(body标签内直接调用,事件响应调用,通过链接调用),函数参数,函数返回值,
+                 嵌套函数(内部函数可以使用外部函数的变量和全局变量,在外部函数调用内部函数),
+                 递归函数,内置函数
+                 Function()构造函数与函数直接量的区别
+7.javascript使用function定义构造函数
+Javascript并不像Java、C#等语言那样支持真正的类。但是在js中可以定义伪类。做到这一点的工具就是构造函数和原型对象。首先介绍js中的构造函数。
+Javascript中创建对象的语法是在new运算符的后面跟着一个函数的调用。
+运算符new首先创建一个新的没有任何属性的对象，然后调用该函数，把新的对象作为this关键字的值传递。
+function Rectangle(w, h) 
+{ 
+this.width = w; 
+this.height = h; 
+} 
+var rect = new Rectange(4,8); 
+Javascript中的构造函数通常没有返回值。但是，函数是允许有返回值的。如果一个构造函数有一个返回值，则返回的对象成为new表达式的值。在此情况下，作为this的对象将会被抛弃。 
+8.直接定义法创建JavaScript对象 
+//定义对象语法 
+var object={}; 
+//对象内的属性语法(属性名(property)与属性值(value)是成对出现的) 
+object.property=value; 
+//对象内的函数语法(函数名(func)与函数内容是成对出现的) 
+object.func=function(){...;}; 
+9.javascript中的函数直接量
+在JavaScript中支持使用函数作为直接量，函数直接量的使用格式如下：
+Function(参数列表) {函数中的语句块}
+函数直接量中没有函数名称，通常将函数直接量赋值给一个变量，被赋值后的变量可以当做函数使用。
+如：
+<script type="text/javascript" language="javascript">
+        var myFunction = function(a, b) { return a + b }
+        document.write("1+2=", myFunction(1, 2));
+</script>
+10.javascript中的对象直接量
+JavaScript支持将对象当做直接量使用，对象直接量也常用语给变量赋值。使用对象直接量给变量赋值后，该变量可以当做对象使用。
+{属性名1：属性值1，属性名2：属性值2，属性名3：属性值3，……}
+如：
+  <script type="text/javascript" language="javascript">
+        var myObj = { height: 10, width: 20, name: "box" };
+        document.write(myObj.height, "<br>");
+        document.write(myObj.width, "<br>");
+        document.write(myObj.name, "<br>");
+</script>
+特殊直接量
+Null undefined
+11.javascript对象:Object对象,String对象,Date对象,document对象,FileSystemObject对象,Array对象
+12.对象访问语句:for ... in
+               with
+

@@ -1527,3 +1527,564 @@ error: [Errno 104] Connection reset by peer
 [25/Apr/2015 10:35:44] "GET /static/bootstrap.min.js HTTP/1.1" 200 34653
 [25/Apr/2015 10:35:45] "GET /static/jquery-1.11.1.min.js HTTP/1.1" 200 95787
 [25/Apr/2015 11:51:28] "GET http://www.baidu.com/ HTTP/1.1" 404 1652
+[25/Apr/2015 12:29:53] "GET /index/ HTTP/1.1" 200 22151
+[25/Apr/2015 12:30:06] "GET /demoiste/index HTTP/1.1" 404 8756
+[25/Apr/2015 12:30:15] "GET /demosite/index/ HTTP/1.1" 200 23772
+[25/Apr/2015 12:30:15] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[25/Apr/2015 12:46:41] "GET /index/ HTTP/1.1" 200 22151
+[25/Apr/2015 12:46:51] "GET /demosite/index/ HTTP/1.1" 200 23772
+[25/Apr/2015 12:46:51] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[25/Apr/2015 12:47:08] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:47:08] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:47:09] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:50:33] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:50:33] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:50:33] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:50:37] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:50:37] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:50:37] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:50:39] "GET /demosite/index/ HTTP/1.1" 200 23772
+[25/Apr/2015 12:50:40] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[25/Apr/2015 12:50:41] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:50:41] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:50:42] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:50:43] "GET /demosite/index/ HTTP/1.1" 200 23772
+[25/Apr/2015 12:50:44] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[25/Apr/2015 12:50:45] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:50:46] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:50:46] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:52:32] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:52:32] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:52:32] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:52:40] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:52:40] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:52:40] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:53:10] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:53:10] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:53:10] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:53:15] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:53:15] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:53:15] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:53:17] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:53:18] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:53:18] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:53:19] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:53:20] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:53:20] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:53:22] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:53:22] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:53:22] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:53:24] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:53:24] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:53:24] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+[25/Apr/2015 12:53:39] "GET /demosite/articles/ HTTP/1.1" 200 2148
+[25/Apr/2015 12:53:40] "GET /fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 8831
+[25/Apr/2015 12:53:40] "GET /fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 8828
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/servers/basehttp.py", line 126, in __init__
+    super(WSGIRequestHandler, self).__init__(*args, **kwargs)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/wsgiref/simple_server.py", line 116, in handle
+    self.raw_requestline = self.rfile.readline()
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+Validating models...
+
+0 errors found
+April 19, 2015 - 17:02:28
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('62.75.207.109', 44375)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('62.75.207.109', 8753)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('101.226.102.97', 47770)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('101.226.102.97', 44171)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('62.75.207.109', 12282)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('62.75.207.109', 51781)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('58.212.61.78', 50418)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('58.212.61.78', 51422)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('58.212.61.78', 51994)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('104.192.0.20', 59843)
+----------------------------------------
+[26/Apr/2015 14:26:32] "GET /index/ HTTP/1.1" 200 22151
+[26/Apr/2015 14:26:40] "GET /demosite/index/ HTTP/1.1" 500 200100
+Validating models...
+
+0 errors found
+April 26, 2015 - 14:25:02
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Validating models...
+
+0 errors found
+April 26, 2015 - 14:27:30
+Django version 1.6, using settings 'nyf.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Unhandled exception in thread started by <function wrapper at 0x7fb363932758>
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/autoreload.py", line 100, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+  File "/usr/lib/python2.7/traceback.py", line 100, in extract_tb
+    linecache.checkcache(filename)
+AttributeError: 'NoneType' object has no attribute 'checkcache'
+[26/Apr/2015 14:27:35] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:27:35] "GET /static/css/index.css HTTP/1.1" 200 393
+[26/Apr/2015 14:27:35] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 34653
+[26/Apr/2015 14:27:35] "GET /static/js/index.js HTTP/1.1" 200 882
+[26/Apr/2015 14:27:35] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[26/Apr/2015 14:27:36] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 114011
+[26/Apr/2015 14:27:37] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:27:48] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:27:48] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:27:48] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:27:48] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:27:48] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:27:48] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:27:49] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:27:49] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:27:50] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:27:52] "GET /demosite/articles/ HTTP/1.1" 500 172978
+[26/Apr/2015 14:29:31] "GET /demosite/articles/ HTTP/1.1" 200 2411
+[26/Apr/2015 14:29:31] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:29:31] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:29:31] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:29:31] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:29:31] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:29:32] "GET /static/js/upload.js HTTP/1.1" 200 851
+[26/Apr/2015 14:29:32] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:29:32] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:29:36] "GET /demosite/articles/ HTTP/1.1" 200 2411
+[26/Apr/2015 14:29:37] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:29:37] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:29:38] "GET /demosite/uploadFile HTTP/1.1" 301 0
+[26/Apr/2015 14:29:38] "GET /demosite/uploadFile/ HTTP/1.1" 200 3242
+[26/Apr/2015 14:29:38] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:29:38] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:29:40] "GET /demosite/articles/ HTTP/1.1" 200 2411
+[26/Apr/2015 14:29:40] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:29:40] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:29:41] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:29:41] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:29:41] "GET /demosite/articles/ HTTP/1.1" 200 2411
+[26/Apr/2015 14:29:42] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:29:42] "GET /demosite/uploadFile/ HTTP/1.1" 200 3242
+[26/Apr/2015 14:29:42] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:29:42] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:29:43] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:29:43] "GET /demosite/knowledgeTree HTTP/1.1" 301 0
+[26/Apr/2015 14:29:43] "GET /demosite/knowledgeTree/ HTTP/1.1" 200 1580
+[26/Apr/2015 14:29:45] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:29:45] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:30:09] "GET /demosite/articles/ HTTP/1.1" 200 2411
+[26/Apr/2015 14:30:09] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:30:09] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:30:09] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:10] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:10] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:10] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:10] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:30:10] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:30:17] "POST /demosite/upload_file?type=article HTTP/1.1" 200 2469
+[26/Apr/2015 14:30:17] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:30:20] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:30:20] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 14:30:21] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:30:21] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:30:22] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 14:30:22] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:30:22] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:30:22] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:22] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:22] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:22] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:30:23] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:30:23] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:30:23] "POST /demosite/articles/getFilename/ HTTP/1.1" 200 17
+[26/Apr/2015 14:30:24] "GET /demosite/showfile HTTP/1.1" 301 0
+[26/Apr/2015 14:30:24] "GET /demosite/showfile/ HTTP/1.1" 200 5832
+[26/Apr/2015 14:30:28] "GET /demosite/uploadFile/ HTTP/1.1" 200 3242
+[26/Apr/2015 14:30:28] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:30:28] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:30:38] "POST /demosite/upload_file?type=image HTTP/1.1" 200 3306
+[26/Apr/2015 14:30:38] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:30:39] "GET /demosite/uploadFile/ HTTP/1.1" 200 3456
+[26/Apr/2015 14:30:40] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:30:40] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:30:40] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:30:40] "GET /static/images/git.png HTTP/1.1" 200 85143
+[26/Apr/2015 14:32:04] "POST /demosite/upload_file?type=image HTTP/1.1" 200 3306
+[26/Apr/2015 14:32:04] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:32:04] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:32:04] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:04] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:04] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:04] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:04] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:32:06] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:32:06] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:32:06] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:32:06] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:32:06] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:32:07] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 200 117551
+[26/Apr/2015 14:32:56] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 14:32:56] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:32:56] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:32:56] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:56] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:56] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:56] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:32:57] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:32:57] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:33:02] "POST /demosite/articles/getFilename/ HTTP/1.1" 200 17
+[26/Apr/2015 14:33:03] "GET /demosite/showfile/ HTTP/1.1" 200 5832
+[26/Apr/2015 14:33:08] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:33:08] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:33:12] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 14:33:12] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:33:13] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:33:14] "POST /demosite/articles/getFilename/ HTTP/1.1" 200 17
+[26/Apr/2015 14:33:14] "GET /demosite/showfile/ HTTP/1.1" 200 5832
+[26/Apr/2015 14:33:15] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:33:15] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:33:16] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:33:16] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:33:16] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:33:16] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:33:16] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:35:24] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:35:24] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:35:24] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:35:24] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:35:24] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:35:24] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:35:25] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:35:25] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:35:25] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:35:25] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:35:25] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:35:52] "GET /demosite/index HTTP/1.1" 301 0
+[26/Apr/2015 14:35:52] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:35:53] "GET /static/js/index.js HTTP/1.1" 200 882
+[26/Apr/2015 14:35:53] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 34653
+[26/Apr/2015 14:35:54] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[26/Apr/2015 14:36:04] "GET /demosite/index HTTP/1.1" 301 0
+[26/Apr/2015 14:36:06] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:36:08] "GET /static/css/index.css HTTP/1.1" 200 393
+[26/Apr/2015 14:36:09] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 34653
+[26/Apr/2015 14:36:09] "GET /static/js/index.js HTTP/1.1" 200 882
+[26/Apr/2015 14:36:09] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 114011
+[26/Apr/2015 14:36:14] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[26/Apr/2015 14:36:46] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:39:19] "GET /demosite/uploadFile HTTP/1.1" 301 0
+[26/Apr/2015 14:39:19] "GET /demosite/uploadFile HTTP/1.1" 301 0
+[26/Apr/2015 14:39:20] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:39:20] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:39:20] "GET /static/js/upload.js HTTP/1.1" 200 851
+[26/Apr/2015 14:39:20] "GET /static/js/index.js HTTP/1.1" 200 882
+[26/Apr/2015 14:39:20] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 34653
+[26/Apr/2015 14:39:21] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[26/Apr/2015 14:39:21] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:39:21] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:39:21] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:39:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:39:21] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:39:21] "GET /static/js/upload.js HTTP/1.1" 200 851
+[26/Apr/2015 14:39:22] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:39:22] "GET /static/images/git.png HTTP/1.1" 200 85143
+[26/Apr/2015 14:39:22] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:39:23] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 200 117551
+[26/Apr/2015 14:39:24] "GET /static/fonts/glyphicons-halflings-regular.svg HTTP/1.1" 404 1720
+[26/Apr/2015 14:39:30] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:39:30] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:41:43] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 14:41:45] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:41:46] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:41:46] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:41:47] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:41:47] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:41:48] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 14:42:16] "GET /demosite/knowledgeTree HTTP/1.1" 301 0
+[26/Apr/2015 14:42:16] "GET /demosite/knowledgeTree/ HTTP/1.1" 200 1580
+[26/Apr/2015 14:42:17] "GET /static/js/index.js HTTP/1.1" 200 882
+[26/Apr/2015 14:42:17] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 34653
+[26/Apr/2015 14:42:17] "GET /demosite/knowledgeTree HTTP/1.1" 301 0
+[26/Apr/2015 14:42:17] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[26/Apr/2015 14:42:18] "GET /demosite/knowledgeTree/ HTTP/1.1" 200 1580
+[26/Apr/2015 14:42:22] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:42:23] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:42:25] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:42:26] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:42:26] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:42:27] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:42:28] "GET /static/fonts/glyphicons-halflings-regular.svg HTTP/1.1" 404 1720
+[26/Apr/2015 14:43:12] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:43:12] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:43:12] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:12] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:12] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:43:12] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:12] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:12] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:43:12] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:43:13] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:43:13] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:43:29] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:43:29] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:43:29] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:43:29] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:29] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:29] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:29] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:43:29] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:43:30] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:43:30] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:43:30] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:50:00] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:50:00] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:50:00] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:00] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:50:00] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:00] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:00] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:00] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:50:01] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:50:01] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:50:01] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:50:21] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:50:21] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:50:21] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:50:21] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:21] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:22] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:50:22] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:50:22] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:50:22] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:50:22] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:52:37] "GET /demosite/knowledgeTree HTTP/1.1" 301 0
+[26/Apr/2015 14:52:37] "GET /demosite/knowledgeTree/ HTTP/1.1" 200 1580
+[26/Apr/2015 14:52:37] "GET /static/css/index.css HTTP/1.1" 200 393
+[26/Apr/2015 14:52:37] "GET /static/js/index.js HTTP/1.1" 200 882
+[26/Apr/2015 14:52:38] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 200 95787
+[26/Apr/2015 14:52:38] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 34653
+[26/Apr/2015 14:52:38] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 114011
+[26/Apr/2015 14:52:39] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 34653
+[26/Apr/2015 14:52:39] "GET /static/js/index.js HTTP/1.1" 200 882
+[26/Apr/2015 14:53:18] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 14:53:18] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:53:18] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:53:18] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:53:18] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:53:18] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:53:18] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:53:18] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:53:19] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:53:19] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:53:19] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:55:10] "GET /demosite/uploadFile/? HTTP/1.1" 200 3690
+[26/Apr/2015 14:55:10] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:55:11] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:55:13] "GET /demosite/uploadFile/? HTTP/1.1" 200 3690
+[26/Apr/2015 14:55:13] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:55:13] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:13] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:13] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:55:13] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:13] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:13] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:55:13] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:55:14] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:55:14] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 14:55:15] "GET /demosite/uploadFile/? HTTP/1.1" 200 3690
+[26/Apr/2015 14:55:15] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 14:55:15] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:15] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:15] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:15] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 14:55:15] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 14:55:16] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 14:55:16] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 14:55:16] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 14:55:17] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:00:05] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 15:00:05] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 15:00:05] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 15:00:05] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 15:00:05] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:00:05] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:00:06] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:00:06] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 15:00:06] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 15:00:06] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:00:06] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:05:18] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 15:05:18] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 15:05:18] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 15:05:18] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 15:05:18] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 15:05:18] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:05:18] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:05:18] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 15:05:19] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:05:19] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:05:19] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:05:22] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:05:22] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:05:22] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:05:24] "POST /demosite/articles/getFilename/ HTTP/1.1" 200 17
+[26/Apr/2015 15:05:25] "GET /demosite/showfile/ HTTP/1.1" 200 5832
+[26/Apr/2015 15:05:31] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:05:31] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:05:32] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:05:32] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 15:05:32] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 15:05:36] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 15:05:47] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 15:09:43] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 15:09:43] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 15:09:43] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 15:09:44] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:09:44] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:09:44] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 15:09:44] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 15:09:44] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 15:09:45] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:09:45] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:09:45] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 15:19:20] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 15:19:20] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:19:21] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:19:21] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:30:37] "GET /demosite/uploadFile/ HTTP/1.1" 200 3690
+[26/Apr/2015 15:30:37] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 15:30:37] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 15:30:37] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:30:37] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:30:37] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 15:30:37] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 15:30:37] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 15:30:37] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:30:37] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:30:38] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:30:54] "POST /demosite/upload_file?type=image HTTP/1.1" 200 3306
+[26/Apr/2015 15:30:55] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:30:56] "GET /demosite/uploadFile/ HTTP/1.1" 200 3982
+[26/Apr/2015 15:30:56] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:30:56] "GET /static/images/u=4105214120,3544266080&fm=21&gp=0.jpg HTTP/1.1" 200 6154
+[26/Apr/2015 15:30:56] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:31:23] "POST /demosite/upload_file?type=image HTTP/1.1" 200 3306
+[26/Apr/2015 15:31:23] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:31:24] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:31:24] "GET /demosite/uploadFile/ HTTP/1.1" 200 4192
+[26/Apr/2015 15:31:24] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:31:24] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:31:24] "GET /static/images/u=4105214120,3544266080&fm=21&gp=0.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:31:24] "GET /static/images/2.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:33:38] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:33:39] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:33:39] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:33:40] "GET /demosite/uploadFile/ HTTP/1.1" 200 4192
+[26/Apr/2015 15:33:40] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:33:40] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:33:40] "GET /static/images/u=4105214120,3544266080&fm=21&gp=0.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:33:41] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:33:41] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:33:41] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:33:43] "GET /demosite/uploadFile/ HTTP/1.1" 200 4192
+[26/Apr/2015 15:33:44] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:33:44] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 15:33:44] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:33:44] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 15:33:53] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:33:53] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:33:53] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:33:54] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 15:33:54] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 15:33:59] "GET /demosite/uploadFile/ HTTP/1.1" 200 4192
+[26/Apr/2015 15:34:00] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:34:00] "GET /static/images/u=4105214120,3544266080&fm=21&gp=0.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:34:00] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:34:00] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:34:01] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:34:01] "GET /demosite/index/ HTTP/1.1" 200 15023
+[26/Apr/2015 15:34:01] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:34:01] "POST /demosite/index/requestlinkdata/ HTTP/1.1" 200 3024
+[26/Apr/2015 15:39:07] "GET /demosite/uploadFile/ HTTP/1.1" 200 4192
+[26/Apr/2015 15:39:07] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:39:07] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:39:07] "GET /static/images/u=4105214120,3544266080&fm=21&gp=0.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:39:08] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:39:09] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:39:10] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:39:10] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:39:10] "GET /demosite/uploadFile/ HTTP/1.1" 200 4192
+[26/Apr/2015 15:39:10] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:39:11] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:39:11] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:39:12] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:39:12] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:39:19] "GET /demosite/articles/? HTTP/1.1" 200 2492
+[26/Apr/2015 15:39:19] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:39:20] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:39:21] "GET /demosite/articles/? HTTP/1.1" 200 2492
+[26/Apr/2015 15:39:21] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:39:22] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:56:39] "GET /demosite/articles/? HTTP/1.1" 200 2492
+[26/Apr/2015 15:56:39] "GET /static/js/index.js HTTP/1.1" 304 0
+[26/Apr/2015 15:56:39] "GET /static/js/jquery-1.11.1.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:56:39] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+[26/Apr/2015 15:56:39] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+[26/Apr/2015 15:56:39] "GET /static/css/index.css HTTP/1.1" 304 0
+[26/Apr/2015 15:56:39] "GET /static/js/upload.js HTTP/1.1" 304 0
+[26/Apr/2015 15:56:40] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:56:40] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:56:41] "GET /demosite/articles/ HTTP/1.1" 200 2492
+[26/Apr/2015 15:56:41] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:56:42] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:56:42] "GET /demosite/uploadFile/ HTTP/1.1" 200 4192
+[26/Apr/2015 15:56:43] "GET /static/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 404 1723
+[26/Apr/2015 15:56:43] "GET /static/images/git.png HTTP/1.1" 304 0
+[26/Apr/2015 15:56:43] "GET /static/fonts/glyphicons-halflings-regular.ttf HTTP/1.1" 404 1720
+[26/Apr/2015 15:56:43] "GET /static/images/%E6%B8%B8%E8%A5%BF%E5%8F%8C%E6%B9%961.jpg HTTP/1.1" 304 0
+[26/Apr/2015 15:56:43] "GET /static/images/u=4105214120,3544266080&fm=21&gp=0.jpg HTTP/1.1" 304 0
