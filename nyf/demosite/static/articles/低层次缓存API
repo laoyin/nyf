@@ -1,0 +1,13 @@
+from django.core.cache import cache
+cache.set('key','hello world',30)
+cache.get('key')
+若缓存中不存在key，则返回None.所以不建议在缓存中保存None常量.
+cache.get('key','default_value')
+get方法指定了缺省值，当缓存中不存在时返回的值
+cache.add('key','new value')
+若key已存在，则不改变原来的值
+cache.get_many()
+返回所有未过期的存在于缓存中的键值
+cache.delete('key')
+显示删除键值
+

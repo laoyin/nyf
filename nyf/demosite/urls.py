@@ -33,13 +33,13 @@ urlpatterns = patterns('',
         url('^%supload_question_and_method/$'%DEMOSITE,newques),	
 	url('^%squestion_and_method_list/$'%DEMOSITE,queslist),
 
-        url('^registerpage/index/$',loginpage),
-	url('^registerpage/index/logincheck',logincheck),
-	url('^fileloadpage/$',fileloadpage),
-	#url('^articles/fileload/$',fileload),
-	url('^articles/upload/$',upload),
-	url('^articles/upload/get/$',get),
-	url('^population_page$',population_view)    
+ #            url('^registerpage/index/$',loginpage),
+	# url('^registerpage/index/logincheck',logincheck),
+	# url('^fileloadpage/$',fileloadpage),
+	# url('^articles/fileload/$',fileload),
+	# url('^articles/upload/$',upload),
+	# url('^articles/upload/get/$',get),
+	# url('^population_page$',population_view)    
 )
 
 urlpatterns += patterns('',

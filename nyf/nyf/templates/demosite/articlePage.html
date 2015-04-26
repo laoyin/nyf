@@ -1,0 +1,17 @@
+{% extends "demosite/demosite_frame.html" %}
+{% block fileupload_block %}
+	<li role="presentation" ><a href="/demosite/uploadFile">图片</a></li>
+{% endblock %}
+{% block content_block%}
+<div class="container">
+	<div id="articlePage" class="list-group" style="margin-top:60px;">
+		<h2 id="title">{{article_title}}</h2>
+		<div style="size:10px;">
+			<pre id="content">{{data}}</pre>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,48 @@
+{% extends "demosite/demosite_frame.html" %}
+{% block aricle_block %}
+	<li role="presentation" ><a href="/demosite/articles">文章</a></li>
+{% endblock %}
+{% block content_block %}
+<div class="container">
+	<p id="message" style="display:none;">{{message}}</p>
+	<div style="margin-top:60px;display:none;">
+		<p>
+			<form name="demoForm" id="demoForm" enctype="multipart/form-data" method='POST' action='/demosite/upload_file?type=article' > 
+				 <p><input type="file" name="file"  id="choose" /></p> 
+				 <p><input value="上传" type="submit" id="upload" /></p> 
+			</form> 
+		</p> 
+	</div>
+	<div class="list-group" style="margin-top:80px;">
+		<button type="button" class="btn btn-default btn-sm" style="float:left;"  id="upload_file">
+		<span class="glyphicon glyphicon-plus"></span> 上传文章
+		</button>
+		<form class="form-search" style="float:right;">
+		<input class="input-medium search-query" type="text" />
+		<button class="btn" contenteditable="false" type="submit">Search</button>
+		</form>
+		<div style="clear:both;"></div>
+		<a href="#" class="list-group-item active" style="margin-top:10px;">
+		{{order}}
+		</a>
+		{% for article in articles %}
+		<a  onclick="showFile()" class="list-group-item">{{article.title}}</a>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
+{% block script_block %}
+<script type="text/javascript" src="/static/js/upload.js"></script>
+<script>
+	function showFile(){
+		var filename=event.srcElement.innerText
+		dict={'filename':filename}
+		$.post('getFilename/',dict,
+			function(data){
+				if(data){
+					window.location.assign("/demosite/showfile")
+				}
+		},'json')	
+	}	
+</script>
+{% endblock%}

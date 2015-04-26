@@ -1,7 +1,6 @@
 #coding=utf-8 
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponse
-from demosite import models
 from django import forms
 from demosite.models import *
 import pdb,sys
@@ -9,12 +8,13 @@ from django.template import Template,RequestContext
 from django.template.loader import get_template
 import json
 from django.core.files.base import ContentFile 
+from django.conf import settings
 #文件名
 variable={}
-
+DEMOSITE = "demosite/"
 #登录页面
 def loginpage(request):
-    return render_to_response('login_page.html')
+    return render_to_response('%slogin_page.html'%DEMOSITE)
 
 #登录验证
 def logincheck(request):
@@ -37,12 +37,12 @@ def logincheck(request):
     
 #加载首页 
 def indexload(request):
-	link_list=Links.objects.all()
-	return render_to_response('index.html',{'link_list':link_list})
+        link_list=Links.objects.all()
+        return render_to_response('%sdemosite_admin.html'%DEMOSITE,{'link_list':link_list})
 
 #注册页面
 def registerload(request):
-    return render_to_response('registerpage.html')
+    return render_to_response('%sregisterpage.html'%DEMOSITE)
 
 #注册处理
 def register(request):
@@ -65,8 +65,8 @@ def register(request):
 
 #加载博文页面
 def articlelistload(request,order):
-	articlesList=articles.objects.all()
-	return render_to_response('articellist.html',{'order':order,'articles':articlesList,'pagetitle':'ArticlesList'})
+	articlesList=File.objects.filter(file_type=0).all()
+	return render_to_response('%sarticellist.html'%DEMOSITE,{'order':order,'articles':articlesList,'pagetitle':'ArticlesList'})
 
 #获取文章名
 def get_filename(request):
@@ -78,55 +78,76 @@ def get_filename(request):
 
 #查看文章
 def show_file(request):
-	rsdic={}
-	if variable['filename'] :
-		temp_file=articles.objects.filter(title=variable['filename'])
-		if not len(temp_file):
-			rsdic={'message':'文件不存在!'}
-		filename=temp_file[0].title
-		time=temp_file[0].time
-		filesrc=temp_file[0].filesrc
-		#读取文件数据
-		f1=open(filesrc+filename,'r')
-		data=f1.read()
-		str(data)
-		f1.close()
-		rsdic={'article_title':filename,'time':time,'data':data}
-	return render_to_response('articlePage.html',rsdic)
+        rsdic={}
+        if variable['filename'] :
+            temp_file=File.objects.filter(title=variable['filename'],file_type=0)
+        if not len(temp_file):
+            rsdic={'message':'文件不存在!'}
+        filename=temp_file[0].title
+        time=temp_file[0].time
+        filesrc=temp_file[0].filesrc
+        #读取文件数据
+        f1=open(filesrc+filename,'r')
+        data=f1.read()
+        str(data)
+        f1.close()
+        rsdic={'article_title':filename,'time':time,'data':data}
+        return render_to_response('%sarticlePage.html'%DEMOSITE,rsdic)
 
 #加载上传文件页面
 def uploadFilePage(request):
-	return render_to_response("uploadfile.html")
+        images = File.objects.filter(file_type=1).all()
+        for image in images :
+            image.filesrc = "/static/images/"+image.title
+        return render_to_response("%sdemosite_image.html"%DEMOSITE,{"images":images})
 #上传文件
 def uploadFile(request):
-        if not request.FILES :
-                rsdic={'ret':'1103','info':'请选择上传文件!'}
-                return render_to_response('uploadfile.html',{'message':rsdic['info']})
-        src=r'/home/nyf/youfa/nyf/demosite/static/articles/'
-        filename=request.FILES['file']._name
+        htmlTemplate = None
+        rsdic={'ret':'1101','info':'上传成功'}
+        if request.GET['type'] == "image" :
+                htmlTemplate = '%sdemosite_image.html'%DEMOSITE
+                if not request.FILES :
+                    rsdic={'ret':'1103','info':'请选择上传文件!'}
+                    return render_to_response('%sdemosite_image.html'%DEMOSITE,{'message':rsdic['info']})
+                filename=request.FILES['file']._name
+                if filename.endswith(".png") or filename.endswith(".jpg") :
+                    file_type = 1
+                    src=settings.BASE_DIR + '/demosite/static/images/'
+                    rsdic['info']=u'成功保存图片到'+src
+                else :
+                    rsdic={'ret':'1103','info':'请选择图片格式文件!'}
+                    return render_to_response('%sdemosite_image.html'%DEMOSITE,{'message':rsdic['info']})
+        elif request.GET['type'] == "article" : 
+                htmlTemplate ='%sarticellist.html'%DEMOSITE
+                if not request.FILES :
+                    rsdic={'ret':'1103','info':'请选择上传文件!'}
+                    return render_to_response('%sarticellist.html'%DEMOSITE,{'message':rsdic['info']})
+                filename=request.FILES['file']._name
+                file_type = 0
+                src=settings.BASE_DIR + '/demosite/static/articles/'
+                rsdic['info']=u'成功保存文章到'+src
+        file_title=File.objects.filter(title=filename)
+        if len(file_title):
+            if file_type == 1 :
+                rsdic={'ret':'1102','info':'存在同名图片，上传失败'}
+            elif file_type == 0 :
+                rsdic={'ret':'1102','info':'存在同名文章，上传失败'}
+            return render_to_response(htmlTemplate,{'message':rsdic['info']})
         size=request.FILES['file']._size
+        if size > 1024*1024  :
+            rsdic={'ret':'1102','info':'上传文件太大'}
+            return render_to_response(htmlTemplate,{'message':rsdic['info']})
         file_data=request.FILES['file'].file.read()
-        rsdic={'ret':'1101','info':'ok'}
-        try:
-                file_title=articles.objects.filter(title=filename)
-                if len(file_title):
-                        rsdic={'ret':'1102','info':'存在同名文件，上传失败'}
-                        return render_to_response('uploadfile.html',{'message':rsdic['info']})
-        except:
-                articles.objects.create(title=filename,time=datetime.date.today(),filesrc=src)
-                return render_to_response('uploadfile.html',{'message':rsdic['info']})
-        articles.objects.create(title=filename,time=datetime.date.today(),filesrc=src)
+        File.objects.create(title=filename,time=datetime.date.today(),filesrc=src,file_type=file_type)
         #写文件到服务器指定路径
         f1=open(src+filename,'w')
         f1.write(file_data)
         f1.close()
-        src_file=src
-        rsdic['info']=u'成功保存文件到'+src_file
-        return render_to_response('uploadfile.html',{'message':rsdic['info']})
+        return render_to_response(htmlTemplate,{'message':rsdic['info']})
 
 #上传链接页面
 def linkPage(request):
-	return render_to_response('link.html')	
+	return render_to_response('%slink.html'%DEMOSITE)	
 
 #上传链接
 def add_link(request):
@@ -166,76 +187,9 @@ def insert_link_url(request):
 
 #加载知识树页面
 def knowledge_tree(request):
-	return render_to_response('knowledgeTree.html')
-
-
-def registerlist(request):
-    customers=customer.objects.all()
-    t=get_template("customerlist.html")
-    c=Context({'customers':customers})
-    p=t.render(c)
-    return HttpResponse(p)
-
-
-def registerpage(request,url):
-    if url=='registerPage_form1':
-        return render_to_response('htmlregister.html',{'register':url})
-    elif url=='registerPage_form2':
-        return render_to_response('htmlregister1.html',{'register':url})
-    elif url=='registerPage_form3':
-        return render_to_response('htmlregister2.html',{'register':url})
-    else:
-        return HttpResponse('error')
+	return render_to_response('%sknowledgeTree.html'%DEMOSITE)
     
-def fileloadpage(request):
-    return render_to_response('uploadfile.html')
-
-
-
-def upload(request):
-	return render_to_response('upload.html')
-
-
-def get(request):
-    filename = request.FILES['file'].name
-    f=open('/home/nyf/%s'%(filename),'wb')
-    f.write(request.FILES['file'].read())
-    return HttpResponse('upload OK!')
-
-def population_view(request):
-    return render_to_response('population.html')
-    
-
-'''#表单上传文件
-def fileload(request):
-	src=r'logindemo/templates/'
-	filename=request.POST['name']
-	lastModifiedDate=request.POST['lastModifiedDate']
-	size=request.POST['size']
-	file_data=request.POST['binary_data']
-	filetype=request.POST['type']
-	rsdic={'ret':'1101','info':'ok'}
-	try:
-		file_title=articles.objects.filter(title=filename)
-		if len(file_title):
-			rsdic={'ret':'1102','info':'存在同名文件，上传失败'}
-			return HttpResponse(json.dumps(rsdic))
-	except:
-		articles.objects.create(title=filename,time=lastModifiedDate,filesrc=src) 
-		return HttpResponse(json.dumps(rsdic)) 
-	articles.objects.create(title=filename,time=lastModifiedDate,filesrc=src)    
-	#写数据到服务器指定目录
-	reload(sys)
-	sys.setdefaultencoding('utf-8')
-	f1= open(src+filename,"w")
-	f1.write(file_data)
-	f1.close()
-	src_file=r'/home/nyf/study/codedemo/demosite/'+src+filename
-	rsdic={'ret':'1101','info':'name','name':filename,'lastModifiedDate':lastModifiedDate,'size':size,'file_text':file_data,'filetype':filetype,'src':src_file}
-	return HttpResponse(json.dumps(rsdic))
-'''
-
-
+# upload question
 def  newques(request):
     if request.method == "POST":
         uf = UserForm1(request.POST,request.FILES)

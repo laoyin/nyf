@@ -1,0 +1,19 @@
+body{
+    		background: aliceblue;
+        }
+ 	.container{
+ 		padding:10px  200px;
+ 	}   
+              .span{
+		margin: 10px;
+		border-style: solid;
+		padding: 10px 100px;
+		border-color: rgb(231, 238, 240);
+		border-radius: 6px;
+		background-color: rgb(231, 238, 240);
+              }
+             .my_btn{
+		color: rgb(127, 168, 255);
+	    	height: 30px;
+		margin-left: 10px;
+             }

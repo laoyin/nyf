@@ -14,14 +14,16 @@ class customer(models.Model):
 	def __unicode__(self):
 		return self.name
 
-class articles(models.Model):
+class  File(models.Model):
 	title=models.CharField(max_length=50)
 	time=models.CharField(max_length=50)
 	filesrc=models.CharField(max_length=128)
+	# 0: article 1: image
+	file_type = models.IntegerField()
 	def __unicode__(self):
 		return self.title
 	class Meta:
-		unique_together=(('title','filesrc'),)
+		unique_together=(('title','file_type'),)
 
 class uploadFileForm(forms.Form):
 	title = forms.CharField(max_length=50)

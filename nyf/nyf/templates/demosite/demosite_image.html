@@ -1,0 +1,73 @@
+{% extends "demosite/demosite_frame.html" %}
+{% block fileupload_block %}
+	<li role="presentation" ><a href="/demosite/uploadFile">图片</a></li>
+{% endblock %}
+{% block content_block%}
+<div class="container">
+	<p id="message" style="display:none;">{{message}}</p>
+	<div style="margin-top:60px;display:none;">
+		<p>
+			<form name="demoForm" id="demoForm" enctype="multipart/form-data" method='POST' action='/demosite/upload_file?type=image' > 
+				 <p><input type="file" name="file" id="choose" /></p> 
+				 <p><input value="上传图片" type="submit" id="upload"/></p> 
+			</form> 
+		</p> 
+	</div>
+	<div class="upload_icon"></div>
+	<div class="list-group" style="margin-top:60px;">
+		<button type="button" class="btn btn-default btn-sm" style="float:left;"  id="upload_file">
+		<span class="glyphicon glyphicon-plus"></span> 上传图片
+		</button>
+		<form class="form-search" style="float:right;">
+		<input class="input-medium search-query" type="text" />
+		<button class="btn" contenteditable="false" type="submit">Search</button>
+		</form>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="row"  style="margin-top:20px;">
+		{% for image in images %}
+		<div class="col-md-2">
+			<a href="#" onclick="showBagImage(this);" data-backdrop="true">	
+				<img src={{image.filesrc}}  class="img-rounded" width="100px" height="100px" name={{image.title}}/>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="BigImage" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+            </h4>
+         </div>
+         <div class="modal-body" id="big_image_body">
+         </div>
+         <!-- <div class="modal-footer">
+         </div> -->
+      </div>
+{% endblock%}
+{% block script_block %}
+<script type="text/javascript" src="/static/js/upload.js"></script>
+<script>
+$(function(){
+		$('#BigImage').on('hide.bs.modal', function () {
+  			$("#big_image_body").empty()
+		})
+})
+	
+function showBagImage(obj){
+		$("#BigImage").modal("show")
+		$("#myModalLabel").text($(obj).find("img").attr("name").split('.')[0])
+		big_image =String.prototype.format( '<img src={0}  class="img-rounded" width="560px" height="500px" />',$(obj).find("img").attr("src"))
+		$("#big_image_body").append(big_image)
+		}
+
+</script>
+{% endblock %}

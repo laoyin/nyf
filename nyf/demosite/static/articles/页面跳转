@@ -1,0 +1,7 @@
+页面跳转:
+1.超链接
+<a href="javascript:functionName"></a>,在javascript函数中请求数据或跳转页面
+<a href="指向某个view的路径"></a>
+2.事件调用javascript函数,在javascript函数中请求数据或跳转页面
+3.window.location.assign("指向某个view的路径")
+4.表单提交
