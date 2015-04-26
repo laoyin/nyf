@@ -11,15 +11,6 @@
 	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/static/js/index.js"></script>
 	{% block script_block %}
-	<script>
-		String.prototype.format= function (src){
-			if (arguments.length == 0) return null;
-			var args = Array.prototype.slice.call(arguments, 1);
-			return src.replace(/\{(\d+)\}/g, function(m, i){
-				return args[i];
-		});
-		}
-	</script>
 	{% endblock%}
 	{% block style_block %}
 	{% endblock%}
