@@ -17,8 +17,8 @@
 		<button type="button" class="btn btn-default btn-sm" style="float:left;"  id="upload_file">
 		<span class="glyphicon glyphicon-plus"></span> 上传文章
 		</button>
-		<form class="form-search" style="float:right;">
-		<input class="input-medium search-query" type="text" />
+		<form class="form-search" style="float:right;" action="/demosite/search/" type="GET">
+		<input class="input-medium search-query" type="text" name="search_str" value=""/>
 		<button class="btn" contenteditable="false" type="submit">Search</button>
 		</form>
 		<div style="clear:both;"></div>

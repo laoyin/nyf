@@ -185,6 +185,33 @@ def insert_link_url(request):
 	return  HttpResponse(json.dumps(rsdic))	
 
 
+#search_articles
+def search_articles(request,order):
+    search_str = request.GET['search_str']
+    if search_str == "" :
+        articlelist = File.objects.filter(file_type=0).all()
+        return render_to_response('%sarticellist.html'%DEMOSITE,{'order':order,'articles':articlelist,'pagetitle':'ArticlesList'})
+    else :
+        objs = File.objects.filter(file_type=0).all()
+        articlelist = []
+        for obj in objs :
+            temp = obj.title
+            if temp.find(search_str) != -1 :
+                articlelist.append(obj)
+    return render_to_response('%sarticellist.html'%DEMOSITE,{'order':order,'articles':articlelist,'pagetitle':'ArticlesList'})
+
+def search_blog(request):
+    search_str = request.GET['search_str']
+    link_list=Links.objects.all()
+    if search_str == "" :
+        return render_to_response('%sdemosite_admin.html'%DEMOSITE,{'link_list':link_list})
+    else :
+        links = []
+        for link in link_list :
+            temp = link.title
+            if temp.find(search_str) != -1 :
+                links.append(link)
+        return render_to_response('%sdemosite_admin.html'%DEMOSITE,{'link_list':links})
 #加载知识树页面
 def knowledge_tree(request):
 	return render_to_response('%sknowledgeTree.html'%DEMOSITE)

@@ -10,8 +10,8 @@
 			<label style="color: rgb(58, 71, 205);font-weight:100;">标题:</label><input id='blog_name' type='text' style="border-radius: 6px;"/>
 			<label style="color: rgb(58, 71, 205);font-weight:100;margin-left:30px;">网址:</label><input id='blog_url' type='text' style="border-radius: 6px;"/>
 			<input type="button" onclick="insertBlogURL()" value="提交" class="my_btn"/>
-			<form class="form-search" style="float:right;">
-			<input class="input-medium search-query" type="text" />
+			<form class="form-search" style="float:right;" type="GET" action="/demosite/index/search_blog/" >{% csrf_token %}
+			<input class="input-medium search-query" type="text" name="search_str" value="" />
 			<button class="btn" contenteditable="false" type="submit">Search</button>
 			</form>
 		<div  id="link_list" style="margin-top:20px;">
