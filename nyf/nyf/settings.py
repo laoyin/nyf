@@ -99,16 +99,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     BASE_DIR+'/nyf/static',
+    BASE_DIR+'/gdesign/media',
     BASE_DIR+'/gdesign/static',
-    BASE_DIR+'/demosite/static',
 )
 
 #template file
@@ -120,6 +116,6 @@ TEMPLATE_DIRS = (
      BASE_DIR+'/gdesign/templates', 
                 )
 
-MEDIA_ROOT=BASE_DIR+"/nyf/static"
+# MEDIA_ROOT=BASE_DIR+"/nyf/static"
 
 

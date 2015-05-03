@@ -6,7 +6,7 @@ $(
 			var $link_list=$("#link_list a")
 			var length=$link_list.length
 			var dict={'message':'ok'}
-			$.post('requestlinkdata/',dict,
+			$.post('/demosite/index/requestlinkdata/',dict,
 		                        function(data){
 						for (var i=0;i<=length-1;i++){
 							$link_list[i].href=data['link_href'][i]
@@ -27,7 +27,7 @@ function insertBlogURL(){
 	var blog_url=$('#blog_url').val();
 	var dict={'blog_name':blog_name,'blog_url':blog_url}
 	if (blog_name || blog_url){
-		$.post('insert_blog_url/',dict,
+		$.post('/demosite/index/insert_blog_url/',dict,
                         function(data){
 				if(data.ret){
 					alert(data.message);			

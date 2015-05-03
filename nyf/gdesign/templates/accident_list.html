@@ -1,0 +1,107 @@
+{% extends "gdesign_frame.html" %}   
+
+{% block content_block %}
+<!-- content -->
+<div class="span8 left" id="content">
+     <!-- head -->
+      <div class="panel-group" id="accordion" style="margin-bottom:10px;">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                 <a href="#">
+                      <div class="row-fluid"  id="accidentCard">
+                                <div class="span4 left">
+                                    事故序号
+                                </div>
+                                <div class="span4 left" style="margin-left:80px;">
+                                    <p>
+                                        <em>事故概要
+                                        </em>
+                                    </p>
+                                </div>
+                                <div style="clear:both;"></div>
+                      </div>
+             </a>
+           </h4>
+              </div>
+            <div class="panel-collapse in" style="display:none;">
+              <div class="panel-body">
+              </div>
+            </div>
+          </div>
+    </div>
+     <!--Endhead -->
+
+     <!--accidentCard -->
+    <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+             <!--   <a data-toggle="collapse" data-parent="#accordion" -->
+                 <a onclick="showDetails();">
+                      <div class="row-fluid"  id="accidentCard">
+                                <div class="span4 left">
+                                    1
+                                </div>
+                                <div class="span4 left" style="margin-left:80px;">
+                                    <p>
+                                        <em id="0">2014年1月1日,在XXX发生一起xxx事故2014年1月1日,在XXX发生一起xxx事故.<br>
+                                        </em>
+                                    </p>
+                                </div>
+                                <div style="clear:both;"></div>
+                      </div>
+             </a>
+           </h4>
+              </div>
+            <div class="panel-collapse collapse in" style="display:none;">
+              <div class="panel-body">
+                  <p>time</p>
+                  <p>location</p>
+                  <p>
+                      Nihil anim keffiyeh helvetica, craft beer labore wes anderson<br>
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher<br>
+                vice lomo.<br>
+                  </p>
+
+              </div>
+            </div>
+          </div>
+    </div>
+    <!--ENDaccidentCard -->
+
+</div>
+<!-- ENDcontent -->
+{% endblock %}   
+
+{% block script_block %}
+<script>
+   function showDetails(){
+       var e=window.event
+       var obj=e.srcElement
+       var id=obj.id
+       var card=$(".collapse")
+       if(card[id].style.display=="none"){
+           card[id].style.display="block"
+       }
+       else {
+          card[id].style.display="none"
+       }
+   }
+</script>
+{% endblock %}  
+
+{% block style_block %}
+<style>
+.left{
+  float:left;
+}
+p{
+  padding-top: 0px;
+}
+.span8{
+  padding: 0px 100px;
+}
+<style>
+{% endblock %}
+

@@ -7,20 +7,26 @@ import pdb
 
 #test page
 def test_page(request):
-    return render_to_response('test.html')
+    return render_to_response('gdesign_frame.html')
 #temp_page
 def temp_page(request):
-    return render_to_response('temp.html')
+    return render_to_response('temp1.html')
 
 #首页
+def gdesign_frame_page(request):
+    return render_to_response('gdesign_frame.html')
+
+#站点画像
+#数故列表   
 def index_page(request):
-    return render_to_response('gdesign.html')
-#加气站介绍
+    return render_to_response('accident_list.html')
+#气站数据
 def stationIntroduct_page(request):
     return render_to_response('stationIntroduct.html')
-#模拟分析介绍
+#模拟分析案例
 def simulationIntroduct_page(request):
     return render_to_response('simulationIntroduct.html')
+
 #设置
 def settings_page(request):
     return render_to_response('settings.html')

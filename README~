@@ -1,0 +1,4 @@
+use git 
+git remote add origin https://github.com/niyoufa/nyf.git
+git push -u origin master
+git pull -u origin master
