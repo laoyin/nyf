@@ -1,9 +1,22 @@
 #coding=utf-8
 from django.db import models
 
-#事故分析表
-class accidentStatistics(models.Model):
-    """
+#加气站
+class Station(models.Model):
+        sha1 = models.CharField(max_length = 40)
+        name = models.CharField(max_length = 255)
+        #加气站类型 0:加气母站 1:加气子站
+        type = models.IntegerField(default=0)
+        geo_x = models.FloatField()
+        geo_y = models.FloatField()
+        #地址
+        address = models.CharField(max_length = 1024)
+        class Meta :
+            unique _together = ('name','address')
+
+#事故表
+class Accident(models.Model):
+        """
         local:
                  0: 高压管道
                  1:车用气瓶
@@ -25,14 +38,19 @@ class accidentStatistics(models.Model):
                  6:储气井泄漏
                  7:储气井管套冲出,窜动
                  8:高压管线腐蚀报废更换
-    """
-    time=models.CharField(max_length=5)
-    local=models.IntegerField()
-    type=models.IntegerField()
-    loss=models.IntegerField()
+        """
+        sha1 = models.CharField(max_length = 40)
+        title = models.CharField(max_length = 1024)
+        station_name = models.CharField(max_length = 255)
+        time = models.DateTimeField(auto_now_add = True)
+        local = models.CharField(max_length = 1024)
+        context = models.TextField()
+        type=models.IntegerField()
+        loss=models.IntegerField()
 
 #模拟数据表
 class SimulationData(models.Model):
+        sha1 = models.CharField(max_length = 40)
         #除系统选取的控制变量外的其它变量整体看成常量,默认为0
         constant=models.IntegerField()
         #单独考虑泄放速度时,windspeed=-1
