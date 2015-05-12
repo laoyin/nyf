@@ -1,0 +1,52 @@
+{% extends "gdesign_frame.html" %}
+
+{% block left_nav%}
+{% endblock %}
+ {% block item_list%}
+         <div class="statsRow">
+            <div class="wrapper">
+                <div class="controlB">
+                    <ul style="padding-right: 280px;">
+                         <li><a href="station/" title=""><img src="/static/images/icons/control/32/photography.png" alt="" /><span>站点画像</span></a></li>
+                         <li><a href="accidentStatistics/" title=""><img src="/static/images/icons/control/32/statistics.png" alt="" /><span>统计分析</span></a></li>
+                        <li><a href="/simulationAnalysis/" title=""><img src="/static/images/icons/control/32/networking.png" alt="" /><span>模拟分析</span></a></li>
+                        <li><a href="/add_station/" title=""><img src="/static/images/icons/control/32/settings.png" alt="" /><span>设置</span></a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        {% endblock %}
+
+ {% block content_block %}
+ <div style="margin-top:200px;"></div>
+        <!-- Dynamic table -->
+        <div class="widget">
+            <div class="title"><img src="/static/images/icons/dark/full2.png" alt="" class="titleIcon" /><h6>全国所有加气站的事故列表</h6></div>                          
+            <table cellpadding="0" cellspacing="0" border="0" class="display dTable">
+            <thead>
+            <tr>
+            <th>Time</th>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Loss</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            </table>  
+        </div>
+        {% endblock %}
+{% block footer_block %}
+<div id="footer">
+        <div class="wrapper" style="padding-left:0px;padding-right:0px;">毕业设计 2015 倪有发 <a href="http://www.onekoko.com:8000/demosite/index/">我的博客</a></div>
+    </div>
+{% endblock %}
+{% block style_block %}
+<style>
+body{
+    background: url('');
+}
+</style>
+{% endblock %}

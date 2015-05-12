@@ -1,0 +1,34 @@
+ {% extends "gdesign_frame.html"%}
+
+{% block script_block %}
+<script type="text/javascript" src="/static/js/chooseDash.js"></script>
+<script type="text/javascript" src="/static/js/variable.js"></script>
+{% endblock %}
+{% block content_block %}
+ <div id="definedsimulationCondition">
+                                 <div class="btn-group">
+                        <button id="chooseDash" class="btn" contenteditable="false">选择模拟图</button>
+                        <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" contenteditable="false" onclick="chooseDash()">
+                            <li><a id="diffusionRate" >扩散速度图</a></li>
+                            <li><a id="ratelompare" href="#" >速度比较图</a></li>
+                            <li><a id="diffusionConcentration" href="#">扩散浓度图</a></li>
+                                <li><a id="ConcentrationCompare" href="#">浓度比较图</a></li> 
+                        </ul>
+                    </div>
+                        </div>
+                        <div id="definedCondition" style="display:none;">
+                                      <div style="margin-top:20px;">
+                        <div id="windSpeed" style="display:none;"><p>风速:</p><input type="text" ></input></div>
+                                            <div id="dischargeSpeed" style="display:none;"><p>泄放速度:</p><input type="text"></input></div><br/>
+                                            <input type="button" value="添加" onclick="simulationRequestData()"></input>
+                      </div>
+                        </div>
+                    </div>   
+            <div id="definedSimulation" class="left" style="margin:40px;">
+                    <div class="span8">
+                        <div class="span8 margin_top" id="definedDash" style="margin-bottom:40px;">
+                            </div>
+                    </div>
+            </div>
+{% endblock %}

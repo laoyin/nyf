@@ -12,7 +12,8 @@ urlpatterns = patterns('gdesign.page_views',
     url(r'^test$','test_page'),
     url(r'^temp$','temp_page'),
     #首页
-    url(r'^$','gdesign_frame_page'),
+    url(r'^$','gdesign_index_page'),
+    # url(r'^index$','gdesign_index_page'),
     #站点画像
     url(r'^station/$','index_page'),
     url(r'^station/accident_list/$','index_page'),
@@ -26,7 +27,11 @@ urlpatterns = patterns('gdesign.page_views',
     url(r'^accidentStatistics/lossStatistics/$','lossStatistics_page'),
     #模拟分析
     url(r'^simulationAnalysis/$','simulationAnalysis_page'),
+    url(r'^definedSimulation/$','definedSimulation_page'),
     url(r'^simulationAnalysis/fireAndExplosionSimulation/','fireAndExplosionSimulation_page'),
+
+    #站点管理
+    url(r'^add_station/$','add_station_page'),
     #三维动态模拟
     url(r'^three_dim_simulation/$','three_dim_simulation_page'),
 )
@@ -34,6 +39,14 @@ urlpatterns = patterns('gdesign.page_views',
 #初始化ajax_view
 urlpatterns +=patterns('gdesign.ajax_views',
     url(r'^test_ajax$','test_ajax'),
-    url(r'^request_simulaton_data$','request_simulation_data'),
+    url(r'^request_simulaton_data/$','request_simulation_data'),
+)
+
+#数据库增删改查的接口路由
+urlpatterns +=patterns('gdesign.ajax_views',
+    url(r'^gdesign/station_list/$','station_list'),
+    url(r'^gdesign/station_delete/$','station_delete'),
+    url(r'^gdesign/station_create/$','station_create'),
+    url(r'^gdesign/station_update/$','station_update'),
 )
 

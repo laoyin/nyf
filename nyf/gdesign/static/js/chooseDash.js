@@ -211,7 +211,7 @@ function requestData(){
 		//输入验证
 		 dict={'dashId':dashId,'requestType':requestType,'default_windSpeed':default_windSpeed,'default_dischargeSpeed':default_dischargeSpeed}
 		 //测试ajax请求
-		 $.post('/request_simulaton_data',dict,
+		 $.post('/request_simulaton_data/',dict,
 			function(data){
 			       if(data){
 					xAxis_categories=data.categories
@@ -243,7 +243,7 @@ function simulationRequestData(){
 				dict['simulation_dischargeSpeed']=simulation_dischargeSpeed
 			}
 			//测试ajax请求
-			$.post('/request_simulaton_data',dict,
+			$.post('/request_simulaton_data/',dict,
 			function(data){
 			       if(data){
 					xAxis_categories=data.categories

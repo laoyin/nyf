@@ -5,6 +5,7 @@ from django.http import *
 from django.template import Context
 import pdb,json
 from gdesign.models import SimulationData
+from gdesign.models import *
 
 #series_object_list
 series_object_dict={}
@@ -16,7 +17,7 @@ def test_ajax(request):
 
 #请求模拟数据
 def request_simulation_data(request):
-	rsdic={}
+ 	rsdic={}
 	categories=[]
 	series_object={}
 	series_object_list=[]
@@ -118,5 +119,65 @@ def request_simulation_data(request):
 	return HttpResponse(json.dumps(rsdic))
 
 
+
+###########################################
+# 以下为数据库增删改查的接口
+###########################################
+
+def station_list(request):
+	result = {}
+	result["Result"] = "OK"
+	result["Records"] = []
+	try : 
+		objs = Station.objects.all()
+		for obj in objs :
+			if obj.type == 0:
+				type = "母站"
+			elif obj.type == 1:
+				type = "子站"
+			result["Records"].append(dict(
+				name = obj.name,
+				type = type  ,
+				location = obj.location,
+				address = obj.address,
+				time = str(obj.time).split(' ')[0]
+				))
+	except Exception,e:
+		print e 
+		result['Result'] = "ERROR"
+		result['Message'] = "没有数据"
+	return HttpResponse(json.dumps(result))
+
+def station_create(request):
+	result = {} 
+	result["Result"] = "OK"
+	result["Record"] = []
+	#get param
+	name = request.POST['name']
+	address = request.POST['address']
+	try :
+		obj = Station(
+			name = name,
+			address = address
+			)
+		obj.save()
+	except Exception , e:
+		print e 
+		result['Result'] = "ERROR"
+		result["Record"] = "添加站点失败"
+	try :
+		obj = Station.objects.filter(name = name,address=address).first()
+		result['Record'] = []
+		result["Record"].append(dict(
+				name = obj.name,
+				type = obj.type,
+				location = obj.location,
+				address = obj.address
+			))
+	except Exception,e:
+		print e 
+		result['Result'] = "ERROR"
+		result['Record'] = "SYSTEM ERROR"
+	return HttpResponse(json.dumps(result))
 
 

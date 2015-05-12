@@ -1,0 +1,204 @@
+{% extends "gdesign_frame.html" %}
+
+{% block content_block %}
+<div id="add_station"><div>
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/static/jqueryui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/jtable/jquery.jtable.min.js"></script>
+<script>
+     
+    var cachedCityOptions = null;
+     
+        $('#add_station').jtable({
+            title: '加气站',
+            paging: true,
+            pageSize: 10,
+           /* sorting: true,
+            multiSorting: true,*/
+           /* defaultSorting: 'Name ASC',*/
+            actions: {
+                listAction: function (postData, jtParams) {
+                    console.log("Loading from custom function...");
+                    return $.Deferred(function ($dfd) {
+                        $.ajax({
+                            url: '/gdesign/station_list/?jtStartIndex=' + jtParams.jtStartIndex + '&jtPageSize=' + jtParams.jtPageSize + '&jtSorting=' + jtParams.jtSorting,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: postData,
+                            success: function (data) {
+                                $dfd.resolve(data);
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            }
+                        });
+                    });
+                },
+                deleteAction: function (postData) {
+                    console.log("deleting from custom function...");
+                    return $.Deferred(function ($dfd) {
+                        $.ajax({
+                            url: '/gdesign/station_delete/',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: postData,
+                            success: function (data) {
+                                $dfd.resolve(data);
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            }
+                        });
+                    });
+                },
+                createAction: function (postData) {
+                    console.log("creating from custom function...");
+                    return $.Deferred(function ($dfd) {
+                        $.ajax({
+                            url: '/gdesign/station_create/',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: postData,
+                            success: function (data) {
+                                $dfd.resolve(data);
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            }
+                        });
+                    });
+                },
+                updateAction: function(postData) {
+                    console.log("updating from custom function...");
+                    return $.Deferred(function ($dfd) {
+                        $.ajax({
+                            url: '/gdesign/station_update/',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: postData,
+                            success: function (data) {
+                                $dfd.resolve(data);
+                            },
+                            error: function () {
+                                $dfd.reject();
+                            }
+                        });
+                    });
+                }
+            },
+            fields: {
+           	    id: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    create : false,
+                    list: false
+                },
+                name: {
+                    title: '加气站名',
+                },
+                type : {
+                	title :"类型",
+                	edit:false,
+                	create : false
+                },
+                location : {
+                	title : "行政区划",
+                	list : false,
+                	edit:false,
+                	create : false,
+                },
+                address : {
+                	title : "地址",
+                },
+                time : {
+                	title : '添加时间',
+                	type: 'date',
+                    	displayFormat: 'yy-mm-dd',
+                    	edit:false,
+                    	create : false,
+                }
+            /*    EmailAddress: {
+                    title: 'Email address',
+                    list: false
+                },
+                Password: {
+                    title: 'User Password',
+                    type: 'password',
+                    list: false
+                },
+                Gender: {
+                    title: 'Gender',
+                    width: '13%',
+                    options: { 'M': 'Male', 'F': 'Female' }
+                },
+                CityId: {
+                    title: 'City',
+                    width: '12%',
+                    options: function () {
+                         
+                        if (cachedCityOptions) { //Check for cache
+                            return cachedCityOptions;
+                        }
+ 
+                        var options = [];
+ 
+                        $.ajax({ //Not found in cache, get from server
+                            url: '/Demo/GetCityOptions',
+                            type: 'POST',
+                            dataType: 'json',
+                            async: false,
+                            success: function (data) {
+                                if (data.Result != 'OK') {
+                                    alert(data.Message);
+                                    return;
+                                }
+                                options = data.Options;
+                            }
+                        });
+                         
+                        return cachedCityOptions = options; //Cache results and return options
+                    }
+                },
+                BirthDate: {
+                    title: 'Birth date',
+                    width: '15%',
+                    type: 'date',
+                    displayFormat: 'yy-mm-dd'
+                },
+                Education: {
+                    title: 'Education',
+                    list: false,
+                    type: 'radiobutton',
+                    options: { '1': 'Primary school', '2': 'High school', '3': 'University' }
+                },
+                About: {
+                    title: 'About this person',
+                    type: 'textarea',
+                    list: false
+                },
+                IsActive: {
+                    title: 'Status',
+                    width: '12%',
+                    type: 'checkbox',
+                    values: { 'false': 'Passive', 'true': 'Active' },
+                    defaultValue: 'true'
+                },
+                RecordDate: {
+                    title: 'Record date',
+                    width: '15%',
+                    type: 'date',
+                    displayFormat: 'yy-mm-dd',
+                    create: false,
+                    edit: false,
+                    sorting: false //This column is not sortable!
+                }*/
+            }
+        });
+        $('#add_station').jtable('load');
+</script>
+{% endblock %}
+{% block style_block %}
+{% endblock %}

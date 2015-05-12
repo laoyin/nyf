@@ -13,8 +13,8 @@ def temp_page(request):
     return render_to_response('temp1.html')
 
 #首页
-def gdesign_frame_page(request):
-    return render_to_response('gdesign_frame.html')
+def gdesign_index_page(request):
+    return render_to_response('gdesign_index_page.html')
 
 #站点画像
 #数故列表   
@@ -47,6 +47,9 @@ def lossStatistics_page(request):
 #模拟分析
 def simulationAnalysis_page(request):
     return render_to_response('simulationAnalysis.html')
+
+def definedSimulation_page(request):
+    return render_to_response("definedSimulation.html")
 #火灾爆炸模拟
 def fireAndExplosionSimulation_page(request):
     return render_to_response('FireAndExplosionSimulation.html')
@@ -54,4 +57,7 @@ def fireAndExplosionSimulation_page(request):
 #三维动态模拟
 def three_dim_simulation_page(request):
     return render_to_response('three_dim_simulation.html')
+
+def add_station_page(request):
+    return render_to_response('add_station.html')
 
