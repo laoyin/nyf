@@ -4,76 +4,9 @@
 <script type="text/javascript" src="/static/js/chooseDash.js"></script>
 <script type="text/javascript" src="/static/js/variable.js"></script>
 <script>
-//管道射流泄漏扩散范围模拟
-   /* var ranges = [
-
-        [40, 80,90],
-        [50, 70,100],
-        [60, 30,110],
-        [70, 0,100],
-        [80, 40,92],
-        [90, 70,90],
-        [100,80,80],
-    ],
-    averages = [
-
-        [40, 85],
-        [50, 85],
-        [60,70],
-        [70, 50],
-        [80, 80],
-        [90, 80],
-    ];*/
-
-    /*$('#LeakageSimulationDash4').highcharts({
-    
-        title: {
-            text: '管道射流泄漏扩散范围模拟图'
-        },
-        
-        xAxis: {
-            title: {
-                text: '水平距离'
-            },
-            tickPixelInterval:50,
-        },
-        
-        yAxis: {
-            title: {
-                text: '垂直距离'
-            },
-            tickPixelInterval:50,
-        },
-        
-        tooltip: {
-            crosshairs: true,
-            shared: true,
-            valueSuffix: 'm'
-        },
-        
-        legend: {
-            align: "center",
-            verticalAlign: "bottom",
-            x: 0,
-            y: 0 ,
-        },
-        
-        series: [{
-            name: '爆炸下限范围',
-            data: ranges,
-            type: 'arearange',
-            lineWidth: 0,
-            linkedTo: ':previous',
-            color: Highcharts.getOptions().colors[0],
-            fillOpacity: 0.3,
-            zIndex: 1,
-        }]
-    
-    });*/
-
 
 //管道泄漏危险系数动态模拟
-                                                           
+                                            
          activity_efficiency_tracking_dash =  function activity_efficiency_tracking_dash(title){
                 Highcharts.setOptions({                                                     
                     global: {                                                               
@@ -81,7 +14,7 @@
                     }                                                                       
                 });                                                                         
                                                                                     
-                var chart;                                                               
+                var chart;                                                            
                 $('#LeakageSimulationDash4').highcharts({                                                
                     chart: {                                                                
                         type: 'spline',                                                     
@@ -93,8 +26,11 @@
                                 // set up the updating of the chart each second             
                                 var series = this.series[0];             
                                 setInterval(function() {     
+                                     var Q = 20*Math.random()/100
+                var A = 0.159874 + 0.960923 * Q -1.24869* Q * Q + 0.3728 * Q * Q*Q   
+                var B =  0.183894*Math.exp(-0.38484*Q)
                                     var x = (new Date()).getTime();
-                                    var y = Math.random();                                      
+                                    var y = A*B;                                      
                                     series.addPoint([x,y], true, true);                    
                                 }, 1000);                                                   
                             }                                                               
@@ -141,10 +77,13 @@
                             time = (new Date()).getTime(),                              
                             i;                       
                             var  j = 5                                                                        
-                            for (i = -19; i <= 0; i++) {           
+                            for (i = -19; i <= 0; i++) {      
+                                         var Q = 20*Math.random()/100
+                var A = 0.159874 + 0.960923 * Q -1.24869* Q * Q + 0.3728 * Q * Q*Q   
+                var B =  0.183894*Math.exp(-0.38484*Q)
                                 data.push({                                                 
                                     x: time + i * 1000,                                     
-                                    y: Math.random()                             
+                                    y: A*B                           
                                 });              
                                 j++                                           
                             }                                                               
@@ -192,6 +131,9 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             text: '气体扩散速度沿下风向变化图',
             x: -20 //center
         },
+        credits: {
+                 enabled: false
+       },
         xAxis: {
             categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
         },
@@ -234,16 +176,19 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             text: '气体扩散浓度沿下风向的变化图',
             x: -20 //center
         },
-        subtitle: {
-            text: 'Source: WorldClimate.com',
-            x: -20
-        },
+        credits: {
+                 enabled: false
+       },
+       
         xAxis: {
              categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
         },
         yAxis: {
             title: {
                 text: '扩散浓度'
+            },
+            credits: {
+                enabled: false
             },
             plotLines: [{
                 value: 0,
@@ -280,10 +225,10 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             text: '气体扩散速度比较图',
             x: -20 //center
         },
-        subtitle: {
-            text: 'Source: WorldClimate.com',
-            x: -20
-        },
+        credits: {
+                 enabled: false
+       },
+        
         xAxis: {
              categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
         },
@@ -320,10 +265,10 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             text: '气体扩散浓度比较图',
             x: -20 //center
         },
-        subtitle: {
-            text: 'Source: WorldClimate.com',
-            x: -20
-        },
+        credits: {
+                 enabled: false
+       },
+       
         xAxis: {
              categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
         },

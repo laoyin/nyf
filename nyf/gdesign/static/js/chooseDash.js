@@ -73,6 +73,9 @@
 			    text: title_text,
 			    x: -20 //center
 			},
+			credits: {
+                                                 enabled: false
+                                       },
 			xAxis: {
 			    categories:xAxis_categories
 			},
@@ -106,6 +109,9 @@
 				    text: title_text,
 				    x: -20 //center
 				},
+				credits: {
+                                                 enabled: false
+                                       },
 				xAxis: {
 				    categories: xAxis_categories
 				},
@@ -138,6 +144,9 @@
 			    text: title_text,
 			    x: -20 //center
 			},
+			credits: {
+                                                 enabled: false
+                                       },
 			subtitle: {
 			    x: -20
 			},
@@ -173,6 +182,9 @@
 			    text: title_text,
 			    x: -20 //center
 			},
+			credits: {
+                                                 enabled: false
+                                       },
 			subtitle: {
 			    x: -20
 			},
