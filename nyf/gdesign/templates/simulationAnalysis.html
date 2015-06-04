@@ -49,7 +49,9 @@
                     yAxis: {                                                                
                         title: {                                                            
                             text: '危险系数'                                                
-                        },                                                                  
+                        },       
+                          lineWidth:1,
+            lineColor:'#C0D0E0',                                                           
                         plotLines: [{                                                       
                             value: 0,                                                       
                             width: 1,                                                       
@@ -141,11 +143,13 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             title: {
                 text: '扩散速度m/s'
             },
+            lineWidth:1,
+            lineColor:'#C0D0E0',
             plotLines: [{
                 value: 0,
                 width: 1,
-                color: '#808080'
-            }]
+                color: '#808080',
+            }],
         },
         tooltip: {
             valueSuffix: 'm/s'
@@ -187,6 +191,8 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             title: {
                 text: '扩散浓度'
             },
+              lineWidth:1,
+            lineColor:'#C0D0E0',
             credits: {
                 enabled: false
             },
@@ -228,7 +234,7 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
         credits: {
                  enabled: false
        },
-        
+      
         xAxis: {
              categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
         },
@@ -236,6 +242,8 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             title: {
                 text: '扩散速度 m/s'
             },
+               lineWidth:1,
+            lineColor:'#C0D0E0',
             plotLines: [{
                 value: 0,
                 width: 1,
@@ -268,7 +276,7 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
         credits: {
                  enabled: false
        },
-       
+      
         xAxis: {
              categories: ['100', '200', '300', '400', '500', '600','700', '800', '900', '1000', '1100', '1200']
         },
@@ -276,6 +284,8 @@ function cal_single_concentration_change(wing_rate,xiefang_rate){
             title: {
                 text: '扩散浓度'
             },
+              lineWidth:1,
+            lineColor:'#C0D0E0',
             plotLines: [{
                 value: 0,
                 width: 1,

@@ -83,6 +83,8 @@
 			    title: {
 				text: '扩散速度m/s'
 			    },
+			      lineWidth:1,
+            lineColor:'#C0D0E0',
 			    plotLines: [{
 				value: 0,
 				width: 1,
@@ -119,6 +121,8 @@
 				    title: {
 					text: '扩散速度m/s'
 				    },
+				      lineWidth:1,
+            lineColor:'#C0D0E0',
 				    plotLines: [{
 					value: 0,
 					width: 1,
@@ -157,6 +161,8 @@
 			    title: {
 				text: '扩散浓度'
 			    },
+			      lineWidth:1,
+                                            lineColor:'#C0D0E0',
 			    plotLines: [{
 				value: 0,
 				width: 1,
@@ -195,6 +201,8 @@
 			    title: {
 				text: '扩散浓度'
 			    },
+			lineWidth:1,
+			lineColor:'#C0D0E0',
 			    plotLines: [{
 				value: 0,
 				width: 1,
