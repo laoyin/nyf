@@ -5,9 +5,12 @@
     	// Build the chart
         $('#typeStatistics').highcharts({
             chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
+               type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45,
+                    beta: 0
+                }
             },
             title: {
                 text: '事故类型图'
@@ -23,9 +26,9 @@
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
-                        enabled: false
+                        enabled: true,
+                          format: '{point.name}'
                     },
-                    showInLegend: true
                 }
             },
             series: [{
