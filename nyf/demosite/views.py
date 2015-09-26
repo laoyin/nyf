@@ -174,15 +174,15 @@ def request_link_data(request):
 
 #插入博客链接
 def insert_link_url(request):
-	rsdic={'ret':1,'message':'success'}
-	try:
-		blog_name=request.POST['blog_name']
-		blog_url=request.POST['blog_url']
-		link=Links(title=blog_name,url=blog_url)
-		link.save()
-	except Exception , e :
-		rsdic={'ret':0,'message':'error'}
-	return  HttpResponse(json.dumps(rsdic))	
+        rsdic={'ret':1,'message':'success'}
+        try:
+            blog_name=request.POST['blog_name']
+            blog_url=request.POST['blog_url']
+            link=Links(title=blog_name,url=blog_url)
+            link.save()
+        except Exception , e :
+            rsdic={'ret':0,'message':'error'}
+        return  HttpResponse(json.dumps(rsdic))	
 
 
 #search_articles
