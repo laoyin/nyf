@@ -1,8 +1,10 @@
+参考网页：http://www.cnblogs.com/wang_yb/p/3867221.html
+
 常规操作也是我自己平时常用的几个命令, 学自于 pro git 这本书中
 
 git 配置文件
 
-git的配置文件位置
+git的配置文件位
 针对所有用户：/etc/gitconfig
 针对当前用户： ～/.gitconfig
 
