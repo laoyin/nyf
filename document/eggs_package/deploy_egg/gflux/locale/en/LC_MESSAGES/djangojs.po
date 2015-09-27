@@ -1,0 +1,2040 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-25 17:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dash/core/static/js/main_framework.js:158
+#: dash/core/static/js/main_framework.js:300
+#: live_auto_generate_static/js/main_framework.js:158
+#: live_auto_generate_static/js/main_framework.js:300
+msgid "任意"
+msgstr "Any"
+
+#: dash/core/static/js/main_framework.js:347
+#: live_auto_generate_static/js/main_framework.js:347
+msgid "日期"
+msgstr "Date"
+
+#: dash/core/static/js/main_framework.js:353
+#: live_auto_generate_static/js/main_framework.js:353
+msgid "油品"
+msgstr "Fuel"
+
+#: dash/core/static/js/main_framework.js:359
+#: live_auto_generate_static/js/main_framework.js:359
+msgid "站点"
+msgstr "Gas Station"
+
+#: dash/core/static/js/main_framework.js:365
+#: live_auto_generate_static/js/main_framework.js:365
+msgid "支付方式"
+msgstr "Payment Type"
+
+#: dash/core/static/js/render.js:152
+#: live_auto_generate_static/js/render.js:152
+msgid "后端数据正在计算之中，请十分钟之后再试！"
+msgstr "The data are calculated, please try again ten minutes later!"
+
+#: gflux/static/js/admin.js:25 gflux/static/js/admin.js.c:39
+#: live_auto_generate_static/js/admin.js:25
+#: live_auto_generate_static/js/admin.js:39
+msgid "待审核用户"
+msgstr "Un-authorized User"
+
+#: gflux/static/js/admin.js:27 live_auto_generate_static/js/admin.js:27
+msgid "试用版用户"
+msgstr "Trial User"
+
+#: gflux/static/js/admin.js:30 live_auto_generate_static/js/admin.js:30
+msgid "普通版用户"
+msgstr "Basic Plan User"
+
+#: gflux/static/js/admin.js:33 live_auto_generate_static/js/admin.js:33
+msgid "专业版用户"
+msgstr "Professional Plan User"
+
+#: gflux/static/js/admin.js:36 live_auto_generate_static/js/admin.js:36
+msgid "管理员账户"
+msgstr "Administrator"
+
+#: gflux/static/js/admin.js:51 live_auto_generate_static/js/admin.js:51
+msgid "处理"
+msgstr "Action"
+
+#: gflux/static/js/fueltypemanage.js:63
+#: live_auto_generate_static/js/fueltypemanage.js:63
+msgid "编辑"
+msgstr "The editor"
+
+#: gflux/static/js/fueltypemanage.js:75
+#: live_auto_generate_static/js/fueltypemanage.js:75
+msgid "新增"
+msgstr "New"
+
+#: gflux/static/js/fueltypemanage.js:91
+#: live_auto_generate_static/js/fueltypemanage.js:91
+msgid "已存在!"
+msgstr "Existing"
+
+#: gflux/static/js/fueltypemanage.js:96
+#: live_auto_generate_static/js/fueltypemanage.js:96
+msgid "不能为空!"
+msgstr "Station name cannot be empty."
+
+#: gflux/static/js/fueltypemanage.js:105 gflux/static/js/fueltypemanage.js:152
+#: live_auto_generate_static/js/fueltypemanage.js:105
+#: live_auto_generate_static/js/fueltypemanage.js:152
+msgid "油品编号必须由数字组成!"
+msgstr "Product number must be composed by Numbers!"
+
+#: gflux/static/js/fueltypemanage.js:127
+#: live_auto_generate_static/js/fueltypemanage.js:127
+msgid "名字不能为空!"
+msgstr "Area name cannot be empty"
+
+#: gflux/static/js/fueltypemanage.js:132
+#: live_auto_generate_static/js/fueltypemanage.js:132
+msgid "油品类型不能为空!"
+msgstr "Station name cannot be empty."
+
+#: gflux/static/js/fueltypemanage.js:144
+#: live_auto_generate_static/js/fueltypemanage.js:144
+msgid "油品类型格式为1101+省行政区划代码前2位+标准代数2位+汽油牌号2位!"
+msgstr ""
+"Oil type format for 1101 + provincial administrative division code before "
+"two algebraic 2 + + standard gasoline number two!"
+
+#: gflux/static/js/fueltypemanage.js:160
+#: live_auto_generate_static/js/fueltypemanage.js:160
+msgid "油品编号不能为空!"
+msgstr "Station name cannot be empty."
+
+#: gflux/static/js/fueltypemanage.js:188
+#: live_auto_generate_static/js/fueltypemanage.js:188
+msgid "油品类型已存在"
+msgstr "Oil type already exists"
+
+#: gflux/static/js/fueltypemanage.js:193
+#: live_auto_generate_static/js/fueltypemanage.js:193
+msgid "名字已存在"
+msgstr "Name already exists"
+
+#: gflux/static/js/import.js:27 live_auto_generate_static/js/import.js:27
+msgid "请选择地区"
+msgstr "Please choose the area"
+
+#: gflux/static/js/import.js:35 live_auto_generate_static/js/import.js:35
+msgid "请选择站点"
+msgstr "Please choose the station"
+
+#: gflux/static/js/import.js:49 live_auto_generate_static/js/import.js:49
+msgid "请选择数据类型"
+msgstr "Please select the type"
+
+#: gflux/static/js/import.js:58 live_auto_generate_static/js/import.js:58
+msgid "请上传ALL文件"
+msgstr "Please upload the ALL file"
+
+#: gflux/static/js/import.js:62 live_auto_generate_static/js/import.js:62
+msgid "请耐心等待ALL文件上传完毕"
+msgstr "Please be patient to wait until ALL file is uploaded"
+
+#: gflux/static/js/import.js:67 live_auto_generate_static/js/import.js:67
+msgid "请上传CARD文件"
+msgstr "Please upload the CARD file"
+
+#: gflux/static/js/import.js:71 live_auto_generate_static/js/import.js:71
+msgid "请耐心等待CARD文件上传完毕"
+msgstr "Please be patient to wait until ALL file is uploaded"
+
+#: gflux/static/js/import.js:90 gflux/static/js/import.js.c:112
+#: live_auto_generate_static/js/import.js:90
+#: live_auto_generate_static/js/import.js:112
+msgid "请上传文件"
+msgstr "Upload file"
+
+#: gflux/static/js/import.js:94 gflux/static/js/import.js.c:116
+#: live_auto_generate_static/js/import.js:94
+#: live_auto_generate_static/js/import.js:116
+msgid "请耐心等待文件上传完毕"
+msgstr "Please be patient to wait until ALL file is uploaded"
+
+#: gflux/static/js/import.js:139 live_auto_generate_static/js/import.js:139
+msgid "成功提交导入数据任务！"
+msgstr "The data importing task is successfully submitted."
+
+#: gflux/static/js/import.js:381 live_auto_generate_static/js/import.js:381
+msgid "站点代码不能为空!"
+msgstr "Station code cannot be empty."
+
+#: gflux/static/js/import.js:385 gflux/static/js/uploaded.js:209
+#: live_auto_generate_static/js/import.js:385
+#: live_auto_generate_static/js/uploaded.js:209
+msgid "站点代码格式错误!"
+msgstr "Wrong format of station code."
+
+#: gflux/static/js/import.js:397 gflux/static/js/myselftationmanage.js:123
+#: gflux/static/js/userstationmanage.js:190
+#: live_auto_generate_static/js/import.js:397
+#: live_auto_generate_static/js/myselftationmanage.js:123
+#: live_auto_generate_static/js/userstationmanage.js:190
+#: live_auto_generate_static/js/userstationmanage1.js:128
+msgid "站点名称不能为空!"
+msgstr "Station name cannot be empty."
+
+#: gflux/static/js/import.js:401 gflux/static/js/myselftationmanage.js:127
+#: gflux/static/js/uploaded.js:224 gflux/static/js/userstationmanage.js:194
+#: live_auto_generate_static/js/import.js:401
+#: live_auto_generate_static/js/myselftationmanage.js:127
+#: live_auto_generate_static/js/uploaded.js:224
+#: live_auto_generate_static/js/userstationmanage.js:194
+#: live_auto_generate_static/js/userstationmanage1.js:132
+msgid "站点名称只能包含汉字、字母和数字!"
+msgstr ""
+"Station name can be only Chinese characters, alphabetic characters or "
+"digital numbers."
+
+#: gflux/static/js/import.js:405 gflux/static/js/language.js:90
+#: gflux/static/js/myselftationmanage.js:131 gflux/static/js/register.js:99
+#: gflux/static/js/userstationmanage.js:198
+#: live_auto_generate_static/js/import.js:405
+#: live_auto_generate_static/js/language.js:90
+#: live_auto_generate_static/js/myselftationmanage.js:131
+#: live_auto_generate_static/js/register.js:99
+#: live_auto_generate_static/js/userstationmanage.js:198
+#: live_auto_generate_static/js/userstationmanage1.js:136
+msgid "请选择区县"
+msgstr "Please select a county"
+
+#: gflux/static/js/import.js:431 live_auto_generate_static/js/import.js:431
+msgid "地区代码不能为空!"
+msgstr "Area code cannot be empty."
+
+#: gflux/static/js/import.js:435 gflux/static/js/uploaded.js:266
+#: live_auto_generate_static/js/import.js:435
+#: live_auto_generate_static/js/uploaded.js:266
+msgid "地区代码格式错误!"
+msgstr "Wrong format of area code."
+
+#: gflux/static/js/import.js:447 live_auto_generate_static/js/import.js:447
+msgid "地区名称不能为空!"
+msgstr "Area name cannot be empty"
+
+#: gflux/static/js/import.js:451 gflux/static/js/uploaded.js:281
+#: live_auto_generate_static/js/import.js:451
+#: live_auto_generate_static/js/uploaded.js:281
+msgid "地区名称只能包含汉字、字母和数字!"
+msgstr ""
+"Area name can be only Chinese characters, alphabetic characters or digital "
+"numbers."
+
+#: gflux/static/js/language.js:100
+#: live_auto_generate_static/js/language.js:100
+msgid "保存成功!"
+msgstr "Saved successfully!"
+
+#: gflux/static/js/login.js:25 gflux/static/js/register.js:39
+#: live_auto_generate_static/js/login.js:25
+#: live_auto_generate_static/js/register.js:39
+msgid "请输入用户名"
+msgstr "Please enter your user name"
+
+#: gflux/static/js/login.js:30 gflux/static/js/register.js:55
+#: live_auto_generate_static/js/login.js:30
+#: live_auto_generate_static/js/register.js:55
+msgid "请输入密码"
+msgstr "Please enter the password"
+
+#: gflux/static/js/login.js:50 live_auto_generate_static/js/login.js:50
+msgid "您已在他处登陆,请先退出他处的登陆!"
+msgstr "You have landed at elsewhere, please exit elsewhere first landing!"
+
+#: gflux/static/js/login.js:53 live_auto_generate_static/js/login.js:53
+msgid "用户名或密码错误！"
+msgstr "The user name or password error!"
+
+#: gflux/static/js/management.js:41
+#: live_auto_generate_static/js/management.js:41
+msgid "请选择站点！"
+msgstr "Please choose the station"
+
+#: gflux/static/js/management.js:184
+#: live_auto_generate_static/js/management.js:184
+msgid "新增通道"
+msgstr "The new channel"
+
+#: gflux/static/js/management.js:185 gflux/static/js/management.js.c:220
+#: live_auto_generate_static/js/management.js:185
+#: live_auto_generate_static/js/management.js:220
+msgid "通道名字"
+msgstr "Channel name"
+
+#: gflux/static/js/management.js:194
+#: live_auto_generate_static/js/management.js:194
+msgid "新增油机"
+msgstr "New oil machine"
+
+#: gflux/static/js/management.js:195 gflux/static/js/management.js.c:244
+#: gflux/static/js/management.js:268
+#: live_auto_generate_static/js/management.js:195
+#: live_auto_generate_static/js/management.js:244
+#: live_auto_generate_static/js/management.js:268
+msgid "油机名字"
+msgstr "Oil machine name"
+
+#: gflux/static/js/management.js:204
+#: live_auto_generate_static/js/management.js:204
+msgid "新增油位"
+msgstr "New oil level"
+
+#: gflux/static/js/management.js:205
+#: live_auto_generate_static/js/management.js:205
+msgid "油位名字"
+msgstr "Oil level name"
+
+#: gflux/static/js/management.js:219
+#: live_auto_generate_static/js/management.js:219
+msgid "编辑通道"
+msgstr "Edit channel"
+
+#: gflux/static/js/management.js:243
+#: live_auto_generate_static/js/management.js:243
+msgid "编辑油机"
+msgstr "Edit the oil machine"
+
+#: gflux/static/js/management.js:267
+#: live_auto_generate_static/js/management.js:267
+msgid "编辑油位"
+msgstr "Edit the oil level"
+
+#: gflux/static/js/management.js:312
+#: live_auto_generate_static/js/management.js:312
+msgid "名字不能为空！"
+msgstr "Area name cannot be empty"
+
+#: gflux/static/js/management.js:323
+#: live_auto_generate_static/js/management.js:323
+msgid "请选择油枪号!"
+msgstr "Please select the oil gun"
+
+#: gflux/static/js/management.js:482
+#: live_auto_generate_static/js/management.js:482
+msgid "名字已存在!"
+msgstr "Name already exists"
+
+#: gflux/static/js/myselftationmanage.js:99
+#: gflux/static/js/userstationmanage.js:166
+#: live_auto_generate_static/js/myselftationmanage.js:99
+#: live_auto_generate_static/js/userstationmanage.js:166
+#: live_auto_generate_static/js/userstationmanage1.js:104
+msgid "编辑油站"
+msgstr "Edit the gas station"
+
+#: gflux/static/js/professional.js:79 gflux/static/js/professional.js.c:857
+#: live_auto_generate_static/js/professional.js:79
+#: live_auto_generate_static/js/professional.js:857
+msgid "不存在任何站点,请先上传数据!"
+msgstr "There is no any site, please upload the data"
+
+#: gflux/static/js/professional.js:97
+#: live_auto_generate_static/js/professional.js:97
+msgid "开始日期和结束日期不能相同!"
+msgstr "Start date and end date cannot be the same!"
+
+#: gflux/static/js/professional.js:101
+#: live_auto_generate_static/js/professional.js:101
+msgid "结束日期必须大于开始日期!"
+msgstr "End date must be greater than start date!"
+
+#: gflux/static/js/professional.js:146
+#: live_auto_generate_static/js/professional.js:146
+msgid "请选择曲线分类!"
+msgstr "Please select a curve classification!"
+
+#: gflux/static/js/professional.js:150
+#: live_auto_generate_static/js/professional.js:150
+msgid "曲线分类最多选择两类!"
+msgstr "Most curve classification choose two classes!"
+
+#: gflux/static/js/professional.js:330
+#: live_auto_generate_static/js/professional.js:330
+msgid "未能查询到相关记录!"
+msgstr "Failed to query to the relevant records!"
+
+#: gflux/static/js/professional.js:412 gflux/static/js/professional.js.c:462
+#: gflux/static/js/professional.js:550 gflux/static/js/professional.js.c:734
+#: gflux/static/js/professional.js:940
+#: live_auto_generate_static/js/professional.js:412
+#: live_auto_generate_static/js/professional.js:462
+#: live_auto_generate_static/js/professional.js:550
+#: live_auto_generate_static/js/professional.js:734
+#: live_auto_generate_static/js/professional.js:940
+msgid "没有任何通道"
+msgstr "There is no channel"
+
+#: gflux/static/js/professional.js:421 gflux/static/js/professional.js.c:471
+#: gflux/static/js/professional.js:567 gflux/static/js/professional.js.c:751
+#: live_auto_generate_static/js/professional.js:421
+#: live_auto_generate_static/js/professional.js:471
+#: live_auto_generate_static/js/professional.js:567
+#: live_auto_generate_static/js/professional.js:751
+msgid "没有任何油机"
+msgstr "No oil machine"
+
+#: gflux/static/js/professional.js:430 gflux/static/js/professional.js.c:480
+#: gflux/static/js/professional.js:584 gflux/static/js/professional.js.c:768
+#: live_auto_generate_static/js/professional.js:430
+#: live_auto_generate_static/js/professional.js:480
+#: live_auto_generate_static/js/professional.js:584
+#: live_auto_generate_static/js/professional.js:768
+msgid "没有任何油位"
+msgstr "There is no oil level"
+
+#: gflux/static/js/professional.js:502 gflux/static/js/professional.js.c:533
+#: live_auto_generate_static/js/professional.js:502
+#: live_auto_generate_static/js/professional.js:533
+msgid "通道"
+msgstr "The new channel"
+
+#: gflux/static/js/professional.js:503 gflux/static/js/professional.js.c:534
+#: live_auto_generate_static/js/professional.js:503
+#: live_auto_generate_static/js/professional.js:534
+msgid "油机"
+msgstr "New oil machine"
+
+#: gflux/static/js/professional.js:504 gflux/static/js/professional.js.c:535
+#: live_auto_generate_static/js/professional.js:504
+#: live_auto_generate_static/js/professional.js:535
+msgid "油位"
+msgstr "New oil level"
+
+#: gflux/static/js/professional.js:648
+#: live_auto_generate_static/js/professional.js:648
+msgid "小时"
+msgstr "Hours"
+
+#: gflux/static/js/professional.js:660
+#: live_auto_generate_static/js/professional.js:660
+msgid "时间范围选择错误,结束时间必须要大于开始时间!"
+msgstr "Time range choose wrong, end time must be greater than the start time!"
+
+#: gflux/static/js/professional.js:669
+#: live_auto_generate_static/js/professional.js:669
+msgid "月"
+msgstr "Month"
+
+#: gflux/static/js/professional.js:669 gflux/static/js/professional.js.c:676
+#: live_auto_generate_static/js/professional.js:669
+#: live_auto_generate_static/js/professional.js:676
+msgid "周"
+msgstr "Week"
+
+#: gflux/static/js/professional.js:676 gflux/static/js/professional.js.c:680
+#: live_auto_generate_static/js/professional.js:676
+#: live_auto_generate_static/js/professional.js:680
+msgid "天"
+msgstr "Day"
+
+#: gflux/static/js/register.js:47 live_auto_generate_static/js/register.js:47
+msgid "用户名格式错误"
+msgstr "The user name format error"
+
+#: gflux/static/js/register.js:62 live_auto_generate_static/js/register.js:62
+msgid "请输入长度在6到16位之间的密码"
+msgstr "Please enter the length of the password between 6 to 16"
+
+#: gflux/static/js/register.js:70 live_auto_generate_static/js/register.js:70
+msgid "两次输入的密码不一样！"
+msgstr "Two input password is not the same"
+
+#: gflux/static/js/register.js:76 live_auto_generate_static/js/register.js:76
+msgid "邮箱格式错误"
+msgstr "Wrong format of station code."
+
+#: gflux/static/js/register.js:84 live_auto_generate_static/js/register.js:84
+msgid "请输入公司名称"
+msgstr "Please enter the name of the company"
+
+#: gflux/static/js/register.js:91 live_auto_generate_static/js/register.js:91
+msgid "公司名称只能包含汉字、字母和数字"
+msgstr ""
+"Area name can be only Chinese characters, alphabetic characters or digital "
+"numbers."
+
+#: gflux/static/js/uploaded.js:20 live_auto_generate_static/js/uploaded.js:20
+msgid "请选择all文件"
+msgstr "Please choose the ALL file"
+
+#: gflux/static/js/uploaded.js:23 live_auto_generate_static/js/uploaded.js:23
+msgid "请选择card文件"
+msgstr "Please choose the CARD file"
+
+#: gflux/static/js/uploaded.js:51 live_auto_generate_static/js/uploaded.js:51
+msgid "删除"
+msgstr "Delete"
+
+#: gflux/static/js/uploaded.js:91 live_auto_generate_static/js/uploaded.js:91
+msgid "请选择all文件名！"
+msgstr "Please choose the ALL file."
+
+#: gflux/static/js/uploaded.js:100
+#: live_auto_generate_static/js/uploaded.js:100
+msgid "请选择card文件名!"
+msgstr "Please choose the CARD file."
+
+#: gflux/static/js/uploaded.js:109
+#: live_auto_generate_static/js/uploaded.js:109
+msgid "请选择正确的区域！"
+msgstr "Please choose a correct area."
+
+#: gflux/static/js/uploaded.js:121
+#: live_auto_generate_static/js/uploaded.js:121
+msgid "请选择正确的站点！"
+msgstr "Please choose a correct station name."
+
+#: gflux/static/js/uploaded.js:145
+#: live_auto_generate_static/js/uploaded.js:145
+msgid "成功导入数据！"
+msgstr "Data is successfully imported."
+
+#: gflux/static/js/uploaded.js:154
+#: live_auto_generate_static/js/uploaded.js:154
+msgid "添加新加油站"
+msgstr "Add new site"
+
+#: gflux/static/js/uploaded.js:176
+#: live_auto_generate_static/js/uploaded.js:176
+msgid "添加新区域"
+msgstr "Add new location"
+
+#: gflux/static/js/uploaded.js:206
+#: live_auto_generate_static/js/uploaded.js:206
+msgid "加油站名不能为空!"
+msgstr "Station name cannot be empty."
+
+#: gflux/static/js/uploaded.js:221 gflux/static/js/uploaded.js.c:278
+#: live_auto_generate_static/js/uploaded.js:221
+#: live_auto_generate_static/js/uploaded.js:278
+msgid "描述不能为空!"
+msgstr "Station name cannot be empty."
+
+#: gflux/static/js/uploaded.js:263
+#: live_auto_generate_static/js/uploaded.js:263
+msgid "区域名不能为空!"
+msgstr "Area name cannot be empty"
+
+
+#: gcustomer/static/js/gcustomer_login.js:24
+#: live_auto_generate_static/js/gcustomer_login.js:24
+msgid "请选择语言!"
+msgstr "Choose language"
+
+#: gcustomer/static/js/gcustomer_people.js:2
+#: gcustomer/static/js/gcustomer_user_profile.js:2
+#: gcustomer/static/js/render_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:422
+#: live_auto_generate_static/js/gcustomer_people.js:2
+#: live_auto_generate_static/js/gcustomer_user_profile.js:2
+#: live_auto_generate_static/js/render_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:422
+msgid "中石油"
+msgstr "CNPC"
+
+#: gcustomer/static/js/gcustomer_people.js:2
+#: gcustomer/static/js/gcustomer_user_profile.js:2
+#: gcustomer/static/js/render_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:422
+#: live_auto_generate_static/js/gcustomer_people.js:2
+#: live_auto_generate_static/js/gcustomer_user_profile.js:2
+#: live_auto_generate_static/js/render_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:422
+msgid "中石化"
+msgstr "Sinopec"
+
+#: gcustomer/static/js/gcustomer_people.js:2
+#: gcustomer/static/js/gcustomer_user_profile.js:2
+#: gcustomer/static/js/render_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:422
+#: live_auto_generate_static/js/gcustomer_people.js:2
+#: live_auto_generate_static/js/gcustomer_user_profile.js:2
+#: live_auto_generate_static/js/render_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:422
+msgid "中海油"
+msgstr "CNOOC"
+
+#: gcustomer/static/js/gcustomer_people.js:2
+#: gcustomer/static/js/gcustomer_user_profile.js:2
+#: gcustomer/static/js/render_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:422
+#: live_auto_generate_static/js/gcustomer_people.js:2
+#: live_auto_generate_static/js/gcustomer_user_profile.js:2
+#: live_auto_generate_static/js/render_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:422
+msgid "壳牌"
+msgstr "Shell"
+
+#: gcustomer/static/js/gcustomer_people.js:2
+#: gcustomer/static/js/gcustomer_user_profile.js:2
+#: gcustomer/static/js/render_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:2
+#: gcustomer/static/js/render_gcustomer_data.js:422
+#: live_auto_generate_static/js/gcustomer_people.js:2
+#: live_auto_generate_static/js/gcustomer_user_profile.js:2
+#: live_auto_generate_static/js/render_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:2
+#: live_auto_generate_static/js/render_gcustomer_data.js:422
+msgid "中化"
+msgstr "Sinochem"
+
+#: gcustomer/static/js/gcustomer_people.js:3
+#: gcustomer/static/js/gcustomer_user_profile.js:3
+#: gcustomer/static/js/render_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:423
+#: live_auto_generate_static/js/gcustomer_people.js:3
+#: live_auto_generate_static/js/gcustomer_user_profile.js:3
+#: live_auto_generate_static/js/render_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:423
+msgid "改善运营效率"
+msgstr "Improve operational efficiency"
+
+#: gcustomer/static/js/gcustomer_people.js:3
+#: gcustomer/static/js/gcustomer_user_profile.js:3
+#: gcustomer/static/js/render_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:423
+#: live_auto_generate_static/js/gcustomer_people.js:3
+#: live_auto_generate_static/js/gcustomer_user_profile.js:3
+#: live_auto_generate_static/js/render_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:423
+msgid "油品优惠"
+msgstr "Fuel Promotion"
+
+#: gcustomer/static/js/gcustomer_people.js:3
+#: gcustomer/static/js/gcustomer_user_profile.js:3
+#: gcustomer/static/js/render_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:423
+#: live_auto_generate_static/js/gcustomer_people.js:3
+#: live_auto_generate_static/js/gcustomer_user_profile.js:3
+#: live_auto_generate_static/js/render_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:423
+msgid "非油品优惠"
+msgstr "NonFuel Promotion"
+
+#: gcustomer/static/js/gcustomer_people.js:3
+#: gcustomer/static/js/gcustomer_user_profile.js:3
+#: gcustomer/static/js/render_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:423
+#: live_auto_generate_static/js/gcustomer_people.js:3
+#: live_auto_generate_static/js/gcustomer_user_profile.js:3
+#: live_auto_generate_static/js/render_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:423
+msgid "定额优惠"
+msgstr "Quota Promotion"
+
+#: gcustomer/static/js/gcustomer_people.js:3
+#: gcustomer/static/js/gcustomer_user_profile.js:3
+#: gcustomer/static/js/render_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:3
+#: gcustomer/static/js/render_gcustomer_data.js:423
+#: live_auto_generate_static/js/gcustomer_people.js:3
+#: live_auto_generate_static/js/gcustomer_user_profile.js:3
+#: live_auto_generate_static/js/render_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:3
+#: live_auto_generate_static/js/render_gcustomer_data.js:423
+msgid "忠诚客户优惠"
+msgstr "Loyal Customer Promotion"
+
+#: gcustomer/static/js/gcustomer_people.js:4
+#: gcustomer/static/js/gcustomer_people.js:5
+#: gcustomer/static/js/gcustomer_people.js:6
+#: gcustomer/static/js/gcustomer_people.js:7
+#: gcustomer/static/js/gcustomer_user_profile.js:4
+#: gcustomer/static/js/gcustomer_user_profile.js:5
+#: gcustomer/static/js/gcustomer_user_profile.js:6
+#: gcustomer/static/js/gcustomer_user_profile.js:7
+#: gcustomer/static/js/render_data.js:4 gcustomer/static/js/render_data.js:5
+#: gcustomer/static/js/render_data.js:6 gcustomer/static/js/render_data.js:7
+#: gcustomer/static/js/render_gcustomer_data.js:5
+#: gcustomer/static/js/render_gcustomer_data.js:7
+#: gcustomer/static/js/render_gcustomer_data.js:8
+#: gcustomer/static/js/render_gcustomer_data.js:9
+#: gcustomer/static/js/render_gcustomer_data.js:425
+#: gcustomer/static/js/render_gcustomer_data.js:426
+#: gcustomer/static/js/render_gcustomer_data.js:427
+#: gcustomer/static/js/render_gcustomer_data.js:428
+#: gcustomer/static/js/render_gcustomer_data.js:429
+#: live_auto_generate_static/js/gcustomer_people.js:4
+#: live_auto_generate_static/js/gcustomer_people.js:5
+#: live_auto_generate_static/js/gcustomer_people.js:6
+#: live_auto_generate_static/js/gcustomer_people.js:7
+#: live_auto_generate_static/js/gcustomer_user_profile.js:4
+#: live_auto_generate_static/js/gcustomer_user_profile.js:5
+#: live_auto_generate_static/js/gcustomer_user_profile.js:6
+#: live_auto_generate_static/js/gcustomer_user_profile.js:7
+#: live_auto_generate_static/js/render_data.js:4
+#: live_auto_generate_static/js/render_data.js:5
+#: live_auto_generate_static/js/render_data.js:6
+#: live_auto_generate_static/js/render_data.js:7
+#: live_auto_generate_static/js/render_gcustomer_data.js:5
+#: live_auto_generate_static/js/render_gcustomer_data.js:7
+#: live_auto_generate_static/js/render_gcustomer_data.js:8
+#: live_auto_generate_static/js/render_gcustomer_data.js:9
+#: live_auto_generate_static/js/render_gcustomer_data.js:425
+#: live_auto_generate_static/js/render_gcustomer_data.js:426
+#: live_auto_generate_static/js/render_gcustomer_data.js:427
+#: live_auto_generate_static/js/render_gcustomer_data.js:428
+#: live_auto_generate_static/js/render_gcustomer_data.js:429
+msgid "无规律"
+msgstr "Irregular"
+
+#: gcustomer/static/js/gcustomer_people.js:4
+#: gcustomer/static/js/gcustomer_user_profile.js:4
+#: gcustomer/static/js/render_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:5
+#: gcustomer/static/js/render_gcustomer_data.js:425
+#: live_auto_generate_static/js/gcustomer_people.js:4
+#: live_auto_generate_static/js/gcustomer_user_profile.js:4
+#: live_auto_generate_static/js/render_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:5
+#: live_auto_generate_static/js/render_gcustomer_data.js:425
+msgid "早上"
+msgstr "Morning"
+
+#: gcustomer/static/js/gcustomer_people.js:4
+#: gcustomer/static/js/gcustomer_user_profile.js:4
+#: gcustomer/static/js/render_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:5
+#: gcustomer/static/js/render_gcustomer_data.js:425
+#: live_auto_generate_static/js/gcustomer_people.js:4
+#: live_auto_generate_static/js/gcustomer_user_profile.js:4
+#: live_auto_generate_static/js/render_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:5
+#: live_auto_generate_static/js/render_gcustomer_data.js:425
+msgid "中午"
+msgstr "Noon"
+
+#: gcustomer/static/js/gcustomer_people.js:4
+#: gcustomer/static/js/gcustomer_user_profile.js:4
+#: gcustomer/static/js/render_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:5
+#: gcustomer/static/js/render_gcustomer_data.js:425
+#: live_auto_generate_static/js/gcustomer_people.js:4
+#: live_auto_generate_static/js/gcustomer_user_profile.js:4
+#: live_auto_generate_static/js/render_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:5
+#: live_auto_generate_static/js/render_gcustomer_data.js:425
+msgid "晚上"
+msgstr "Night"
+
+#: gcustomer/static/js/gcustomer_people.js:4
+#: gcustomer/static/js/gcustomer_user_profile.js:4
+#: gcustomer/static/js/render_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:5
+#: gcustomer/static/js/render_gcustomer_data.js:425
+#: live_auto_generate_static/js/gcustomer_people.js:4
+#: live_auto_generate_static/js/gcustomer_user_profile.js:4
+#: live_auto_generate_static/js/render_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:5
+#: live_auto_generate_static/js/render_gcustomer_data.js:425
+msgid "午夜"
+msgstr "Midnight\t"
+
+#: gcustomer/static/js/gcustomer_people.js:5
+#: gcustomer/static/js/gcustomer_user_profile.js:5
+#: gcustomer/static/js/render_data.js:5
+#: gcustomer/static/js/render_gcustomer_data.js:426
+#: live_auto_generate_static/js/gcustomer_people.js:5
+#: live_auto_generate_static/js/gcustomer_user_profile.js:5
+#: live_auto_generate_static/js/render_data.js:5
+#: live_auto_generate_static/js/render_gcustomer_data.js:426
+msgid "加满"
+msgstr "Full Gasfill"
+
+#: gcustomer/static/js/gcustomer_people.js:5
+#: gcustomer/static/js/gcustomer_user_profile.js:5
+#: gcustomer/static/js/render_data.js:5
+#: gcustomer/static/js/render_gcustomer_data.js:426
+#: live_auto_generate_static/js/gcustomer_people.js:5
+#: live_auto_generate_static/js/gcustomer_user_profile.js:5
+#: live_auto_generate_static/js/render_data.js:5
+#: live_auto_generate_static/js/render_gcustomer_data.js:426
+msgid "定额"
+msgstr "Quota filling"
+
+#: gcustomer/static/js/gcustomer_people.js:6
+#: gcustomer/static/js/gcustomer_user_profile.js:6
+#: gcustomer/static/js/render_data.js:6
+#: gcustomer/static/js/render_gcustomer_data.js:7
+#: gcustomer/static/js/render_gcustomer_data.js:8
+#: gcustomer/static/js/render_gcustomer_data.js:427
+#: gcustomer/static/js/render_gcustomer_data.js:428
+#: live_auto_generate_static/js/gcustomer_people.js:6
+#: live_auto_generate_static/js/gcustomer_user_profile.js:6
+#: live_auto_generate_static/js/render_data.js:6
+#: live_auto_generate_static/js/render_gcustomer_data.js:7
+#: live_auto_generate_static/js/render_gcustomer_data.js:8
+#: live_auto_generate_static/js/render_gcustomer_data.js:427
+#: live_auto_generate_static/js/render_gcustomer_data.js:428
+msgid "加很多"
+msgstr "Large Pumping"
+
+#: gcustomer/static/js/gcustomer_people.js:6
+#: gcustomer/static/js/gcustomer_user_profile.js:6
+#: gcustomer/static/js/render_data.js:6
+#: gcustomer/static/js/render_gcustomer_data.js:7
+#: gcustomer/static/js/render_gcustomer_data.js:8
+#: gcustomer/static/js/render_gcustomer_data.js:427
+#: gcustomer/static/js/render_gcustomer_data.js:428
+#: live_auto_generate_static/js/gcustomer_people.js:6
+#: live_auto_generate_static/js/gcustomer_user_profile.js:6
+#: live_auto_generate_static/js/render_data.js:6
+#: live_auto_generate_static/js/render_gcustomer_data.js:7
+#: live_auto_generate_static/js/render_gcustomer_data.js:8
+#: live_auto_generate_static/js/render_gcustomer_data.js:427
+#: live_auto_generate_static/js/render_gcustomer_data.js:428
+msgid "加很少"
+msgstr "Small Pumping"
+
+#: gcustomer/static/js/gcustomer_people.js:6
+#: gcustomer/static/js/gcustomer_people.js:7
+#: gcustomer/static/js/gcustomer_people.js:8
+#: gcustomer/static/js/gcustomer_user_profile.js:6
+#: gcustomer/static/js/gcustomer_user_profile.js:7
+#: gcustomer/static/js/gcustomer_user_profile.js:8
+#: gcustomer/static/js/render_data.js:6 gcustomer/static/js/render_data.js:7
+#: gcustomer/static/js/render_data.js:8
+#: gcustomer/static/js/render_gcustomer_data.js:7
+#: gcustomer/static/js/render_gcustomer_data.js:8
+#: gcustomer/static/js/render_gcustomer_data.js:9
+#: gcustomer/static/js/render_gcustomer_data.js:10
+#: gcustomer/static/js/render_gcustomer_data.js:427
+#: gcustomer/static/js/render_gcustomer_data.js:428
+#: gcustomer/static/js/render_gcustomer_data.js:429
+#: gcustomer/static/js/render_gcustomer_data.js:430
+#: live_auto_generate_static/js/gcustomer_people.js:6
+#: live_auto_generate_static/js/gcustomer_people.js:7
+#: live_auto_generate_static/js/gcustomer_people.js:8
+#: live_auto_generate_static/js/gcustomer_user_profile.js:6
+#: live_auto_generate_static/js/gcustomer_user_profile.js:7
+#: live_auto_generate_static/js/gcustomer_user_profile.js:8
+#: live_auto_generate_static/js/render_data.js:6
+#: live_auto_generate_static/js/render_data.js:7
+#: live_auto_generate_static/js/render_data.js:8
+#: live_auto_generate_static/js/render_gcustomer_data.js:7
+#: live_auto_generate_static/js/render_gcustomer_data.js:8
+#: live_auto_generate_static/js/render_gcustomer_data.js:9
+#: live_auto_generate_static/js/render_gcustomer_data.js:10
+#: live_auto_generate_static/js/render_gcustomer_data.js:427
+#: live_auto_generate_static/js/render_gcustomer_data.js:428
+#: live_auto_generate_static/js/render_gcustomer_data.js:429
+#: live_auto_generate_static/js/render_gcustomer_data.js:430
+msgid "一般"
+msgstr "General"
+
+#: gcustomer/static/js/gcustomer_people.js:7
+#: gcustomer/static/js/gcustomer_user_profile.js:7
+#: gcustomer/static/js/render_data.js:7
+#: gcustomer/static/js/render_gcustomer_data.js:9
+#: gcustomer/static/js/render_gcustomer_data.js:429
+#: live_auto_generate_static/js/gcustomer_people.js:7
+#: live_auto_generate_static/js/gcustomer_user_profile.js:7
+#: live_auto_generate_static/js/render_data.js:7
+#: live_auto_generate_static/js/render_gcustomer_data.js:9
+#: live_auto_generate_static/js/render_gcustomer_data.js:429
+msgid "买很多"
+msgstr "Purchase lot"
+
+#: gcustomer/static/js/gcustomer_people.js:7
+#: gcustomer/static/js/gcustomer_user_profile.js:7
+#: gcustomer/static/js/render_data.js:7
+#: gcustomer/static/js/render_gcustomer_data.js:9
+#: gcustomer/static/js/render_gcustomer_data.js:429
+#: live_auto_generate_static/js/gcustomer_people.js:7
+#: live_auto_generate_static/js/gcustomer_user_profile.js:7
+#: live_auto_generate_static/js/render_data.js:7
+#: live_auto_generate_static/js/render_gcustomer_data.js:9
+#: live_auto_generate_static/js/render_gcustomer_data.js:429
+msgid "买很少"
+msgstr "Purchase little"
+
+#: gcustomer/static/js/gcustomer_people.js:8
+#: gcustomer/static/js/gcustomer_user_profile.js:8
+#: gcustomer/static/js/render_data.js:8
+#: gcustomer/static/js/render_gcustomer_data.js:10
+#: gcustomer/static/js/render_gcustomer_data.js:430
+#: live_auto_generate_static/js/gcustomer_people.js:8
+#: live_auto_generate_static/js/gcustomer_user_profile.js:8
+#: live_auto_generate_static/js/render_data.js:8
+#: live_auto_generate_static/js/render_gcustomer_data.js:10
+#: live_auto_generate_static/js/render_gcustomer_data.js:430
+msgid "无影响"
+msgstr "No effect"
+
+#: gcustomer/static/js/gcustomer_people.js:8
+#: gcustomer/static/js/gcustomer_user_profile.js:8
+#: gcustomer/static/js/render_data.js:8
+#: gcustomer/static/js/render_gcustomer_data.js:10
+#: gcustomer/static/js/render_gcustomer_data.js:430
+#: live_auto_generate_static/js/gcustomer_people.js:8
+#: live_auto_generate_static/js/gcustomer_user_profile.js:8
+#: live_auto_generate_static/js/render_data.js:8
+#: live_auto_generate_static/js/render_gcustomer_data.js:10
+#: live_auto_generate_static/js/render_gcustomer_data.js:430
+msgid "严重"
+msgstr "Servity"
+
+#: gcustomer/static/js/gcustomer_people.js:51
+#: gcustomer/static/js/gcustomer_user_profile.js:21
+#: gcustomer/static/js/render_data.js:22 gcustomer/static/js/render_data.js:94
+#: gcustomer/static/js/render_gcustomer_data.js:33
+#: gcustomer/static/js/render_gcustomer_data.js:136
+#: live_auto_generate_static/js/gcustomer_people.js:51
+#: live_auto_generate_static/js/gcustomer_user_profile.js:21
+#: live_auto_generate_static/js/render_data.js:22
+#: live_auto_generate_static/js/render_data.js:94
+#: live_auto_generate_static/js/render_gcustomer_data.js:33
+#: live_auto_generate_static/js/render_gcustomer_data.js:136
+msgid "请输入用户卡号，不能为空！"
+msgstr "Empty user cardno"
+
+#: gcustomer/static/js/gcustomer_people.js:57
+#: live_auto_generate_static/js/gcustomer_people.js:57
+msgid "请输入用户卡号，必须全为数字"
+msgstr "User cardno must be all number digits"
+
+#: gcustomer/static/js/gcustomer_register.js:10
+#: live_auto_generate_static/js/gcustomer_register.js:10
+msgid "请选择注册类型！"
+msgstr "Signup type"
+
+#: gcustomer/static/js/gcustomer_register.js:80
+#: gcustomer/static/js/gcustomer_register.js:313
+#: live_auto_generate_static/js/gcustomer_register.js:80
+#: live_auto_generate_static/js/gcustomer_register.js:313
+msgid "请选择公司"
+msgstr "Choose company"
+
+#: gcustomer/static/js/gcustomer_register.js:94
+#: live_auto_generate_static/js/gcustomer_register.js:94
+msgid "用户名格式错误！"
+msgstr "Username is invalid"
+
+#: gcustomer/static/js/gcustomer_register.js:102
+#: live_auto_generate_static/js/gcustomer_register.js:102
+msgid "请输入密码！"
+msgstr "Enter password"
+
+#: gcustomer/static/js/gcustomer_register.js:123
+#: live_auto_generate_static/js/gcustomer_register.js:123
+msgid "邮箱格式错误！"
+msgstr "Wrong email address"
+
+#: gcustomer/static/js/gcustomer_register.js:131
+#: live_auto_generate_static/js/gcustomer_register.js:131
+msgid "请输入公司名称！"
+msgstr "Enter company name"
+
+#: gcustomer/static/js/gcustomer_register.js:138
+#: live_auto_generate_static/js/gcustomer_register.js:138
+msgid "请选择公司类型！"
+msgstr "Enter company type"
+
+#: gcustomer/static/js/gcustomer_register.js:295
+#: live_auto_generate_static/js/gcustomer_register.js:295
+msgid "请选择公司类型"
+msgstr "Choose company type"
+
+#: gcustomer/static/js/gcustomer_user_profile.js:27
+#: gcustomer/static/js/gcustomer_user_profile.js:98
+#: gcustomer/static/js/render_data.js:28
+#: gcustomer/static/js/render_data.js:100
+#: live_auto_generate_static/js/gcustomer_user_profile.js:27
+#: live_auto_generate_static/js/gcustomer_user_profile.js:98
+#: live_auto_generate_static/js/render_data.js:28
+#: live_auto_generate_static/js/render_data.js:100
+msgid "请输入正确的用户卡号，必须全是数字！"
+msgstr "The user cardno must be all numeric"
+
+#: gcustomer/static/js/gcustomer_user_profile.js:92
+#: live_auto_generate_static/js/gcustomer_user_profile.js:92
+msgid "请输入用户卡号，不能为空"
+msgstr "Empty user cardno"
+
+#: gcustomer/static/js/render_advertisement_data.js:6
+#: live_auto_generate_static/js/render_advertisement_data.js:6
+msgid "正在加载..."
+msgstr "Loading"
+
+#: gcustomer/static/js/render_advertisement_data.js:9
+#: gcustomer/static/js/render_advertisement_data.js:67
+#: gcustomer/static/js/render_advertisement_data.js:87
+#: live_auto_generate_static/js/render_advertisement_data.js:9
+#: live_auto_generate_static/js/render_advertisement_data.js:67
+#: live_auto_generate_static/js/render_advertisement_data.js:87
+msgid "当前没有在播广告！"
+msgstr "No advertisement"
+
+#: gcustomer/static/js/render_advertisement_data.js:13
+#: live_auto_generate_static/js/render_advertisement_data.js:13
+msgid "加载完成"
+msgstr "Loading finished"
+
+#: gcustomer/static/js/render_advertisement_data.js:45
+#: live_auto_generate_static/js/render_advertisement_data.js:45
+msgid "确定要删除吗？"
+msgstr "Are you sure to delete"
+
+#: gcustomer/static/js/render_advertisement_data.js:132
+#: live_auto_generate_static/js/render_advertisement_data.js:132
+msgid "所有投放广告最近一个月的访问量"
+msgstr "Vistor statistics in previous month"
+
+#: gcustomer/static/js/render_advertisement_data.js:145
+#: live_auto_generate_static/js/render_advertisement_data.js:145
+msgid "访问量"
+msgstr "Visit volume"
+
+#: gcustomer/static/js/render_advertisement_data.js:176
+#: live_auto_generate_static/js/render_advertisement_data.js:176
+msgid "所有广告转化销量统计图"
+msgstr "Advertisement conversion statistics"
+
+#: gcustomer/static/js/render_advertisement_data.js:190
+#: live_auto_generate_static/js/render_advertisement_data.js:190
+msgid "RMB(万元)"
+msgstr "RMB (in 10000)"
+
+#: gcustomer/static/js/render_data.js:164
+#: gcustomer/static/js/render_gcustomer_data.js:1024
+#: gcustomer/static/js/render_gcustomer_data.js:1025
+#: gcustomer/static/js/render_gcustomer_data.js:1040
+#: gcustomer/static/js/render_gcustomer_data.js:1041
+#: gcustomer/static/js/render_gcustomer_data.js:1665
+#: gcustomer/static/js/render_gcustomer_data.js:1719
+#: live_auto_generate_static/js/render_data.js:164
+#: live_auto_generate_static/js/render_gcustomer_data.js:1024
+#: live_auto_generate_static/js/render_gcustomer_data.js:1025
+#: live_auto_generate_static/js/render_gcustomer_data.js:1040
+#: live_auto_generate_static/js/render_gcustomer_data.js:1041
+#: live_auto_generate_static/js/render_gcustomer_data.js:1665
+#: live_auto_generate_static/js/render_gcustomer_data.js:1719
+msgid "查看"
+msgstr "Check"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:424
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:424
+msgid "消费金额倾向"
+msgstr "Propensity to consume"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:171
+#: gcustomer/static/js/render_gcustomer_data.js:424
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:171
+#: live_auto_generate_static/js/render_gcustomer_data.js:424
+msgid "加油时间倾向"
+msgstr "Refueling time tendency"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:424
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:424
+msgid "加满率"
+msgstr "Fill rate"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:424
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:424
+msgid "单次加油额"
+msgstr "Single filling amount"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:424
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:424
+msgid "非油品消费类型"
+msgstr "Nonfuel consumption type"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: gcustomer/static/js/render_gcustomer_data.js:424
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:424
+msgid "加油间隔"
+msgstr "Gasfill Interval"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+msgid "最喜爱的非油品"
+msgstr "Fuel interval"
+
+#: gcustomer/static/js/render_gcustomer_data.js:4
+#: live_auto_generate_static/js/render_gcustomer_data.js:4
+msgid "推荐购买的非油品"
+msgstr "Recommended products"
+
+#: gcustomer/static/js/render_gcustomer_data.js:11
+#: gcustomer/static/js/render_gcustomer_data.js:431
+#: live_auto_generate_static/js/render_gcustomer_data.js:11
+#: live_auto_generate_static/js/render_gcustomer_data.js:431
+msgid "间隔几天"
+msgstr "Interval"
+
+#: gcustomer/static/js/render_gcustomer_data.js:11
+#: gcustomer/static/js/render_gcustomer_data.js:431
+#: live_auto_generate_static/js/render_gcustomer_data.js:11
+#: live_auto_generate_static/js/render_gcustomer_data.js:431
+msgid "每天"
+msgstr "Every Day"
+
+#: gcustomer/static/js/render_gcustomer_data.js:11
+#: gcustomer/static/js/render_gcustomer_data.js:431
+#: live_auto_generate_static/js/render_gcustomer_data.js:11
+#: live_auto_generate_static/js/render_gcustomer_data.js:431
+msgid "间隔一个月以上"
+msgstr "More than one month interval"
+
+#: gcustomer/static/js/render_gcustomer_data.js:42
+#: gcustomer/static/js/render_gcustomer_data.js:142
+#: live_auto_generate_static/js/render_gcustomer_data.js:42
+#: live_auto_generate_static/js/render_gcustomer_data.js:142
+msgid "请输入正确的用户卡号，必须全是数字"
+msgstr "Please enter the correct user number, must be all digital"
+
+#: gcustomer/static/js/render_gcustomer_data.js:150
+#: gcustomer/static/js/render_gcustomer_data.js:151
+#: gcustomer/static/js/render_gcustomer_data.js:205
+#: gcustomer/static/js/render_gcustomer_data.js:244
+#: gcustomer/static/js/render_gcustomer_data.js:245
+#: gcustomer/static/js/render_gcustomer_data.js:246
+#: live_auto_generate_static/js/render_gcustomer_data.js:150
+#: live_auto_generate_static/js/render_gcustomer_data.js:151
+#: live_auto_generate_static/js/render_gcustomer_data.js:205
+#: live_auto_generate_static/js/render_gcustomer_data.js:244
+#: live_auto_generate_static/js/render_gcustomer_data.js:245
+#: live_auto_generate_static/js/render_gcustomer_data.js:246
+msgid "正在加载数据..."
+msgstr "Loading data..."
+
+#: gcustomer/static/js/render_gcustomer_data.js:169
+#: live_auto_generate_static/js/render_gcustomer_data.js:169
+msgid "加油地点范围"
+msgstr "Fuel location range"
+
+#: gcustomer/static/js/render_gcustomer_data.js:173
+#: live_auto_generate_static/js/render_gcustomer_data.js:173
+msgid "加油方式倾向"
+msgstr "Refueling style tendency"
+
+#: gcustomer/static/js/render_gcustomer_data.js:178
+#: gcustomer/static/js/render_gcustomer_data.js:187
+#: gcustomer/static/js/render_promotion_data.js:790
+#: live_auto_generate_static/js/render_gcustomer_data.js:178
+#: live_auto_generate_static/js/render_gcustomer_data.js:187
+#: live_auto_generate_static/js/render_promotion_data.js:790
+msgid "暂无"
+msgstr "No Data"
+
+#: gcustomer/static/js/render_gcustomer_data.js:183
+#: live_auto_generate_static/js/render_gcustomer_data.js:183
+msgid "油品消费倾向"
+msgstr "Oil consumption tendency"
+
+#: gcustomer/static/js/render_gcustomer_data.js:192
+#: live_auto_generate_static/js/render_gcustomer_data.js:192
+msgid "购买最多的非油品"
+msgstr "Most selling products"
+
+#: gcustomer/static/js/render_gcustomer_data.js:216
+#: gcustomer/static/js/render_gcustomer_data.js:276
+#: gcustomer/static/js/render_gcustomer_data.js:361
+#: gcustomer/static/js/render_gcustomer_data.js:1710
+#: gcustomer/static/js/render_gcustomer_data.js:1739
+#: gcustomer/static/js/render_station_data.js:134
+#: live_auto_generate_static/js/render_gcustomer_data.js:216
+#: live_auto_generate_static/js/render_gcustomer_data.js:276
+#: live_auto_generate_static/js/render_gcustomer_data.js:361
+#: live_auto_generate_static/js/render_gcustomer_data.js:1710
+#: live_auto_generate_static/js/render_gcustomer_data.js:1739
+#: live_auto_generate_static/js/render_station_data.js:134
+msgid "暂无数据"
+msgstr "No Data!"
+
+#: gcustomer/static/js/render_gcustomer_data.js:223
+#: live_auto_generate_static/js/render_gcustomer_data.js:223
+msgid "个人，购买了"
+msgstr "Individual, bought"
+
+#: gcustomer/static/js/render_gcustomer_data.js:223
+#: live_auto_generate_static/js/render_gcustomer_data.js:223
+msgid "种商品"
+msgstr "Kinds of goods"
+
+#: gcustomer/static/js/render_gcustomer_data.js:240
+#: live_auto_generate_static/js/render_gcustomer_data.js:240
+msgid "请输入客户名"
+msgstr "Please enter the customer name"
+
+#: gcustomer/static/js/render_gcustomer_data.js:262
+#: live_auto_generate_static/js/render_gcustomer_data.js:262
+msgid "创建时间"
+msgstr "Create Time"
+
+#: gcustomer/static/js/render_gcustomer_data.js:264
+#: gcustomer/static/js/render_gcustomer_data.js:338
+#: gcustomer/static/js/render_gcustomer_data.js:1345
+#: live_auto_generate_static/js/render_gcustomer_data.js:264
+#: live_auto_generate_static/js/render_gcustomer_data.js:338
+#: live_auto_generate_static/js/render_gcustomer_data.js:1345
+msgid "当前余额"
+msgstr "Current Balance"
+
+#: gcustomer/static/js/render_gcustomer_data.js:284
+#: live_auto_generate_static/js/render_gcustomer_data.js:284
+msgid "请输入大客户卡号"
+msgstr "Enter enterprise customer cardno"
+
+#: gcustomer/static/js/render_gcustomer_data.js:291
+#: live_auto_generate_static/js/render_gcustomer_data.js:291
+msgid "编辑副卡信息"
+msgstr "Edit Slave Card"
+
+#: gcustomer/static/js/render_gcustomer_data.js:296
+#: gcustomer/static/js/render_gcustomer_data.js:1298
+#: live_auto_generate_static/js/render_gcustomer_data.js:296
+#: live_auto_generate_static/js/render_gcustomer_data.js:1298
+msgid "没有数据"
+msgstr "No Data"
+
+#: gcustomer/static/js/render_gcustomer_data.js:297
+#: gcustomer/static/js/render_gcustomer_data.js:1299
+#: live_auto_generate_static/js/render_gcustomer_data.js:297
+#: live_auto_generate_static/js/render_gcustomer_data.js:1299
+msgid "数据加载中"
+msgstr "Data Loading ..."
+
+#: gcustomer/static/js/render_gcustomer_data.js:298
+#: gcustomer/static/js/render_gcustomer_data.js:1300
+#: live_auto_generate_static/js/render_gcustomer_data.js:298
+#: live_auto_generate_static/js/render_gcustomer_data.js:1300
+msgid "添加新的副卡"
+msgstr "Add New Card"
+
+#: gcustomer/static/js/render_gcustomer_data.js:300
+#: gcustomer/static/js/render_gcustomer_data.js:1302
+#: live_auto_generate_static/js/render_gcustomer_data.js:300
+#: live_auto_generate_static/js/render_gcustomer_data.js:1302
+msgid "编辑副卡"
+msgstr "Edit slave card"
+
+#: gcustomer/static/js/render_gcustomer_data.js:301
+#: gcustomer/static/js/render_gcustomer_data.js:1303
+#: live_auto_generate_static/js/render_gcustomer_data.js:301
+#: live_auto_generate_static/js/render_gcustomer_data.js:1303
+msgid "确定?"
+msgstr "OK?"
+
+#: gcustomer/static/js/render_gcustomer_data.js:302
+#: gcustomer/static/js/render_gcustomer_data.js:1304
+#: live_auto_generate_static/js/render_gcustomer_data.js:302
+#: live_auto_generate_static/js/render_gcustomer_data.js:1304
+msgid "该副卡信息会被删除,确定吗?"
+msgstr "Are you sure to remove the slave card information?"
+
+#: gcustomer/static/js/render_gcustomer_data.js:303
+#: gcustomer/static/js/render_gcustomer_data.js:304
+#: gcustomer/static/js/render_gcustomer_data.js:1305
+#: gcustomer/static/js/render_gcustomer_data.js:1306
+#: live_auto_generate_static/js/render_gcustomer_data.js:303
+#: live_auto_generate_static/js/render_gcustomer_data.js:304
+#: live_auto_generate_static/js/render_gcustomer_data.js:1305
+#: live_auto_generate_static/js/render_gcustomer_data.js:1306
+msgid "保存"
+msgstr "Save"
+
+#: gcustomer/static/js/render_gcustomer_data.js:305
+#: gcustomer/static/js/render_gcustomer_data.js:1307
+#: live_auto_generate_static/js/render_gcustomer_data.js:305
+#: live_auto_generate_static/js/render_gcustomer_data.js:1307
+msgid "取消"
+msgstr "Cancel"
+
+#: gcustomer/static/js/render_gcustomer_data.js:308
+#: gcustomer/static/js/render_gcustomer_data.js:1310
+#: live_auto_generate_static/js/render_gcustomer_data.js:308
+#: live_auto_generate_static/js/render_gcustomer_data.js:1310
+msgid "错误"
+msgstr "Error"
+
+#: gcustomer/static/js/render_gcustomer_data.js:309
+#: gcustomer/static/js/render_gcustomer_data.js:1311
+#: live_auto_generate_static/js/render_gcustomer_data.js:309
+#: live_auto_generate_static/js/render_gcustomer_data.js:1311
+msgid "关闭"
+msgstr "Close"
+
+#: gcustomer/static/js/render_gcustomer_data.js:312
+#: gcustomer/static/js/render_gcustomer_data.js:1314
+#: live_auto_generate_static/js/render_gcustomer_data.js:312
+#: live_auto_generate_static/js/render_gcustomer_data.js:1314
+msgid "每页副卡数"
+msgstr "Slave Card number of one page"
+
+#: gcustomer/static/js/render_gcustomer_data.js:313
+#: gcustomer/static/js/render_gcustomer_data.js:1315
+#: live_auto_generate_static/js/render_gcustomer_data.js:313
+#: live_auto_generate_static/js/render_gcustomer_data.js:1315
+msgid "跳转到"
+msgstr "Jump To "
+
+#: gcustomer/static/js/render_gcustomer_data.js:325
+#: gcustomer/static/js/render_gcustomer_data.js:1332
+#: live_auto_generate_static/js/render_gcustomer_data.js:325
+#: live_auto_generate_static/js/render_gcustomer_data.js:1332
+msgid "帐号"
+msgstr "Account"
+
+#: gcustomer/static/js/render_gcustomer_data.js:330
+#: gcustomer/static/js/render_gcustomer_data.js:1337
+#: live_auto_generate_static/js/render_gcustomer_data.js:330
+#: live_auto_generate_static/js/render_gcustomer_data.js:1337
+msgid "姓名"
+msgstr "Name"
+
+#: gcustomer/static/js/render_gcustomer_data.js:333
+#: gcustomer/static/js/render_gcustomer_data.js:1340
+#: live_auto_generate_static/js/render_gcustomer_data.js:333
+#: live_auto_generate_static/js/render_gcustomer_data.js:1340
+msgid "车牌号"
+msgstr "Plate number"
+
+#: gcustomer/static/js/render_gcustomer_data.js:342
+#: gcustomer/static/js/render_gcustomer_data.js:1349
+#: live_auto_generate_static/js/render_gcustomer_data.js:342
+#: live_auto_generate_static/js/render_gcustomer_data.js:1349
+msgid "主卡号"
+msgstr "Master Card"
+
+#: gcustomer/static/js/render_gcustomer_data.js:385
+#: live_auto_generate_static/js/render_gcustomer_data.js:385
+msgid "百分比 (%)"
+msgstr "Percent"
+
+#: gcustomer/static/js/render_gcustomer_data.js:396
+#: live_auto_generate_static/js/render_gcustomer_data.js:396
+msgid "企业客户"
+msgstr "Enterprise customers"
+
+#: gcustomer/static/js/render_gcustomer_data.js:400
+#: live_auto_generate_static/js/render_gcustomer_data.js:400
+msgid "忠实散户"
+msgstr "Loyal individual customers"
+
+#: gcustomer/static/js/render_gcustomer_data.js:404
+#: live_auto_generate_static/js/render_gcustomer_data.js:404
+msgid "一般客户"
+msgstr "Usual customers"
+
+#: gcustomer/static/js/render_gcustomer_data.js:408
+#: gcustomer/static/js/render_promotion_data.js:993
+#: live_auto_generate_static/js/render_gcustomer_data.js:408
+#: live_auto_generate_static/js/render_promotion_data.js:993
+msgid "其他"
+msgstr "Others"
+
+#: gcustomer/static/js/render_gcustomer_data.js:424
+#: live_auto_generate_static/js/render_gcustomer_data.js:424
+msgid "喜爱的非油品"
+msgstr "Favorate Nonfuel"
+
+#: gcustomer/static/js/render_gcustomer_data.js:469
+#: gcustomer/static/js/render_gcustomer_data.js:476
+#: gcustomer/static/js/render_gcustomer_data.js:483
+#: gcustomer/static/js/render_gcustomer_data.js:490
+#: gcustomer/static/js/render_gcustomer_data.js:497
+#: gcustomer/static/js/render_gcustomer_data.js:504
+#: gcustomer/static/js/render_gcustomer_data.js:510
+#: gcustomer/static/js/render_gcustomer_data.js:872
+#: gcustomer/static/js/render_gcustomer_data.js:874
+#: gcustomer/static/js/render_gcustomer_data.js:909
+#: live_auto_generate_static/js/render_gcustomer_data.js:469
+#: live_auto_generate_static/js/render_gcustomer_data.js:476
+#: live_auto_generate_static/js/render_gcustomer_data.js:483
+#: live_auto_generate_static/js/render_gcustomer_data.js:490
+#: live_auto_generate_static/js/render_gcustomer_data.js:497
+#: live_auto_generate_static/js/render_gcustomer_data.js:504
+#: live_auto_generate_static/js/render_gcustomer_data.js:510
+#: live_auto_generate_static/js/render_gcustomer_data.js:872
+#: live_auto_generate_static/js/render_gcustomer_data.js:874
+#: live_auto_generate_static/js/render_gcustomer_data.js:909
+msgid "请选择"
+msgstr "Choose"
+
+#: gcustomer/static/js/render_gcustomer_data.js:513
+#: live_auto_generate_static/js/render_gcustomer_data.js:513
+msgid "获取非油品异常"
+msgstr "Non-fuel abnormal"
+
+#: gcustomer/static/js/render_gcustomer_data.js:643
+#: live_auto_generate_static/js/render_gcustomer_data.js:643
+msgid "请输入正确的年龄范围！"
+msgstr "Please enter the correct age range!"
+
+#: gcustomer/static/js/render_gcustomer_data.js:703
+#: gcustomer/static/js/render_promotion_data.js:983
+#: live_auto_generate_static/js/render_gcustomer_data.js:703
+#: live_auto_generate_static/js/render_promotion_data.js:983
+msgid "男"
+msgstr "Male"
+
+#: gcustomer/static/js/render_gcustomer_data.js:762
+#: live_auto_generate_static/js/render_gcustomer_data.js:762
+msgid "请输入客户群名称"
+msgstr "Please Enter Customer Group Name"
+
+#: gcustomer/static/js/render_gcustomer_data.js:767
+#: live_auto_generate_static/js/render_gcustomer_data.js:767
+msgid "请输入客户群范围"
+msgstr "Please Enter Customer Range"
+
+#: gcustomer/static/js/render_gcustomer_data.js:772
+#: live_auto_generate_static/js/render_gcustomer_data.js:772
+msgid "请至少选择一个客户群基本属性"
+msgstr "Please choose at lease one basic attribute"
+
+#: gcustomer/static/js/render_gcustomer_data.js:777
+#: live_auto_generate_static/js/render_gcustomer_data.js:777
+msgid "请至少选择一个客户群行为特征"
+msgstr "Please select at least one of the behaviour attributes "
+
+#: gcustomer/static/js/render_gcustomer_data.js:782
+#: live_auto_generate_static/js/render_gcustomer_data.js:782
+msgid "请输入客户群描述"
+msgstr "Please enter the customer group description"
+
+#: gcustomer/static/js/render_gcustomer_data.js:887
+#: live_auto_generate_static/js/render_gcustomer_data.js:887
+msgid "请选择市级名称！"
+msgstr "Please choose the city name!"
+
+#: gcustomer/static/js/render_gcustomer_data.js:937
+#: live_auto_generate_static/js/render_gcustomer_data.js:937
+msgid "客户群范围："
+msgstr "Customer area:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:938
+#: live_auto_generate_static/js/render_gcustomer_data.js:938
+msgid "基本信息："
+msgstr "Basic information:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:939
+#: live_auto_generate_static/js/render_gcustomer_data.js:939
+msgid "行为特征："
+msgstr "Behavior characteristics:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:940
+#: live_auto_generate_static/js/render_gcustomer_data.js:940
+msgid "客户群描："
+msgstr "Group description"
+
+#: gcustomer/static/js/render_gcustomer_data.js:973
+#: live_auto_generate_static/js/render_gcustomer_data.js:973
+msgid "没有客户群"
+msgstr "No user groups"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1059
+#: live_auto_generate_static/js/render_gcustomer_data.js:1059
+msgid "性别：男"
+msgstr "Male"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1061
+#: live_auto_generate_static/js/render_gcustomer_data.js:1061
+msgid "性别：女"
+msgstr "Female"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1063
+#: live_auto_generate_static/js/render_gcustomer_data.js:1063
+msgid "性别：无限制"
+msgstr "Gender: both"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1068
+#: live_auto_generate_static/js/render_gcustomer_data.js:1068
+msgid "年龄段："
+msgstr "Age group"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1074
+#: live_auto_generate_static/js/render_gcustomer_data.js:1074
+msgid "职业:"
+msgstr "Occupation"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1078
+#: live_auto_generate_static/js/render_gcustomer_data.js:1078
+msgid "最喜爱的非油品:"
+msgstr "Favorite non-fuel products:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1080
+#: live_auto_generate_static/js/render_gcustomer_data.js:1080
+msgid "消费金额倾向:"
+msgstr "Propensity to consume:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1081
+#: live_auto_generate_static/js/render_gcustomer_data.js:1081
+msgid "加油时间倾向:无限制"
+msgstr "Refueling time tendency: no limit"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1081
+#: live_auto_generate_static/js/render_gcustomer_data.js:1081
+msgid "加油时间倾向:"
+msgstr "Refueling time tendency:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1082
+#: live_auto_generate_static/js/render_gcustomer_data.js:1082
+msgid "加满率:无限制"
+msgstr "Full gasfilling: no limit"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1082
+#: live_auto_generate_static/js/render_gcustomer_data.js:1082
+msgid "加满率:"
+msgstr "Full gasfilling:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1083
+#: live_auto_generate_static/js/render_gcustomer_data.js:1083
+msgid "单次加油额:"
+msgstr "Average gasfill amount:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1084
+#: live_auto_generate_static/js/render_gcustomer_data.js:1084
+msgid "非油品消费类型:"
+msgstr "Non-fuel consumption type"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1085
+#: live_auto_generate_static/js/render_gcustomer_data.js:1085
+msgid "加油间隔:"
+msgstr "Gasfilling interval:"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1090
+#: live_auto_generate_static/js/render_gcustomer_data.js:1090
+msgid "客户群名称"
+msgstr "User group name"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1144
+#: live_auto_generate_static/js/render_gcustomer_data.js:1144
+msgid "查询失败！"
+msgstr "Fail to query"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1157
+#: live_auto_generate_static/js/render_gcustomer_data.js:1157
+msgid "没有客户属于该群！"
+msgstr "No users belong to the group!"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1161
+#: live_auto_generate_static/js/render_gcustomer_data.js:1161
+msgid "用户列表"
+msgstr "User list"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1291
+#: live_auto_generate_static/js/render_gcustomer_data.js:1291
+msgid "添加副卡信息"
+msgstr "Add slave card information"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1367
+#: live_auto_generate_static/js/render_gcustomer_data.js:1367
+msgid "请输入主卡号"
+msgstr "Please master cardno"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1373
+#: live_auto_generate_static/js/render_gcustomer_data.js:1373
+msgid "主卡号格式错误！"
+msgstr "Illegal master card no"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1379
+#: live_auto_generate_static/js/render_gcustomer_data.js:1379
+msgid "请输入大客户名称！"
+msgstr "Enter enterprise customer name"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1385
+#: live_auto_generate_static/js/render_gcustomer_data.js:1385
+msgid "请选择客户来源"
+msgstr "Customer source"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1391
+#: live_auto_generate_static/js/render_gcustomer_data.js:1391
+msgid "请输入副卡数量"
+msgstr "Enter number of slave cards"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1396
+#: live_auto_generate_static/js/render_gcustomer_data.js:1396
+msgid "请输入整数数值"
+msgstr "Please input an integer"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1402
+#: gcustomer/static/js/render_gcustomer_data.js:1407
+#: live_auto_generate_static/js/render_gcustomer_data.js:1402
+#: live_auto_generate_static/js/render_gcustomer_data.js:1407
+msgid "格式错误"
+msgstr "wrong format"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1429
+#: live_auto_generate_static/js/render_gcustomer_data.js:1429
+msgid "现在就去编辑副卡信息!"
+msgstr "Edit slave cards now"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1464
+#: gcustomer/static/js/render_station_data.js:17
+#: live_auto_generate_static/js/render_gcustomer_data.js:1464
+#: live_auto_generate_static/js/render_station_data.js:17
+msgid "没有该油站的信息！"
+msgstr "Cannot find station"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1493
+#: live_auto_generate_static/js/render_gcustomer_data.js:1493
+msgid "大客户贡献比例图"
+msgstr "Contribution ratio of enterprise customers"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1503
+#: gcustomer/static/js/render_station_data.js:153
+#: live_auto_generate_static/js/render_gcustomer_data.js:1503
+#: live_auto_generate_static/js/render_station_data.js:153
+msgid "贡献量"
+msgstr "Contribution"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1532
+#: gcustomer/static/js/render_station_data.js:182
+#: live_auto_generate_static/js/render_gcustomer_data.js:1532
+#: live_auto_generate_static/js/render_station_data.js:182
+msgid "贡献比例"
+msgstr "Contribution ratio"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1561
+#: live_auto_generate_static/js/render_gcustomer_data.js:1561
+msgid "不存在这个用户！"
+msgstr "User is not existent"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1593
+#: live_auto_generate_static/js/render_gcustomer_data.js:1593
+msgid "消费额度趋势"
+msgstr "Consumption Trend"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1604
+#: live_auto_generate_static/js/render_gcustomer_data.js:1604
+msgid "消费额"
+msgstr "Consumption"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1613
+#: gcustomer/static/js/render_promotion_data.js:788
+#: gcustomer/static/js/render_promotion_data.js:789
+#: gcustomer/static/js/render_promotion_data.js:1107
+#: live_auto_generate_static/js/render_gcustomer_data.js:1613
+#: live_auto_generate_static/js/render_promotion_data.js:788
+#: live_auto_generate_static/js/render_promotion_data.js:789
+#: live_auto_generate_static/js/render_promotion_data.js:1107
+msgid "万元"
+msgstr "10000 RMB"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1622
+#: live_auto_generate_static/js/render_gcustomer_data.js:1622
+msgid "大客户消费额"
+msgstr "Purcahse amount of enterprise customers"
+
+#: gcustomer/static/js/render_gcustomer_data.js:1702
+#: live_auto_generate_static/js/render_gcustomer_data.js:1702
+msgid "不存在该副卡信息"
+msgstr "Slave card cannot be found"
+
+#: gcustomer/static/js/render_promotion_data.js:12
+#: gcustomer/static/js/render_promotion_data.js:71
+#: live_auto_generate_static/js/render_promotion_data.js:12
+#: live_auto_generate_static/js/render_promotion_data.js:71
+msgid "当前活动为空"
+msgstr "Empty activity name"
+
+#: gcustomer/static/js/render_promotion_data.js:46
+#: live_auto_generate_static/js/render_promotion_data.js:46
+msgid "成功将活动"
+msgstr "Succeed to move "
+
+#: gcustomer/static/js/render_promotion_data.js:46
+#: live_auto_generate_static/js/render_promotion_data.js:46
+msgid "放入回收箱!"
+msgstr "to trash bin"
+
+#: gcustomer/static/js/render_promotion_data.js:100
+#: gcustomer/static/js/render_promotion_data.js:102
+#: live_auto_generate_static/js/render_promotion_data.js:100
+#: live_auto_generate_static/js/render_promotion_data.js:102
+msgid "分钟"
+msgstr "Minutes"
+
+#: gcustomer/static/js/render_promotion_data.js:136
+#: live_auto_generate_static/js/render_promotion_data.js:136
+msgid "所有油站"
+msgstr "All stations"
+
+#: gcustomer/static/js/render_promotion_data.js:225
+#: live_auto_generate_static/js/render_promotion_data.js:225
+msgid "请选择活动范围!"
+msgstr "Choose the activity area"
+
+#: gcustomer/static/js/render_promotion_data.js:236
+#: gcustomer/static/js/render_promotion_data.js:631
+#: gcustomer/static/js/render_promotion_data.js:643
+#: live_auto_generate_static/js/render_promotion_data.js:236
+#: live_auto_generate_static/js/render_promotion_data.js:631
+#: live_auto_generate_static/js/render_promotion_data.js:643
+msgid "请选择活动范围"
+msgstr "Choose the acitivity area"
+
+#: gcustomer/static/js/render_promotion_data.js:249
+#: live_auto_generate_static/js/render_promotion_data.js:249
+msgid "请选择活动类型"
+msgstr "Enter activity type"
+
+#: gcustomer/static/js/render_promotion_data.js:282
+#: gcustomer/static/js/render_promotion_data.js:350
+#: live_auto_generate_static/js/render_promotion_data.js:282
+#: live_auto_generate_static/js/render_promotion_data.js:350
+msgid "请选择油站"
+msgstr "Choose station"
+
+#: gcustomer/static/js/render_promotion_data.js:318
+#: live_auto_generate_static/js/render_promotion_data.js:318
+msgid "营销活动范围内没有油站!"
+msgstr "No stations are found in the activity area"
+
+#: gcustomer/static/js/render_promotion_data.js:392
+#: live_auto_generate_static/js/render_promotion_data.js:392
+msgid "没有该活动信息"
+msgstr "No activity information is found"
+
+#: gcustomer/static/js/render_promotion_data.js:411
+#: live_auto_generate_static/js/render_promotion_data.js:411
+msgid "活动参与人数分布图"
+msgstr "Distribution of activity joins"
+
+#: gcustomer/static/js/render_promotion_data.js:417
+#: live_auto_generate_static/js/render_promotion_data.js:417
+msgid "注：从活动开始到活动结束期间"
+msgstr "Comment: from beginning of activity to end"
+
+#: gcustomer/static/js/render_promotion_data.js:427
+#: live_auto_generate_static/js/render_promotion_data.js:427
+msgid "人数"
+msgstr "Number of people"
+
+#: gcustomer/static/js/render_promotion_data.js:459
+#: live_auto_generate_static/js/render_promotion_data.js:459
+#, c-format
+msgid "第%d{0}天"
+msgstr "No %d{0}"
+
+#: gcustomer/static/js/render_promotion_data.js:469
+#: gcustomer/static/js/render_promotion_data.js:1083
+#: live_auto_generate_static/js/render_promotion_data.js:469
+#: live_auto_generate_static/js/render_promotion_data.js:1083
+msgid "营销活动效益累计跟踪图"
+msgstr "Promotion Effect Tracking"
+
+#: gcustomer/static/js/render_promotion_data.js:480
+#: live_auto_generate_static/js/render_promotion_data.js:480
+msgid "效益(元)"
+msgstr "Income(RMB)"
+
+#: gcustomer/static/js/render_promotion_data.js:491
+#: live_auto_generate_static/js/render_promotion_data.js:491
+msgid "元"
+msgstr "RMB"
+
+#: gcustomer/static/js/render_promotion_data.js:539
+#: gcustomer/static/js/render_promotion_data.js:554
+#: live_auto_generate_static/js/render_promotion_data.js:539
+#: live_auto_generate_static/js/render_promotion_data.js:554
+msgid "获取油站群错误"
+msgstr "Fail to get the station group"
+
+#: gcustomer/static/js/render_promotion_data.js:585
+#: gcustomer/static/js/render_promotion_data.js:593
+#: live_auto_generate_static/js/render_promotion_data.js:585
+#: live_auto_generate_static/js/render_promotion_data.js:593
+msgid "点"
+msgstr "Point"
+
+#: gcustomer/static/js/render_promotion_data.js:606
+#: live_auto_generate_static/js/render_promotion_data.js:606
+msgid "请输入活动名称!"
+msgstr "Enter activity name"
+
+#: gcustomer/static/js/render_promotion_data.js:612
+#: live_auto_generate_static/js/render_promotion_data.js:612
+msgid "请输入活动起始时间"
+msgstr "Enter the activity beginning time"
+
+#: gcustomer/static/js/render_promotion_data.js:618
+#: live_auto_generate_static/js/render_promotion_data.js:618
+msgid "请输入活动结束时间"
+msgstr "Enter the activity ending time"
+
+#: gcustomer/static/js/render_promotion_data.js:653
+#: live_auto_generate_static/js/render_promotion_data.js:653
+msgid "请选择目标用户群"
+msgstr "Please choose the target user group"
+
+#: gcustomer/static/js/render_promotion_data.js:659
+#: live_auto_generate_static/js/render_promotion_data.js:659
+msgid "请选择沟通类型"
+msgstr "Please the contact type"
+
+#: gcustomer/static/js/render_promotion_data.js:666
+#: live_auto_generate_static/js/render_promotion_data.js:666
+msgid "描述信息不能为空"
+msgstr "Description cannot be empty"
+
+#: gcustomer/static/js/render_promotion_data.js:673
+#: live_auto_generate_static/js/render_promotion_data.js:673
+msgid "请添加优惠商品"
+msgstr "Please add discounted product"
+
+#: gcustomer/static/js/render_promotion_data.js:699
+#: live_auto_generate_static/js/render_promotion_data.js:699
+msgid "正在处理..."
+msgstr "Processing..."
+
+#: gcustomer/static/js/render_promotion_data.js:709
+#: gcustomer/static/js/render_promotion_data.js:711
+#: live_auto_generate_static/js/render_promotion_data.js:709
+#: live_auto_generate_static/js/render_promotion_data.js:711
+msgid "创建成功"
+msgstr "Succeed to create"
+
+#: gcustomer/static/js/render_promotion_data.js:787
+#: live_auto_generate_static/js/render_promotion_data.js:787
+msgid "升"
+msgstr "Liter"
+
+#: gcustomer/static/js/render_promotion_data.js:798
+#: live_auto_generate_static/js/render_promotion_data.js:798
+msgid "请选择活动创建方式"
+msgstr "Please choose the way to create the activity"
+
+#: gcustomer/static/js/render_promotion_data.js:872
+#: live_auto_generate_static/js/render_promotion_data.js:872
+msgid "请输入省份"
+msgstr "Please enter the province"
+
+#: gcustomer/static/js/render_promotion_data.js:908
+#: live_auto_generate_static/js/render_promotion_data.js:908
+msgid "请输入市级信息"
+msgstr "Please enter the city"
+
+#: gcustomer/static/js/render_promotion_data.js:960
+#: live_auto_generate_static/js/render_promotion_data.js:960
+msgid "请选择维度"
+msgstr "Please select the dimension"
+
+#: gcustomer/static/js/render_promotion_data.js:974
+#: live_auto_generate_static/js/render_promotion_data.js:974
+msgid "20岁以下"
+msgstr "below 20 years"
+
+#: gcustomer/static/js/render_promotion_data.js:975
+#: live_auto_generate_static/js/render_promotion_data.js:975
+msgid "20-40岁"
+msgstr "20-40 years"
+
+#: gcustomer/static/js/render_promotion_data.js:976
+#: live_auto_generate_static/js/render_promotion_data.js:976
+msgid "40-60岁"
+msgstr "40-60 years"
+
+#: gcustomer/static/js/render_promotion_data.js:977
+#: live_auto_generate_static/js/render_promotion_data.js:977
+msgid "60岁以上"
+msgstr "above 60 years"
+
+#: gcustomer/static/js/render_promotion_data.js:984
+#: live_auto_generate_static/js/render_promotion_data.js:984
+msgid "女"
+msgstr "Female"
+
+#: gcustomer/static/js/render_promotion_data.js:990
+#: live_auto_generate_static/js/render_promotion_data.js:990
+msgid "学生"
+msgstr "Student"
+
+#: gcustomer/static/js/render_promotion_data.js:991
+#: live_auto_generate_static/js/render_promotion_data.js:991
+msgid "司机"
+msgstr "Driver"
+
+#: gcustomer/static/js/render_promotion_data.js:992
+#: live_auto_generate_static/js/render_promotion_data.js:992
+msgid "老师"
+msgstr "Teacher"
+
+#: gcustomer/static/js/render_promotion_data.js:999
+#: live_auto_generate_static/js/render_promotion_data.js:999
+msgid "5次以下"
+msgstr "less than 5 times"
+
+#: gcustomer/static/js/render_promotion_data.js:1000
+#: live_auto_generate_static/js/render_promotion_data.js:1000
+msgid "5-10次"
+msgstr "5-10 times"
+
+#: gcustomer/static/js/render_promotion_data.js:1001
+#: live_auto_generate_static/js/render_promotion_data.js:1001
+msgid "10-15次"
+msgstr "10-15 times"
+
+#: gcustomer/static/js/render_promotion_data.js:1002
+#: live_auto_generate_static/js/render_promotion_data.js:1002
+msgid "15次以上"
+msgstr "more than 15 times"
+
+#: gcustomer/static/js/render_promotion_data.js:1007
+#: live_auto_generate_static/js/render_promotion_data.js:1007
+msgid "该维度信息暂无"
+msgstr "No dimension"
+
+#: gcustomer/static/js/render_promotion_data.js:1026
+#: live_auto_generate_static/js/render_promotion_data.js:1026
+msgid "参与广告人群类型分布图"
+msgstr "Distribution of influenced people"
+
+#: gcustomer/static/js/render_promotion_data.js:1045
+#: live_auto_generate_static/js/render_promotion_data.js:1045
+msgid "比例"
+msgstr "Percentage"
+
+#: gcustomer/static/js/render_promotion_data.js:1094
+#: live_auto_generate_static/js/render_promotion_data.js:1094
+msgid "效益/万元"
+msgstr "Income (in 10000 RMB)"
+
+#: gcustomer/static/js/render_promotion_data.js:1117
+#: live_auto_generate_static/js/render_promotion_data.js:1117
+msgid "营销活动"
+msgstr "Promotion Acticvity"
+
+#: gcustomer/static/js/render_station_data.js:143
+#: live_auto_generate_static/js/render_station_data.js:143
+msgid "客户贡献比例图"
+msgstr "Contribution Ratio of Customers"
+
+#: gcustomer/static/js/render_station_data.js:211
+#: live_auto_generate_static/js/render_station_data.js:211
+msgid "群名称不能为空！"
+msgstr "Empty group name"
+
+#: gcustomer/static/js/render_station_data.js:216
+#: live_auto_generate_static/js/render_station_data.js:216
+msgid "请选择油站范围！"
+msgstr "Please choose the station area"
+
+#: gcustomer/static/js/render_station_data.js:225
+#: gcustomer/static/js/render_station_data.js:234
+#: live_auto_generate_static/js/render_station_data.js:225
+#: live_auto_generate_static/js/render_station_data.js:234
+msgid "销售额必须为数值"
+msgstr "The sales amount must be digital"
+
+#: gcustomer/static/js/render_station_data.js:241
+#: live_auto_generate_static/js/render_station_data.js:241
+msgid "油站总销售额不能为空！"
+msgstr "Total sales amount must not be empty"
+
+#: gcustomer/static/js/render_station_data.js:247
+#: live_auto_generate_static/js/render_station_data.js:247
+msgid "排名为整数！"
+msgstr "Rank must be integeral"
+
+#: gcustomer/static/js/render_station_data.js:255
+#: live_auto_generate_static/js/render_station_data.js:255
+msgid "群描述不能为空！"
+msgstr "Empty group description!"
+
+#: gcustomer/static/js/render_station_data.js:270 gflux/static/js/tag.js:61
+#: live_auto_generate_static/js/render_station_data.js:270
+#: live_auto_generate_static/js/tag.js:61
+msgid "创建失败！"
+msgstr "Fail to create."
+
+#: gcustomer/static/js/render_station_data.js:274
+#: live_auto_generate_static/js/render_station_data.js:274
+msgid "创建成功！"
+msgstr "Succeed to create."
+
+#: gcustomer/static/js/render_station_data.js:316
+#: live_auto_generate_static/js/render_station_data.js:316
+msgid "请选择省份！"
+msgstr "Please choose the province"
+
+#: gcustomer/static/js/render_station_data.js:352
+#: live_auto_generate_static/js/render_station_data.js:352
+msgid "请选择市级信息！"
+msgstr "Please choose the city"
+
+#: gcustomer/static/js/render_station_data.js:398
+#: live_auto_generate_static/js/render_station_data.js:398
+msgid "油站范围："
+msgstr "Station area"
+
+#: gcustomer/static/js/render_station_data.js:399
+#: live_auto_generate_static/js/render_station_data.js:399
+msgid "油站总销售额："
+msgstr "Station sales amount"
+
+#: gcustomer/static/js/render_station_data.js:400
+#: live_auto_generate_static/js/render_station_data.js:400
+msgid "油站排名："
+msgstr "Station rank:"
+
+#: gcustomer/static/js/render_station_data.js:401
+#: live_auto_generate_static/js/render_station_data.js:401
+msgid "油站群描述："
+msgstr "Station group description:"
+
+#: gcustomer/static/js/render_station_data.js:408
+#: live_auto_generate_static/js/render_station_data.js:408
+msgid "没有相关油站群"
+msgstr "No relevent station group"
+
+#: gcustomer/static/js/render_station_data.js:454
+#: live_auto_generate_static/js/render_station_data.js:454
+msgid "油站群名称"
+msgstr "Station group name"
+
+#: gcustomer/static/js/render_station_data.js:519
+#: live_auto_generate_static/js/render_station_data.js:519
+msgid "删除失败"
+msgstr "Fail to delete"

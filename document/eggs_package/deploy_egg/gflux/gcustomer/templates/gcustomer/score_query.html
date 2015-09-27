@@ -1,0 +1,120 @@
+{% extends "gcustomer/gcustomer_score.html" %}
+{% load i18n %}
+{% block consumption_habits_nav %}
+        <li class="nav-active"><a href="/gcustomer/score_query/">{% trans "查询用户积分" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="margin-bottom:20px;">
+
+	<h4>{% trans "积分查询" %}</h4>
+	<div style="padding: 10px 20px">
+		<div class="row" style="margin-top: 20px;">
+		    <div class="col-md-12 col-lg-12">
+		        <div class="form-inline" style="padding-bottom: 15px;" id='group'>
+		            <div class="form-group">
+		                <input type="text"  style="width: 300px;" class="form-control" id="user_cardnum" value="15996458299" placeholder="{% trans "请输入用户卡号" %}" />
+		            </div>
+		            <button class="btn btn-default" id ="user_inegral_search">{% trans "搜索" %}</button>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+	<div id="the_score_submary_info" style="display:none;">
+		<h4>{% trans "积分概况" %}</h4>
+		<table class="table" contenteditable="false" style="border-bottom:1px solid;margin-top:20px;border-color:rgb(221, 221, 221)">
+		            <thead>
+		                <tr >
+		                    <th >{% trans "用户名" %}</th>
+		                    <th >{% trans "当前积分" %}</th>
+		                    <th style="display:none;">{% trans "等级" %}</th>
+		                    <th>{% trans "累计积分" %}</th>
+		                    <th>{% trans "积分详情" %}</th>
+		                </tr>
+		           </thead>
+		           <tbody id ="user_score_submary_info">
+
+		           </tbody>
+	            </table>
+	</div>
+
+            <!-- 查看积分详情 -->
+            <div id="the_score_detials" style="display:none;">
+            		<h4>{% trans "积分记录" %}</h4>
+            		<table class="table" contenteditable="false" style="border-bottom:1px solid;margin-top:20px;border-color:rgb(221, 221, 221)">
+	            <thead>
+	                <tr >
+                	       <th>{% trans "时间" %}</th>
+	                    <th >{% trans "交易号" %}</th>
+	                    <th >{% trans "积分收支" %}</th>
+	                    <th >{% trans "剩余积分" %}</th>
+	                </tr>
+	           </thead>
+	           <tbody id="user_score_detials_info">
+	           	   <!-- <tr>
+	           	   	<td>2015 5-1 15:30:50</td>
+	           	   	<td>49589745490</td>
+	           	   	<td>25</td>
+	           	   	<td>175</td>
+	           	   </tr>
+	           	   <tr>
+	           	   	<td>2015 5-1 13:30:50</td>
+	           	   	<td>49589745489</td>
+	           	   	<td>20</td>
+	           	   	<td>200</td>
+	           	   </tr> -->
+	           </tbody>
+            </table>
+            </div>
+</div>
+{% endblock %}
+
+
+{% block script_block %}
+<script>
+$(function(){
+	$("#user_inegral_search").on("click",function(){
+		cardnum = $("#user_cardnum").val()
+		if(cardnum == ""){
+			alert("卡号不能为空!")
+			return
+		}
+		if(isNaN(parseInt(cardnum))){
+			alert("卡号必须全为数字")
+			return
+		}
+		$.get("/gcustomer/ajax/get_score_record_details/",{"cardnum":cardnum},
+			function(data){
+				if(data.ret !="0001"){
+					alert(data.info)
+				}
+				if(data.obj.length == 0){
+					alert("用户不存在!")
+					return
+				}
+				$("#user_score_submary_info").empty()
+				$("#the_score_submary_info").show()
+				$("#user_score_submary_info").append(String.format(''+
+			'<tr>'+
+		           	   	'<td>{0}</td>'+
+		           	   	'<td>{1}</td>'+
+		           	   	'<td style="display:none;">{2}星</td>'+
+		           	   	'<td>{3}</td>'+
+		           	   	'<td><button class="btn btn-default" id="get_score_record_details" >查看</button></td>'+
+		           	'</tr>',data.obj[0].name,data.obj[0].score,data.obj[0].score_rank,data.obj[0].all_score))
+
+
+				$("#get_score_record_details").on("click",function(){
+					$("#user_score_detials_info").empty()
+					$("#the_score_detials").show()
+					$("#user_score_detials_info").append('<tr><th colspan="4" style="text-align: center">暂无数据</th></tr>')
+
+				})
+			},"json")
+
+
+	})
+})
+</script>
+{% endblock %}

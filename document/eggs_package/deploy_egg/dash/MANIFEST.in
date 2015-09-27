@@ -1,0 +1,2 @@
+recursive-include dash/core/static *
+recursive-include dash/core/templates *

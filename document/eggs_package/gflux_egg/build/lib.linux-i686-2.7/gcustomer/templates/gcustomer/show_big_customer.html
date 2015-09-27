@@ -1,0 +1,65 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block manage_customer_nav %}
+<li class="nav-active"><a href="/gcustomer/manage_customer/">{% trans "管理大客户" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+
+<div style="padding: 10px 20px;">
+    <div class="form-inline" style="padding-bottom: 15px;" id='big_customer'>
+        <div class="form-group">
+            <!--<label for="exampleInputName2">Name</label>-->
+            <input type="text"  style="width: 300px;" class="form-control" value="" placeholder="{% trans "福州汽车公司" %}" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default" id ="big_customer_list">{% trans "查看" %}</button>
+    <h4>{% trans "大客户列表" %}</h4>
+    <table class="table border-table" contenteditable="false">
+        <thead>
+        <tr class="success">
+            <th>{% trans "序号" %}</th>
+            <th>{% trans "客户来源" %}</th>
+            <th>{% trans "单位名称" %}</th>
+            <th>{% trans "主卡号" %}</th>
+            <th>{% trans "创建时间" %}</th>
+            <th>{% trans "已充值量" %}</th>
+            <th>{% trans "当前余额" %}</th>
+            <th>{% trans "副卡数量" %}</th>
+            <th>{% trans "修改副卡信息' %}</th>
+        </tr>
+        </thead>
+        <tbody  id="infornation_survey">  
+        	<tr>
+        		<td>1</td>
+        		<td>{% trans "中石油" %]</td>
+        		<td>{% trans "福州汽车公司" %}</td>
+        		<td>4367420011310479058</td>
+        		<td>2015-9-1</td>
+        		<td>20000</td>
+        		<td>1000</td>
+        		<td>15</td>
+        		<td><a>{% trans "修改" %}</a></td>
+        	</tr>  
+        	<tr>
+        		<td>1</td>
+        		<td>{% trans "中石油" %}</td>
+        		<td>{% trans "福州客运公司" %}</td>
+        		<td>4392260001410420</td>
+        		<td>2015-9-1</td>
+        		<td>30000</td>
+        		<td>1500</td>
+        		<td>16</td>
+        		<td><a>{% trans "修改" %}</a></td>
+        	</tr>  
+        </tbody>
+    </table>
+   
+</div>
+
+
+{% endblock %}
+
+{% block script_block %}
+<!-- <script type='text/javascript' src='/gflux/static/js/render_gcustomer_data.js'></script> -->
+{% endblock %}

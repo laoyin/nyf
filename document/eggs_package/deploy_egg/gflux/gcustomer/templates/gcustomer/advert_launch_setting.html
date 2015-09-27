@@ -1,0 +1,116 @@
+{% extends "gcustomer/gcustomer_advert.html" %}
+{% load i18n %}
+{% block advert_launch_setting %}
+<li class="nav-active"><a href="/gcustomer/advert_launch_setting/">{% trans "设置周期" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+    <h4 class="title-label-class">{% trans "投放设置" %}</h4>
+    <table class="table " contenteditable="false" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+        <thead>
+            <tr>
+                <th>{% trans "序号" %}</th>
+                <th>{% trans "广告标题" %}</th>
+                <th>{% trans "生命周期(天)" %}</th>
+                <th>{% trans "播放时间(秒)" %}</th>
+                <th>{% trans "播放频率(分钟／次)" %}</th>
+                <th>{% trans "修改" %}</th>
+                <th>{% trans "操作" %}</th>
+            </tr>
+        </thead>
+        <tbody id="advertisement_cycle_setting">
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block script_block %}
+<script>
+$(function(){
+    get_advert_cycle_setting_info();
+});
+
+    
+
+function get_advert_cycle_setting_info(){
+        $.get("/gcustomer/ajax/get_advert_cycle_setting_info/",{},
+        function(data){
+               if(data.ret !="0001"){
+                   $("#alert_modal_body").html(data.info);
+                    $("#alert_modal").modal("show");
+               }
+               i = 0
+               $("#advertisement_cycle_setting").empty()
+               $(data.objs).each(function(){
+                        var obj = this
+                        if(obj.is_close == "1"){
+                            advert_set = "关闭播放";
+                        }else{
+                            advert_set = "开始播放";
+                        }
+                        $("#advertisement_cycle_setting").append(String.format(''+
+                                '<tr>'+
+                                    '<td>{0}</td>'+
+                                    '<td>{1}</td>'+
+                                    '<td>{2}</td>'+
+                                    '<td>{3}</td>'+
+                                    '<td>{4}</td>'+
+                                    '<td class="advert_id" style="display:none;">{5}</td>'+
+                                    '<td><button class="alter">修改</button></td>'+
+                                    '<td><button class="advert_set">{6}</button></td>'+
+                                '</tr>'+
+                            '',i+1,obj.title,obj.life_cycle,obj.play_time,obj.play_frequency,obj.advert_id,advert_set))
+                            i++
+               })
+               $("button").on("click",function(){
+                        if($(this).html() == "修改"){
+                            if($(".make_sure").length != 0){
+                                $("#alert_modal_body").html("先确定修改！");
+                                $("#alert_modal").modal("show");
+                                return
+                            }
+                            $(this).removeClass("alter")
+                            $(this).addClass("make_sure")
+                            $(this).parent().parent().attr("contenteditable","true")
+                            $($(this).parent().parent().find('td')[1]).attr("contenteditable","false")
+                            $(this).parent().parent().css("border","3px solid rgb(204,204,204)")
+                            $(this).html("确定")
+                        }
+                        else if($(this).html() == "确定"){
+                            $(".make_sure").addClass("alter");
+                            $(".make_sure").removeClass("make_sure");
+                            var title = $(this).parent().parent().find("td").eq(1).html();
+                            var life_cycle = $(this).parent().parent().find("td").eq(2).html();
+                            var play_time = $(this).parent().parent().find("td").eq(3).html();
+                            var play_frequency = $(this).parent().parent().find("td").eq(4).html();
+                            var advert_id = $(this).parent().parent().find("td").eq(5).html();
+                            var data = {'title':title, 'life_cycle':life_cycle, 'play_time':play_time,
+                                        'play_frequency':play_frequency, 'advert_id':advert_id}
+                            $.post("/gcustomer/ajax/modify_advert_cycle_setting_info/", data, function (data) {
+                                    if(data.ret != "0001"){
+                                        $("#alert_modal_body").html(data.info);
+                                        $("#alert_modal").modal("show");
+                                    }
+                            }, "json")
+                            $(this).parent().parent().attr("contenteditable","false");
+                            $(this).parent().parent().css("border","1px none rgb(204,204,204)");
+                            $(this).html("修改");
+                        }
+                    });
+                $(".advert_set").on("click",function(){
+                    var obj = $(this)
+                    var advert_id = Number(obj.parent().parent().find("td.advert_id").html())
+                    $.get("/gcustomer/ajax/alter_advert_setting/",{"advert_id":advert_id},
+                        function(data){
+                            if(data.ret != '0001'){
+                                alert(data.info)
+                            }
+                            //刷新
+                            get_advert_cycle_setting_info();
+                        },"json");
+                });
+        },"json");
+}
+</script>
+{% endblock %}

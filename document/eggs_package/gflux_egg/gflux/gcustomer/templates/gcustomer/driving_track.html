@@ -1,0 +1,101 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block driving_track_nav %}
+        <li class="nav-active"><a href="/gcustomer/driving_track/">{% trans "行车轨迹" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+	 <label>{% trans "选择时间段" %}</label>
+	 <div class="row">
+	        <div class="col-lg-3">
+	            <div class="input-group date">
+	                <div class="input-group-addon">{% trans "起始时间" %}</div>
+	                <input name="start_time" type="text" class="form-control datepicker" id="start_time"placeholder="02/25/2015"><span class="input-group-addon" ><i class="glyphicon glyphicon-th"></i></span>
+	            </div>
+	        </div>
+	        <div class="col-lg-3">
+	            <div class="input-group date">
+	                <div class="input-group-addon">{% trans "结束时间" %}</div>
+	                <input name='end_time' id="end_time" type="text" class="form-control datepicker" placeholder="04/25/2015"><span class="input-group-addon" ><i class="glyphicon glyphicon-th"></i></span>
+	            </div>
+	        </div>
+    	</div>
+	<div class="form-inline" style="padding-bottom: 15px;margin-top:20px;">
+		<div class="form-group">
+			    <input type="text"  style="width: 300px;" class="form-control" id="user_cardnum" value="15996458299"  placeholder = "{% trans "请输入卡号" %}"/>
+		</div>
+	</div>
+	<button id='show_current_driving_track' class="btn btn-default" >{% trans "查询" %}</button>
+
+	<div  style="margin-top:20px;">
+		<div id="allmap" style="width:800px;height:600px;"></div>
+	</div>
+
+ </div>
+{% endblock %}
+
+{% block script_block %}
+<script>
+$('.datepicker').datepicker({});
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=G8DM0aHj0AUGaGazQZBGII41"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//查询行车轨迹
+	$("#show_current_driving_track").on("click",function(){
+		var start_time = $("#start_time").val()
+		var end_time = $("#end_time").val()
+		var cardnum = $("#user_cardnum").val()
+		if(start_time == "" ){
+			$("#alert_modal_body").html("请输入起始时间！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(end_time == "" ){
+			$("#alert_modal_body").html("请输入结束时间！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(cardnum == "" ){
+			$("#alert_modal_body").html("请输入卡号");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(isNaN(parseInt(cardnum)) != false){
+			$("#alert_modal_body").html("卡号为数值");
+			$("#alert_modal").modal("show");
+			return
+		}
+		var dict = {}
+		dict['start_time'] = String(start_time)
+		dict['end_time'] = String(end_time)
+		dict['cardnum'] = cardnum
+		$.get("/gcustomer/ajax/get_user_driving_trace/",dict,
+			function(data){
+				if(data.ret != '0001'){
+					$("#alert_modal_body").html(data.info);
+                    $("#alert_modal").modal("show");
+					return
+				}
+				point_list = data.points
+				var map = new BMap.Map("allmap");
+				map.centerAndZoom(new BMap.Point(point_list[0].longitude,point_list[0].latitude), 12);
+				map.enableScrollWheelZoom();
+
+				points = []
+				if(point_list.length >1){
+					for(var i = 1 , len = point_list.length;i<len;i++){
+						points.push(new BMap.Point(point_list[i].longitude,point_list[i].latitude))
+					}
+				}
+				var curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5}); //创建弧线对象
+				map.addOverlay(curve); //添加到地图中
+				curve.enableEditing(); //开启编辑功能
+			},"json");
+		});
+});
+
+</script>
+{% endblock %}

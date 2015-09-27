@@ -1,0 +1,9 @@
+Shell    13100     1  0 Jul15 ?        00:01:01 python manage.py gearman_worker_compute_station_monthbatch
+Shell    13433     1  4 Aug17 ?        1-00:27:42 python manage.py gearman_worker_import_shell_data
+root     16261 15827  0 05:13 ?        00:00:00 /usr/bin/python /usr/share/PackageKit/helpers/yum/yumBackend.py get-updates none
+Shell    17746     1  0 Jul27 ?        00:11:26 python manage.py gearman_import_shell_history_data
+Shell    22373 17297  0 11:15 pts/2    00:00:00 grep python
+Shell    23061     1  0 Jul08 ?        00:00:17 python manage.py gearman_worker_send_email
+Shell    23062     1  0 Jul08 ?        00:52:09 python manage.py gearman_worker_compute_station_daybatch
+Shell    23064     1  0 Jul08 ?        04:25:00 python manage.py gearman_worker_compute_fuel_daybatch
+Shell    27830 18561  0 Jul15 ?        00:17:12 /usr/local/python-2.7.10/bin/python /home/Shell/gflux/trunk/gflux/manage.py runfcgi daemonize=False host=0.0.0.0 port=9090 method=threaded debug=true outlog=/tmp/server_out.log errlog=/tmp/server_err.log

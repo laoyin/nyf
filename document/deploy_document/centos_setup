@@ -1,0 +1,69 @@
+1.python版本
+  首先需要安装zlib
+  python -V查看python版本，确保python为python27
+  wget http://python.org/ftp/python/2.7/Python-2.7.tar.bz2
+  tar -jxvf Python-2.7.tar.bz2
+  cd Python-2.7
+  ./configure
+  make all
+  sudo make install
+  make clean
+  make distclean
+  /usr/local/bin/python2.7 -V
+
+  建立软链接指向默认python2.7
+  #mv /usr/bin/python /usr/bin/python2.6
+  #ln -s /usr/local/bin/python2.7 /usr/bin/python
+  输入python -V检查
+  
+  更改python版本后，可能会导致yum不可使用，解决办法如下：	
+  #修改yum文件
+  vi /usr/bin/yum
+  将文件头部的
+  #!/usr/bin/python
+  改为如下内容	
+  #!/usr/bin/python2.6
+
+2.esay_insatll
+  先安装distribute-0.6.10
+  安装setuptools-7.0
+
+3.相关库的安装
+  pip install python-dateutil flup Django==1.6 SQLAlchemy==0.9.4 django-localeurl python-memcached  xlrd tornado pyparsing gearman
+  wget  http://initd.org/psycopg/tarballs/PSYCOPG-2-5/psycopg2-2.5.4.tar.gz
+  tar xf psycopg2-2.5.4.tar.gz
+  cd psycopg2-2.5.4
+  yum install -y postgresql-devel*
+  python setup.py build
+  sudo python setup.py install
+
+  sudo yum install gcc-gfortran libgfortran blas-devvel blas lapack lapack-devel gcc-c++ libuuid-devel gperf boost-devel memcached memcached-devel
+  pip install numpy scipy matplotlib scikit-learn
+
+  sudo /etc/rc.d/init.d/postgresql restart
+
+4.数据库配置
+  sudo -u postgres psql
+  postgres=#  ALTER USER postgres WITH PASSWORD 'pku123';
+  create user tao with password 'pku123'; #密码设置为local_settings.py配置的值
+  alter role tao with superuser;
+  create database gflux；
+  
+
+  vi /var/lib/pgsql/data/pg_hba.conf改成md5方式，否则无法登录数据库，service postgresql restart重启
+
+5.初始化
+  python manage.py syncdb
+  python manage.py init_gflux_dev_env
+  python manage.py init_fuel_type_relation
+  python manage.py init_loc_site_fueltype_datehours
+
+6.设置定时任务执行网感指数，开启相应的gearman
+  #gearmand -d
+  
+  gearmand --log-file gearmand.log --listen 127.0.0.1 --port=4730 --verbose=INFO &
+
+
+  
+  
+  

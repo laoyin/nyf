@@ -1,0 +1,39 @@
+leasy_install-2.7 pip
+
+在ubuntu上:
+pip install python-dateutil flup Django==1.6 psycopg2==2.5.2 SQLAlchemy==0.9.4 django-localeurl python-memcached  xlrd tornado pyparsing gearman (Mac上需要下载psycopg2源代码和Postgres.app并将pg_config路径指定到setup.cfg文件中再python setup.py install)
+
+在mac上：
+pip install python-dateutil flup Django==1.6 SQLAlchemy==0.9.4 django-localeurl python-memcached  xlrd tornado pyparsing gearman (Mac上需要下载psycopg2源代码和Postgres.app并将pg_config路径指定到setup.cfg文件中再python setup.py install)
+之后下载并安装Postgres 9.35.0，
+点击图形界面右下角出现psql界面，然后创建数据库和拥护
+wget http://initd.org/psycopg/tarballs/PSYCOPG-2-5/psycopg2-2.5.4.tar.gz
+编辑setup.cfg，将pg_config路径设置为/Applications/Postgres.app/Contents/Versions/9.3/bin/pg_config之后python setup.py install
+
+#相关性计算库
+ubuntu: sudo apt-get install gfortran libopenblas-dev liblapack-dev (Mac上跳过此步)
+centos: sudo yum install gcc-gfortran libgfortran blas-devel blas lapack lapack-devel gcc-c++ libuuid-devel gperf boost-devel memcached memcached-devel
+
+-r--r--r--   1 work work  329136 Sep  6 01:53 blas-3.2.1-4.el6.x86_64.rpm
+-rw-r--r--.  1 work work  110576 Sep  5 23:40 boost-program-options-1.41.0-27.el6.x86_64.rpm
+-r--r--r--   1 work work 4949360 Sep  6 01:55 gcc-c++-4.4.7-16.el6.x86_64.rpm
+-r--r--r--   1 work work 4940428 Sep  6 01:49 gcc-gfortran-4.4.7-16.el6.x86_64.rpm
+-r--r--r--   1 work work 4528760 Sep  6 01:54 lapack-3.2.1-4.el6.x86_64.rpm
+-r--r--r--   1 work work  273800 Sep  6 01:50 libgfortran-4.4.7-16.el6.x86_64.rpm
+-r--r--r--   1 work work   81508 Sep  6 02:00 libmemcached-0.31-1.1.el6.x86_64.rpm
+-r--r--r--   1 work work   70508 Sep  6 01:59 libuuid-2.17.2-12.18.el6.x86_64.rpm
+-r--r--r--   1 work work   87328 Sep  6 01:59 libuuid-devel-2.17.2-12.18.el6.x86_64.rpm
+-r--r--r--   1 work work   69780 Sep  6 02:00 memcached-1.4.4-3.el6.x86_64.rpm
+-r--r--r--   1 work work   32708 Sep  6 02:00 python-memcached-1.43-6.el6.noarch.rpm
+
+
+下载编译安装gearmand
+
+pip install numpy scipy matplotlib scikit-learn (Mac中不依赖于上述库，要先安装numpy再安装scipy)
+
+
+安装xlwt
+sudo apt-get install python-setuptools
+sudo easy_install xlwt
+
+

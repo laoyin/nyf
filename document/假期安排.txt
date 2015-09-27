@@ -1,0 +1,122 @@
+
+假期安排
+
+一 . 后台
+
+1. python 库文档
+
+python面向对象
+python库文档
+
+2. django 模型文档
+
+Django模型
+1.模型安装
+2.模型添加字符表现
+3.模型基本增删改查
+4.数据排序
+5.连锁查询
+6.限制返回的数据
+7.查询单个对象 更新删除多个对象
+8.syncdb不能同步模型的修改到数据库
+9.如何修改数据库架构
+10. Django模型的manager，django的objects是一个默认的manager实例
+11. 模型方法
+12. Django中执行SQL查询
+11. 多数据库
+12. ORM框架  
+13.cascades自动关系处理
+14. 会话与事务控制
+
+3. django 模板文档
+
+模板继承
+渲染
+html与javascript分离
+
+二 . 数据库
+
+1. postgres 数据库文档
+2. mysql数据库文档
+3. redis文档
+
+三 . 前端
+
+1. html5
+2. css3
+3. javascript
+3. jquery
+4. bootstrap   
+bootstrap布局
+5. highcharts
+hightcharts tooltip 自定义
+6. anglarjs
+
+四 . 设计
+
+python数据结构
+python设计模式
+django模型源码
+
+
+
+
+五 . 部署
+
+0. Linux安装，服务器配置，刻录os镜像，开机启动，定时任务 ,postgres配置
+1. django 项目的部署
+2. ubuntu 上SubVersion服务搭建
+http://wiki.ubuntu.org.cn/SubVersion#.E5.88.9B.E5.BB.BA_SVN_.E4.BB.93.E5.BA.93
+3.山东东明石化数据导入部署
+4.svn版本控制工具
+5. git版本控制工具
+
+
+
+六. 文档
+
+1. gflux/gcustomer 详细部署文档
+2. gearman 文档
+3. postgresql文档
+4. bat脚本
+5. ftp的相关接口
+7. fabric文档
+8. teamviewer使用文档
+9. 梳理gcustomer推荐系统设计思路文档
+10. xlsxwwrier文档
+
+七 . web  架构
+
+1. 从现有的web系统中分离出独立的模块
+dash
+加密
+消息服务
+微信支付宝支付支付
+用户认证
+app
+国际化
+计算脚本
+缓存
+
+2. Django搭建松散耦合的web应用
+
+3. js代码和html代码解耦
+
+4. web项目优化查询
+
+5. python web前端架构
+1.面向对象+模版渲染
+2.html+模版继承
+
+6. gflux数据查询框架
+
+
+
+八 . 大数据
+
+大数据集群部署
+scala
+spark
+hadoop
+
+

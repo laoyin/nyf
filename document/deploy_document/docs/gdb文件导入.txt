@@ -1,0 +1,34 @@
+1.安装interbase_xe3
+  运行Install目录下的install_windows.exe文件
+  
+2.安装marcketcloud
+
+3.将marcketcloud安装目录中的PositiveIBExternal.dll文件复制到interbase的安装目录中（Program Files\Embarcadero\InterBase\UDF）
+
+4.安装python（2.7）
+
+5.配置marcketcloud中的文件trans_db_settings.py
+
+6.配置python环境变量
+
+7.将gdb文件放在data目录下
+
+8.运行trans_db_to_all_card.py文件
+
+9.使用pscp将输出文件上传到服务器
+H:\Program Files\marcketcloud>pscp H:\all_card_file.tar.gz work@gflux1.tmlsystem.com:
+
+10.在服务器上解压缩文件 tar xf ***.tar.gz
+
+11.运行命令，导数据
+develop/gilbarco/trunk/gflux 目录
+python manage.py submit_cnpc_task --dir /home/work/data/ --user tao --location_name=CN_LN --location_desc=辽宁
+
+
+
+option_list = BaseCommand.option_list + (
+        make_option('--dir',help="set file dir",type="string"),
+        make_option('--user',help="set username",type="string"),
+        make_option('--location_name',help="set location name like SC_CN",type="string"),
+        make_option('--location_desc',help="set location desc like 四川",type="string"),
+    )

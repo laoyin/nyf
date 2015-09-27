@@ -1,0 +1,284 @@
+Cenos 安装程序文档
+
+1-0 、概述 
+1）一种是软件的源代码，您需要自己动手编译它。这种软件安装包通常是用gzip压缩过的tar包（后缀为.tar.gz）。
+
+#./configure
+#make
+#make install
+
+2）另一种是软件的可执行程序，你只要安装它就可以了。这种软件安装包通常被是一个RPM包（Redhat Linux Packet Manager，就是Redhat的包管理器），后缀是.rpm。
+
+通过yum下载安装的本质是先下载相关的rpm包,然后用rpm -ivh 安装这些rpm包
+默认通过yum下载下来的rpm包安装完之后会自动清除, 可以设置/etc/yum.conf 的keepcache=1
+这样可以将rpm包缓存在/var/cache/yum/x86_64/6/base/packages 下
+
+1.安装软件：执行rpm -ivh rpm包名，
+如：#rpm -ivh apache-1.3.6.i386.rpm
+2.升级软件：执行rpm -Uvh rpm包名。
+3.反安装：执行rpm -e rpm包名。
+4.查询软件包的详细信息：执行rpm -qpi rpm包名
+5.查询某个文件是属于那个rpm包的：执行rpm -qf rpm包名
+6.查该软件包会向系统里面写入哪些文件：执行 rpm -qpl rpm包名
+
+
+1-1、rpm包的安装：
+
+      1.安装一个包
+
+　　# rpm -ivh
+
+　　2.升级一个包
+
+　　# rpm -Uvh
+
+　　3.移走一个包
+
+　　# rpm -e
+
+　　4.安装参数
+
+　　--force 即使覆盖属于其它包的文件也强迫安装
+
+　　--nodeps 如果该RPM包的安装依赖其它包，即使其它包没装，也强迫安装。
+
+　　5.查询一个包是否被安装
+
+　　# rpm -q < rpm package name>
+
+　　6.得到被安装的包的信息
+
+　　# rpm -qi < rpm package name>
+
+　　7.列出该包中有哪些文件
+
+　　# rpm -ql < rpm package name>
+
+　　8.列出服务器上的一个文件属于哪一个RPM包
+
+　　#rpm -qf
+
+　　9.可综合好几个参数一起用
+
+　　# rpm -qil < rpm package name>
+
+　　10.列出所有被安装的rpm package
+
+　　# rpm -qa
+
+　　11.列出一个未被安装进系统的RPM包文件中包含有哪些文件？
+
+　　# rpm -qilp < rpm package name>
+
+ 
+
+1-2、rpm包的卸载：
+
+      rpm -qa | grep 包名
+
+     这个命令是为了把包名相关的包都列出来     
+
+      rpm -e 文件名
+
+    这个命令就是你想卸载的软件，后面是包名称，最后的版本号是不用打的
+
+   例如：
+
+     # rpm -qa |  grep mysql
+
+      mod_auth_mysql-2.6.1-2.2 
+      php-mysql-5.3.9-3.15 
+      mysql-devel-5.1.77-1.CenOS 5.2
+
+      mysql-5.0.77-1.CenOS 5.2
+      mysqlclient10-5.0.77-1.CentOS 5.2
+      libdbi-dbd-mysql-0.6.5-10.CentOS 5.2
+
+   # rpm -e mysqlclient
+
+   
+
+ 1-3、yum安装：
+
+       # yum install 包名
+
+ 1-4、yum卸载：
+
+       # yum -y remove 包名
+
+
+1-5、CentOS yum 源的配置与使用
+ http://www.cnblogs.com/mchina/archive/2013/01/04/2842275.html
+
+1、挂载系统安装光盘
+
+# mount /dev/cdrom /mnt/cdrom/
+
+2、配置本地yum源
+(1) 方案一 ：
+# cd /etc/yum.repos.d/
+# ls
+
+会看到四个repo 文件
+CentOS-Base.repo 是yum 网络源的配置文件
+
+CentOS-Media.repo 是yum 本地源的配置文件
+
+修改CentOS-Media.repo
+
+# cat CentOS-Media.repo
+在baseurl 中修改第2个路径为/mnt/cdrom（即为光盘挂载点）
+
+将enabled=0改为1
+
+3、禁用默认的yum 网络源
+
+将yum 网络源配置文件改名为CentOS-Base.repo.bak，否则会先在网络源中寻找适合的包，改名之后直接从本地源读取。
+
+4、执行yum 命令
+
+# yum install postgresql
+
+(2)  方案二 ：
+
+#设置光驱挂载点
+mkdir -p /Application/cdrom
+#挂载光驱
+mount /dev/cdrom /Application/cdrom
+#备份原yum源
+cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+#把光驱设为yum源
+echo "[base]" > /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-$releasever - Base" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=file:///Application/cdrom/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=0" >> /etc/yum.repos.d/CentOS-Base.repo
+#安装gcc
+yum install gcc -y
+#恢复原yum源
+cp –f /etc/yum.repos.d/CentOS-Base.repo.bak /etc/yum.repos.d/CentOS-Base.repo
+
+1-6、yum使用 
+当第一次使用yum管理软件时，yum会自动下载所需要的headers放置在/var/cache/yum目录下；
+
+1) rpm包的更新
+
+#检查可以更新的软件包 
+yum check-update 
+#更新所有的软件包 
+yum update 
+
+#更新特定的软件包 
+yum update kernel 
+
+#大规模的升级 
+yum upgrade
+
+
+2) rpm包的安装和删除
+
+#rpm包的安装和删除 
+yum install xxx【服务名】 
+yum remove xxx【服务名】
+
+3) yum缓存的相关信息
+
+#清楚缓存中rpm包文件 
+yum clean packages 
+#清楚缓存中rpm的头文件 
+yum clean  headers 
+#清除缓存中旧的头文件 
+yum clean old headers 
+#清除缓存中旧的rpm头文件和包文件 
+yum clean all
+
+
+4)软件包信息查询
+
+#列出资源库中所有可以安装或更新的rpm包 
+yum list 
+
+#列出资源库中特定的可以安装或更新以及已经安装的rpm包 
+yum list firfox* 
+N:可以在rpm包名中使用通配符,查询类似的rpm包
+
+#列出资源库中所有可以更新的rpm包 
+yum list updates 
+
+#列出已经安装的所有的rpm包 
+yum list installed 
+
+#列出已经安装的但是不包含在资源库中的rpm包 
+yum list extras 
+N:通过如网站下载安装的rpm包  
+
+#rpm包信息显示(info参数同list)，列出资源库中所有可以安装或更新的rpm包的信息 
+yum info 
+
+#列出资源库中特定的可以安装或更新以及已经安装的rpm包的信息 
+
+yum info firefox* 
+N:可以在rpm包名中使用匹配符 
+
+#列出资源库中所有可以更新的rpm包的信息
+yum info updates 
+
+#列出已经安装的所有的rpm包的信息
+
+ yum info installed 
+
+#列出已经安装的但是不包含在资源库中的rpm包的信息 
+yum info extras 
+N:通过如网站下载安装的rpm包的信息
+
+#搜索匹配特定字符的rpm包
+yum search firofox
+#搜索包含特定文件的rpm包
+yum provides firefox
+
+1-7、GCC基本用法
+假设源程序文件名为test.c。
+
+I. 常用编译命令选项
+1. 无选项编译链接
+用法：#gcc test.c
+作用：将test.c预处理、汇编、编译并链接形成可执行文件。这里未指定输出文件，默认输出为a.out。
+
+2. 选项 -o
+用法：#gcc test.c -o test
+作用：将test.c预处理、汇编、编译并链接形成可执行文件test。-o选项用来指定输出文件的文件名。
+
+3. 选项 -E
+用法：#gcc -E test.c -o test.i
+作用：将test.c预处理输出test.i文件。
+
+4. 选项 -S
+用法：#gcc -S test.i
+作用：将预处理输出文件test.i汇编成test.s文件。
+
+5. 选项 -c
+用法：#gcc -c test.s
+作用：将汇编输出文件test.s编译输出test.o文件。
+
+6. 无选项链接
+用法：#gcc test.o -o test
+作用：将编译输出文件test.o链接成最终可执行文件test。
+
+7. 选项-O
+用法：#gcc -O1 test.c -o test
+作用：使用编译优化级别1编译程序。级别为1~3，级别越大优化效果越好，但编译时间越长。
+
+II. 多源文件的编译方法
+如果有多个源文件，基本上有两种编译方法：
+[假设有两个源文件为test.c和testfun.c]
+
+1. 多个文件一起编译
+用法：#gcc testfun.c test.c -o test
+作用：将testfun.c和test.c分别编译后链接成test可执行文件。
+
+2. 分别编译各个源文件，之后对编译后输出的目标文件链接。
+用法：
+#gcc -c testfun.c //将testfun.c编译成testfun.o
+#gcc -c test.c   //将test.c编译成test.o
+#gcc -o testfun.o test.o -o test //将testfun.o和test.o链接成test
+
+以上两种方法相比较，第一中方法编译时需要所有文件重新编译，而第二种方法可以只重新编译修改的文件，未修改的文件不用重新编译。

@@ -1,0 +1,21 @@
+1. django-admin.py 
+代码位置 : 
+##/usr/local/lib/python2.7/dist-packages/django/bin/django-admin.py
+#!/usr/bin/env python
+from django.core import management
+
+if __name__ == "__main__":
+    management.execute_from_command_line()
+
+
+##django/core/management/__init__.py
+def execute_from_command_line(argv=None):
+    """
+    A simple method that runs a ManagementUtility.
+    """
+    utility = ManagementUtility(argv)
+    utility.execute()
+
+
+2. django代码之runserver.py 
+

@@ -1,0 +1,421 @@
+{% load i18n %} {% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  {% csrf_token %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+  <title>GCustomer</title>
+  <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+
+  <link href="{% static 'bootstrap/css/bootstrap.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'bootstrap-datepicker/css/datepicker.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'css/core.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'css/main_framework.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'css/gcustomer_people.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="{% static 'js/html5shiv.min.js' %}"></script>
+      <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="hide">
+        <div class="group_template" style="clear:both;width:850px;margin-top:20px;overflow:auto;background-color:#fafafa;border-radius:5px;padding:5px;border:1px solid #ddd">
+            <h4 class="title">{% trans "聚合1：共6人" %}</h4>
+            <div class="pull-left">
+                <h5 style="background-color:#eee;padding:5px 10px">{% trans "用户列表" %}</h5>
+                <ul class="group_users"></ul>
+            </div>
+            <div class="pull-left">
+                <h5 style="background-color:#eee;padding:5px 10px">{% trans "商品列表" %}</h5>
+                <ul class="group_items"></ul>
+            </div>
+        </div>
+    </div>
+  <!-- Navigation -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      <a class="navbar-gcustomer-brand" target="_top" href="#" title="GCustomer">{% trans "油品零售CRM系统" %}</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+
+        <li class="active">
+          <a target="_top" href="/gcustomer/people/">{% trans "客户管理" %}</a>
+        </li>
+        <li>
+          <a target="_top" href="/gcustomer/people/">{% trans "客户管理" %}</a>
+        </li>
+        <li>
+          <a target="_top" href="#">{% trans "油站画像" %}</a>
+        </li>
+         <li>
+          <a target="_top" href="#">{% trans "广告接入" %}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 客户管理的二级菜单  -->
+  <!-- EndNavigation -->
+  <div class="container-fluid" style="margin-top:40px;">
+    <!-- Sidebar -->
+    <div class="col-lg-2">
+      <div class="row-fluid">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "用户画像" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon ">{% trans "消费习惯" %}</i> 
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "消费预测" %}
+              </a>
+            </div>
+            <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "价值贡献（相当于把以前的个人画像分成三部分显示）" %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "目标用户群" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "创建群" %}
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "已有群" %}
+              </a>
+            </div>
+            <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "系统推荐(原来的人群聚合)" %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+ <!-- 营销活动的二级菜单  -->
+ <!-- EndNavigation -->
+  <div class="container-fluid" style="margin-top:40px;">
+    <!-- Sidebar -->
+    <div class="col-lg-2">
+      <div class="row-fluid">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "活动管理" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon ">{% trans "开始" %}</i> 
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "时间" %}
+              </a>
+            </div>
+            <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "等待" %}
+              </a>
+            </div>
+             <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "结束" %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "沟通设置" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "导出" %}
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "直邮" %}
+              </a>
+            </div>
+            <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "短信" %}
+              </a>
+            </div>
+             <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "客户经理" %}
+              </a>
+            </div>
+             <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> Email
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- 油站画像的二级菜单  -->
+  <!-- EndNavigation -->
+  <div class="container-fluid" style="margin-top:40px;">
+    <!-- Sidebar -->
+    <div class="col-lg-2">
+      <div class="row-fluid">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "油站画像" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon ">{% trans "主要客户" %}</i> 
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "运营效率" %}
+              </a>
+            </div>
+            <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "油品销售" %}
+              </a>
+            </div>
+             <div>
+              <a right-container-id="user_profile_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "非油品销售" %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  <!-- 广告管理的二级菜单  -->
+  <!-- EndNavigation -->
+  <div class="container-fluid" style="margin-top:40px;">
+    <!-- Sidebar -->
+    <div class="col-lg-2">
+      <div class="row-fluid">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "广告管理" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon ">{% trans "上传广告" %}</i> 
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "已有广告" %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "广告效果" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon ">{% trans "点击统计" %}</i> 
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "转化销量" %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>{% trans "投放设置" %}</h4>
+          </div>
+          <div id="sidebar" class="list-group">
+             <div>
+              <a right-container-id="grouped_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon ">{% trans "周期" %}</i> 
+              </a>
+            </div>
+            <div>
+              <a right-container-id="lookupgroup_right_container" href="#" target="_top" data-parent="#sidebar" class="list-group-item ">
+                <i class="glyphicon "></i> {% trans "间隔" %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <!-- EndSidebar -->
+    <div id="overview_right_container" init-func="initOverviewContainer" class="right-container col-lg-10" style="margin-bottom: 30px;">
+      <!-- Context -->
+      <div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form class="dash-top-form form-inline pull-left" role="form" action="#">
+              <div class="btn-group" style="margin-right: 5px">
+                <button type="button" class="btn btn-default" value="site">{% trans "站点" %}</button>
+                <select class="dash-control form-control" id="id_site" name="site" style="width:100px;">
+                  <option value="BJ-KDFX">BJ-KDFX</option>
+                  <option value="BJ-KL">BJ-KL</option>
+                  <option value="BJ-KX">BJ-KX</option>
+                  <option value="BJ-LG">BJ-LG</option>
+                  <option value="BJ-NPZ">BJ-NPZ</option>
+                  <option value="BJ-NT">BJ-NT</option>
+                </select>
+              </div>
+
+              <button type="submit" class="dash-top-submit btn btn-default">{% trans "更新" %}</button>
+            </form>
+          </div>
+        </div>
+        <h2>{% trans "油站参数" %}</h2>
+        <div>
+          <ul>
+            <li>{% trans "客户总数：xxx" %}</li>
+            <li>{% trans "分析样本时间范围：xxx-xxx" %}</li>
+            <li>{% trans "总加油量：xxx" %}</li>
+            <li>{% trans "总非油品销售额:xxx" %}</li>
+            <li>{% trans "总销售额：xxx" %}</li>
+          </ul>
+        </div>
+
+        <h2>{% trans "关注的人群" %}</h2>
+        <div>
+          <div>
+            <span class="unfollow pull-right">{% trans "取消关注" %}</span>
+            <h4>{% trans "特征：加油时间倾向于早上" %}</h4>
+            <div id="overview_user_followed_demo"></div>
+          </div>
+        </div>
+      </div>
+      <!-- EndContext -->
+    </div>
+
+    <div id="grouped_right_container" init-func="initGroupedContainer" class="hide right-container col-lg-10" style="margin-bottom: 30px;">
+      <!-- Context -->
+
+      <!-- EndContext -->
+    </div>
+
+    <div id="lookupgroup_right_container" init-func="initLookupGroupContainer" class="hide right-container col-lg-10" style="margin-bottom: 30px;">
+      <!-- Context -->
+      developing...
+      <!-- EndContext -->
+    </div>
+
+    <div id="user_profile_right_container" init-func="initUserProfileContainer" class="hide right-container col-lg-10" style="margin-bottom: 30px;">
+      <!-- Context -->
+      <div>
+          <div class="panel-body"  style="width:600px;">
+              <div class="input-group" id="search_user_profile">
+                  <input type="text" class="form-control" placeholder="用户卡号" aria-describedby="basic-addon2">
+                  <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button">{% trans "查询" %}</button>
+                  </span>
+              </div>
+              <div>{% trans "例如：" %}9130270000415916, 9030270001464196, 9030270000297344, 9030270000430424, 9030270001928140</div>
+          </div>
+        <div>
+            <h3>{% trans "行为特征" %}</h3>
+          <ul id="user_profile_feature">
+          </ul>
+        </div>
+
+        <div>
+        <h3>{% trans "所属人群" %}</h3>
+          <ul id="user_profile_grouped">
+          </ul>
+        </div>
+
+        <div>
+        <h3>{% trans "营销活动" %}</h3>
+        <ul id="user_profile_event">
+        </ul>
+        </div>
+      </div>
+      <!-- EndContext -->
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  </div>
+  <!-- END Content -->
+  <!-- /.row-fluid -->
+
+  <!-- Foot -->
+  <div style="clear:both">
+  </div>
+  <div align="center">
+    <p class="graya3">Powered by:
+      <a href="https://www.zcdata.com.cn" target="_blank" class="graya3">
+            {% trans "北京志察数据科技有限公司" %}</a>. &nbsp; &nbsp;</p>
+  </div>
+
+  <!-- End Foot -->
+
+  </div>
+  <!-- /.container-fluid -->
+  <!-- JavaScripts
+        ================================================== -->
+  <script type="text/javascript" src="{% static 'js/underscore.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-migrate.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery.blockUI.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery.cookie-1.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/utils.{{settings.STATIC_VERSION}}.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/gcustomer_people.{{settings.STATIC_VERSION}}.js' %}"></script>
+  <script type="text/javascript" src="{% static 'highcharts/js/highcharts.js' %}"></script>
+  <script type="text/javascript" src="{% static 'highcharts/js/highcharts-more.js' %}"></script>
+</body>
+
+</html>

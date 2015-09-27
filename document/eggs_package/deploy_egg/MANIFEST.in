@@ -1,0 +1,13 @@
+recursive-include gflux/gflux/static *
+recursive-include gflux/gflux/templates *
+
+recursive-include gflux/gcustomer/static * 
+recursive-include gflux/gcustomer/templates * 
+recursive-include gflux/gcustomer/server_rsa_private_key 
+recursive-include gflux/gcustomer/server_rsa_public_key 
+
+recursive-include gflux/gcustomer/message_server *
+
+
+
+

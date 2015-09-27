@@ -1,0 +1,11 @@
+1.  ubuntu 删除目录及子目录中指定文件
+
+find   ./apps   -name '.svn' | xargs rm -r
+上面的命令是删除./apps目录及其子目录下所有.svn文件
+find   ./gflux   -name '.py' | xargs ls -r
+
+
+
+2. ubuntu 设置开机启动项
+可先将脚本复制或者软连接到/etc/init.d/目录下，
+sudo update-rc.d test defaults 95

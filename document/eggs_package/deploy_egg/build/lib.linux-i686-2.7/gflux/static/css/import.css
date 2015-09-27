@@ -1,0 +1,45 @@
+.process-form{
+    display:none;
+}
+.new-select-option{
+    display:none;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 15px;
+    width: 260px;
+}
+.main-form{
+    width: 300px;
+}
+.progress{
+    margin-top:3px;
+}
+.upload-form .progress{
+    height: 14px;
+}
+
+.input-check-message{
+    min-height: 20px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(241, 12, 49, 0.99);
+    margin-top: 5px;
+    border-radius: 3px;
+    line-height: 20px;
+    padding-left: 10px
+}
+
+.input-check-message::before{
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid rgba(241, 12, 49, 0.99);
+}
+
+.upload_icon {
+    background-image: url(../images/gflux_upload_icon.png);
+    background-repeat: no-repeat;
+}

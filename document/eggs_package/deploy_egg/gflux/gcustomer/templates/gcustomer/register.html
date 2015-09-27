@@ -1,0 +1,176 @@
+{% load i18n %}
+{% load staticfiles%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% csrf_token %}
+    <meta name="url_prefix" content="{{url_prefix}}">
+    <title>{{ settings.SITE_NAME }}</title>
+    <!--<link type="text/css" media="all" rel="stylesheet" href="/gflux/static/css/login.css">-->
+    <link type="text/css" media="all" rel="stylesheet" href="/gflux/static/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="/gflux/static/js/utils.js"></script>
+   <script type="text/javascript" src="/gflux/zh-cn/gflux/jsi18n/"></script>
+    <script type="text/javascript" src="/gflux/static/js/gcustomer_register.js"></script>
+    <style type="text/css">
+        body{
+            background-color: #fafafa;
+        }
+        p{
+            margin: 0;
+        }
+        .navbar-brand{
+        background-image: url('/gflux/static/images/customer_logo.png');
+        background-position: 50% 50%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 36px;
+        width: 140px;
+        margin-left: 15px;
+        margin-top:7px;
+        }
+    </style>
+</head>
+<body>
+{% include "gcustomer/alert_modal.html" %}
+<div style="background-color: #101010">
+    <div class="container">
+        <div class="row" style="height: 50px;">
+            <div class="col-md-2 col-lg-2">
+                <p style="color: rgba(255,255,255,0.87);text-align: center;margin: 0">
+                    <a class='navbar-brand' style="font-size:20px;color: rgba(255,255,255,0.87);" href="/gcustomer/"></a></p>
+
+                <p style="color: #fff;text-align: center"> </p>
+            </div>
+            <div class="col-md-7 col-lg-7">
+                <div class="row nav-kit">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <a style="padding:12px 30px;float: right;font-size: 16px;color: rgba(255,255,255,0.87);text-align: center"
+                   href="/gcustomer/login/">{% trans "立即登录" %}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row" style="margin-top: 80px;">
+        <div class="jumbotron" style="background-color: #fff;margin: 0">
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-7">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-5">
+                    <div class="login_form">
+
+                        <div class="input-group" style="margin-bottom: 10px;" id="the_register_option">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-leaf"></i></span>
+                            <select id="register_type" class="form-control" style="width: 100%;">
+                                <option selected value="">{% trans "请选择注册方式" %}</option>
+                                <option  value="0">{% trans "注册已有公司的用户" %}</option>
+                                <option  value="1">{% trans "注册新公司的用户" %}</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block" id ="next_step">下一步</button>
+                        
+
+                        <div id="the_register_page" style="display:none;">
+                                <div id="the_comp_option0" style="display:none;">
+                                    <div class="input-group" style="margin-bottom: 10px;">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-leaf"></i></span>
+                                        <select id="company_type1" class="form-control" style="width: 100%;">
+                                            <option selected value="0">{% trans "请选择公司" %}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div id="the_comp_option1" style="display:none;">
+                                    <div class="input-group" style="margin-bottom: 10px;">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-leaf"></i></span>
+                                        <select id="company_type" class="form-control" style="width: 100%;">
+                                            <option selected value="0">{% trans "请选择公司类型" %}</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group" style="margin-bottom: 10px;">
+                                        <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-copyright-mark"></i></span>
+                                        <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="company" placeholder="{% trans "公司名称" %}" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="username" placeholder="{% trans "用户名" %}" type="text">
+                                </div>
+
+                                <p class="error_message" id="username_error"></p>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="password" placeholder="{% trans "密码" %}" type="password">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="repassword" placeholder="{% trans "再次输入密码" %}" type="password">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                <span class="input-group-addon" style="padding: 5px 10px"><i
+                                    class="glyphicon glyphicon-envelope"></i></span>
+                                    <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="email" placeholder="{% trans "邮箱"%}" type="text">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                    <select id="shengcode" class="form-control" style="width: 40%;">
+                                        <option selected value="">{% trans "请选择省份" %}</option>
+                                    </select>
+                                    <select id="shicode" class="form-control" style="width: 30%;">
+                                        <option selected value="">{% trans "请选择" %}</option>
+                                    </select>
+                                    <select id="xiancode" class="form-control" style="width: 30%;">
+                                        <option selected value="">{% trans "请选择" %}</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div id="login" class="btn btn-primary btn-lg btn-block" style="font-size: 17px;width:100%;" onclick="register()"
+                                             role="button" data-toggle="modal">{% trans "注册" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-xs-offset-2" style="text-algin:right">
+                                        <button class="btn btn-primary btn-lg btn-block" id ="pre_step" style="display:none;width:100%;">{% trans "返回" %}</button>
+                                    </div>
+                                </div>
+                                <p id="password_error"
+                                   style="clear:both;padding:3px;text-align: center;font-size: 12px;font-weight: bold;color: #b94a48"></p>
+
+                                        
+                    
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="margin-top:100px;height: 100px;background-color: #fff;border-top: 1px solid #eee"></div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            {% include "dash/includes/foot.html" %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

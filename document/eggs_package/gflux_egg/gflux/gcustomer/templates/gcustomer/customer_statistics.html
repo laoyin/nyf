@@ -1,0 +1,39 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n%}
+{% block customer_statistics_nav %}
+<li class="nav-active"><a href="/gcustomer/customer_statistics/">{% trans "大客户统计" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px;">
+    <h4>{% trans "大客户统计" %}</h4>
+    <div id="the_big_customer_top_20">
+    	<h4 class="title-label-class">{% trans "排名前20的大客户" %}</h4>
+        <table class="table border-table" contenteditable="false">
+            <thead>
+            <tr class="success">
+                <th>{% trans "序号" %}</th>
+                <th>{% trans "单位名称" %}</th>
+                <th>{% trans "主卡号" %}</th>
+                <th>{% trans "创建时间" %}</th>
+                <th>{% trans "总消费额" %}</th>
+                <th>{% trans "当前余额" %}</th>
+                <th>{% trans "副卡数量" %}</th>
+            </tr>
+            </thead>
+            <tbody  id="infornation_survey">  
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 大客户数量与贡献比的关系图 -->
+   
+        <h4 class="title-label-class">{% trans "大客户贡献比" %}</h4>
+        <div id="big_customer_contribution_ratio_dash" ></div>
+   
+</div>
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+{% endblock %}

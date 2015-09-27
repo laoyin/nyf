@@ -1,0 +1,90 @@
+山西gflux详细部署文档
+
+1. 安装操作系统Cenos6.7
+注意 : 安装时选择完全安装，需要手动选择一些程序包,创建用户work 密码 pku123
+
+2. 给用户work添加sudo权限 
+(1) 切换到root用户 : su -l 
+(2) cd /etc
+(3) 使用命令“vim sudoers”，按“i”进入编辑模式后，找到“rootALL=(ALL) ALL ”，在后面添加："xxxALL=(ALL) ALL"(这里的xxx是你的用户名)，再按一下“Esc”键退出编辑，输入“wq”（write quit）后，退出sudoers。
+
+3.  将U盘中准备好的deployment目录拷贝至用户work根目录/home/work/
+deployment目录包括安装必要的rpm文件, iso文件, python2.7.10等
+
+4. 编译安装python2.7.10
+./configure --prefix=/usr/local --with-zlib
+make
+make install
+
+5. 将deployment目录下的site_package.tar解压到python2.7目录下
+(1) sudo mv site_package.tar  cd /usr/local/lib/python2.7/
+(2) sudo tar -xvf site_package.tar
+(3) 进入python命令行检测相关的库是否安装,gflux能否启动
+注意 : site-package.tar 包的制作参考svn上的gflux打包文档
+
+6. 安装 配置 初始化 postgres数据库
+
+(1) 安装 : 
+
+安装将deployment目录下的postgres相关的三个rpm文件
+sudo rpm -ivh postgresql-libs-8.4.20-3.el6_6.x86_64.rpm
+sudo rpm -ivh postgresql-8.4.20-3.el6_6.x86_64.rpm
+sudo rpm -ivh postgresql-server-8.4.20-3.el6_6.x86_64.rpm
+
+(2) 配置 : 
+
+su -l 
+service postgresql initdb
+(会建立/var/lib/pgsql目录)
+
+启动postgresql
+service postgresql start 
+查看 ：ps -ef | grep postgres
+终端显示 ：
+
+配置密码登陆和监听远程登陆
+修改客户端认证配置文件pg_hba.conf  : 
+vi /var/lib/pgsql/data/pg_hba.conf
+将ident字段改为md5
+
+修改 /var/lib/pgsql/data/postgresql.conf
+将localhost字段改为*
+
+性能配置
+vi /var/lib/pgsql/data/postgresql.conf
+max_connections = 1000
+hared_buffers = 1024MB
+
+(3) 初始化postgres数据库
+
+新建用户tao和数据库gflux 
+sudo -u postgres psql 
+create user tao with password 'pku123';
+alter role tao with superuser;
+create database gflux with owner = tao;
+
+将备份文件gflux.sql导入到gflux数据库
+psql -U tao -d gflux 
+\i gflux.sql 
+
+7. 配置nginx服务器
+
+7.1 安装
+rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
+yum info nginx
+yum install nginx
+
+7.2 编辑nginx.conf文件
+复制deployment目录下nginx.conf文件的内容到nginx自带的nginx.conf中(不要直接拷贝文件)
+
+7.3 启动nginx
+service nginx start
+(sudo /usr/llocal/nginx/sbin)
+检查是否启动nginx
+ps -ef | grep nginx 
+
+7.4 到/usr/local/lib/python2.7/site-packages/gflux-0.1.0-py2.7.egg 目录下启动gflux
+./script/start_fcgi_gflux
+
+8. 数据部署
+

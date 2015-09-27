@@ -1,0 +1,165 @@
+
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_goods.html" %}
+{% load i18n %}
+{% load staticfiles%}
+{% block add_store_items %}
+<li class="nav-active"><a href="/gcustomer/add_store_items/">{% trans "添加商品" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div  style="padding:10px 20px">
+        <h4 class="pos_id-label-class">{% trans "添加商品" %}</h4>
+
+        <div class = "row" style="margin-top:10px;" >
+        	<div class="col-lg-3">
+        		<select class="form-control" id="choose_store_items_add_type">
+        			<option name="add_type" value="">{% trans "请选择添加方式" %}</option>
+        			<option name="add_type" value="0">{% trans "手动添加" %}</option>
+        			<option name="add_type" value="1">{% trans "自动导入" %}</option>
+        		</select>
+        	</div>
+        </div>
+
+        <div id="the_add_create" style="display:none;padding:10px;20px;">
+	        <div id="the_add_crreate_type" style="display:none;">
+		        <div id="add_store_items_form" class="form-horizontal" method="post" action='/gcustomer/ajax/create_commodity/' enctype="multipart/form-data">
+		            <div class="form-group">
+		                <div class="row" style="margin-top:10px;">
+		                    <div class="col-lg-3">
+		                        <label for="exampleInputEmail1">{% trans "POS系统ID" %}</label>
+		                    </div>
+		                </div>
+		                <div class="row">
+		                    <div class="col-lg-4">
+		                        <input type="text" name="pos_id" id="pos_id" class="form-control" required placeholder="{% trans "请输入商品的POS系统ID" %}">
+		                    </div>
+		                </div>
+		                <div class="row" style="margin-top:10px;">
+		                    <div class="col-lg-3">
+		                        <label for="exampleInputEmail1">{%trans "商品名称"%}</label>
+		                    </div>
+		                </div>
+		                <div class="row">
+		                    <div class="col-lg-4">
+		                        <input type="text" name="commodity" id="commodity" class="form-control" required placeholder="{% trans "请输入商品名称" %}">
+		                    </div>
+		                </div>
+		                <div class="row" style="margin-top:10px;">
+		                    <div class="col-lg-3">
+		                        <label for="exampleInputEmail1">{% trans "商品单价" %}</label>
+		                    </div>
+		                </div>
+		                <div class="row">
+		                    <div class="col-lg-4">
+		                        <input type="text" name="price" id="price" class="form-control" required placeholder="{% trans "请输入商品单价(元)" %}">
+		                    </div>
+		                </div>
+		                <div class="row" style="margin-top:10px;">
+		                    <div class="col-lg-6">
+		                        <label for="exampleInputEmail1">{% trans "上传图片" %}</label>
+		                        <input type="file" name="files" id="store_items_image_upload" ></input>
+		                        <p class="help-block">{%trans "选择需要上传的文件，支持格式 JPG,PNG" %}</p>
+		                    </div>
+		                </div>
+		                <div class="row" style="margin-top:10px;margin-left:0px;">
+			                <div>
+			                    <button type="submit" id="new_create" class="btn btn-default" style="position:relative;top:10px;">{% trans "确定" %}</button>
+			                </div>
+		        		</div>
+		            </div>
+		        </div>
+	        </div>
+        </div>
+</div>
+<p id="message" style="display:none;">{{message}}</p>
+{% endblock %}
+{% block script_block %}
+<script>
+$(function(){
+	image_sha1 = null
+	$("#new_create").attr("disabled",true)
+	$("#store_items_image_upload").fileupload({
+				    url:"/gcustomer/ajax/jquery_upload_images/",
+				    formData:{},
+				    dataType:"json",
+				    done:function(e,result){
+				    	data = result.result
+				    	if(data['ret'] != "0001"){
+				    		image_sha1 = null
+				    		return
+				    	}
+				    	image_sha1 = data['image_sha1']
+				    	$("#new_create").attr("disabled",false)
+				    }
+			})
+	$("#choose_store_items_add_type").change(function(){
+		if($(this).val() == "0"){
+			$("#the_add_create").show()
+			$("#the_add_crreate_type").show()
+			$("#the_auto_create_type").hide()
+		}
+		else if ($(this).val() == "1"){
+			$("#the_add_create").show()
+			$("#the_add_crreate_type").hide()
+			$("#the_auto_create_type").show()
+		}
+		else{
+			alert("请选择添加方式!")
+			$("#the_add_create").hide()
+			$("#the_add_crreate_type").hide()
+			$("#the_auto_create_type").hide()
+		}
+	})
+
+	$("#new_create").on('click', function () {
+
+		var pos_id = $("#pos_id").val();
+		var commodity = $("#commodity").val();
+		var price = $("#price").val();
+		if(pos_id.length == 0){
+			$("#alert_modal_body").html("请输入正确的POS ID");
+			$("#alert_modal").modal("show");
+			return 0;
+		}
+		else if(commodity.length == 0){
+			$("#alert_modal_body").html("请输入商品名称！");
+			$("#alert_modal").modal("show");
+			return 0;
+		}
+		else if(price.length == 0){
+			$("#alert_modal_body").html("请输入商品价格！");
+			$("#alert_modal").modal("show");
+			return 0;
+		}
+		if(image_sha1 == null){
+			$("#alert_modal_body").html("请上传图片");
+			$("#alert_modal").modal("show");
+			return 0 ;
+		}
+		var data = {'pos_id':pos_id, 'commodity':commodity, 'price':price,'image_sha1':image_sha1};
+		$.post("/gcustomer/ajax/create_commodity/", data, function (data) {
+			if(data.ret == "0001"){
+				$("#alert_modal_body").html(data.message);
+				$("#alert_modal").modal("show");
+			}
+			else if(data.ret != "0001"){
+				$("#alert_modal_body").html(data.message);
+				$("#alert_modal").modal("show");
+			}
+			$("#pos_id").val("");
+			$("#commodity").val("");
+			$("#price").val("");
+			$("input[name='goods_image']").val("");
+			image_sha1 = null
+		}, 'json');
+	})
+})
+
+var message=$("#message").text()
+if(message){
+	$("#alert_modal_body").html(message);
+	$("#alert_modal").modal("show");
+}
+</script>
+{% endblock %}

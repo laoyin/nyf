@@ -1,0 +1,64 @@
+1. 总体报表数据格式
+
+2. 每日报表数据格式
+每个dict表示一天的销量汇总
+如：
+data = {
+	"avg":[],
+	"ytd" :[],
+	"daily_data" = [
+		{"97#":12232,"95#":4323,"93#":2323,"柴油":2323},
+		{"97#":12232,"95#":4323,"93#":2323,"柴油":2323}.
+
+	]
+}
+
+
+#生成报表的测试子类
+class ReportCreator(AbstractReportCreator) :
+	data = {}
+	#创建报表的相关对象并统筹报表的创建工作
+	def make_report_xlsx(self,location,tag,unit,user_id,file_name) :
+		#获取图表存储目录
+		current_path = os.getcwd()+'/'
+		report_file_path = settings.REPORT_FILE_PATH + '/'
+
+		#创建工作本
+		workbook = xlsxwriter.Workbook(current_path+report_file_path+file_name)
+		#存储默认的报表和辅助的临时报表
+		#默认的报表
+		worksheet = workbook.add_worksheet()
+		#格式
+		self.write_report_format_info(workbook)
+		#内容
+		self.write_report_context_info(worksheet,self.format_list)
+		#数据
+		self.data = self.write_report_info(worksheet,location,tag,unit,user_id)
+		#图表
+		self.write_report_dash(workbook,unit,location,tag,worksheet,self.data)
+		#自动统计函数
+		self.write_report_func_define(worksheet,self.format_list,user_id,location,self.data)
+
+		workbook.close()
+
+	#将空报表对象作为参数传递给报表样式方法
+	def write_report_format_info(self,workbook):
+		self.format_list = create_report_style(workbook)
+
+	#写入报表context
+	def write_report_context_info(self,worksheet,format_list):
+		create_report_context(worksheet,format_list)
+
+	#写入数据
+	def write_report_info(self,worksheet,location,tag,unit,user_id):
+		format_list = self.format_list
+		create_report_data(worksheet,unit,location,tag,format_list,user_id)
+
+	#导入图表
+	def write_report_dash(self,workbook,unit,location,tag,worksheet,data):
+		create_report_dash_line(workbook,unit,location,tag,worksheet,data)
+		create_report_dash_pie(workbook,unit,location,tag,worksheet,data)
+
+	#导入自动计算函数定义
+	def write_report_func_define(self,worksheet,format_list,user_id,location,data):
+		create_report_func_define(worksheet,format_list,data,sheet_type)

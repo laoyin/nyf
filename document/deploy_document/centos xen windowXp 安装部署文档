@@ -1,0 +1,63 @@
+centos xen windowXp 虚拟机安装文档
+
+1. 安装centos5.6(光盘安装)
+
+2. 安装xen
+
+(1) 检查网络 : ping www.baidu.com
+(2) 安装 : yum install xen kernel-xen xen-libs virt-manager
+(3) 修改grub.conf ： vi /boot/grub/grub.conf
+  
+  1) 注释掉hiddenmenu 
+  2) 把default改为0，即自动进入xen
+
+(4) 停用iptables和selinux：
+  1) vi /etc/selinux/config，把selinux改为disable 
+  2) chkconfig --level 2345 iptables off 
+
+(5) 开机启动xen :
+
+  1) chkconfig --level 2345 xend on
+  2) chkconfig --level 2345 xendomains on
+  3) 重启 : reboot
+  4) 检查 : uname -r 检查是否是以xen内核启动，不是的话reboot重启选择xen内核启动
+		   xm list检查xen状态
+
+3. 安装centos图形用户界面
+ 
+  1) 下载安装软件包
+   yum grouplist
+   yum groupinstall "X Window System"
+   yum groupinstall "GNOME Desktop Environment"
+
+  2) 检查是否安装了图形用户界面
+   yum grouplist >> test  把输出结果倒入一个特定的文件，进行察看
+   在grouplist的输出结果中的“Installed Groups:”部分中，如果你能找到“X Window System”和“GNOME Desktop Environment,
+   证明你安装了桌面环境。
+
+  3) 开机自启动桌面设置 : vim /etc/inittab  id:5:initdefault
+
+  4) 启动桌面系统
+   startx  启动X系统 
+
+  PS : 卸载GNOME桌面环境 yum groupremove "GNOME Desktop Environment"
+
+
+4. 安装虚拟机
+
+1) 准备镜像文件 
+
+将windowXp 的ios文件拷贝到root根目录下(可以通过scp从当前局域网的其他机器上拷贝)
+
+2) virtual  Machine Manager 虚拟机安装
+
+内存 : 512M
+磁盘 : 10G 
+
+
+5. xp虚拟机上安装framework4.0和sqlserver2005简化版本  安装teamviewer10（设置开机自启动） 
+
+6. centos建立隧道
+ssh -N -f -R 2222:127.0.0.1:22 123.123.123.123
+ssh -N -f -R 2223:127.0.0.1:22 gflux2.tmlsystem.com
+成功建立隧道之后远程登陆 : ssh -p 2223 work@localhost

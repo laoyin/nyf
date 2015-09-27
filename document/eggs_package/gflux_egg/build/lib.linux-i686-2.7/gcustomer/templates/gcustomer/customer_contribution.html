@@ -1,0 +1,55 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block customer_contribution_nav %}
+<li class="nav-active"><a href="/gcustomer/customer_contribution/">{%trans "大客户贡献" %}</a></li>
+{% endblock %}
+
+
+{% block page_content %}
+
+<div style="padding: 10px 20px">
+    <h4>{%trans "客户贡献"%}</h4>
+
+    <div class="row" style="margin-top: 20px;">
+
+        <div class="col-md-12 col-lg-12">
+            <form class="form-inline" style="padding-bottom: 15px;" id='big_customer'>
+                <div class="form-group">
+                    <input type="text"  style="width: 300px;" class="form-control" id="big_customer_cardnum" value="4367420011310479058" placeholder="{%trans "请输入大客户卡号" %}" />
+                    <input type="button" class="btn btn-default" id ="big_customer_contribution_search" value="{% trans "查看" %}"></input>
+                </div>
+            </form>
+
+            <div id="the_big_customer_contribution_information" style="display:none;">
+                <h4 class="title-label-class">{% trans "贡献详情" %}</h4>
+                <table class="table border-table" contenteditable="false">
+                    <thead>
+                    <tr class="success">
+                        <th width="20%">{% trans "公司名称" %}</th>
+                        <th>{% trans "总消费额" %}</th>
+                        <th>{% trans "上个月消费额"%}</th>
+                        <th>{% trans "等级积分" %}</th>
+                        <th>{% trans "积分排名" %}</th>
+                        <th>{% trans "加油范围" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody  id="information_survey">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 近六月消费额度趋势 -->
+    <div id="the_near_six_month_sale_trend" style="display:none;">
+            <h4 class="title-label-class">{% trans "近六月消费额度趋势" %}</h4>
+            <div  id="big_customer_consume_trend_dash"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+{% endblock %}

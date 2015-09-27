@@ -1,0 +1,70 @@
+{% extends "gcustomer/gcustomer_station.html"%}
+{% load i18n%}
+{% block station_group_nav %}
+<li class="nav-active"><a href="/gcustomer/station_group/">{% trans "已有油站群" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+    <h4>{% trans "油站群" %}</h4>
+    <div class="row" style="margin-top:20px;">
+        <div class="col-md-12 col-lg-12">
+         <div class="form-inline" style="padding-bottom: 15px;" id='group'>
+            <div class="form-group">
+                <input type="text"  style="width: 300px;" class="form-control" id="staion_group_search" value="" placeholder="{% trans "输入关键词" %}" />
+                <button class="btn btn-default" id ="group_search">{% trans "搜索" %}</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="the_station_group_details" style="display:none;">
+        <h4 class="title-label-class">{% trans "群组详情" %}</h4>
+        <table class="table border-table" contenteditable="false">
+            <thead>
+                <tr class="success">
+                    <th>{% trans "序号" %}</th>
+                    <th>{% trans "群名称" %}</th>
+                    <th>{% trans "创建者" %}</th>
+                    <th>{% trans "创建时间" %}</th>
+                    <th>{% trans "详情" %}</th>
+                    <th>{% trans "油站列表" %}</th>
+                    <th>{% trans "删除" %}</th>
+                </tr>
+            </thead>
+            <tbody id="station_group_submary">
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id = "station_group" ></div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="stationGroupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="groupStationModalLabel">
+            </h4>
+         </div>
+         <div class="modal-body">
+            <table id="stationgroupdetail">
+            </table>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" 
+               data-dismiss="modal">{% trans "关闭" %}
+            </button>
+         </div>
+      </div>
+</div>
+
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_station_data{{settings.GCUSTOMER_STATIC_VERSION}}.js" ></script>
+{% endblock %}

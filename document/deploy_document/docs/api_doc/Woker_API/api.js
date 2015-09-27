@@ -1,0 +1,623 @@
+var api_data = [
+
+    //获取版本号
+    {
+        "name": "获取版本号(app启动时需要第一个发送该请求)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+	    	"action": "get_service_version",
+		"data":{
+		    "app_name":"jiayouyuan",
+		}
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data": {
+		"version":1.1
+	    },
+         },
+        "note": {
+            "请求参数":"-------------",
+	    "app_name":"app的名字，这个值固定",
+
+            "返回参数":"-------------",
+            "version": "服务器的版本号",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识"
+        }
+    },
+
+    // 注册
+    {
+        "name": "注册(2015-7-20)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/jiayouyuan_api",
+        "method": "POST",
+        "params": {
+	    	"action": "worker_register",
+    	    "data": {
+                    "name": "15996458299",
+    	        "password": "user123",
+                    "comp_id" : 1,
+                    "site_sha1" : "e08ed03d8f17acaf3f5b82401fecdb8181358700",
+                    "user_type":2
+    	    }
+
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+        },
+        "note": {
+            "请求参数": "-------------",
+
+            "name": "手机号",
+            "password": "密码",
+            "comp_id":"石油公司id",
+            "site_sha1":"该石油公司旗下的油站sha1",
+            "user_sha1":"用户类型 1:为加油员，2:为收银员",
+            "返回参数": "-------------",
+
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识"
+        }
+    },
+
+    // 登录
+    {
+        "name": "登录",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/jiayouyuan_api",
+        "method": "POST",
+        "params": {
+            "action": "worker_login",
+            "data": {
+                "username": "15996458290",
+                "password": "920816"
+            }
+
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data": {
+                "user_sha1": "0a0f8c22a861231aff038b16d84c9a4ae175083e",
+                "user_name": "15996458299",
+                "avarta_sha1": "0a0f8c22a861231aff038b16d84c9a4ae175083e",
+                "nick": "lilei",
+                "sessionid": "sdfsdfsdfgdgsdfsdaff038b16d84c9a4ae17wsede",
+		"site_sha1":"8908e787o989f",
+		"user_type":1
+            },
+        },
+        "note": {
+            "请求参数": "-------------",
+            "username": "用户名",
+            "password": "用户密码",
+            "返回的参数": "-------------",
+            "info": "请求成功或者失败的信息",
+            "ret": "返回的状态信息",
+            "user_sha1": "用户的sha1",
+            "user_name": "用户名",
+            "avarta_sha1": "头像图片sha1",
+            "nick": "昵称",
+            "sessionid": "用户sessiond",
+	    "site_sha1":"站点的sha1",
+	    "user_type":"员工的角色，0:未验证用户 1:为加油员，2:为收银员"
+        }
+    },
+
+    // 登出
+    {
+        "name": "登出",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/jiayouyuan_api",
+        "method": "POST",
+        "params": {
+            "action": "worker_logout",
+            "data": {
+                "session_id": "sdfsdfsdfgdgsdfsdaff038b16d84c9a4ae17wsede"
+            },
+
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data": {
+            },
+        },
+        "note": {
+            "请求参数": "-------------",
+            "session_id": "用户session——id",
+            "返回参数": "-------------",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识",
+        }
+    },
+
+
+{"name": "===================以下为新版加油员接口"+"===================",},
+//新版驾车宝
+{"name": "*****************************油品购买模块"+"****************************",},
+   //收银员注册选择公司和油站信息
+   {
+        "name": "收银员注册选择公司和油站信息(2015-07-21)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "worker_register_init_info",
+            "data": {}
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{
+                    "comp_list":[
+                        {
+                            "comp_id":1,
+                            "comp_name":"",
+                            "station_list":[
+                                    {
+                                    "station_sha1":"dsfsdfsdf73432jfkjsdlfksdjf",
+                                    "name":""
+                                    },
+                                     {
+                                    "station_sha1":"dsfsdfsdf734fdsfds32jfkjsdlfksdjf",
+                                    "name":""
+                                    },
+                                ]
+                        },
+                        {
+                            "comp_id":2,
+                            "comp_name":"",
+                            "sation_list":[
+                                    {
+                                    "station_sha1":"dsfsdfsdf73432jfkjsdlfksdjf",
+                                    "station_name":""
+                                    },
+                                     {
+                                    "station_sha1":"dsfsdfsdf734fdsfds32jfkjsdlfksdjf",
+                                    "station_name":""
+                                    },
+                                ]   
+                        },
+                    ]
+                }
+        },
+        "note": {
+            "请求参数":"-----",
+            "comp_id":"公司id",
+            "comp_name":"",
+            "返回参数":"-----",
+            "station_list":"油站列表",
+             "station_sha1":"油站sha1",
+            "station_name":"油站名",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识",
+        }
+    },
+
+    //收银员获取生成订单初始化信息
+    {
+        "name": "收银员获取生成订单初始化信息(2015-08-07)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "get_oil_order_init_info",
+            "data": {
+                "station_sha1" : "cb04edfbe0573136b3e8a8de7ed77a1ef62bf91e"
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{
+                "pump_ids":[1,2,3],
+                "fuel_list":[
+                    {
+                        "barcode":600615,
+                        "fuel_name":"93#",
+                        "price":7.8
+                    },
+                    {
+                        "barcode":600605,
+                        "fuel_name":"95#",
+                        "price":8.6
+                    }
+                ]
+            }
+        },
+        "note": {
+            "请求参数":"-----",
+            "station_sha1":"油站sha1",
+            "返回参数":"-----",
+            "pump_ids":"油枪列表",
+            "fuel_list":"油品列表",
+            "price":"油品价格",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识",
+        }
+    },
+    //收银员生成油品订单
+    {
+        "name": "生成订单(2015-07-20)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "create_order_by_worker",
+            "data": {
+                "order_type":1,
+                "worker_sha1": "7eaacd90a11c7ceccdba8cb5db75d84157aa4611",
+                "item_sha1": "300585",
+                "price" : 8.7,
+                "pay":200,
+                "pump_id":12
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{
+                "order_sha1": "66f3e0e39ea401f968b8e4f2bb0d33d159222b4f"
+            }
+        },
+        "note": {
+            "请求参数":"-----",
+            "pump_id":"油枪号",
+            "pay":"付款金额",
+            "order_type":"0:充值  1:购买油品 2:购买非油品 3:购买车后服务 4:积分商城",
+            "user_sha1":"用户的sha1",
+            "item_sha1":"商品的条形码",
+            "date":"交易时间",
+            "返回参数":"-----",
+            "order_id":"此次交易的订单号",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识"
+        }
+    },
+//收银员
+ {
+        "name": "收银员确认订单状态(2015-7-23)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "confirm_order_by_worker",
+            "data": {
+                "order_sha1": "9fa5a3cf6eb9071f30d2c765995ae104d946a31d"
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{
+                "order_info":{
+                    "order_total":20.0,
+                    "time":"",
+                    "gun_id":1,
+                    "fuel_info":{
+                        "fuel_name": "脉动芒果口味600ml/瓶",
+                    },
+              }
+            }
+        },
+        "note": {
+            "order_sha1":"订单号",
+            "order_type":" 整型 0商品优惠  1积分商城, 2 油品购买  3 车后服务",
+            "fuel_info":"油品信息",
+            "fuel_name" : "油品名字",
+            "site_sha1": "油站sha1",
+            "price":"该油站该油品的价格",
+            "barcode":"油品的条形码",
+            "order_total":"订单总价",
+            "pump_count":"油品升数",
+            "time":"订单生成时间",
+            "site_info":"商家信息",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识"
+        }
+    },
+
+
+//收银员取消订单
+{
+    "name": "收银员取消油品订单(2015-07-13)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "delete_order_by_work",
+            "data": {
+                "order_id" : "d61864b7e3589a4ca2415d6d20f3b52009fc649e"
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+        },
+        "note": {
+            "请求参数":"-----",
+            "shouyinyuan_sha1":"用户的sha1",
+            "order_id":"此次交易的订单号",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识"
+        }
+},
+
+//收银员查看订单是否已支付
+{
+        "name": "收银员查看订单是否已支付(2015-7-27)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/jiayouyuan_api",
+        "method": "POST",
+        "params": {
+        "action": "check_has_purchase_worker",
+            "data": {
+                    "order_sha1": "5ab7f6baf8b25a73b7a76ff834bceab47d1607d8"
+                }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+        },
+        "note": {
+            "请求参数": "-----",
+            "order_id": "订单号",
+            "seller_sha1": "取货地点商家信息",
+            "返回参数": "------"
+        }
+    },
+
+
+// 确认已交易
+    {
+        "name": "订单确认已交易,修改订单状态,打印小票(2015-7-23)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/jiayouyuan_api",
+        "method": "POST",
+        "params": {
+        "action": "purchase_complete_worker",
+            "data": {
+                    "order_sha1": "14eb159b8558625c0adf33b3bc57898bbf939ad4"
+                }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data": {
+            }
+        },
+        "note": {
+            "请求参数": "-----",
+            "order_id": "订单号",
+            "seller_sha1": "取货地点商家信息",
+            "返回参数": "------"
+        }
+    },
+
+
+//确认预订商品是否可支付
+{
+        "name": "确认预订商品是否可支付(2015-08-03)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/jiayouyuan_api",
+        "method": "POST",
+        "params": {
+        "action": "confirm_reservation_by_worker",
+            "data": {
+                    "order_sha1": "14eb159b8558625c0adf33b3bc57898bbf939ad4" ,
+                    "status":4
+                }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data": {
+            }
+        },
+        "note": {
+            "请求参数": "-----",
+            "order_id": "订单号",
+            "status": "订单状态0未支付，1已支付未取货，2已交易并取货(同为收银员未录入状态)，3收银员已录入状态 4商品预订状态",
+            "返回参数": "------"
+        }
+    },
+
+
+{"name": "*****************************商品预付模块"+"****************************",},
+
+ // 收银员确认预付订单状态
+    {
+        "name": "收银员扫码确认预付订单状态",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/jiayouyuan_api",
+        "method": "POST",
+        "params": {
+            "action": "confirm_order",
+            "data": {
+                "worker_sha1":"7eaacd90a11c7ceccdba8cb5db75d84157aa4611",   
+                "order_sha1": "1d8945ed9f320aff4e12b1ce5bec5c5cb3ee41c6"
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{
+                "order_info":{
+                    "order_sha1":"66f3e0e39ea401f968b8e4f2bb0d33d159222b4f",
+                    "user_sha1":"3e6905d72fe2ab9f8df847542d36947b1b",
+                    "item_sha1":"6947b1be0b2c411760385020af820151204130",
+                    "item_type":0,
+                    "item_total":1,
+                    "item_count":1,
+                    "time":"",
+                    "status":"2",
+                    "goods_info":{
+                        "goods_name": "脉动芒果口味600ml/瓶",
+                        "goods_sha1": "f4fbb12da9ddc147011d34d27448c627bdd52590",
+                        "seller_sha1": "882348fd3762a3804962d23d190041aae5d26ec6",
+                        "price": 3.7,
+                        "src": "/gcustomer/ajax/render_image/",
+                        "img_sha1": ""
+                    },
+                    "seller_info": {
+                        "name": "中油",
+                        "sha1": "sdcasdca",
+                        "address": "北京市",
+                        "geo_x": 12.0,
+                        "geo_y": 212.2,
+                        "phone": "1523828282",
+                        "img_sha1": "sdcasdcasd",
+                        "score": 1000,
+                        "introduction": "this is a test"
+                    }
+                }
+            }
+        },
+        "note": {
+            "order_sha1": "订单号",
+            "order_type": " 整型 0:充值  1:购买油品 2:购买非油品 3:购买车后服务 4:积分商城",
+            "user_sha1": "用户的sha1",
+            "item_sha1": "商品的sha1",
+            "item_type": "商品的类型 0是商品，1是服务",
+            "item_total": "商品总价",
+            "time": "订单生成时间",
+            "item_count": "商品数量",
+            "status": "订单状态0未支付，1已支付未取货，2已交易并取货(同为收银员未录入状态)，3收银员已录入状态 4商品预订状态",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识"
+        }
+    },
+    
+    //获取油站流水订单详情
+    {
+        "name": "获取油站流水订单详情（2015-7-23）",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "get_site_trade_details",
+            "data": {
+                "order_id": "c7d3a19c9cb6a0179e3a4ec90c6e069c35059072",
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{
+                "pay":"单价",
+                "pump_id":"油枪号",
+                "time":"时间",
+                "card_num":"交易卡号"
+   
+            }
+        },
+        "note": {
+            "请求参数":"-----",
+            "order_id": "交易编号",
+            "station_sha1":"station sha1",
+            "返回参数":"-----",
+            "pay":"单价",
+            "pump_id":"油枪号",
+            "time":"时间",
+            "card_num":"交易卡号"
+        }
+    
+    },
+
+
+{"name": "*****************************订单管理模块"+"****************************",},
+
+    // 获取油站的流水订单
+    {
+        "name": "查询油站的流水订单（2015-7-23）",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "get_site_trades",
+            "data": {
+                "station_sha1": "e08ed03d8f17acaf3f5b82401fecdb8181358700",
+                "status": 2,
+                "start": 0,
+                "end": 10
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{
+                "order_list":[
+                    {
+                        "order_id":"9f8df847542d36947b1be0b2c411760385020af8",
+                        "user_sha1":"3e6905d72fe2ab9f8df847542d36947b1b",
+                        "item_sha1":"6947b1be0b2c411760385020af820151204130",
+                        "item_type":0,
+                        "item_count":1,
+                        "item_total":1,
+                        "time":"",
+                        "status":"2",
+                        "goods_info":{
+                            "goods_name": "脉动芒果口味600ml/瓶",
+                            "goods_sha1": "f4fbb12da9ddc147011d34d27448c627bdd52590",
+                            "seller_sha1":"882348fd3762a3804962d23d190041aae5d26ec6",
+                            "price": 3.7,
+                            "discount" : 0.9,
+                            "discount_info": "300积分兑换,限量50瓶",
+                            "discount_end_time": "2015-04-10",
+                            "available_source": "京东商城",
+                            "history": 8,
+                            "pick": 1,
+                            "src":"/gcustomer/ajax/render_image/",
+                            "img_sha1":""
+                        },
+                        "seller_info":{
+                            "name" : "中油",
+                            "sha1" : "sdcasdca",
+                            "address" : "北京市",
+                            "geo_x" : 12.0,
+                            "geo_y" : 212.2,
+                            "phone" : "1523828282",
+                            "img_sha1" : "sdcasdcasd",
+                            "score" : 1000,
+                            "introduction" : "this is a test"
+                        }
+                    }
+                ]
+            }
+        },
+        "note": {
+            "请求参数":"-----",
+            "order_id":"订单号",
+            "station_sha1":"收银员sha1",
+            "item_sha1":"商品的sha1",
+            "item_type":"商品类型",
+            "item_count":"商品数量",
+            "item_total":"商品总价",
+            "time":"订单生成时间",
+            "order_type":"订单的类型，0 未完成订单 1 已完成订单",
+            "info": "请求成功或者失败的信息",
+            "ret": "代表请求的信息一些标识"
+        }
+    },
+
+// 收银员确认录入信息
+    {
+        "name": "收银员确认录入信息(2015-7-23)",
+        "url": "http://wheel.marketcloud.com.cn/gcustomer/api",
+        "method": "POST",
+        "params": {
+            "action": "confirm_recorded",
+            "data": {
+                "worker_sha1":"a7e0c4b0bc32073bcf37269b2831512ad0b8d8bf",
+                "order_id":"466fed8e67792bf08bac3aaf30aa27f874dfe0eb"
+            }
+        },
+        "response": {
+            "info": "OK",
+            "ret": "0001",
+            "data":{}
+        },
+        "note": {
+            "请求参数":"-----",
+            "order_id":"订单号",
+            "worker_sha1":"收银员",
+            "status":"注!!!：商品交易状态，0未支付，1已支付未取货，2已交易并取货(同为收银员未录入状态)，3收银员已录入状态 4商品预订状态"
+        }
+    },
+
+
+]
+
+

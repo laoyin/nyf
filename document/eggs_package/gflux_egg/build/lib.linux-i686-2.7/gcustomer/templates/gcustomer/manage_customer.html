@@ -1,0 +1,58 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block manage_customer_nav %}
+<li class="nav-active"><a href="/gcustomer/manage_customer/">{% trans "管理大客户" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+
+<div style="padding: 10px 20px;">
+    <h4>{% trans "管理大客户" %}</h4>
+    <div class="form-inline" style="padding-bottom: 15px;margin-top:20px;" id='big_customer'>
+        <div class="form-group">
+            <!-- <h4 id ="user_type">{{user_type}}</h4> -->
+            {% if user_type == 2 %}
+            <input type="text"  style="width: 300px;display:none;" class="form-control" value="4367420011310479058" placeholder="{% trans "请输入大客户卡号" %}"  />
+            {% else %}
+            <input type="text"  style="width: 300px;" class="form-control" value="4367420011310479058" placeholder="{% trans "请输入大客户卡号" %}" />
+            {% endif %}
+            <button type="button" class="btn btn-default" id ="big_customer_search" >{% trans "查看" %}</button>
+        </div>
+
+    </div>
+    
+    <div id="big_customer_infromation_overview" style="display:none;">
+        <h4 class="title-label-class">{% trans "信息概况" %}</h4>
+        <table class="table border-table" contenteditable="false">
+            <thead>
+            <tr class="success">
+                <th colspan="4">{% trans "客户信息" %}</th>
+
+            </tr>
+            </thead>
+            <tbody  id="infornation_survey">    
+            </tbody>
+        </table>
+    </div>
+    <div class="row" style="margin-top:20px;" id="slave_card_list_container">
+        <div class="col-lg-12" id="slave_card_list">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block script_block %}
+<!-- <script type='text/javascript' src='/gflux/static/js/render_gcustomer_data.js'></script> -->
+<script type='text/javascript' src='/gflux/static/jqueryui/jquery-ui.min.js'></script>
+<script type='text/javascript' src='/gflux/static/jtable/jquery.jtable.min.js'></script>
+<script type='text/javascript' src='/gflux/static/js/render_gcustomer_data.js'></script>
+<script>
+/*$(function(){
+    alert($("#user_type").text())
+})*/
+</script>
+{% endblock %}
+{% block style_block %}
+{% endblock %}

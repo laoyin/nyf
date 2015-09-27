@@ -1,0 +1,17 @@
+{%load i18n%}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>{{ settings.SITE_NAME }}</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+  </head>
+  <body>
+  <h1>{% trans "你已经成功的注册了MarketCloud账户。在审核通过之前，请耐心等候" %}!</h1>
+  </body>
+</html>

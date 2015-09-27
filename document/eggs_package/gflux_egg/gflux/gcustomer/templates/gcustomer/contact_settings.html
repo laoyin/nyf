@@ -1,0 +1,103 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_activity.html" %}
+{% load i18n %}
+{% block style_block %}
+<style type="text/css">
+    .email-template{
+
+    }
+    .email-template .item{
+        background-color: #eee;
+        height: 80px;
+        border-radius: 3px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    .email-template .item a{
+        line-height: 80px;
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+    }
+
+</style>
+{% endblock %}
+
+{% block setting_page_nav %}
+<li class="nav-active"><a href="/gcustomer/contact_settings/">Email</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding: 10px 20px">
+    <div class="row">
+        <h4>{% trans "沟通设置" %}</h4>
+        <div class="col-lg-5" style="padding: 10px">
+            <p style="font-weight: bold;padding: 10px 0px;">{% trans "Email设置" %}</p>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">{% trans "主题" %}</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="{% trans "定额加油500元送矿泉水一瓶" %}">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">{% trans "发件人" %}</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="{% trans "中森美福州市公司" %}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">{% trans "邮件内容" %}</label>
+                <textarea rows="12" placeholder="{% trans "
+定额加油500元送矿泉水一瓶
+
+1.此活动仅限于2015.03.12—2015.03.31期间，所有囤油兑付成功的囤油宝用户， 享受每升0.6元囤油兑付补贴；
+2.囤油宝每两次线上兑付时间间隔须>7日，每次线上兑付加油量须≤50升，参与活动的用户兑付每升补贴0.6元；
+3.囤油宝用户在线兑付后，加油补贴款会同用户所兑付油量的油款一起汇入用户绑定的银行卡内）；
+4.囤油宝有权取消、终止、修改或暂停本活动，囤油网对本活动拥有最终解释权。" %}" class="form-control"></textarea>
+            </div>
+            <div class="form-group email-template">
+                <label for="">{% trans "邮件模版" %}</label>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="item">
+                            <a href="">{% trans "简约" %}</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="item" style="background-color:orange ">
+                            <a href="">{% trans "炫彩" %}</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="item" style="background-color:lightgreen ">
+                            <a href="">{% trans "清新" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info">{% trans "预览邮件" %}</button>
+        </div>
+        <div class="col-lg-6">
+            <p style="font-weight: bold;padding: 10px 0px;">{% trans "Email预览" %}</p>
+            <div style="width: 100%;height: 600px;background-color: #fff;border-radius: 5px;border: 1px solid #eee;padding: 20px;">
+                <p style="font-weight: bold">{% trans "亲爱的顾客:" %}</p>
+                <h4 style="padding: 30px;">{% trans "定额加油500元送矿泉水一瓶" %}</h4>
+                <div style="padding: 10px;line-height: 25px;">
+                    <ol>
+                        <li>{% trans "1.此活动仅限于2015.03.12—2015.03.31期间，所有囤油兑付成功的囤油宝用户， 享受每升0.6元囤油兑付补贴；"%}</li>
+                        <li>{%trans "2.囤油宝每两次线上兑付时间间隔须>7日，每次线上兑付加油量须≤50升，参与活动的用户兑付每升补贴0.6元；"%}</li>
+                        <li>{% trans "3.囤油宝用户在线兑付后，加油补贴款会同用户所兑付油量的油款一起汇入用户绑定的银行卡内）；" %}</li>
+                        <li>{% trans "4.囤油宝有权取消、终止、修改或暂停本活动，囤油网对本活动拥有最终解释权。" %}</li>
+                    </ol>
+                </div>
+                <p style="text-align: right;padding: 30px;">{% trans "中森美福州市公司" %}</p>
+                <p style="text-align: center">2015.03.12</p>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

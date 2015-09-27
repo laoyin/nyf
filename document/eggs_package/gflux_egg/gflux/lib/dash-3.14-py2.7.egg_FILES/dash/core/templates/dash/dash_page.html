@@ -1,0 +1,55 @@
+{% load admin_static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>{{ settings.SITE_NAME }}</title>
+
+    {{ dash.media_css }}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/{{ settings.URL_PREFIX }}" target="_top">{{ settings.SITE_NAME }}</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- {% if user != None %}             -->
+            <!-- <li><a href="#">{{ user.username }}</a></li> -->
+            <!-- <li><a href="#">logout</a></li> -->
+            <!-- {% endif %} -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END Navigation -->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-lg-offset-1 col-lg-10">
+        {{ dash.render_as_standalone }}
+        </div>
+      </div> <!-- /.row-fluid -->
+    </div><!-- /.container-fluid -->
+    <!-- JavaScripts
+    ================================================== -->
+    <script type="text/javascript">
+      function init_hook() {
+      {% for param, value in params %}
+        $('#id_{{ param }}').val('{{value}}');
+      {% endfor %}
+      }
+    </script>
+    {{ dash.media_js }}
+  </body>
+</html>

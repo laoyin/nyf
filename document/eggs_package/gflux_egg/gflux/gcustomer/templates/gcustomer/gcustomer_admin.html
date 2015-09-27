@@ -1,0 +1,500 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_frame.html" %}
+{% load i18n %}
+{% block gcustomer_user_management %}
+<li class="item nav-active"><a href="/gcustomer/gcustomer_admin/">{% trans "用户管理" %}</a></li>
+{% endblock %}
+
+{% block page_nav %}
+<!-- 公司版的用户管理 -->
+{% if user_type == 3 %}
+<div class="nav-item">
+    <h4>{% trans "用户管理" %}</h4>
+    <ul>
+        <li id = "comp_user_option" class="nav-active">
+            <a href="javascript:get_all_web_users();" target="_top" data-parent="#sidebar">
+                <i class="glyphicon "></i>
+                {% trans "公司用户" %}
+            </a>
+        </li>
+        <li id="app_worker_option">
+            <a href="javascript:get_all_app_users();" target="_top" data-parent="#sidebar">
+                <i class="glyphicon "></i>
+                {% trans "油站用户" %}
+            </a>
+        </li>
+    </ul>
+</div>
+{% endif %}
+
+<!-- gcustomer系统的用户管理 -->
+{% if user_type == 4 %}
+<div class="nav-item">
+    <h4>{% trans "用户管理" %}</h4>
+    <ul>
+        <li id = "system_user_option" class="nav-active" >
+            <a href="javascript:get_all_system_user_list();"  target="_top" data-parent="#sidebar">
+                <i class="glyphicon "></i>
+                {% trans "系统用户设置" %}
+            </a>
+        </li>
+        <li id = "comp_manaer_option">
+            <a href="javascript:get_all_comp_user_list();" target="_top" data-parent="#sidebar">
+                <i class="glyphicon "></i>
+                {% trans "公司用户设置" %}
+            </a>
+        </li>
+        <li id="set_app_user__type_option" style="display:block;">
+            <a href="javascript:user_type_set();" target="_top" data-parent="#sidebar">
+                <i class="glyphicon "></i>
+                {% trans "驾车宝用户设置" %}
+            </a>
+        </li>
+    </ul>
+</div>
+{% endif %}
+
+{% endblock %}
+
+
+{% block page_content %}
+<!-- 公司版的用户管理 -->
+{% if user_type == 3 %}
+<h4 class="title-label-class">{% trans "用户管理" %}</h4>
+
+<div class="col-lg-10" id="user_list" >
+    <table class="table" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+        <thead>
+        <tr  class = "active">
+            <th>{% trans "用户名" %}</th>
+            <th>{% trans "用户类型" %}</th>
+            <th>{% trans "公司" %}</th>
+            <th>{% trans "注册时间" %}</th>
+            <th width="20%">{% trans "操作" %}</th>
+        </tr>
+        </thead>
+        <tbody id="user_list_table">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="col-lg-10" id="app_user_list" style="display:none;">
+    <div style="padding: 0px 0px 10px 10px;">
+        <table class="table" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+            <thead>
+            <tr  class = "active">
+                <th>{% trans "用户名" %}</th>
+                <th>{% trans "用户类型" %}</th>
+                <th>{% trans "油站名" %}</th>
+                <th>{% trans "公司" %}</th>
+                <th>{% trans "注册时间" %}</th>
+                <th width="20%">{% trans "操作" %}</th>
+            </tr>
+            </thead>
+            <tbody id="app_user_list_table">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="select_type_template" style="display: none">
+    <div class="select">
+    <select  onchange="changeUserType(this)" class="form-control">
+        <option value="0">{% trans "待审核用户" %}</option>
+        <option value="1">{% trans "公司普通用户" %}</option>
+        <option value="2">{% trans "公司管理员" %}</option>
+        </select>
+    </div>
+</div>
+
+<div class="select_app_user_type" style="display: none">
+    <div class="select">
+            <select  onchange="changeAppUserType(this)" class="form-control">
+                <option value="0">{% trans "待审核用户" %}</option>
+                <option value="1" style="display:none;">{% trans "加油员" %}</option>
+                <option value="2">{% trans "收银员" %}</option>
+            </select>
+    </div>
+</div>
+{% endif %}
+
+<!-- gcustomer系统的用户管理 -->
+{% if user_type == 4 %}
+<!-- <h4 class="title-label-class">用户列表</h4> -->
+
+<div class="col-lg-10" id="all_system_user_list" >
+    <table class="table" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+        <thead>
+        <tr  class = "active">
+            <th>{% trans "用户名" %}</th>
+            <th>{% trans "用户类型" %}</th>
+            <th>{% trans "注册时间" %}</th>
+            <th width="20%">{% trans "操作" %}</th>
+        </tr>
+        </thead>
+        <tbody id="all_system_user_list_table">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="col-lg-10" id="all_comp_user_list" style="display:none;">
+    <table class="table" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+        <thead>
+        <tr  class = "active">
+            <th>{% trans "用户名" %}</th>
+            <th>{% trans "用户类型" %}</th>
+            <th>{% trans "公司" %}</th>
+            <th>{% trans "注册时间" %}</th>
+            <th width="20%">{% trans "操作" %}</th>
+        </tr>
+        </thead>
+        <tbody id="all_comp_user_list_table">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="col-lg-10" id="app_user_type_set" style="display:none;">
+    <div style="padding: 0px 0px 10px 10px;">
+            <h4>{% trans "设置驾车宝用户类型" %}</h4>
+            <h4 id="group_count" style="display:none;"></h4>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-12 col-lg-12">
+                    <div class="form-inline" style="padding-bottom: 15px;" id='group'>
+                        <div class="form-group">
+                            <input type="text"  style="width: 300px;" class="form-control" id="app_user_name" value="15996458299" placeholder="{% trans "请输入用户名" %}" />
+                        </div>
+                        <button class="btn btn-default" id ="app_user_search">{% trans "搜索" %}</button>
+                    </div>
+                </div>
+
+                <div id="the_app_user_setting_table" class="row" style="display:none;">
+                    <div class="col-lg-5" style="margin-left:20px;">
+                            <table class="table" contenteditable="false" style="border-bottom:1px solid;margin-top:20px;border-color:rgb(221, 221, 221)">
+                                    <thead>
+                                        <tr >
+                                            <th>{% trans "用户名" %}</th>
+                                            <th>{% trans "设置" %}</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody id="app_user_setting_body">
+                                            <tr>
+                                                    <td id="user_name" ></td>
+                                                    <td id ="app_user_setting_button"><button></button></td>
+                                                    <td style="display:none;" id="is_pay_in_advance"></td>
+                                            </tr>
+                                   </tbody>
+                            </table>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>
+
+<div class="select_type_template_system" style="display: none">
+    <div class="select">
+    <select  onchange="changeSystemUserType(this)" class="form-control">
+        <option value="0">{% trans "待审核用户" %}</option>
+        <option value="1" style="display:none;">{% trans "试用版用户" %}</option>
+        <option value="2" style="display:none;">{% trans "大客户用户" %}</option>
+        <option value="3" style="display:none;">{% trans "公司用户" %}</option>
+        <option value="4">{% trans "超级管理员" %}</option>
+        </select>
+    </div>
+</div>
+
+<div class="select_type_template_comp" style="display: none">
+    <div class="select">
+    <select  onchange="changeCompUserType(this)" class="form-control">
+            <option value="0">{% trans "待审核 的公司用户" %}</option>
+            <option value="1">{% trans "公司普通用户" %}</option>
+            <option value="2">{% trans "公司管理员用户" %}</option>
+        </select>
+    </div>
+</div>
+
+<div class="select_app_user_type_system" style="display: none">
+    <div class="select">
+            <select  onchange="changeAppUserType(this)" class="form-control">
+                <option value="0">{% trans "待审核用户" %}</option>
+                <option value="1" style="display:none;">{% trans "加油员" %}</option>
+                <option value="2">{% trans "收银员" %}</option>
+            </select>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
+{% block script_block %}
+<script type="text/javascript" src='/gflux/static/js/jquery.min.js'></script>
+<script type="text/javascript" src='/gflux/static/js/jquery-migrate.js' ></script>
+<script type="text/javascript" src='/gflux/static/js/jquery.cookie-1.4.1.min.js'></script>
+<script type="text/javascript" src='/gflux/static/bootstrap/js/bootstrap.min.js'></script>
+<script type="text/javascript">
+$(function(){
+            // 获取系统用户信息
+             get_system_user_info = function get_system_user_info(){
+                        $.get('/gcustomer/ajax/get_system_user_list/',function(data){
+                               var user_list = data['users'];
+                               for(var i = 0;i<user_list.length;i++){
+                                   var select_type = $('.select_type_template_system').find('.select').clone();
+                                   var obj = user_list[i];
+                                   select_type.find('select').attr('user_id',obj.id);
+                                   select_type.find('option').eq(obj.type).attr('selected','selected');
+                                   select_type = select_type.html()
+                                   time = obj.time.split(".")[0]
+                                   $('#all_system_user_list_table').append('<tr>'+
+                                    '<td>'+obj.name+'</td>'+
+                                    '<td>'+obj.type+'</td>'+
+                                    '<td>'+time+'</td>'+
+                                    '<td>'+select_type+'</td>'+
+                                    '</tr>')
+                               }
+                        });
+             }
+             // 初始化
+             get_system_user_info();
+
+             //获取石油公司信息
+             get_all_comp_user_info = function all_comp_user_info(){
+                    $.get('/gcustomer/ajax/get_all_comp_user_list/',function(data){
+                               var user_list = data['users'];
+                               for(var i = 0;i<user_list.length;i++){
+                                   var select_type = $('.select_type_template_comp').find('.select').clone();
+                                   var obj = user_list[i];
+                                   select_type.find('select').attr('user_id',obj.id);
+                                   select_type.find('option').eq(obj.type).attr('selected','selected');
+                                   select_type = select_type.html()
+                                   time = obj.time.split(".")[0]
+                                   $('#all_comp_user_list_table').append('<tr>'+
+                                    '<td>'+obj.name+'</td>'+
+                                    '<td>'+obj.type+'</td>'+
+                                    '<td>'+obj.company_name+'</td>'+
+                                    '<td>'+time+'</td>'+
+                                    '<td>'+select_type+'</td>'+
+                                    '</tr>')
+                               }
+                        });
+             }
+
+
+             // 公司管理员获取公司用户信息
+             get_comp_user_info = function get_comp_user_info(){
+                       $.get('/gcustomer/ajax/get_all_comp_user_list/',function(data){
+                           var user_list = data['users'];
+                           for(var i = 0;i<user_list.length;i++){
+                               var select_type = $('.select_type_template').find('.select').clone();
+                               var obj = user_list[i];
+                               select_type.find('select').attr('user_id',obj.id);
+                               select_type.find('option').eq(obj.type).attr('selected','selected');
+                               select_type = select_type.html()
+                               time = obj.time.split(".")[0]
+                               $('#user_list_table').append('<tr>'+
+                                '<td>'+obj.name+'</td>'+
+                                '<td>'+obj.type+'</td>'+
+                                '<td>'+obj.company_name+'</td>'+
+                                '<td>'+time+'</td>'+
+                                '<td>'+select_type+'</td>'+
+                                '</tr>')
+                           }
+                       });
+            }
+            get_comp_user_info();
+            // 获取油站工作者
+            get_app_worker_info = function get_app_worker_info(){
+                    $.get('/gcustomer/ajax/get_app_user_list',function(data){
+                                if(data.ret != '0001'){
+                                    alert(data.info)
+                                    return
+                                }
+                               var user_list = data['users'];
+                               for(var i = 0;i<user_list.length;i++){
+                                   var select_type = $('.select_app_user_type').find('.select').clone();
+                                   var obj = user_list[i];
+                                   select_type.find('select').attr('user_id',obj.id);
+                                   select_type.find('option').eq(obj.user_type).attr('selected','selected');
+                                   select_type = select_type.html()
+                                   time = obj.time.split(".")[0]
+                                   $('#app_user_list_table').append('<tr>'+
+                                    '<td>'+obj.name+'</td>'+
+                                    '<td>'+obj.user_type+'</td>'+
+                                    '<td>'+obj.site_name+'</td>'+
+                                    '<td>'+obj.company_name+'</td>'+
+                                    '<td>'+time+'</td>'+
+                                    '<td>'+select_type+'</td>'+
+                                    '</tr>')
+                               }
+                    });
+            }
+});
+
+//查询驾车宝用户
+
+
+$("#app_user_search").on("click",function(){
+        var name = $("#app_user_name").val()
+        if(name == ""){
+            alert("请输入app用户名!");
+            return 
+        }
+        get_app_user_setting(name);
+});
+
+//设置用户是否为测试用户
+$("#app_user_setting_button").on("click",function(){
+        var name = $("#user_name").html()
+        var is_pay_in_advance = Number($("#is_pay_in_advance").html())
+        $.get("/gcustomer/ajax/alter_app_user_settting/",{"name":name,"is_pay_in_advance":is_pay_in_advance},
+            function(data){
+                    if(data.ret != '0001'){
+                        $("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+                         return
+                    }
+                    get_app_user_setting($("#user_name").html())
+            },"json");
+});
+
+function get_app_user_setting(name){
+    $.get("/gcustomer/ajax/get_app_user_setting/",{"name":name},
+            function(data){
+                    if(data.ret != "0001"){
+                        $("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    $("#the_app_user_setting_table").show()
+                    $('#user_name').html(data.data.name)
+                    var is_pay_in_advance = data.is_pay_in_advance
+                    $("#is_pay_in_advance").html(is_pay_in_advance)
+                    if(is_pay_in_advance == 0){
+                        $("#app_user_setting_button").find("button").html("")
+                        $("#app_user_setting_button").find("button").html("设置为测试用户")
+                    }
+                    else{
+                        $("#app_user_setting_button").find("button").html("")
+                        $("#app_user_setting_button").find("button").html("设置为非测试用户")
+                    }
+                    
+            },"json");
+}
+
+    // 获取系统用户信息
+    function get_all_system_user_list(){
+            $("#all_system_user_list").show()
+            $("#all_comp_user_list").hide()
+            $("#app_user_type_set").hide()
+
+            $("#all_system_user_list_table").empty()
+            get_system_user_info();
+
+            $("#system_user_option").addClass("nav-active")
+            $("#comp_manaer_option").removeClass("nav-active")
+            $("#set_app_user__type_option").removeClass("nav-active")
+    }
+    // 获取公司管理员用户信息
+    function get_all_comp_user_list(){
+            $("#all_system_user_list").hide()
+            $("#all_comp_user_list").show()
+            $("#app_user_type_set").hide()
+            
+            $("#all_comp_user_list_table").empty()
+            get_all_comp_user_info();
+
+            $("#system_user_option").removeClass("nav-active")
+            $("#comp_manaer_option").addClass("nav-active")
+            $("#set_app_user__type_option").removeClass("nav-active")
+    }
+
+    //设置驾车宝用户类型 
+    function user_type_set(){
+            $("#all_system_user_list").hide()
+            $("#all_comp_user_list").hide()
+            $("#app_user_type_set").show()
+            $("#the_app_user_setting_table").hide()
+            // $("#all_system_user_list_table").empty()
+            // get_system_user_info();
+
+            $("#system_user_option").removeClass("nav-active")
+            $("#comp_manaer_option").removeClass("nav-active")
+            $("#set_app_user__type_option").addClass("nav-active")
+    }
+
+    //公司管理员获取公司用户信息
+    function get_all_web_users(){
+                $("#user_list").show()
+                $("#app_user_list").hide()
+
+                $('#user_list_table').empty()
+                get_comp_user_info();
+
+                $("#comp_user_option").addClass("nav-active")
+                $("#app_worker_option").removeClass("nav-active")
+
+    }
+    // 公司的油站工作者
+    function get_all_app_users(){
+            $("#user_list").hide()
+            $("#app_user_list").show()
+
+            $('#app_user_list_table').empty()
+            get_app_worker_info();
+
+            $("#comp_user_option").removeClass("nav-active")
+            $("#app_worker_option").addClass("nav-active")
+    }
+
+
+/*修改用户类型*/
+
+//修改系统用户类型
+function changeSystemUserType(obj){
+    var user_id = $(obj).attr('user_id');
+    var type = $(obj).find('option:selected').val();
+    $.post('/gcustomer/ajax/admin_change_user_type/',{"user_id":user_id,type:type},function(data){
+            $('tbody').empty();
+            get_system_user_info();
+    });
+}
+
+//修改石油公司用户类型
+function changeCompUserType(obj){
+    var user_id = $(obj).attr('user_id');
+    var type = $(obj).find('option:selected').val();
+    $.post('/gcustomer/ajax/admin_change_user_type/',{"user_id":user_id,type:type},function(data){
+            $('tbody').empty();
+            get_all_comp_user_info();
+    });
+}
+//修改驾车宝用户类型
+
+
+
+
+//管理员修改公司用户类型
+function changeUserType(obj){
+    var user_id = $(obj).attr('user_id');
+    var type = $(obj).find('option:selected').val();
+    $.post('/gcustomer/ajax/admin_change_user_type/',{"user_id":user_id,type:type},function(data){
+            $('tbody').empty();
+            get_comp_user_info();
+    });
+}
+
+// 修改app用户类型
+function changeAppUserType(obj){
+    var user_id = $(obj).attr('user_id');
+    var type = $(obj).find('option:selected').val();
+    $.post('/gcustomer/ajax/change_app_user_type/',{"user_id":user_id,type:type},function(data){
+            $('#app_user_list_table').empty();
+            get_app_worker_info();
+    });
+}
+
+</script>
+{% endblock %}

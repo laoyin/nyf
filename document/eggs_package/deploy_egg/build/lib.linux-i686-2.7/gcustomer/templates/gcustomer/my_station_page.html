@@ -1,0 +1,514 @@
+{% extends "gcustomer/gcustomer_station.html"%}
+{% load i18n %}
+{% block my_station_nav %}
+<li class="nav-active"><a href="/gcustomer/my_station_list/">{% trans "我的油站" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+
+<!--油站信息显示模块-->
+<div id="station_information">
+    <div style="padding: 10px 20px">
+    	<div style="margin-bottom:20px;">
+            <button type="button" onclick="new_create()" class="btn">{% trans "新建" %}</button>
+    	</div>
+    	<div class="form-group">
+            <div class="row">
+                <div class="col-lg-3">
+                    <input class="form-control"  id="station_keyword" placeholder="{% trans "请输入油站名称或编码" %}" value=""></input>
+                </div>
+                <div class="col-lg-3">
+                    <button id="get_station_with_key_word" class="btn btn-default" type="button">{% trans "查询" %}</button>
+                </div>
+            </div>
+        </div>
+ 
+            <table class="table " contenteditable="false" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+                <thead>
+                    <tr>
+                        <th style="width:100px">{% trans "序号" %}</th>
+                        <th>{% trans "油站编码" %}</th>
+                        <th>{% trans "油站名" %}</th>
+                        <th>{% trans "地址" %}</th>
+                        <th>{% trans "电话" %}</th>
+                        <th style="width:15%;">{% trans "编辑" %}</th>
+                    </tr>
+                </thead>
+                <tbody id="station_list">
+                </tbody>
+            </table>
+    </div>
+</div>
+
+
+<!--新建油站模块-->
+<div id="create_station_information" style="display:none;">
+    <div style="padding: 10px 20px">
+        <div>
+            <h4>{% trans "新建油站" %}</h4>
+        </div>
+        <div id="new_station" class="form-horizontal">
+            <div class="form-group">
+
+                <div class="row" style="margin-top:10px;">
+                	<div class="col-lg-3">
+                		<label for="exampleInputEmail1">{% trans "油站编码" %}</label>
+                	</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                    	<input type="text" name="site_code" id="site_code" class="form-control" placeholder="{% trans "请输入油站编码" %}">
+                    </div>
+                	
+                </div>              
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "油站名" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="site_name" id="name" class="form-control" placeholder="{% trans "请输入油站名" %}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <label for="exampleInputEmail1" style="padding: 10px 20px">{% trans "城市" %}</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" id="province">
+                            <option name="province" value="" selected>{% trans "请选择省" %}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" id="city" >
+                            <option name="city" selected value="">{% trans "请选择市" %}</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" id="xiancode">
+                            <option name="xian" value="" selected>{% trans "请选择县" %}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "详细地址" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="address" id="address" class="form-control" placeholder="{% trans "请输入油站地址" %}">
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "联系电话" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="site_tel" id="site_tel" class="form-control" placeholder="{% trans "请输入电话" %}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                    <button id="new_create" class="btn btn-default" style="position:relative;top:10px;">{% trans "新建" %}</button>
+                    <button type="button" onclick="get_back_one()" class="btn btn-default" style="position:relative;top:10px;">{% trans "返回" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--查看编辑油站详细信息-->
+<div id="details" style="display:none;">
+    <div class="form-group">
+        <div id= "detials">
+            <div style="padding: 10px 20px">
+                <div>
+                    <button onclick="get_back()" class="btn btn-default">{% trans "返回" %}</button>
+                    <button id="modification" class="btn btn-default">{% trans "修改" %}</button>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="title-label-class">{% trans "油站详细信息" %}</h4>
+                        <table id="detail_info" class="table border-table" contenteditable="false" >
+                        </table>
+                    </div>
+
+                </div>
+                <div id="message" class="col-lg-6" style="display:none;">
+                    <label>{% trans "信息修改成功！" %}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}
+
+{% block script_block %}
+<script type="text/javascript">
+    $(function(){
+        if ($("#province").length != 0){
+            init_china_location();
+        }
+    });
+
+    function init_china_location(){
+        var url_prefix = "gcustomer/";
+        ////取得省份的信息
+        $.post('/'+url_prefix+'ajax/get_china_location/',{'parent':0,'level':1},function(data){
+            //判断返回值是否正确
+             if (data.ret!=0001){
+                 alert(data.info)
+                 return
+             }
+             var all_ps=data['dict_city']
+
+             //循环遍历出城市的id和name,并填充到页面中
+             for(var i=0;i<all_ps.length;i++){
+                 var $html=String.format('<option value="{0}">{1}</option>',all_ps[i][0],all_ps[i][1])
+                 $('#province').append($html)
+             }
+        },"json")
+        //监听选择市/县的事件
+
+        $('#province').change(function(){
+            if($("#province").val() == ""){
+                alert(gettext("请选择省份！"));
+                return
+            }
+            //取出url地址
+            var url_prefix = "gcustomer/";
+            var parent = $('#province').val()
+            //通过ajax请求取得城市的信息
+            $.post('/'+url_prefix+'ajax/get_china_location/',
+               {"parent":parent,"level":2},
+                function(data){
+                    //判断返回值是否正确
+                    if (data.ret!=0001){
+                        alert(data.info)
+                        return
+                    }
+                    var all_ps=data['dict_city']
+                    var $city = $('#city').empty();
+                    $city.append('<option selected value="">请选择市</option>')
+                    var $xiancode = $('#xiancode').empty();
+                    $xiancode.append('<option selected value="">请选择区/县</option>')
+                    //循环遍历出城市的id和name,并填充到页面中
+                    for(var i=0;i<all_ps.length;i++){
+                        var $html=String.format('<option value="{0}">{1}</option>',all_ps[i][0],all_ps[i][1])
+                        $('#city').append($html)
+                    }
+                },"json");
+        })
+
+        $("#city").change(function(){
+            if($("#city").val() == ""){
+                alert("请选择市！");
+                return
+            }
+            //取出url地址
+            var url_prefix = "gcustomer/" /*$('meta[name="url_prefix"]').attr('content');*/
+            var parent = $('#city').val()
+
+            //通过ajax请求取得区县的信息
+            $.post('/'+url_prefix+'ajax/get_china_location/',
+               {"parent":parent,"level":3},
+                function(data) {
+                    //判断返回值是否正确
+                    if (data.ret!=0001){
+                        alert(data.info)
+                        return
+                    }
+                    var all_ps = data['dict_city']
+                    var $xiancode = $('#xiancode').empty();
+                    $xiancode.append('<option selected value="">请选择区/县</option>')
+
+                    //循环遍历出城市的id和name,并填充到页面中
+                    for (var i = 0; i < all_ps.length; i++) {
+                         var $html = String.format('<option value="{0}">{1}</option>', all_ps[i][0], all_ps[i][1])
+                         $('#xiancode').append($html)
+                    }
+                },"json");
+        })
+    }
+
+    function new_create () {
+        $("#station_information").hide();
+        $("#create_station_information").show();
+    }
+
+
+    function get_back_one (){
+    	$("#create_station_information").hide();
+    	$("#station_information").show();
+        get_station('');
+    }
+    function get_back() {
+        if($("#modification").html() == "确定"){
+            alert("请确定修改!");
+            return
+        }
+        else{
+            $("#details").hide();
+            $("#message").hide();
+            $("#station_information").show();
+            get_station('');
+
+        }
+        
+    }
+
+
+
+    //新建油站提交部分js(完成)     
+    $(function() {
+    	$("#new_create").on("click",function () {
+    		var site_code = $("#site_code").val();
+    		if (site_code == ""){
+    			alert("请输入油站编码");
+    			return 0;
+    		}
+
+    		var name = $("#name").val();
+    		if (name == ""){
+    			alert("请输入油站名");
+    			return 0;
+    		}
+            var province = $("#province").val();
+            if (province == ""){
+                alert("请选择省份！");
+                return
+            }
+            var city = $("#city").val();
+            if (city == ""){
+                alert("请选择市！");
+                return
+            }
+            var xiancode = $("#xiancode").val();
+            if (xiancode == ""){
+                alert("请选择区/县！");
+                return
+            }
+    		var address = $("#address").val();
+    		if (address == "") {
+    			alert("请输入油站地址");
+    			return 0;
+
+    		}
+    		var site_tel = $("#site_tel").val();
+   
+    		if (site_tel == ""){
+    			alert("请输入联系电话");
+    			return 0;
+    		}
+    		var data = {
+    			'site_code':site_code,
+    			'name':name,
+    			'site_tel':site_tel,
+    			'address':address,
+                'province':province,
+                'city':city,
+                'xiancode':xiancode,
+    		}
+            
+    		$.post("/gcustomer/ajax/create_station/",data,function (data) {
+    			if (data['ret'] == "0001"){
+    				alert("油站创建成功！");
+    				$("#site_code").val("");
+    				$("#name").val("");
+    				$("#site_tel").val("");
+    				$("#address").val("");
+                    $("#province").val("");
+                    $("#city").val("");
+                    $("#xiancode").val("");
+    				$("#new_create").attr("disabled",true)
+
+    			}
+
+    			else {
+    				alert("新建油站失败！");
+    			}
+
+	
+    		},"json");
+
+
+
+        });
+    	
+    })
+
+
+
+
+
+$(function () {
+    get_station('');
+});
+
+//查询显示油站信息
+function get_station(keyword){
+            var data = {'keyword':keyword};
+            $.get("/gcustomer/ajax/get_station_list/", data, function (data) {
+                if(data.ret != '0001'){
+                    alert(data.info);
+                    return ;
+                }
+                //show station
+                $("#station_list").empty();
+                for(var i=0; i<data.station_list.length; i++)
+                {
+                    var station = data.station_list[i];
+                    $("#station_list").append('<tr>\
+                        <td>'+(i+1)+'</td>\
+                        <td>'+station.site_code+'</td>\
+                        <td>'+station.name+'</td>\
+                        <td>'+station.address+'</td>\
+                        <td>'+station.site_tel+'</td>\
+                        <td>\
+                            <button onclick="detail_info(\''+station.sha1+'\')">点击查看</button>\
+                            <button disabled = "disabled" onclick="delete_record(\''+station.sha1+'\')" style="margin-top:5px;">删除</button>\
+                        </td>\
+                    </tr>')
+                }
+
+            }, "json");
+    }
+
+
+
+    //详细信息
+    function detail_info (sha1) {
+        var data = {'sha1':sha1};
+        $.post("/gcustomer/ajax/get_station_detail/", data, function (data) {
+            if(data.ret != '0001'){
+                alert("获取信息失败!")
+            }
+            else{
+                var site_code = data.obj.site_code;
+                var name = data.obj.name;
+                var address = data.obj.address;
+                var site_tel = data.obj.site_tel;
+                var geo_x = data.obj.geo_x;
+                var geo_y = data.obj.geo_y;
+                $("#station_information").hide();
+                $("#details").show();
+                $("#detail_info").empty();
+                $("#detail_info").append('<tr>\
+                    <td style="width:100px;">油站编码</td>\
+                    <td id=\"detail_site_code\">'+site_code+'</td>\
+                    </tr>\
+                    <tr>\
+                    <td style="width:100px;">油站名</td>\
+                    <td id=\"detail_name\">'+name+'</td>\
+                    </tr>\
+                    <tr style="display:none">\
+                        <td id=\"detail_sha1\">'+sha1+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>经度</td>\
+                        <td id=\"detail_geo_x"\>'+geo_x+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>纬度</td>\
+                        <td id=\"detail_geo_y\">'+geo_y+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>地址</td>\
+                        <td id=\"detail_address\">'+address+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>联系电话</td>\
+                        <td id=\"detail_site_tel\">'+site_tel+'</td>\
+                    </tr>\
+                    ')
+
+
+            }
+        },"json");
+}
+
+
+//delete information
+    function delete_record (sha1) {
+        var data = {'sha1':sha1}
+        if(confirm("确定要删除吗？")){
+                $.post("/gcustomer/ajax/delete_station/", data, function (data) {
+                if (data.ret == "0001") {
+                    console.log(data);
+                    get_station('');
+                }
+                else {
+                    console.log("error");
+                }
+            }, "json");
+
+        } 
+        else {
+            return
+        }
+    }
+
+//modefication
+    
+    $(function () {
+        $("#modification").on('click', function () {
+            $("#message").hide();
+            if($(this).html() == "修改") {
+                $("#detials").find("table").attr("contenteditable","true");
+                $("#detials").find("table").css("border","3px solid rgb(204,204,204)");
+                $(this).html("确定");
+            }
+            else if($(this).html() == "确定"){
+                $("#detials").find("table").attr("contenteditable","false");
+                $("#detials").find("table").css("border","1px solid rgb(204,204,204)");
+                var sha1 = $("#detail_sha1").html();
+                var site_code = $("#detail_site_code").html();
+                var name = $("#detail_name").html();
+                var address = $("#detail_address").html();
+                var site_tel = $("#detail_site_tel").html();
+                var geo_x = parseFloat($("#detail_geo_x").html());
+                var geo_y = parseFloat($("#detail_geo_y").html());
+                var data = {
+                    'sha1':sha1,
+                    'site_code':site_code,
+                    'name':name,
+                    'address':address,
+                    'site_tel':site_tel,
+                    'geo_x':geo_x,
+                    'geo_y':geo_y
+                }
+                $.post("/gcustomer/ajax/modify_detail_station/",data, function (data) {
+                    if (data.ret == "0001") {
+                        $("#message").show();
+                        console.log(data);
+                    }
+                    else if(data.ret == "1111"){
+                        alert("信息修改失败！");
+                        console.log(data);
+                    }
+                }, "json");
+                $(this).html("修改");
+            }
+        });
+    })
+
+
+
+//获取查询关键字
+$(function() {
+    $("#get_station_with_key_word").on('click',function() {
+            station_keyword = $("#station_keyword").val()
+            get_station(station_keyword)
+    })
+})
+
+    
+</script>
+{% endblock %}

@@ -1,0 +1,451 @@
+{% load i18n %} {% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    {% csrf_token %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>GCustomer</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'bootstrap-datepicker/css/datepicker.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'css/core.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'css/main_framework.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'css/gcustomer_people.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .navbar-brand{
+        background-image: url('/gflux/static/images/customer_logo.png');
+        background-position: 50% 50%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+        }
+        .footer-link a{
+            padding: 0px 10px;
+            font-size: 13px;
+        }
+        .footer-coryright,.footer-link{
+            font-size: 13px;
+            color: rgba(0,0,0,0.36);
+            padding: 5px;
+        }
+        .nav-kit a{
+            line-height: 50px;
+            color: #fafafa;
+            width: 100%;
+            display: inline-block;
+        }
+        .nav-kit .item{
+            text-align: center;
+        }
+        .nav-kit .nav-active,.nav-kit .nav-active a{
+            background-color: #ddd;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        body{
+            background-color: #fafafa;
+        }
+        .nav-item{
+            background-color: #fff;
+            border-radius: 2px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .nav-item h4{
+            background-color: #eee;
+            padding: 12px 10px;
+            margin: 0px;
+            border: 1px solid #eee;
+        }
+        .nav-item ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav-item ul li{
+            list-style: none;
+            padding: 0px 10%;
+            border-top: 1px solid #eee;
+            cursor: pointer;
+        }
+        .nav-item ul li a{
+            color: #333;
+            padding: 10px 0px;
+            display: inline-block;
+            width: 100%;
+        }
+        .nav-item ul li:hover{
+            background-color: #f5f5f5;
+        }
+        .nav-item .nav-active{
+            background-color: #f5f5f5;
+            border-right: 3px solid #000000;
+        }
+
+        .app-item .item{
+            background-color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #eee;
+            height: 160px;
+        }
+        .app-item .item:hover{
+            background-color: #eee;
+        }
+        .app-item .item a{
+            color: rgba(0,0,0,0.87);
+            font-weight: bold;
+            font-size: 16px;
+            margin: auto;
+            padding: 10px 0px;
+            display: inline-block;
+            width: 100%;
+            height: 120px;
+        }
+
+
+        .home-nav .item{
+            background-color: #fff;
+            height: 200px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+        .home-nav .item:hover{
+            background-color: #eee;
+        }
+        .home-nav .item a{
+            color: rgba(0,0,0,0.87);
+            font-weight: bold;
+            font-size: 16px;
+            margin: auto;
+            padding: 10px 0px;
+            display: inline-block;
+            width: 100%;
+            height: 160px;
+        }
+        .home-nav .item p{
+            background-color: rgba(0,0,0,0.56);
+            padding: 3px 10px;
+            color: #fff;
+        }
+
+        .activity-item h4{
+            /*text-align: center;*/
+            padding: 0px 0px 10px 0px;
+        }
+        .activity-item .progress{
+            height: 14px;
+        }
+        .activity-item{
+            padding: 10px;
+            background-color: #eee;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .item-x-1{
+            background-image: url("{% static '/images/play-arrow.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-2{
+            background-image: url("{% static '/images/schedule.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-3{
+            background-image: url("{% static '/images/pause.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-4{
+            background-image: url("{% static '/images/settings.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-5{
+            background-image: url("{% static '/images/recent-actors.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-6{
+            background-image: url("{% static '/images/cloud-upload.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-7{
+            background-image: url("{% static '/images/trending-up.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-8{
+            background-image: url("{% static '/images/loop.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-9{
+            background-image: url("{% static '/images/favorite.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-10{
+            background-image: url("{% static '/images/trending-down.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-11{
+            background-image: url("{% static '/images/local-atm.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-12{
+            background-image: url("{% static '/images/group-add.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-13{
+            background-image: url("{% static '/images/people.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-14{
+            background-image: url("{% static '/images/shopping-cart.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-15{
+            background-image: url("{% static '/images/meter.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-16{
+            background-image: url("{% static '/images/shuffle.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+
+        .item-1{
+            background-image: url("{% static '/images/timer-auto.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-2{
+            background-image: url("{% static '/images/local-grocery-store.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-3{
+            background-image: url("{% static '/images/local-gas-station.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-4{
+            background-image: url("{% static '/images/recent-actors.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-1-1{
+            /*background-image: url("{% static '/images/luntai.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-2-1{
+            /*background-image: url("{% static '/images/xiche2.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-3-1{
+            /*background-image: url("{% static '/images/changcheng.jpg' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-4-1{
+            /*background-image: url("{% static '/images/xiche1.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-5-1{
+            /*background-image: url("{% static '/images/4s1.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-6-1{
+            /*background-image: url("{% static '/images/4s2.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .border-table{
+            border: 1px solid #ccc;
+        }
+        .border-table th, .border-table td{
+            border: 1px solid #ddd;
+            border-collapse:collapse ;
+        }
+
+    </style>
+    {% block style_block %}
+    {% endblock %}
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="height: 50px;background-color: #101010">
+        <div class="col-md-2 col-lg-2">
+            <p style="color: rgba(255,255,255,0.87);text-align: center;margin: 0">
+                <a class='navbar-brand' style="font-size:20px;color: rgba(255,255,255,0.87);" href="/gcustomer/"></a> </p>
+                <p style="color: #fff;text-align: center"></p>
+        </div>
+        <div class="col-md-7 col-lg-7">
+            <div class="row nav-kit">
+                {% block gcustomer_manage_title %}
+                <div class="col-sm-3 col-md-2 col-lg-2 item"><a href="/gcustomer/gcustomer_manage/">{% trans "客户管理" %}</a></div>
+                {% endblock %}
+
+                {% block gcustomer_activity_title %}
+                <div class="col-sm-3 col-md-2 col-lg-2 item"><a href="/gcustomer/gcustomer_activity/">{% trans "营销活动" %}</a></div>
+                {% endblock %}
+
+                {% block gcustomer_station_title %}
+                <div class="col-sm-3 col-md-2 col-lg-2 item"><a href="/gcustomer/gcustomer_station/">{% trans "油站管理" %}</a></div>
+                {% endblock %}
+
+                {% block gcustomer_advert_title %}
+                <div class="col-sm-3 col-md-2 col-lg-2 item"><a href="/gcustomer/gcustomer_advert/">{% trans "广告管理" %}</a></div>
+                {% endblock %}
+
+                {% block gcustomer_service_title %}
+                <div class="col-sm-3 col-md-2 col-lg-2 item"><a href="#">{% trans "客服管理" %}</a></div>
+                {% endblock %}
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3">
+            <a style="padding:12px 30px;float: right;font-size: 16px;color: rgba(255,255,255,0.87);text-align: center" href="javascript:logout()"><i style="float: left;margin: 2px;" class="glyphicon glyphicon-off"></i>{% trans "退出系统" %}</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="margin-top: 15px;">
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div style="padding: 0px 0px 10px 10px;">
+<div class="" style="padding:10px 20px">
+    <h4>{% trans "上传" %}</h4>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-lg-6">
+                        <form method='POST' action='/gcustomer/ajax/upload_app_img/' enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="exampleInputFile">{% trans "图片" %}</label>
+                                    <input type="file" id="exampleInputFile" name='image'>
+                                    <p class="help-block">{% trans "选择需要上传的文件，支持格式 JPG,PNG" %}</p>
+                                </div>
+
+                                <input type="submit" class="btn btn-info" value="{% trans "上传" %}"/>
+                    </form>
+        </div>
+    </div>
+</div>
+<p id="message" style="display:none;">{{message}}</p>
+ <script>
+        var message=$("#message").text()
+        if(message){
+            $("#alert_modal_body").html(message);
+            $("#alert_modal").modal("show");
+        }
+    </script>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <div style="padding: 3px;text-align: center;margin-top: 20px;">
+                <p class="footer-link">
+                    <a href="#">{% trans "关于我们" %}</a>
+                    <a href="#">{% trans "联系我们" %}</a>
+                    <a href="#">{% trans "在线客服" %}</a>
+                    <a href="#">{% trans "销售联盟" %}</a>
+                </p>
+               <p class="footer-coryright">Powered by:
+                    <a href="https://www.zcdata.com.cn" target="_blank" class="graya3">{% trans "北京志察数据科技有限公司" %}</a>
+               </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
+<!-- JavaScripts
+      ================================================== -->
+<script type="text/javascript" src="{% static 'js/underscore.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-migrate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.blockUI.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.cookie-1.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/utils.{{settings.STATIC_VERSION}}.js' %}"></script>
+<script type="text/javascript" src="{% static 'highcharts/js/highcharts.js' %}"></script>
+<script type="text/javascript" src="{% static 'highcharts/js/highcharts-more.js' %}"></script>
+<script>
+function logout(){
+    $.post('/gcustomer/ajax/logout/').complete(function(){
+        window.location.href="https://www.zcdata.com.cn/marketcloud/";
+    })
+}
+</script>
+{% block script_block %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /usr/local/python-2.7.9/bin/python2.7 /home/work/develop/gflux/trunk/gflux/manage.py runfcgi daemonize=False host=0.0.0.0 port=9092 method=threaded debug=true outlog=/tmp/server_out.log errlog=/tmp/server_err.log >/dev/null 2>&1

@@ -1,0 +1,134 @@
+{% extends "gcustomer/gcustomer_order_page.html" %}
+{% load i18n %}
+{% block refund_process_nav %}
+        <li class="nav-active"><a href="/gcustomer/refund_process/">{% trans "退款处理" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div id="the_order_refund_process">
+    <div style="padding: 10px 20px">
+	<div class="col-lg-3">
+	            <div class="form-horizontal" id="advert_form" method='POST'  enctype="multipart/form-data">
+	                <div class="form-group">
+	                    <label for="exampleInputEmail1">{% trans "虚拟卡号" %}</label>
+	                    <input type="text" name="advert_title" class="form-control" id="vcard_id" placeholder="15996458299" value="15996458299">
+	                </div>
+	                <div class="form-group">
+	                    <label for="exampleInputPassword1">{% trans "身份证号" %}</label>
+	                    <input type="text" name='advert_customer_name' class="form-control" id="id_card" placeholder="320123199208164019" value="320123199208164019">
+	                </div>
+	                <div class="form-group">
+	                	<button class="btn btn-info" id="search_refund">{% trans "查询" %}</button>
+	                </div>
+	            </div>
+	            
+	  </div>
+	  <div class="col-lg-1"></div>
+	  <div class="col-lg-8" style="border:1px solid;border-style:initial;background-image:url(/gflux/static/images/order_background.jpg);display:none;" id="the_refund_order_panel">
+	  	<h4>{% trans "订单信息(每次处理一条退款订单)" %}</h4>
+	  	<ul>
+	  		<li>
+	  			<label>{% trans "订单号:" %}</label>
+	  			<label id="order_sha1"></label>
+  			 </li>
+
+	  		<li>
+	  			<label>{% trans "订单支付时间:" %}</label>
+	  			<label id="order_purchase_time"></label>
+	  		</li>
+
+	  		<li>
+	  			<label>{% trans "申请退款日期:" %}</label>
+	  			<label id="order_refund_submit_time"></label>
+	  		</li>
+
+	  		<li>
+	  			<label>{% trans "订单状态:" %}</label>
+	  			<label id="order_status"></label>
+	  		</li>
+	  	</ul>
+
+		<h4>{% trans "商品信息" %}</h4>
+		<ul>
+	  		<li>
+	  			<label>{% trans "商家:" %}</label>
+	  			<label id="order_seller_name"></label>
+	  		</li>
+
+	  		<li>
+	  			<label>{% trans "商品名:" %}</label>
+	  			<label id="order_item_name"></label>
+	  		</li>
+
+	  		<li>
+	  			<label>{% trans "下单时间:" %}</label>
+	  			<label id="order_time"></label>
+	  		</li>
+
+	  		<li>
+	  			<label>{% trans "购买数量:" %}</label>
+	  			<label id="order_count"></label>
+	  		</li>
+
+	  		<li>
+	  			<label>{% trans "订单总额:" %}</label>
+	  			<label id="order_money"></label>
+	  		</li>
+	  	</ul>
+	  	<button class="btn btn-default" id="confirm_order_refund" style="background-color:rgb(234, 240, 226);margin-bottom:10px;">{% trans "完成退款申请" %}</button>
+  	</div>
+    </div>
+</div>
+{% endblock %}
+{% block script_block%}
+<script type="text/javascript">
+	$(function(){
+		$("#search_refund").on("click",function(){
+			var vcard_id = $("#vcard_id").val();
+			var id_card = $("#id_card").val();
+			dict = {"vcard_id":vcard_id,"id_card":id_card}
+			$.get("/gcustomer/ajax/get_refund_order_info/",dict,
+				function(data){
+					if(data.ret != '0001'){
+						$("#alert_modal_body").html(data.info);
+						$("#alert_modal").modal("show");
+						return;
+					}
+					$("#order_sha1").html(data.refund_order_list[0].order_sha1);
+
+					$("#order_purchase_time").html(data.refund_order_list[0].order_purchase_time);
+
+					$("#order_refund_submit_time").html(data.refund_order_list[0].order_refund_submit_time);
+					$("#order_status").html("申请退款成功");
+
+					$("#order_seller_name").html(data.refund_order_list[0].order_seller_name);
+
+					$("#order_item_name").html(data.refund_order_list[0].order_item_name);
+
+					$("#order_time").html(data.refund_order_list[0].order_time);
+
+					$("#order_count").html(data.refund_order_list[0].order_count);
+
+					$("#order_money").html(data.refund_order_list[0].order_money + ' RMB');
+
+					$("#the_refund_order_panel").show()
+				},"json");
+		});
+		$("#confirm_order_refund").on("click",function(){
+			var order_sha1 = $("#order_sha1").html();
+			dict = {"order_sha1":order_sha1}
+			$.get("/gcustomer/ajax/confirm_order_refund/",dict,
+				function(data){
+					if(data.ret != '0001'){
+						$("#alert_modal_body").html(data.info);
+						$("#alert_modal").modal("show");
+						return;
+					}
+					$("#alert_modal_body").html("处理成功");
+					$("#alert_modal").modal("show");
+					$("#the_refund_order_panel").hide()
+				},"json");
+		});
+	})
+</script>
+{% endblock %}

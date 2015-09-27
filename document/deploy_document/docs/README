@@ -1,0 +1,28 @@
+
+(0) 按照docs/requirements_common.txt安装必要的库
+
+(1) 仿照docs/install_README.txt安装设置数据库及python环境, 初始数据;
+
+(2) 在dash目录下安装编译
+
+./build_egg.sh
+sudo easy_install -Z dist/dash-3.14-py2.7.egg
+
+(3) 在gflux下运行django
+
+创建表格
+python manage.py syncdb
+python manage.py init_gflux_dev_env
+python manage.py init_fuel_type_relation
+python manage.py init_loc_site_fueltype_datehours
+
+导入数据例子： 
+
+python manage.py import_csv_data_card_all --all_file=/media/DATA/ljj/SC-CN-1-2/CDWH/武侯加油/all --card_file=/media/DATA/ljj/SC-CN-1-2/CDWH/武侯加油/card --location_name=SC-CN --location_desc=四川 --site=CDWH
+
+或者
+
+python manage.py import_csv_data_card_all --all_file=../data/all1000.txt --card_file=../data/card1000.txt --location_name=SC-CN --location_desc=四川 --site=CDWH
+
+启动网站：
+python manage.py runserver

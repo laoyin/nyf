@@ -1,0 +1,77 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n%}
+{% block group_page_nav %}
+<li class="nav-active"><a href="/gcustomer/group_page/">{% trans "已有客户群" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+    <h4>{% trans "客户群" %}</h4>
+    <h4 id="group_count" style="display:none;"></h4>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12 col-lg-12">
+            <div class="form-inline" style="padding-bottom: 15px;" id='group'>
+                <div class="form-group">
+                    <input type="text"  style="width: 300px;" class="form-control" id="customer_group_name" value="" placeholder="{% trans "请输入关键词" %}" />
+                </div>
+                <button class="btn btn-default" id ="group_search">{% trans "搜索" %}</button>
+            </div>
+            <div id="the_customer_group_details" style="display:none;">
+                <h4 class="title-label-class">{% trans "群组详情" %}</h4>
+                <table class="table border-table" contenteditable="false">
+                    <thead>
+                    <tr class="success">
+                        <th style="display:none;">序号</th>
+                        <th>{% trans "客户群ID" %}</th>
+                        <th width="20%">{% trans "客户群名称" %}</th>
+                        <th>{% trans "创建者" %}</th>
+                        <th width="10%">{% trans "详情" %}</th>
+                        <th width="10%">{% trans "查看聚合信息" %}</th>
+                        <th width="10%">{% trans "编辑" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody  id="contribution_infornation_survey">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+         <div id="paging_10" class="col-lg-6" style="margin-left:200px;display:none;">
+            <nav>
+                <ul class="pagination">
+                </ul>
+            </nav>
+      </div>
+    </div>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="checkCustomerGroupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                {% trans "客户群名称：" %}
+            </h4>
+         </div>
+         <div class="modal-body">
+            <table id="customer_group_detail">
+            </table>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" 
+               data-dismiss="modal">{% trans "关闭" %}
+            </button>
+         </div>
+      </div>
+</div>
+
+
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+{% endblock %}

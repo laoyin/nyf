@@ -1,0 +1,35 @@
+1. nodejs 安装
+下载源码: node-v0.12.3.tar.gz 
+解压 : tar -xvf node-v0.12.3.tar.gz
+./configure
+make
+make install 
+
+2. 安装必要的库
+2.1 进入message_server目录
+2.2 npm install 
+2.3 安装redis-server : apt-get install redis-server 
+2.4 安装protobuf-2.5.0 
+./configure
+make 
+make install 
+cd python 
+python setup.py build 
+python setup.py install 
+配置成功！
+
+3. 启动测试消息服务器
+3.1 进入core目录执行 node message_server.js
+3.2 进入service目录 运行 python message_client.py protobuf_message_pb2模块是否可用
+3.3  使用message_client中的MessageClient测试登陆
+python 
+>>> from message_client import *  
+>>> client = MessageClient('127.0.0.1', 8000)
+>>> client.Login("nyf","nyf")
+消息服务器终端显示 : 
+
+4. 消息服务器使用
+4.1 在protobuf_message.proto 中添加新的消息协议定义
+4.2 在message_client.py 中定义需要扩展的消息
+4.3 在message_service.py中定义消息服务类调用gearmand处理消息发送
+4.4 在gearmand_work_push_message.py 中实例化message_client的消息客户端完成消息的发送 

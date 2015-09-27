@@ -1,0 +1,107 @@
+1. egg文件生成和使用   参考文档 : http://berdy.iteye.com/blog/1106662
+1.1 安装easy-install
+
+1.2 制作egg
+
+(1) 新建目录egg-demo 新建文件 setup.py (setup.py其实是python工具包distutils的配置文件，setuptools就是基于 distutils来做的)
+(2) 编辑 setup.py 文件如下 : 
+#!/usr/bin/env python 
+#-*- coding:utf-8 -*- 
+
+from setuptools import setup 
+setup() 
+
+(3) 使用下面命令生成egg包 : 
+python setup.py bdist_egg 
+查看文件类型 : file dist/UNKNOWN-0.0.0-py2.6.egg
+查看zip文件内部结构 : unzip -l dist/UNKNOWN-0.0.0-py2.6.egg
+
+(4) 重新编辑setup文件 
+#!/usr/bin/env python 
+#-*- coding:utf-8 -*- 
+
+from setuptools import setup, find_packages 
+
+setup( 
+name = "demo", 
+version="0.1.0", 
+packages = find_packages(), 
+zip_safe = False, 
+
+description = "egg test demo.", 
+long_description = "egg test demo, haha.", 
+author = "amoblin", 
+author_email = "amoblin@ossxp.com", 
+
+license = "GPL", 
+keywords = ("test", "egg"), 
+platforms = "Independant", 
+url = "", 
+) 
+
+生成打包目录
+$ mkdir demo 
+$ cat demo/__init__.py 
+#!/usr/bin/env python 
+#-*- coding:utf-8 -*- 
+
+def test(): 
+print "Hello, I'm amoblin." 
+
+if __name__ == '__main__': 
+test() 
+
+重新打包
+
+
+(5) 安装
+安装成功输出 : 
+running install
+running bdist_egg
+running egg_info
+writing demo.egg-info/PKG-INFO
+writing top-level names to demo.egg-info/top_level.txt
+writing dependency_links to demo.egg-info/dependency_links.txt
+reading manifest file 'demo.egg-info/SOURCES.txt'
+writing manifest file 'demo.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-i686/egg
+running install_lib
+running build_py
+creating build/bdist.linux-i686/egg
+creating build/bdist.linux-i686/egg/demo
+copying build/lib.linux-i686-2.7/demo/__init__.py -> build/bdist.linux-i686/egg/demo
+byte-compiling build/bdist.linux-i686/egg/demo/__init__.py to __init__.pyc
+creating build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/PKG-INFO -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/SOURCES.txt -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/dependency_links.txt -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/not-zip-safe -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/top_level.txt -> build/bdist.linux-i686/egg/EGG-INFO
+creating 'dist/demo-0.1.0-py2.7.egg' and adding 'build/bdist.linux-i686/egg' to it
+removing 'build/bdist.linux-i686/egg' (and everything under it)
+Processing demo-0.1.0-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/demo-0.1.0-py2.7.egg
+Extracting demo-0.1.0-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding demo 0.1.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/demo-0.1.0-py2.7.egg
+Processing dependencies for demo==0.1.0
+Finished processing dependencies for demo==0.1.0
+
+(6) 卸载
+查看安装信息 : 
+$ cd /usr/local/lib/python2.6/dist-packages 
+$ cat easy-install.pth|grep demo 
+./demo-0.1.0-py2.6.egg 
+$ ls -F|grep demo 
+demo-0.1.0-py2.6.egg/ 
+卸载 : 
+删除easy-install.pth中对应的行 
+删除目录 demo-0.1.0-py2.6.egg
+
+2. 打包django项目
+3. 启动django项目
+
+
+
+

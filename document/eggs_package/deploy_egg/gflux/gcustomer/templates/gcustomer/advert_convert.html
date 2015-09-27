@@ -1,0 +1,173 @@
+
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_advert.html" %}
+{% load i18n %}
+{% block style_block %}
+<style type="text/css">
+    .advert-list .item{
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        height: 80px;
+        text-align: center;
+    }
+    .advert-list .item a{
+        line-height: 80px;
+        width: 100%;
+        display: inline-block;
+        height: 80px;
+    }
+
+</style>
+{% endblock %}
+
+
+{% block advert_convent_nav %}
+<li class="nav-active"><a href="/gcustomer/advert_convert/">{% trans "转化销量" %}</a></li>
+{% endblock %}
+
+
+{% block page_content %}
+<div class="" style="padding:10px 20px">
+        <div id="the_launch_advertisement_information" >
+                <h4 class="title-label-class" >{% trans "转化销量" %}</h4>
+                <div class="row advert-list" id="advert_convert_panel">
+                </div>
+        </div>
+
+        <div id="the_advert_convert_count" style="display:none"> 
+                <button class="btn btn-default" onclick="get_back()">{% trans "返回" %}</button>
+                <h4>{% trans "转化销量" %}</h4>
+                <div id="advert_convert_count"></div>
+        </div>
+
+        <div id="the_advert_convert_map" style="display:none;">
+                <h4 class="title-label-class">{% trans "转化销量人群" %}</h4>
+                <div class="row" style="margin-bottom:10px;">
+                    <div class="col-lg-3">
+                        <select class="form-control" id="advert_dimensions">
+                            <option name="people_dimensions" value>{% trans "请选择维度" %}</option>
+                            <option name="people_dimensions" value="0">{% trans "年龄" %}</option>
+                            <option name="people_dimensions" value="1">{% trans "性别" %}</option>
+                            <option name="people_dimensions" value="2">{% trans "职业" %}</option>
+                            <option name="people_dimensions" value="3">{% trans "加油消费次数" %}</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="advert_convert_map">
+                </div>
+        </div>
+</div>
+
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_advertisement_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+<script type="text/javascript">
+   /* $(function(){
+
+        $("#the_advert_convert_count").hide()
+        $("#the_advert_convert_map").hide()
+        $("#the_launch_advertisement_information").show()
+
+        $("#advert_dimensions").change(function(){
+                $("#advert_convert_map").show()
+                if($(this).val() == ""){
+                    $("#advert_convert_map").hide()
+                    alert("请选择维度")
+                }
+                else {
+                    renderPeopleDimensionsAgeDash($(this).val())
+                    $("body").scrollTop(10000)
+                }
+             
+            })
+
+    });
+    //根据不同维度显示不同表
+    function renderPeopleDimensionsAgeDash(dimension){
+            if(dimension){
+                switch(dimension){
+                    case "0" :
+                        data = [
+                                            ['20岁以下',   5.8],
+                                            ['20-40岁',   54.0],
+                                            ['40-60岁',     28.2],
+                                            ['60岁以上',       12.0]
+                                        ]
+                        advertConvertMapDash(data)
+                        break;
+                    case "1" :
+                        data = [
+                                            ['男',   35.8],
+                                            ['女',   64.2],
+                                        ]
+                        advertConvertMapDash(data)
+                        break;
+                    case "2" :
+                        data = [
+                                            ['学生',   5.8],
+                                            ['司机',   54.0],
+                                            ['老师',     28.2],
+                                            ['其他',       12.0]
+                                        ]
+                        advertConvertMapDash(data)
+                        break;
+                    case "3" :
+                        data = [
+                                            ['5次以下',   5.8],
+                                            ['5-10次',   54.0],
+                                            ['10-15次',     28.2],
+                                            ['15次以上',       12.0]
+                                        ]
+                        advertConvertMapDash(data)
+                        break;
+                    default :
+                        alert("该维度信息暂无!")
+                }
+
+            }
+        }
+
+    function advertConvertMapDash(){
+        if($("#advert_convert_map").length !=0){
+            $('#advert_convert_map').highcharts({
+                                chart: {
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                title: {
+                                    text: '销量转化人群类型分布图'
+                                },
+                                credits: {
+                             enabled: false
+                        },
+                                tooltip: {
+                                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true,
+                                            color: '#000000',
+                                            connectorColor: '#000000',
+                                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                                        }
+                                    }
+                                },
+                                series: [{
+                                    type: 'pie',
+                                    name: '比例',
+                                    data:data
+                                }]
+            });
+        }
+    }
+
+    });*/
+
+</script>
+{% endblock %}

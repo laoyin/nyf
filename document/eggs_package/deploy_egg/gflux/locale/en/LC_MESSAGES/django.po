@@ -1,0 +1,4980 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-24 18:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: debug_local_settings.py:69 local_settings.py:66
+#: gcustomer/templates/gcustomer/login.html:141
+msgid "英文"
+msgstr "English"
+
+#: debug_local_settings.py:70 local_settings.py:67
+#: gcustomer/templates/gcustomer/login.html:142
+msgid "中文"
+msgstr "Chinese"
+
+#: gcustomer/models.py:14
+#: gcustomer/templates/gcustomer/create_customer.html:28
+#: gcustomer/templates/gcustomer/show_big_customer.html:46
+msgid "中石油"
+msgstr "CNPC"
+
+#: gcustomer/models.py:16
+#: gcustomer/templates/gcustomer/create_customer.html:29
+msgid "中石化"
+msgstr "Sinopec"
+
+#: gcustomer/models.py:18
+#: gcustomer/templates/gcustomer/create_customer.html:30
+msgid "中海油"
+msgstr "CNOOC"
+
+#: gcustomer/models.py:20
+msgid "壳牌"
+msgstr "SHELL"
+
+#: gcustomer/models.py:22
+#: gcustomer/templates/gcustomer/create_customer.html:32
+msgid "中化"
+msgstr "Sinochem"
+
+#: gcustomer/models.py:27
+msgid "改善运营效率"
+msgstr "Optimize Operation"
+
+#: gcustomer/models.py:34
+msgid "油品优惠"
+msgstr "Fuel Promotion"
+
+#: gcustomer/models.py:42
+msgid "非油品优惠"
+msgstr "Convenience Store Promition"
+
+#: gcustomer/models.py:48
+msgid "定额优惠"
+msgstr "Quota Promotion"
+
+#: gcustomer/models.py:54
+msgid "忠诚客户优惠"
+msgstr "Promotion to loyal customers"
+
+#: gcustomer/status.py:4
+msgid "服务器繁忙"
+msgstr "Server is busy"
+
+#: gcustomer/status.py:5
+msgid "用户未登录"
+msgstr "Not logged in"
+
+#: gcustomer/status.py:7
+msgid "用户不存在"
+msgstr "User doesn't exist"
+
+#: gcustomer/status.py:8
+msgid "密码错误"
+msgstr "Password error"
+
+#: gcustomer/status.py:9
+msgid "评论失败，没有权限"
+msgstr "No permission to comment"
+
+#: gcustomer/status.py:10
+msgid "已评论"
+msgstr "Comments"
+
+#: gcustomer/status.py:11
+msgid "用户已存在"
+msgstr "User is already existent"
+
+#: gcustomer/status.py:12
+msgid "暂无数据"
+msgstr "No data"
+
+#: gcustomer/status.py:13
+msgid "没有更多数据"
+msgstr "No more data"
+
+#: gcustomer/status.py:14
+msgid "创建订单出错，订单创建失败"
+msgstr "Fail to place the order"
+
+#: gcustomer/status.py:15
+msgid "订单查询出错，未能找到订单"
+msgstr "Fail to find the order"
+
+#: gcustomer/status.py:16
+msgid "积分不足"
+msgstr "Score is not enough"
+
+#: gcustomer/status.py:17
+msgid "两次密码不一致"
+msgstr "The two passwords are not the same"
+
+#: gcustomer/status.py:18
+msgid "加油卡不存在"
+msgstr "Cannot recognize card"
+
+#: gcustomer/status.py:19
+msgid "当前已经离线"
+msgstr "User is offline"
+
+#: gcustomer/status.py:20
+msgid "修改支付密码错误"
+msgstr "Fail to change the payment password"
+
+#: gcustomer/status.py:21
+msgid "余额不足"
+msgstr "Balance is not enough"
+
+#: gcustomer/status.py:22
+msgid "加油卡支付失败"
+msgstr "Fail to pay with gas card"
+
+#: gcustomer/status.py:23
+msgid "充值失败"
+msgstr "Fail to charge"
+
+#: gcustomer/status.py:24
+msgid "获取订单详情失败"
+msgstr "Fail to the get the order details"
+
+#: gcustomer/status.py:25
+msgid "收银员不存在"
+msgstr "Cannot recognize station worker"
+
+#: gcustomer/status.py:26
+msgid "删除订单失败"
+msgstr "Fail to delete the order"
+
+#: gcustomer/status.py:27
+msgid "修改订单状态失败"
+msgstr "Fail to change the order status"
+
+#: gcustomer/status.py:28
+msgid "上传图片失败"
+msgstr "Fail to upload the picture"
+
+#: gcustomer/status.py:29
+msgid "修改用户信息失败"
+msgstr "Fail to change the user information"
+
+#: gcustomer/status.py:30
+msgid "石油公司已关联"
+msgstr "The oil company is already associated"
+
+#: gcustomer/status.py:31
+msgid "用户身份证信息格式错误"
+msgstr "Invalid user ID"
+
+#: gcustomer/status.py:32
+msgid "查询油站失败"
+msgstr "Fail to find the gas station"
+
+#: gcustomer/status.py:33
+msgid "查询指定油站的油品失败"
+msgstr "Fail to query the station fuel products"
+
+#: gcustomer/status.py:34
+msgid "获取附近失败"
+msgstr "Fail to search nearby"
+
+#: gcustomer/status.py:35
+msgid "获取便利店热销商品失败"
+msgstr "Fail to get hot-sale products"
+
+#: gcustomer/status.py:36
+msgid "获取救援电话失败"
+msgstr "Fail to get the rescue phone number"
+
+#: gcustomer/status.py:37
+msgid "用户身份验证错误"
+msgstr "Fail to verify the user"
+
+#: gcustomer/status.py:38
+msgid "获取广告周期设置失败"
+msgstr "Fail to get the advertisement delivery period"
+
+#: gcustomer/status.py:39
+msgid "查询广告失败"
+msgstr "Fail to query the advertisement"
+
+#: gcustomer/status.py:40
+msgid "查询Gcustomer用户信息失败"
+msgstr "Fail to get the GCustomer user information"
+
+#: gcustomer/status.py:41
+msgid "广告查看记录失败"
+msgstr "Fail to get the advertisement information"
+
+#: gcustomer/status.py:42
+msgid "记录行车轨迹失败"
+msgstr "Fail to record the car track"
+
+#: gcustomer/status.py:43
+msgid "注册错误"
+msgstr "Fail to sign up"
+
+#: gcustomer/status.py:44
+msgid "请求方法错误"
+msgstr "Error request method"
+
+#: gcustomer/status.py:45
+msgid "用户在其它地方登录"
+msgstr "Already logged in from other places"
+
+#: gcustomer/status.py:46
+msgid "存储用户身份证号失败"
+msgstr "Fail to save the user ID"
+
+#: gcustomer/status.py:47
+msgid "绑定加油卡失败"
+msgstr "Fail to bind the gas card"
+
+#: gcustomer/status.py:48
+msgid "请先办理虚拟卡业务"
+msgstr "Please register the virtual card first"
+
+#: gcustomer/status.py:49
+msgid "查询绑定卡失败"
+msgstr "Fail to get the associated card"
+
+#: gcustomer/status.py:50
+msgid "查询公司失败"
+msgstr "Fail to get the oil company"
+
+#: gcustomer/status.py:51
+msgid "验证用户和卡关联信息失败"
+msgstr "Fail to verify the card membership"
+
+#: gcustomer/status.py:52
+msgid "解除卡绑定失败"
+msgstr "Fail to remove the card association"
+
+#: gcustomer/status.py:53
+msgid "注册公司失败"
+msgstr "Fail to register the company"
+
+#: gcustomer/status.py:54
+msgid "关联石油公司失败"
+msgstr "Fail to associate the oil company"
+
+#: gcustomer/status.py:55
+msgid "查询账户失败"
+msgstr "Fail to query the account"
+
+#: gcustomer/status.py:56
+msgid "站点信息与石油公司信息不匹配"
+msgstr "Station information doesn't match oil company"
+
+#: gcustomer/status.py:57
+msgid "查询油品信息失败"
+msgstr "Fail to get the fuel info"
+
+#: gcustomer/status.py:58
+msgid "交易类型错误"
+msgstr "Error transaction type"
+
+#: gcustomer/status.py:59
+msgid "确认订单失败"
+msgstr "Fail to confirm the order"
+
+#: gcustomer/status.py:60
+msgid "该石油公司已关联"
+msgstr "The oil company is already associated"
+
+#: gcustomer/status.py:61
+msgid "查询石油公司信息失败"
+msgstr "Fail to query the oil company information"
+
+#: gcustomer/status.py:62
+msgid "订单已完成"
+msgstr "The order is completed"
+
+#: gcustomer/status.py:63
+msgid "调用消息服务器发送消息失败"
+msgstr "Fail to deliver the message through server"
+
+#: gcustomer/status.py:64
+msgid "查询用户群信息失败"
+msgstr "Fail to get the user group information"
+
+#: gcustomer/status.py:65
+msgid "创建用户群失败"
+msgstr "Fail to create the user group"
+
+#: gcustomer/status.py:66
+msgid "计算用户群聚合信息失败"
+msgstr "Fail to compute the user group information"
+
+#: gcustomer/status.py:67
+msgid "已创建相同的用户群"
+msgstr "Duplicate user group name"
+
+#: gcustomer/status.py:68
+msgid "订单还未支付"
+msgstr "The order is not paid"
+
+#: gcustomer/status.py:69
+msgid "加密错误"
+msgstr "Encryption error"
+
+#: gcustomer/status.py:70
+msgid "解密错误"
+msgstr "Decryption error"
+
+#: gcustomer/status.py:71
+msgid "激活虚拟卡失败"
+msgstr "Fail to activate the virtual card"
+
+#: gcustomer/status.py:72
+msgid "虚拟卡已激活"
+msgstr "The virtual card is activated"
+
+#: gcustomer/status.py:73
+msgid "md5加密失败"
+msgstr "Fail to encrypy with MD5"
+
+#: gcustomer/status.py:74
+msgid "查询油站工作人员失败"
+msgstr "Fail to query the gas worker info"
+
+#: gcustomer/status.py:75
+msgid "更新订单信息失败"
+msgstr "Fail to update the order info"
+
+#: gcustomer/status.py:76
+msgid "订单类型错误"
+msgstr "Wrong order type"
+
+#: gcustomer/status.py:77
+msgid "等待审核"
+msgstr "Waiting for confirmation"
+
+#: gcustomer/status.py:78
+msgid "查询商品信息失败"
+msgstr "Fail to get the product information"
+
+#: gcustomer/status.py:79
+msgid "查询车后服务信息失败"
+msgstr "Fail to get the car-service information"
+
+#: gcustomer/status.py:80
+msgid "查询营销活动失败"
+msgstr "Fail to get promotion information"
+
+#: gcustomer/status.py:81
+msgid "查询用户公司信息失败"
+msgstr "Fail to get user company information"
+
+#: gcustomer/status.py:82
+msgid "查询用户失败"
+msgstr "Fail to query the user"
+
+#: gcustomer/status.py:83
+msgid "修改石油公司用户类型失败"
+msgstr "Fail to change the user company type"
+
+#: gcustomer/status.py:84
+msgid "修改app用户类型失败"
+msgstr "Fail to change the app user type"
+
+#: gcustomer/status.py:85
+msgid "解除绑定卡失败"
+msgstr "Fail to remove the card association"
+
+#: gcustomer/status.py:86
+msgid "加油卡已绑定"
+msgstr "Gas card is already associated"
+
+#: gcustomer/status.py:87
+msgid "获取加油流失客户油站信息失败"
+msgstr "Fail to get the station user loss rate"
+
+#: gcustomer/status.py:88
+msgid "获取高峰期油站列表失败"
+msgstr "Fail to get the overloaded stations"
+
+#: gcustomer/status.py:89
+msgid "没有加油流失客户"
+msgstr "No users are lost "
+
+#: gcustomer/status.py:90
+msgid "预订不可以支付"
+msgstr "The order cannot be paid"
+
+#: gcustomer/status.py:91
+msgid "油站信息不一致,收银员无法确认"
+msgstr "Worker cannot confirm due to station information is not consistent"
+
+#: gcustomer/status.py:92
+msgid "没有退款订单"
+msgstr "No refund order"
+
+#: gcustomer/status.py:93
+msgid "操作退款失败"
+msgstr "Fail to refund"
+
+#: gcustomer/status.py:94
+msgid "已提交退款申请"
+msgstr "Refund application is submitted"
+
+#: gcustomer/status.py:95
+msgid "退款申请失败"
+msgstr "Fail to apply for refund"
+
+#: gcustomer/status.py:96
+msgid "用户订单信息不匹配"
+msgstr "User order information doesn't match"
+
+#: gcustomer/status.py:97
+msgid "申请已提交或未支付"
+msgstr "Application is submitted or not paid"
+
+#: gcustomer/status.py:98
+msgid "微信支付失败"
+msgstr "Fail to pay with wechat"
+
+#: gcustomer/status.py:99
+msgid "添加油站失败"
+msgstr "Fail to add the gas station"
+
+#: gcustomer/status.py:100
+msgid "油站已存在"
+msgstr "Duplicate station name"
+
+#: gcustomer/status.py:101
+msgid "没有权限"
+msgstr "Not authorized"
+
+#: gcustomer/status.py:102
+msgid "删除目标用户群失败"
+msgstr "Fail to remove the target user group"
+
+#: gcustomer/status.py:103
+msgid "修改登录密码失败"
+msgstr "Fail to change the password"
+
+#: gcustomer/status.py:104
+msgid "原错误密码"
+msgstr "Wrong password"
+
+#: gcustomer/status.py:105
+msgid "意见反馈内容长度不合法"
+msgstr "Comment content length is not allowed"
+
+#: gcustomer/status.py:106
+msgid "意见反馈包含敏感信息"
+msgstr "Comment contains sensitive information"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:7
+#: gcustomer/templates/gcustomer/add_store_items.html:12
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:12
+msgid "添加商品"
+msgstr "Add a product"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:17
+msgid "请选择添加方式"
+msgstr "Please choose the way to add"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:18
+msgid "手动添加"
+msgstr "Manual"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:19
+msgid "自动导入"
+msgstr "Automatic"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:30
+msgid "POS系统ID"
+msgstr "POS system ID"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:35
+msgid "请输入商品的POS系统ID"
+msgstr "Please enter the POS system ID"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:40
+#: gcustomer/templates/gcustomer/show_activity.html:26
+#: gcustomer/templates/gcustomer/show_store_items.html:28
+msgid "商品名称"
+msgstr "Product Name"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:45
+msgid "请输入商品名称"
+msgstr "Please enter the product name"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:50
+msgid "商品单价"
+msgstr "Price"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:55
+msgid "请输入商品单价(元)"
+msgstr "Please enter the product price"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:60
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:144
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:100
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:98
+msgid "上传图片"
+msgstr "Upload an image"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:62
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:146
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:102
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:100
+#: gcustomer/templates/gcustomer/upload_advert.html:26
+#: gcustomer/templates/gcustomer/upload_app_img.html:391
+msgid "选择需要上传的文件，支持格式 JPG,PNG"
+msgstr "Please choose the JPG/PNG file to upload"
+
+#: gcustomer/templates/gcustomer/add_store_items.html:67
+#: gcustomer/templates/gcustomer/create_group_page.html:76
+#: gcustomer/templates/gcustomer/create_group_page.html:102
+#: gcustomer/templates/gcustomer/create_group_page.html:145
+#: gcustomer/templates/gcustomer/fuel_sale.html:17
+#: gcustomer/templates/gcustomer/main_customer_list.html:16
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:16
+#: gcustomer/templates/gcustomer/score_rule_setting.html:32
+#: gcustomer/templates/gcustomer/start_activity.html:355
+#: gcustomer/templates/gcustomer/upload_advert.html:61
+#: gflux/templates/management.html:69 gflux/templates/uploaded_page.html:151
+#: gflux/templates/uploaded_page.html:166
+msgid "确定"
+msgstr "Submit"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:26
+#: gcustomer/templates/gcustomer/advert_convert.html:33
+#: gcustomer/templates/gcustomer/advert_convert.html:40
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:29
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:69
+#: gcustomer/templates/gcustomer/home.html:266
+msgid "转化销量"
+msgstr "converted sales volume"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:39
+#: gcustomer/templates/gcustomer/advert_count.html:36
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:44
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:152
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:108
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:121
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:106
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:119
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:21
+#: gcustomer/templates/gcustomer/my_station_page.html:117
+#: gcustomer/templates/gcustomer/my_station_page.html:131
+#: gcustomer/templates/gcustomer/register.html:148
+#: gcustomer/templates/gcustomer/score_exchange.html:11
+#: gcustomer/templates/gcustomer/score_member.html:11
+#: gcustomer/templates/gcustomer/score_member.html:64
+#: gcustomer/templates/gcustomer/show_activity.html:18
+#: gcustomer/templates/gcustomer/show_store_items.html:42
+#: gcustomer/templates/gcustomer/stop_activity.html:48
+#: gflux/templates/management.html:71
+#: gflux/templates/station_professional_analysis.html:221
+#: gflux/templates/tag.html:91
+msgid "返回"
+msgstr "return"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:45
+msgid "转化销量人群"
+msgstr "Converted customers"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:49
+#: gcustomer/templates/gcustomer/advert_count.html:46
+msgid "请选择维度"
+msgstr "Please choose the dimension"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:50
+#: gcustomer/templates/gcustomer/advert_count.html:47
+#: gcustomer/templates/gcustomer/create_group_page.html:43
+#: gcustomer/templates/gcustomer/stop_activity.html:80
+msgid "年龄"
+msgstr "Age"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:51
+#: gcustomer/templates/gcustomer/advert_count.html:48
+#: gcustomer/templates/gcustomer/create_group_page.html:42
+#: gcustomer/templates/gcustomer/create_group_page.html:57
+#: gcustomer/templates/gcustomer/stop_activity.html:81
+msgid "性别"
+msgstr "Sex"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:52
+#: gcustomer/templates/gcustomer/advert_count.html:49
+#: gcustomer/templates/gcustomer/create_group_page.html:44
+#: gcustomer/templates/gcustomer/create_group_page.html:111
+#: gcustomer/templates/gcustomer/stop_activity.html:82
+msgid "职业"
+msgstr "Career"
+
+#: gcustomer/templates/gcustomer/advert_convert.html:53
+#: gcustomer/templates/gcustomer/advert_count.html:50
+#: gcustomer/templates/gcustomer/stop_activity.html:83
+msgid "加油消费次数"
+msgstr "Number of gas purcahses"
+
+#: gcustomer/templates/gcustomer/advert_count.html:26
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:26
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:63
+#: gcustomer/templates/gcustomer/home.html:261
+msgid "点击统计"
+msgstr "Click statistics"
+
+#: gcustomer/templates/gcustomer/advert_count.html:32
+msgid "投放广告"
+msgstr "Advertisement delivery"
+
+#: gcustomer/templates/gcustomer/advert_count.html:38
+msgid "广告查看量"
+msgstr "Advertisement reading"
+
+#: gcustomer/templates/gcustomer/advert_count.html:42
+msgid "查看人群分布"
+msgstr "Distribution of advertised users"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:4
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:24
+msgid "货运"
+msgstr "Shipping"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:12
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:151
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:11
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:107
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:11
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:105
+#: gcustomer/templates/gcustomer/create_station_group.html:48
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:15
+#: gcustomer/templates/gcustomer/my_station_page.html:13
+#: gcustomer/templates/gcustomer/my_station_page.html:116
+#: gcustomer/templates/gcustomer/start_activity.html:7
+msgid "新建"
+msgstr "Create"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:17
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:16
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:16
+msgid "请输入货运名称关键字"
+msgstr "Please enter the transport keyword"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:20
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:19
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:19
+#: gcustomer/templates/gcustomer/consumption_forecase.html:17
+#: gcustomer/templates/gcustomer/consumption_habits.html:17
+#: gcustomer/templates/gcustomer/contribution.html:15
+#: gcustomer/templates/gcustomer/driving_track.html:29
+#: gcustomer/templates/gcustomer/home.html:362
+#: gcustomer/templates/gcustomer/my_station_page.html:21
+#: gcustomer/templates/gcustomer/order_list_page.html:16
+#: gcustomer/templates/gcustomer/order_refund_page.html:21
+#: gcustomer/templates/gcustomer/score_rule_setting.html:50
+#: gcustomer/templates/gcustomer/show_store_items.html:20
+msgid "查询"
+msgstr "Query"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:27
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:13
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:26
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:26
+#: gcustomer/templates/gcustomer/consumption_forecase.html:38
+#: gcustomer/templates/gcustomer/consumption_habits.html:44
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:27
+#: gcustomer/templates/gcustomer/customer_statistics.html:15
+#: gcustomer/templates/gcustomer/main_customer_list.html:25
+#: gcustomer/templates/gcustomer/my_station_page.html:29
+#: gcustomer/templates/gcustomer/score_exchange.html:17
+#: gcustomer/templates/gcustomer/score_member.html:17
+#: gcustomer/templates/gcustomer/show_big_customer.html:21
+#: gcustomer/templates/gcustomer/start_activity.html:184
+#: gcustomer/templates/gcustomer/station_group.html:26
+msgid "序号"
+msgstr "Sequence Num"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:28
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:72
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:27
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:48
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:27
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:48
+msgid "标题"
+msgstr "Title"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:29
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:80
+msgid "发货城市"
+msgstr "Source city"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:30
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:95
+msgid "目的城市"
+msgstr "Destination city"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:31
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:28
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:28
+#: gcustomer/templates/gcustomer/customer_statistics.html:18
+#: gcustomer/templates/gcustomer/show_big_customer.html:25
+#: gcustomer/templates/gcustomer/station_group.html:29
+msgid "创建时间"
+msgstr "Creation time"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:32
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:30
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:30
+#: gcustomer/templates/gcustomer/group_page.html:30
+#: gcustomer/templates/gcustomer/my_station_page.html:34
+#: gcustomer/templates/gcustomer/score_level_setting.html:16
+#: gcustomer/templates/gcustomer/score_rule_setting.html:65
+#: gflux/templates/admin_page_tbd.html:72
+msgid "编辑"
+msgstr "Edit"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:45
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:18
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:122
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:120
+#: gcustomer/templates/gcustomer/my_station_page.html:132
+#: gcustomer/templates/gcustomer/score_member.html:65
+#: gcustomer/templates/gcustomer/show_big_customer.html:42
+#: gcustomer/templates/gcustomer/show_big_customer.html:53
+#: gcustomer/templates/gcustomer/show_store_items.html:43
+msgid "修改"
+msgstr "Revise"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:49
+msgid "货运详细信息"
+msgstr "Detailed shipping information"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:55
+msgid "货运信息修改成功"
+msgstr "Succeed to change the shipping information"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:65
+msgid "新建货运信息"
+msgstr "Add a shipping"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:75
+msgid "请输入货运标题"
+msgstr "Enter the shipping title"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:84
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:99
+#: gcustomer/templates/gcustomer/create_station_group.html:21
+#: gcustomer/templates/gcustomer/my_station_page.html:80
+msgid "请选择省"
+msgstr "Please select a province"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:89
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:104
+#: gcustomer/templates/gcustomer/create_group_page.html:26
+#: gcustomer/templates/gcustomer/create_station_group.html:26
+#: gcustomer/templates/gcustomer/my_station_page.html:85
+msgid "请选择市"
+msgstr "Please select a city"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:114
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:69
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:68
+#: gflux/apps/station/reports.py:2916 gflux/apps/station/reports.py:2972
+#: gflux/apps/station/reports.py:3556
+msgid "价格"
+msgstr "Price"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:119
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:74
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:73
+msgid "请输入价格"
+msgstr "Please enter the price"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:124
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:79
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:78
+#: gcustomer/templates/gcustomer/my_station_page.html:106
+#: gcustomer/templates/gcustomer/short_message_setting.html:14
+msgid "联系电话"
+msgstr "Phone"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:129
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:84
+#: gcustomer/templates/gcustomer/my_station_page.html:111
+msgid "请输入电话"
+msgstr "Please enter the contact phone number"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:134
+msgid "货物描述"
+msgstr "Goods description"
+
+#: gcustomer/templates/gcustomer/advert_goods_launch.html:139
+msgid "化肥，40吨，需高栏车，长度9.6m，1辆，运费800元"
+msgstr "Fertilizer, 40 tons, large truck, 9.6m long, for $800"
+
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:4
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:38
+msgid "设置周期"
+msgstr "Set the period"
+
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:9
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:35
+#: gcustomer/templates/gcustomer/home.html:275
+msgid "投放设置"
+msgstr "Delivery setting"
+
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:14
+#: gcustomer/templates/gcustomer/upload_advert.html:16
+msgid "广告标题"
+msgstr "Advertisement title"
+
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:15
+msgid "生命周期(天)"
+msgstr "Lifecycle (in days)"
+
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:16
+msgid "播放时间(秒)"
+msgstr "Playing time (in seconds)"
+
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:17
+msgid "播放频率(分钟／次)"
+msgstr "Playing frequency (per minute)"
+
+#: gcustomer/templates/gcustomer/advert_launch_setting.html:19
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:73
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:92
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:134
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:151
+#: gcustomer/templates/gcustomer/start_activity.html:189
+#: gflux/templates/uploaded_page.html:89
+msgid "操作"
+msgstr "Action"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:4
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:30
+msgid "保养"
+msgstr "Save"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:29
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:59
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:29
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:58
+#: gcustomer/templates/gcustomer/my_station_page.html:32
+#: gcustomer/templates/gcustomer/order_list_page.html:43
+msgid "地址"
+msgstr "Address"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:42
+msgid "新建保养信息"
+msgstr "Add a card 4s service information"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:53
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:53
+msgid "请输入标题"
+msgstr "Please enter the title"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:64
+msgid "请输入保养店地址"
+msgstr "4s store address"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:90
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:88
+msgid "主营范围"
+msgstr "Services provided"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:95
+msgid "引擎、变速箱系统、空调系统、冷却系统、燃油系统、动力转向系统等"
+msgstr "Engine, Air condition, and so on"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:126
+msgid "保养详细信息"
+msgstr "Details of 4s service"
+
+#: gcustomer/templates/gcustomer/advert_maintenance_launch.html:132
+msgid "保养信息修改成功！"
+msgstr "Succeed to change the service info"
+
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:4
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:27
+msgid "维修"
+msgstr "Car repair service"
+
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:42
+msgid "新建维修信息"
+msgstr "Add a car repair store"
+
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:63
+msgid "请输入维修店地址"
+msgstr "Address"
+
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:83
+msgid "请输入电话号码"
+msgstr "Phone number"
+
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:93
+msgid "发动机、车身、电气系统、自动变速器维修及车身清洁维护、涂漆、轮胎."
+msgstr "Engine, body, electric equipment, and so on"
+
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:124
+msgid "维修详细信息"
+msgstr "Details for card repair service"
+
+#: gcustomer/templates/gcustomer/advert_repair_launch.html:131
+msgid "维修信息修改成功！"
+msgstr "Succeed to change the car repair service"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:4
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:70
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:113
+#: gcustomer/templates/gcustomer/home.html:81
+msgid "消费预测"
+msgstr "Consumption prediction"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:23
+msgid "预测列表"
+msgstr "Predicted list"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:34
+msgid "信息推送记录"
+msgstr "Message delivery list"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:39
+msgid "类型"
+msgstr "Consumption type"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:40
+msgid "优惠信息标题"
+msgstr "Promotion title"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:41
+msgid "推送时间"
+msgstr "Delivery time"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:42
+#: gcustomer/templates/gcustomer/group_page.html:28
+#: gcustomer/templates/gcustomer/score_member.html:20
+#: gcustomer/templates/gcustomer/show_store_items.html:30
+#: gcustomer/templates/gcustomer/station_group.html:30
+#: gcustomer/templates/gcustomer/stop_activity.html:54
+msgid "详情"
+msgstr "Details"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:48
+msgid "加油优惠信息"
+msgstr "Gas promotion"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:49
+msgid "95#汽油8折"
+msgstr "80% discount for 95# gas"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:50
+msgid "5天"
+msgstr "5 days"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:51
+#: gcustomer/templates/gcustomer/consumption_forecase.html:58
+msgid "点击查看"
+msgstr "Details"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:55
+msgid "非油品优惠信息"
+msgstr "Discount for products"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:56
+msgid "周日买一盒奥利奥赠一包牛奶"
+msgstr "Free milk for a Olio cookie on Sunday"
+
+#: gcustomer/templates/gcustomer/consumption_forecase.html:57
+msgid "1天"
+msgstr "1 day"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:4
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:67
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:107
+#: gcustomer/templates/gcustomer/home.html:76
+msgid "消费习惯"
+msgstr "Consumption habbit"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:20
+msgid "客户消费习惯"
+msgstr "Consumption habbit of customers"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:24
+#: gcustomer/templates/gcustomer/contribution.html:22
+msgid "编号"
+msgstr "Product serial number"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:25
+msgid "条目"
+msgstr "List"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:26
+msgid "内容"
+msgstr "Content"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:35
+msgid "相似客户分布"
+msgstr "Distribution of similar customers"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:40
+msgid "相似客户特征"
+msgstr "Charactertics of similar customers"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:45
+msgid "购买商品"
+msgstr "Buy a product"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:46
+msgid "用户卡号"
+msgstr "User card no"
+
+#: gcustomer/templates/gcustomer/consumption_habits.html:47
+msgid "备注"
+msgstr "Comments"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:33
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:27
+#: gcustomer/templates/gcustomer/home.html:155
+msgid "沟通设置"
+msgstr "Contact setting"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:35
+msgid "Email设置"
+msgstr "Email setting"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:38
+#: gcustomer/templates/gcustomer/start_activity.html:299
+msgid "主题"
+msgstr "Subject"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:39
+#: gcustomer/templates/gcustomer/contact_settings.html:84
+#: gcustomer/templates/gcustomer/start_activity.html:300
+msgid "定额加油500元送矿泉水一瓶"
+msgstr "Free spring water"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:44
+#: gcustomer/templates/gcustomer/start_activity.html:305
+msgid "发件人"
+msgstr "Sender"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:45
+#: gcustomer/templates/gcustomer/contact_settings.html:93
+#: gcustomer/templates/gcustomer/start_activity.html:306
+msgid "中森美福州市公司"
+msgstr "Sinopec Senmei Fuzhou branch"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:49
+#: gcustomer/templates/gcustomer/start_activity.html:310
+msgid "邮件内容"
+msgstr "Content"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:59
+msgid "邮件模版"
+msgstr "Template"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:63
+#: gcustomer/templates/gcustomer/email_setting.html:35
+msgid "简约"
+msgstr "Compact"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:68
+#: gcustomer/templates/gcustomer/email_setting.html:36
+msgid "炫彩"
+msgstr "Cool"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:73
+#: gcustomer/templates/gcustomer/email_setting.html:37
+msgid "清新"
+msgstr "Fresh"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:78
+msgid "预览邮件"
+msgstr "Preview"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:81
+#: gcustomer/templates/gcustomer/start_activity.html:296
+msgid "Email预览"
+msgstr "Preview Email"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:83
+msgid "亲爱的顾客:"
+msgstr "Deal customer:"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:87
+msgid ""
+"1.此活动仅限于2015.03.12—2015.03.31期间，所有囤油兑付成功的囤油宝用户， 享受"
+"每升0.6元囤油兑付补贴；"
+msgstr ""
+"1. This promotion is only for 2015/03/12-2015/03/31, all the jiachebao users "
+"will have a discount of $0.60 for each liter of gas "
+
+#: gcustomer/templates/gcustomer/contact_settings.html:88
+msgid ""
+"2.囤油宝每两次线上兑付时间间隔须>7日，每次线上兑付加油量须≤50升，参与活动的用"
+"户兑付每升补贴0.6元；"
+msgstr ""
+"2. The two continuous purchases will have an interval of at least 7 days, "
+"and each time the gas amount will be less than 50 liters"
+
+#: gcustomer/templates/gcustomer/contact_settings.html:89
+msgid ""
+"3.囤油宝用户在线兑付后，加油补贴款会同用户所兑付油量的油款一起汇入用户绑定的"
+"银行卡内）；"
+msgstr "3. Jiachebao users will pay the money to the oil company account."
+
+#: gcustomer/templates/gcustomer/contact_settings.html:90
+msgid ""
+"4.囤油宝有权取消、终止、修改或暂停本活动，囤油网对本活动拥有最终解释权。"
+msgstr "4. Jiachebao can cancel or terminiate the promotion in need."
+
+#: gcustomer/templates/gcustomer/contribution.html:4
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:73
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:119
+msgid "价值贡献"
+msgstr "Value"
+
+#: gcustomer/templates/gcustomer/contribution.html:18
+msgid "贡献排名"
+msgstr "Rank"
+
+#: gcustomer/templates/gcustomer/contribution.html:23
+msgid "贡献类型"
+msgstr "Type"
+
+#: gcustomer/templates/gcustomer/contribution.html:24
+#: gcustomer/templates/gcustomer/fuel_sale.html:40
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:57
+#: gflux/apps/station/ui_dashlet.py:49 gflux/apps/station/ui_dashlet.py:60
+#: gflux/apps/station/ui_dashlet.py:71 gflux/apps/station/ui_dashlet.py:82
+#: gflux/apps/station/ui_dashlet.py:93 gflux/apps/station/ui_dashlet.py:104
+#: gflux/apps/station/ui_dashlet.py:115 gflux/apps/station/ui_dashlet.py:126
+#: gflux/apps/station/ui_dashlet.py:137 gflux/apps/station/ui_dashlet.py:148
+msgid "排名"
+msgstr "Rank"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:57
+#: gcustomer/templates/gcustomer/create_activity_page.html:102
+msgid "人群分析"
+msgstr "Cluster analysis"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:61
+#: gcustomer/templates/gcustomer/create_activity_page.html:118
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:6
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:41
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:409
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:502
+#: gcustomer/templates/gcustomer/home.html:380
+#: gcustomer/templates/gcustomer/upload_app_img.html:358
+msgid "营销活动"
+msgstr "Promotion"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:65
+msgid "推荐进货"
+msgstr "Product Recommendation"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:68
+msgid "切换"
+msgstr "Switch"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:71
+msgid "产品1"
+msgstr "Product 1"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:74
+msgid "产品2"
+msgstr "Product 2"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:77
+msgid "产品3"
+msgstr "Product 3"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:105
+msgid "客户概览"
+msgstr "Customer Summary"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:108
+msgid "我来筛选"
+msgstr "Choose"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:111
+msgid "自定义客户"
+msgstr "Customize the customers"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:121
+#: gcustomer/templates/gcustomer/create_activity_page.html:156
+msgid "新建活动"
+msgstr "Create an activity"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:124
+msgid "最近活动"
+msgstr "Recent activities"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:128
+msgid "历史活动"
+msgstr "Historical activities"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:138
+msgid "平均加油间隔"
+msgstr "Average gas interval"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:158
+msgid "活动类型："
+msgstr "Activity type:"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:160
+msgid "类型1"
+msgstr "Type1"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:161
+msgid "类型2"
+msgstr "Type2"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:162
+msgid "类型3"
+msgstr "Type3"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:163
+msgid "类型4"
+msgstr "Type4"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:167
+msgid "活动时间："
+msgstr "Activity time"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:168
+msgid "起始日期"
+msgstr "Begin time"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:172
+msgid "结束日期"
+msgstr "End time"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:181
+msgid "活动内容："
+msgstr "Activity description:"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:190
+#: gcustomer/templates/gcustomer/email_setting.html:44
+#: gcustomer/templates/gcustomer/short_message_setting.html:47
+#: gflux/templates/language_setting.html:71
+#: gflux/templates/language_setting.html:83
+#: gflux/templates/language_setting.html:100
+msgid "保存"
+msgstr "Save"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:191
+#: gflux/templates/admin_page_tbd.html:111
+#: gflux/templates/fueltypemanage.html:99 gflux/templates/import.html:81
+#: gflux/templates/import.html.py:117 gflux/templates/management.html:161
+#: gflux/templates/myselftationmanage.html:100 gflux/templates/tag.html:127
+#: gflux/templates/uploaded_page.html:152
+#: gflux/templates/uploaded_page.html:167
+#: gflux/templates/uploaded_page.html:171
+#: gflux/templates/userstationmanage.html:111
+msgid "取消"
+msgstr "Cancel"
+
+#: gcustomer/templates/gcustomer/create_activity_page.html:207
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:536
+#: gcustomer/templates/gcustomer/gcustomer_info.html:271
+#: gcustomer/templates/gcustomer/home.html:399
+#: gcustomer/templates/gcustomer/upload_app_img.html:422
+msgid "北京志察数据科技有限公司"
+msgstr "Beijing Zhicha data Tech. Co., Ltd"
+
+#: gcustomer/templates/gcustomer/create_customer.html:4
+#: gcustomer/templates/gcustomer/create_customer.html:10
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:20
+msgid "新建大客户"
+msgstr "Create an enterprise customer"
+
+#: gcustomer/templates/gcustomer/create_customer.html:15
+msgid "大客户卡号"
+msgstr "Enterprise user cardno"
+
+#: gcustomer/templates/gcustomer/create_customer.html:16
+msgid "请绑定主卡号"
+msgstr "Please bind the master card no"
+
+#: gcustomer/templates/gcustomer/create_customer.html:19
+msgid "大客户名称"
+msgstr "Enterprise customer name"
+
+#: gcustomer/templates/gcustomer/create_customer.html:20
+msgid "请输入单位名称"
+msgstr "Company name"
+
+#: gcustomer/templates/gcustomer/create_customer.html:23
+msgid "选择客户来源"
+msgstr "Source"
+
+#: gcustomer/templates/gcustomer/create_customer.html:31
+msgid "延长壳牌 "
+msgstr "YCSHELL"
+
+#: gcustomer/templates/gcustomer/create_customer.html:38
+#: gcustomer/templates/gcustomer/customer_statistics.html:21
+#: gcustomer/templates/gcustomer/show_big_customer.html:28
+msgid "副卡数量"
+msgstr "Number of slave cards"
+
+#: gcustomer/templates/gcustomer/create_customer.html:41
+msgid "请输入副卡数量"
+msgstr "Enter"
+
+#: gcustomer/templates/gcustomer/create_customer.html:47
+#: gcustomer/templates/gcustomer/create_customer.html:65
+msgid "完成"
+msgstr "Finish"
+
+#: gcustomer/templates/gcustomer/create_customer.html:50
+msgid "编辑副卡信息"
+msgstr "Edit the slave cards"
+
+#: gcustomer/templates/gcustomer/create_customer.html:55
+msgid "请选择编辑方式"
+msgstr "Please specify the edit way"
+
+#: gcustomer/templates/gcustomer/create_customer.html:56
+msgid "导入数据文件"
+msgstr "Import data"
+
+#: gcustomer/templates/gcustomer/create_customer.html:57
+msgid "手动输入"
+msgstr "Manually input"
+
+#: gcustomer/templates/gcustomer/create_customer.html:73
+msgid "选择导入文件"
+msgstr "Please import a file"
+
+#: gcustomer/templates/gcustomer/create_customer.html:79
+#: gcustomer/templates/gcustomer/upload_app_img.html:384
+#: gcustomer/templates/gcustomer/upload_app_img.html:394
+msgid "上传"
+msgstr "Upload"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:4
+#: gcustomer/templates/gcustomer/create_group_page.html:9
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:52
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:125
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:139
+msgid "新建客户群"
+msgstr "Create a user group"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:13
+#: gcustomer/templates/gcustomer/group_page.html:26
+msgid "客户群名称"
+msgstr "Group name"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:14
+msgid "都市白领"
+msgstr "White-collar"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:17
+msgid "客户群范围"
+msgstr "Area"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:21
+#: gcustomer/templates/gcustomer/register.html:132
+#: gcustomer/templates/gcustomer/start_activity.html:98
+#: gflux/templates/import.html:105 gflux/templates/language_setting.html:92
+#: gflux/templates/myselftationmanage.html:88 gflux/templates/register.html:47
+#: gflux/templates/userstationmanage.html:99
+msgid "请选择省份"
+msgstr "Please select a province"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:31
+#: gcustomer/templates/gcustomer/create_station_group.html:31
+msgid "请选择区/县"
+msgstr "Select the district/county"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:37
+msgid "添加基本属性"
+msgstr "Add basic attribute"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:41
+msgid "请选择基本属性"
+msgstr "choose"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:63
+msgid "男"
+msgstr "Male"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:71
+msgid "女"
+msgstr "Female"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:84
+msgid "年龄范围"
+msgstr "Age"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:89
+msgid "起始年龄"
+msgstr "Begin"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:96
+msgid "截止年龄"
+msgstr "End"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:117
+msgid "司机"
+msgstr "Driver"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:125
+msgid "学生"
+msgstr "Student"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:133
+msgid "教师"
+msgstr "Teacher"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:141
+msgid "其他"
+msgstr "Others"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:153
+msgid "添加行为特征"
+msgstr "Add behaviour attribute"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:157
+msgid "请选择行为特征"
+msgstr "Choose"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:162
+#: gcustomer/templates/gcustomer/register.html:135
+#: gcustomer/templates/gcustomer/register.html:138
+#: gcustomer/templates/gcustomer/start_activity.html:103
+#: gcustomer/templates/gcustomer/start_activity.html:108
+#: gflux/templates/import.html:66 gflux/templates/import.html.py:89
+#: gflux/templates/import.html:108 gflux/templates/import.html.py:111
+#: gflux/templates/import.html:125 gflux/templates/language_setting.html:95
+#: gflux/templates/language_setting.html:98 gflux/templates/management.html:66
+#: gflux/templates/myselftationmanage.html:91
+#: gflux/templates/myselftationmanage.html:94 gflux/templates/register.html:50
+#: gflux/templates/register.html.py:53
+#: gflux/templates/userstationmanage.html:102
+#: gflux/templates/userstationmanage.html:105
+msgid "请选择"
+msgstr "Choose"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:170
+msgid "群描述"
+msgstr "Group description"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:171
+msgid "群描述信息"
+msgstr "Group description"
+
+#: gcustomer/templates/gcustomer/create_group_page.html:173
+#: gcustomer/templates/gcustomer/home.html:99
+msgid "创建群"
+msgstr "Create a station group"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:4
+#: gcustomer/templates/gcustomer/gcustomer_station.html:35
+msgid "新建油站群"
+msgstr "Create a station group"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:9
+msgid "新建群"
+msgstr "Create"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:13
+msgid "油站群名称"
+msgstr "Name"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:14
+#: gcustomer/templates/gcustomer/start_activity.html:187
+msgid "名称"
+msgstr "Company Name"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:17
+msgid "油站范围"
+msgstr "Area"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:37
+msgid "油站总销售额"
+msgstr "Total Sales Volume"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:38
+msgid "销售额最小值"
+msgstr "Minimum value"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:41
+msgid "油站排名"
+msgstr "Rank"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:42
+msgid "排名前多少的数值"
+msgstr "Top..."
+
+#: gcustomer/templates/gcustomer/create_station_group.html:45
+msgid "油站群描述"
+msgstr "Group description"
+
+#: gcustomer/templates/gcustomer/create_station_group.html:46
+msgid "建立一个地域范围为福州市的群油站"
+msgstr "Create a station group for Fuzhou area"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:4
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:41
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:99
+msgid "加油卡消费统计"
+msgstr "Refueling card consumption ratio"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:9
+msgid "消费卡管理"
+msgstr "Card management"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:13
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:16
+#: gcustomer/templates/gcustomer/customer_contribution.html:18
+#: gcustomer/templates/gcustomer/manage_customer.html:15
+#: gcustomer/templates/gcustomer/manage_customer.html:17
+msgid "请输入大客户卡号"
+msgstr "Enter the master card no"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:14
+#: gcustomer/templates/gcustomer/customer_contribution.html:19
+#: gcustomer/templates/gcustomer/manage_customer.html:19
+#: gcustomer/templates/gcustomer/show_big_customer.html:16
+#: gflux/templates/userstationmanage.html:61
+msgid "查看"
+msgstr "View"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:17
+#: gcustomer/templates/gcustomer/customer_grade.html:19
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:170
+#: gcustomer/templates/gcustomer/group_page.html:17
+#: gcustomer/templates/gcustomer/score_query.html:18
+#: gcustomer/templates/gcustomer/station_group.html:15
+msgid "搜索"
+msgstr "Search"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:23
+msgid "主卡消费统计"
+msgstr "Consumption of master card"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:28
+#: gcustomer/templates/gcustomer/customer_statistics.html:16
+#: gcustomer/templates/gcustomer/show_big_customer.html:23
+msgid "单位名称"
+msgstr "Company name"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:29
+#: gcustomer/templates/gcustomer/customer_statistics.html:17
+#: gcustomer/templates/gcustomer/show_big_customer.html:24
+msgid "主卡号"
+msgstr "Master cardno"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:30
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:47
+msgid "当前余额(元)"
+msgstr "Current balance"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:31
+msgid "副卡消费信息"
+msgstr "Consumption of slave cards"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:40
+msgid "副卡消费统计"
+msgstr "Statistics of slave cards"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:41
+msgid "主卡号：4367420011310479058"
+msgstr "Master cardno: 4367420011310479058"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:46
+msgid "副卡号"
+msgstr "Slave cardno"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:48
+msgid "详细消费记录"
+msgstr "Detailed consumption records"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:57
+msgid "副卡消费明细"
+msgstr "Slave card details"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:58
+msgid "副卡号：9030230000007810"
+msgstr "slave card no: 9030230000007810"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:62
+#: gflux/apps/station/reports.py:216 gflux/apps/station/reports.py:243
+#: gflux/apps/station/reports.py:272 gflux/apps/station/reports.py:299
+#: gflux/apps/station/reports.py:326 gflux/apps/station/reports.py:413
+#: gflux/apps/station/reports.py:747 gflux/apps/station/reports.py:1586
+#: gflux/apps/station/reports.py:1808 gflux/apps/station/reports.py:1930
+#: gflux/apps/station/reports.py:1987 gflux/apps/station/reports.py:2045
+#: gflux/apps/station/reports.py:2154 gflux/apps/station/reports.py:2181
+#: gflux/apps/station/reports.py:2293 gflux/apps/station/reports.py:3053
+#: gflux/apps/station/reports.py:3107 gflux/apps/station/reports.py:4396
+#: gflux/apps/station/reports.py:4593
+#: gflux/templates/station_professional_analysis.html:82
+msgid "日期"
+msgstr "Date"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:63
+msgid "支出(元)"
+msgstr "Outcome"
+
+#: gcustomer/templates/gcustomer/customer_consume_statistics.html:64
+msgid "余额(元)"
+msgstr "Balance"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:4
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:36
+msgid "大客户贡献"
+msgstr "Contribution"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:11
+msgid "客户贡献"
+msgstr "Contribution"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:24
+msgid "贡献详情"
+msgstr "Details"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:28
+#: gcustomer/templates/gcustomer/customer_grade.html:28
+#: gcustomer/templates/gcustomer/register.html:102
+#: gflux/templates/register.html:42
+msgid "公司名称"
+msgstr "Company Name"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:29
+#: gcustomer/templates/gcustomer/customer_statistics.html:19
+msgid "总消费额"
+msgstr "Total consumption amount"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:30
+msgid "上个月消费额"
+msgstr "Consumption in previous month"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:31
+#: gcustomer/templates/gcustomer/customer_grade.html:29
+msgid "等级积分"
+msgstr "Score degree"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:32
+#: gcustomer/templates/gcustomer/customer_grade.html:30
+msgid "积分排名"
+msgstr "Score rank"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:33
+msgid "加油范围"
+msgstr "Area"
+
+#: gcustomer/templates/gcustomer/customer_contribution.html:46
+msgid "近六月消费额度趋势"
+msgstr "Trend in previous six months"
+
+#: gcustomer/templates/gcustomer/customer_grade.html:4
+msgid "大客户等级积分"
+msgstr "Enterprise customer degree"
+
+#: gcustomer/templates/gcustomer/customer_grade.html:11
+msgid "客户等级积分"
+msgstr "Customer degree"
+
+#: gcustomer/templates/gcustomer/customer_grade.html:18
+#: gcustomer/templates/gcustomer/customer_grade.html:35
+#: gcustomer/templates/gcustomer/show_big_customer.html:13
+#: gcustomer/templates/gcustomer/show_big_customer.html:36
+msgid "福州汽车公司"
+msgstr "Fuzhou Car Company"
+
+#: gcustomer/templates/gcustomer/customer_grade.html:23
+msgid "等级详情"
+msgstr "Details"
+
+#: gcustomer/templates/gcustomer/customer_grade.html:42
+msgid "泉州汽车公司"
+msgstr "Quanzhou Car Company"
+
+#: gcustomer/templates/gcustomer/customer_manage.html:10
+msgid "客户经理设置"
+msgstr "Customer manager setting"
+
+#: gcustomer/templates/gcustomer/customer_manage.html:14
+msgid "暂无信息"
+msgstr "TBD"
+
+#: gcustomer/templates/gcustomer/customer_statistics.html:4
+#: gcustomer/templates/gcustomer/customer_statistics.html:9
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:26
+msgid "大客户统计"
+msgstr "Enterprise customer statistics"
+
+#: gcustomer/templates/gcustomer/customer_statistics.html:11
+msgid "排名前20的大客户"
+msgstr "Top 20 customers"
+
+#: gcustomer/templates/gcustomer/customer_statistics.html:20
+#: gcustomer/templates/gcustomer/show_big_customer.html:27
+msgid "当前余额"
+msgstr "Current balance"
+
+#: gcustomer/templates/gcustomer/customer_statistics.html:31
+msgid "大客户贡献比"
+msgstr "Contribution ratio"
+
+#: gcustomer/templates/gcustomer/driving_track.html:4
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:76
+msgid "行车轨迹"
+msgstr "Driving track"
+
+#: gcustomer/templates/gcustomer/driving_track.html:9
+msgid "选择时间段"
+msgstr "Please choose a period"
+
+#: gcustomer/templates/gcustomer/driving_track.html:13
+msgid "起始时间"
+msgstr "Begin time"
+
+#: gcustomer/templates/gcustomer/driving_track.html:19
+#: gcustomer/templates/gcustomer/start_activity.html:66
+msgid "结束时间"
+msgstr "End time"
+
+#: gcustomer/templates/gcustomer/driving_track.html:26
+msgid "请输入卡号"
+msgstr "Please enter the cardno"
+
+#: gcustomer/templates/gcustomer/email_setting.html:10
+msgid "邮件设置"
+msgstr "Email setting"
+
+#: gcustomer/templates/gcustomer/email_setting.html:14
+msgid "邮箱地址"
+msgstr "Email"
+
+#: gcustomer/templates/gcustomer/email_setting.html:18
+#: gcustomer/templates/gcustomer/start_activity.html:245
+msgid "请选择发件邮箱地址"
+msgstr "Choose the email"
+
+#: gcustomer/templates/gcustomer/email_setting.html:30
+msgid "模板风格"
+msgstr "Template style"
+
+#: gcustomer/templates/gcustomer/email_setting.html:34
+msgid "请选择模板风格"
+msgstr "Choose"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:4
+#: gcustomer/templates/gcustomer/gcustomer_station.html:22
+#: gcustomer/templates/gcustomer/home.html:213
+msgid "油品销售"
+msgstr "Non-fuel Product Sales"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:10
+#: gcustomer/templates/gcustomer/main_customer_list.html:9
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:9
+msgid "选择油站"
+msgstr "Choose the station"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:14
+msgid "请请输入油站名"
+msgstr "Station name"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:14
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:13
+msgid "上海油站"
+msgstr "Shanghai station"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:22
+msgid "油品销售概况"
+msgstr "Non-fuel Product Sales"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:26
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:26
+#: gflux/apps/station/ui_page.py:457 gflux/apps/station/ui_page.py:652
+#: gflux/apps/station/ui_portal.py:13
+msgid "概况"
+msgstr "Summary"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:36
+msgid "油品销售排行"
+msgstr "Top 10 Non-fuel Products in a Month"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:41
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:42
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:58
+msgid "非油品名称"
+msgstr "Non-fuel Product"
+
+#: gcustomer/templates/gcustomer/fuel_sale.html:42
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:43
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:59
+#: gflux/apps/station/reports.py:1147 gflux/apps/station/reports.py:1339
+#: gflux/apps/station/reports.py:1360 gflux/apps/station/reports.py:1414
+#: gflux/apps/station/reports.py:2177 gflux/apps/station/reports.py:2285
+#: gflux/apps/station/reports.py:2434 gflux/apps/station/reports.py:2517
+#: gflux/apps/station/reports.py:2584 gflux/apps/station/reports.py:2605
+#: gflux/templates/station_professional_analysis.html:76
+msgid "销售额"
+msgstr "Sales Volume"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:12
+#: gcustomer/templates/gcustomer/home.html:127
+msgid "活动管理"
+msgstr "Activity management"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:18
+#: gcustomer/templates/gcustomer/show_activity.html:5
+msgid "跟踪"
+msgstr "Track"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:21
+#: gcustomer/templates/gcustomer/stop_activity.html:25
+msgid "结果"
+msgstr "Result"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:30
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:64
+#: gcustomer/templates/gcustomer/register.html:126
+#: gflux/templates/register.html:37
+msgid "邮箱"
+msgstr "Email Address"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:33
+#: gcustomer/templates/gcustomer/home.html:170
+#: gcustomer/templates/gcustomer/short_message_setting.html:4
+#: gcustomer/templates/gcustomer/start_activity.html:166
+#: gcustomer/templates/gcustomer/start_activity.html:237
+msgid "短信"
+msgstr "Message"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:46
+#: gcustomer/templates/gcustomer/home.html:132
+#: gflux/apps/station/reports.py:381 gflux/apps/station/reports.py:731
+#: gflux/apps/station/reports.py:828 gflux/apps/station/reports.py:870
+#: gflux/apps/station/reports.py:889 gflux/apps/station/reports.py:908
+#: gflux/apps/station/reports.py:931 gflux/apps/station/reports.py:953
+#: gflux/apps/station/reports.py:975 gflux/apps/station/reports.py:997
+#: gflux/apps/station/reports.py:1019 gflux/apps/station/reports.py:1034
+#: gflux/apps/station/reports.py:1118 gflux/apps/station/reports.py:1203
+#: gflux/apps/station/reports.py:1329 gflux/apps/station/reports.py:1350
+#: gflux/apps/station/reports.py:1372 gflux/apps/station/reports.py:1384
+#: gflux/apps/station/reports.py:1470 gflux/apps/station/reports.py:1673
+#: gflux/apps/station/reports.py:1715 gflux/apps/station/reports.py:1745
+#: gflux/apps/station/reports.py:2263 gflux/apps/station/reports.py:2345
+#: gflux/apps/station/reports.py:2405 gflux/apps/station/reports.py:2488
+#: gflux/apps/station/reports.py:2574 gflux/apps/station/reports.py:2595
+#: gflux/apps/station/reports.py:2638 gflux/apps/station/reports.py:2729
+#: gflux/apps/station/reports.py:2807 gflux/apps/station/reports.py:3220
+#: gflux/apps/station/reports.py:3580 gflux/apps/station/reports.py:4041
+#: gflux/apps/station/reports.py:4502
+#: gflux/templates/station_professional_analysis.html:91
+#: gflux/templates/welcome.html:157
+msgid "开始"
+msgstr "Start"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:47
+msgid "创建一个营销活动"
+msgstr "Create a promotion"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:52
+#: gcustomer/templates/gcustomer/home.html:137
+#: gcustomer/templates/gcustomer/score_query.html:48
+msgid "时间"
+msgstr "Register Time"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:53
+msgid "查看和监控活动"
+msgstr "View"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:58
+#: gcustomer/templates/gcustomer/home.html:147
+#: gflux/apps/station/reports.py:382 gflux/apps/station/reports.py:732
+#: gflux/apps/station/reports.py:829 gflux/apps/station/reports.py:871
+#: gflux/apps/station/reports.py:890 gflux/apps/station/reports.py:909
+#: gflux/apps/station/reports.py:932 gflux/apps/station/reports.py:954
+#: gflux/apps/station/reports.py:976 gflux/apps/station/reports.py:998
+#: gflux/apps/station/reports.py:1020 gflux/apps/station/reports.py:1035
+#: gflux/apps/station/reports.py:1119 gflux/apps/station/reports.py:1204
+#: gflux/apps/station/reports.py:1330 gflux/apps/station/reports.py:1351
+#: gflux/apps/station/reports.py:1373 gflux/apps/station/reports.py:1385
+#: gflux/apps/station/reports.py:1471 gflux/apps/station/reports.py:1674
+#: gflux/apps/station/reports.py:1716 gflux/apps/station/reports.py:1746
+#: gflux/apps/station/reports.py:2264 gflux/apps/station/reports.py:2346
+#: gflux/apps/station/reports.py:2406 gflux/apps/station/reports.py:2489
+#: gflux/apps/station/reports.py:2575 gflux/apps/station/reports.py:2596
+#: gflux/apps/station/reports.py:2639 gflux/apps/station/reports.py:2730
+#: gflux/apps/station/reports.py:2808 gflux/apps/station/reports.py:3221
+#: gflux/apps/station/reports.py:3581 gflux/apps/station/reports.py:4042
+#: gflux/apps/station/reports.py:4503
+#: gflux/templates/station_professional_analysis.html:96
+#: gflux/templates/welcome.html:160
+msgid "结束"
+msgstr "End"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:59
+msgid "查看活动效果"
+msgstr "Check activity details"
+
+#: gcustomer/templates/gcustomer/gcustomer_activity.html:65
+msgid "设置活动沟通方式"
+msgstr "Contact setting"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:5
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:12
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:33
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:63
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:439
+#: gflux/apps/station/ui_portal.py:125 gflux/templates/admin_page_tbd.html:93
+msgid "用户管理"
+msgstr "User"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:17
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:204
+msgid "公司用户"
+msgstr "Enterprise users"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:23
+msgid "油站用户"
+msgstr "Station users"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:38
+msgid "系统用户设置"
+msgstr "System account setting"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:44
+msgid "公司用户设置"
+msgstr "Enterprise account setting"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:50
+msgid "驾车宝用户设置"
+msgstr "App user setting"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:69
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:87
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:131
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:147
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:179
+#: gcustomer/templates/gcustomer/register.html:108
+#: gcustomer/templates/gcustomer/score_query.html:29
+#: gcustomer/templates/gcustomer/show_activity.html:41
+#: gflux/templates/admin_page_tbd.html:68 gflux/templates/register.html:21
+msgid "用户名"
+msgstr "User Name"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:70
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:88
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:132
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:148
+msgid "用户类型"
+msgstr "User Type"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:71
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:90
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:149
+#: gflux/templates/admin_page_tbd.html:71
+msgid "公司"
+msgstr "Company"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:72
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:91
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:133
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:150
+#: gflux/templates/admin_page_tbd.html:70
+msgid "注册时间"
+msgstr "Register Time"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:89
+#: gcustomer/templates/gcustomer/my_station_page.html:31
+#: gcustomer/templates/gcustomer/my_station_page.html:66
+#: gcustomer/templates/gcustomer/start_activity.html:186
+msgid "油站名"
+msgstr "Station name"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:105
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:115
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:201
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:223
+#: gflux/apps/station/ui_page.py:229
+msgid "待审核用户"
+msgstr "Un-authorized Users"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:106
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:214
+msgid "公司普通用户"
+msgstr "Usual enterprise users "
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:107
+msgid "公司管理员"
+msgstr "Enterprise administrators"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:116
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:224
+msgid "加油员"
+msgstr "Station worker"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:117
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:225
+msgid "收银员"
+msgstr "Station Cashier"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:162
+msgid "设置驾车宝用户类型"
+msgstr "Specify user type"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:168
+#: gcustomer/templates/gcustomer/login.html:127 gflux/templates/login.html:35
+msgid "请输入用户名"
+msgstr "Please Enter User Name"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:180
+#: gflux/apps/station/ui_page.py:327
+msgid "设置"
+msgstr "Settings"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:202
+#: gflux/apps/station/ui_page.py:157 gflux/templates/admin_page_tbd.html:99
+msgid "试用版用户"
+msgstr "Trial Users"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:203
+msgid "大客户用户"
+msgstr "Enterprise user"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:205
+msgid "超级管理员"
+msgstr "Administrator"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:213
+msgid "待审核 的公司用户"
+msgstr "Enterprise users to permit"
+
+#: gcustomer/templates/gcustomer/gcustomer_admin.html:215
+msgid "公司管理员用户"
+msgstr "Enterprise administrators"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:5
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:421
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:514
+#: gcustomer/templates/gcustomer/home.html:237
+#: gcustomer/templates/gcustomer/upload_app_img.html:366
+msgid "广告管理"
+msgstr "Advert"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:11
+msgid "移动广告"
+msgstr "Mobile Advertisement"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:14
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:57
+#: gcustomer/templates/gcustomer/home.html:242
+#: gcustomer/templates/gcustomer/upload_advert.html:6
+#: gcustomer/templates/gcustomer/upload_advert.html:11
+msgid "上传广告"
+msgstr "Publish"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:17
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:51
+#: gcustomer/templates/gcustomer/home.html:247
+#: gcustomer/templates/gcustomer/show_advert.html:34
+msgid "已有广告"
+msgstr "Current"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:23
+#: gcustomer/templates/gcustomer/home.html:256
+msgid "广告效果"
+msgstr "Effect"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:46
+msgid "广告投放"
+msgstr "Delivery"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:52
+msgid "查看已经发布的广告"
+msgstr "Check published"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:58
+msgid "上传品牌相关的广告"
+msgstr "Publish brand advertisement"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:64
+msgid "查看广告访问统计"
+msgstr "Ad visit ratio"
+
+#: gcustomer/templates/gcustomer/gcustomer_advert.html:70
+msgid "查看广告销量转化"
+msgstr "Ad sales ratio"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:392
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:484
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:6
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:92
+msgid "大客户"
+msgstr "Enterprise user"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:396
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:493
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:8
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:85
+#: gcustomer/templates/gcustomer/home.html:47
+#: gcustomer/templates/gcustomer/home.html:50
+#: gcustomer/templates/gcustomer/upload_app_img.html:354
+msgid "客户管理"
+msgstr "Customer"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:403
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:508
+#: gcustomer/templates/gcustomer/gcustomer_station.html:5
+#: gcustomer/templates/gcustomer/upload_app_img.html:362
+msgid "油站管理"
+msgstr "Station"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:415
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:4
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:15
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:37
+#: gcustomer/templates/gcustomer/show_store_items.html:5
+msgid "商品管理"
+msgstr "Store"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:427
+#: gcustomer/templates/gcustomer/gcustomer_info.html:121
+#: gcustomer/templates/gcustomer/gcustomer_score.html:5
+#: gcustomer/templates/gcustomer/gcustomer_score.html:42
+msgid "积分管理"
+msgstr "Score"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:433
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:4
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:26
+msgid "订单管理"
+msgstr "Order"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:447
+msgid "系统设置"
+msgstr "System"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:448
+msgid "修改密码"
+msgstr "Password"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:449
+msgid "设置语言"
+msgstr "Language"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:450
+msgid "意见反馈"
+msgstr "Feedback"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:461
+msgid "退出"
+msgstr "Quit"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:480
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:489
+msgid "欢迎登录GCustomer系统"
+msgstr "Welcome to GCustomer"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:485
+msgid "大客户，查看用户和用户组的消费情况"
+msgstr "Consumption of enterprise users and groups"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:494
+msgid "管理客户，查看用户以及用户组的消费情况"
+msgstr "Manage users and check the consumption information"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:503
+msgid "创建营销活动，查看营销活动的状态和结果"
+msgstr "Create promotions and check the effect"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:509
+msgid "查看油站的客户，运营以及油品非油品销售情况"
+msgstr "Check station customers and sales information"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:515
+msgid "查看投放广告，广告的效益，设置广告相关信息。"
+msgstr "Check advertisement and their effect"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:530
+#: gcustomer/templates/gcustomer/gcustomer_info.html:265
+#: gcustomer/templates/gcustomer/upload_app_img.html:416
+msgid "关于我们"
+msgstr "About us"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:531
+#: gcustomer/templates/gcustomer/gcustomer_info.html:266
+#: gcustomer/templates/gcustomer/upload_app_img.html:417
+msgid "联系我们"
+msgstr "Conect us"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:532
+#: gcustomer/templates/gcustomer/gcustomer_info.html:267
+#: gcustomer/templates/gcustomer/upload_app_img.html:418
+msgid "在线客服"
+msgstr "Contact online"
+
+#: gcustomer/templates/gcustomer/gcustomer_frame.html:533
+#: gcustomer/templates/gcustomer/gcustomer_info.html:268
+#: gcustomer/templates/gcustomer/upload_app_img.html:419
+msgid "销售联盟"
+msgstr "Sales allien"
+
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:9
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:42
+msgid "商品服务"
+msgstr "Store service"
+
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:21
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:48
+msgid "车后服务"
+msgstr "Car service"
+
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:43
+msgid "管理油站便利店的商品"
+msgstr "Manage convience store products"
+
+#: gcustomer/templates/gcustomer/gcustomer_goods.html:49
+msgid "提供货运维修保养相关的车后服务"
+msgstr "Recomend car service"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:120
+msgid "账户管理"
+msgstr "Account management"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:122
+msgid "联系客服"
+msgstr "Contact custumor service"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:126
+#: gcustomer/templates/gcustomer/upload_app_img.html:375
+msgid "退出系统"
+msgstr "Quit"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:134
+msgid "首页"
+msgstr "Homepage"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:136
+msgid "新增副卡"
+msgstr "Add a slave card"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:137
+msgid "修改副卡"
+msgstr "Revise a slave card"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:138
+msgid "消费记录"
+msgstr "Consumption record"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:139
+msgid "实时状况"
+msgstr "Real-time"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:147
+msgid "广告资讯"
+msgstr "Advertisement"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:189
+msgid "货运信息"
+msgstr "Shipping information"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:192
+msgid ""
+"长途搬迁公司还与多家物流货运公司合作，运输范围含盖全国各地，可从事公路、铁路"
+"及航空运输多途径多渠道的长途搬家业务！"
+msgstr ""
+"Home Moving, a company that can help customers to move to national wide."
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:196
+msgid ""
+"福建省省漳州市张工机械厂是一家生产和管理高度现代化的企业，专业从事喷、烤漆房"
+"的研发和制造，有一批材料需要运往福州市。"
+msgstr "Zhangzhou Factory need ship goods to Fuzhou. "
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:200
+msgid ""
+"公司目前具有小汽车专用运输车（箱）5000余辆，单次运量可达5万台，拥有21条商品车"
+"运输班列线，形成覆盖全国的铁路商品车运输网络体系。"
+msgstr ""
+"Our company have more than 500 trucks and can transport to the whole province"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:204
+msgid ""
+"自有车辆，合同车辆，供调派车型有大、小型号的：封闭车，半封闭车，高栏车，平板"
+"车"
+msgstr "Self-owned cars with different types"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:208
+msgid ""
+"福建省福州马耘货运专业提供福州物流，欢迎新老客户咨询，全国统一热：4000360512."
+msgstr ""
+"Fuzhou Mayun Shipping Comany welcome all the customers, and the phone number "
+"is 4000360512"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:212
+msgid ""
+"大量供应各种优质煤炭、锅炉用煤、冶炼用煤等。欢迎来我公司洽谈合作，我公司保证"
+"煤质合格达标，以诚信为本、以诚实是为人，为了双方的互惠互利。"
+msgstr "We suppy all kinds of coals."
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:217
+msgid "福建省福州市中通快递有限公司，大件物流冲福州到北京，有意者请联系"
+msgstr "Fuzhou zhongtong company: we need ship to Beijing. Please contact me."
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:225
+msgid "优惠信息"
+msgstr "Promotion"
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:228
+msgid ""
+"福州合创汽车贸易有限公司在福清举行了“五十铃100P轻卡福州市场推广仪式暨第一"
+"届‘合创杯’五十铃卡车趣味挑战赛”，在本次活动上福州合创正式推出了庆铃100P国III"
+"轻卡。"
+msgstr "Hechuang company has lauched a new card named Qingling 100p."
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:232
+msgid ""
+"福州合创汽车贸易有限公司，专营庆铃五十铃各系列皮卡车、轻卡车、中重型商用车。"
+"恰逢年关将至，福州合创特推出年底冲量优惠活动"
+msgstr "Hechuang has promotions for trucks in October."
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:242
+msgid ""
+"福州合创于2011年4月30号举办“五一过节乐，合创人家最快乐”员工迎五一趣味运动会。"
+msgstr "Hechuang will set up a sports meet on April 30."
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:246
+msgid ""
+"为答谢广大客户对庆铃品牌汽车的厚爱与支持，凡在2011年5月1日至6月30日在福州合创"
+"庆铃4S专营店、福清合庆庆铃4S专营店购庆铃N系列（100P/600P）车型均赠送原厂GPS导"
+"航（带卫星电视）"
+msgstr ""
+"Free GPS for all new customers of Qingling 100P/600p in Hechuang 4s store."
+
+#: gcustomer/templates/gcustomer/gcustomer_info.html:250
+msgid ""
+"10月25日，“品味·舞动生活”合众汽车三周年店庆即将举行，这次店庆活动旨在与消费者"
+"共同分享合众汽车三年以来的喜悦与收获。庆典当天主办方除了会献上精心准备的演出"
+"之外，还准备了丰厚的礼品，与到场来宾进行深度互动。"
+msgstr ""
+"Hechuang has a three-year aniversary and discounts will be available to all "
+"visitors."
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:16
+msgid "大客户管理"
+msgstr "Enterprise customers"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:31
+#: gcustomer/templates/gcustomer/manage_customer.html:4
+#: gcustomer/templates/gcustomer/manage_customer.html:10
+#: gcustomer/templates/gcustomer/show_big_customer.html:4
+msgid "管理大客户"
+msgstr "Manage"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:49
+msgid "目标客户群"
+msgstr "Traget"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:55
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:146
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:147
+#: gcustomer/templates/gcustomer/group_page.html:4
+msgid "已有客户群"
+msgstr "Current"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:64
+msgid "加油卡画像"
+msgstr "Profiling of gas card"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:93
+msgid "管理大客户的信息"
+msgstr "Manage information"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:100
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:108
+msgid "单个客户的消费习惯信息"
+msgstr "Consumption habiit"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:114
+msgid "客户行为预测和消息推送"
+msgstr "Behaviour prediction"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:120
+msgid "单个客户的价值评估"
+msgstr "Value of customers"
+
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:126
+#: gcustomer/templates/gcustomer/gcustomer_manage.html:140
+msgid "用户创建客户群"
+msgstr "Create a user group"
+
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:9
+msgid "我的订单"
+msgstr "My orders"
+
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:12
+#: gcustomer/templates/gcustomer/order_list_page.html:4
+msgid "订单流水"
+msgstr "Order list"
+
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:15
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:31
+#: gcustomer/templates/gcustomer/order_refund_page.html:4
+msgid "退款处理"
+msgstr "Refunding"
+
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:18
+msgid "交易曲线"
+msgstr "Transaction Trend"
+
+#: gcustomer/templates/gcustomer/gcustomer_order_page.html:32
+msgid "根据油站管理公司的订单"
+msgstr "Manage orders by company"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:11
+#: gcustomer/templates/gcustomer/gcustomer_score.html:47
+msgid "积分商品"
+msgstr "Goods for score"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:14
+#: gcustomer/templates/gcustomer/score_rule_setting.html:4
+msgid "商品积分设置"
+msgstr "Score mall setting"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:17
+msgid "用户等级设置"
+msgstr "User level setting"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:20
+#: gcustomer/templates/gcustomer/score_exchange.html:4
+msgid "积分兑换商品"
+msgstr "Buy goods with score"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:23
+#: gcustomer/templates/gcustomer/score_member.html:4
+msgid "会员商品"
+msgstr "Member specials"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:30
+#: gcustomer/templates/gcustomer/gcustomer_score.html:53
+#: gcustomer/templates/gcustomer/score_query.html:10
+msgid "积分查询"
+msgstr "Query score"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:33
+#: gcustomer/templates/gcustomer/score_query.html:4
+msgid "查询用户积分"
+msgstr "Query"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:48
+msgid "公司的积分商城"
+msgstr "Score mall"
+
+#: gcustomer/templates/gcustomer/gcustomer_score.html:54
+msgid "查询用户积分和积分记录详情"
+msgstr "Details of user score"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:11
+#: gcustomer/templates/gcustomer/gcustomer_station.html:48
+#: gcustomer/templates/gcustomer/home.html:53
+#: gcustomer/templates/gcustomer/home.html:198
+msgid "油站画像"
+msgstr "Station profiling"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:14
+#: gcustomer/templates/gcustomer/my_station_page.html:4
+msgid "我的油站"
+msgstr "My station"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:18
+#: gcustomer/templates/gcustomer/gcustomer_station.html:53
+#: gcustomer/templates/gcustomer/home.html:203
+#: gcustomer/templates/gcustomer/main_customer_list.html:4
+msgid "主要客户"
+msgstr ""
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:26
+#: gcustomer/templates/gcustomer/gcustomer_station.html:59
+#: gcustomer/templates/gcustomer/home.html:218
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:4
+msgid "非油品销售"
+msgstr "Non-fuel Product Sales"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:32
+msgid "油站群管理"
+msgstr "Manage station group"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:39
+#: gcustomer/templates/gcustomer/station_group.html:4
+msgid "已有油站群"
+msgstr "Current"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:54
+msgid "油站主要客户列表"
+msgstr "Main customers of station"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:60
+msgid "油站非油品销售情况"
+msgstr "Non-fuel Product Sales"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:65
+#: gcustomer/templates/gcustomer/home.html:208
+#: gcustomer/templates/gcustomer/station_operation_efficiency.html:4
+msgid "运营效率"
+msgstr "Operation Efficiency"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:66
+msgid "查看油站的运营效率"
+msgstr "Check"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:71
+msgid "油非转化"
+msgstr "Conversion from oil to non-fuel"
+
+#: gcustomer/templates/gcustomer/gcustomer_station.html:72
+msgid "油品和非油品之间的转化"
+msgstr "Conversion between fuel and non-fuel"
+
+#: gcustomer/templates/gcustomer/group_page.html:9
+msgid "客户群"
+msgstr "User group"
+
+#: gcustomer/templates/gcustomer/group_page.html:15
+msgid "请输入关键词"
+msgstr "Enter keyword"
+
+#: gcustomer/templates/gcustomer/group_page.html:20
+#: gcustomer/templates/gcustomer/station_group.html:22
+msgid "群组详情"
+msgstr "Group details"
+
+#: gcustomer/templates/gcustomer/group_page.html:25
+msgid "客户群ID"
+msgstr "Group ID"
+
+#: gcustomer/templates/gcustomer/group_page.html:27
+#: gcustomer/templates/gcustomer/station_group.html:28
+msgid "创建者"
+msgstr "Creator"
+
+#: gcustomer/templates/gcustomer/group_page.html:29
+msgid "查看聚合信息"
+msgstr "Cluster information"
+
+#: gcustomer/templates/gcustomer/group_page.html:57
+msgid "客户群名称："
+msgstr "Group name"
+
+#: gcustomer/templates/gcustomer/group_page.html:66
+#: gcustomer/templates/gcustomer/station_group.html:60
+msgid "关闭"
+msgstr "close"
+
+#: gcustomer/templates/gcustomer/home.html:27
+msgid "聚合1：共6人"
+msgstr "Cluster 1: 6 people together"
+
+#: gcustomer/templates/gcustomer/home.html:29
+msgid "用户列表"
+msgstr "User list"
+
+#: gcustomer/templates/gcustomer/home.html:33
+msgid "商品列表"
+msgstr "Product list"
+
+#: gcustomer/templates/gcustomer/home.html:41
+msgid "油品零售CRM系统"
+msgstr "CRM system for oil sales"
+
+#: gcustomer/templates/gcustomer/home.html:56
+msgid "广告接入"
+msgstr "Advertisement publishment"
+
+#: gcustomer/templates/gcustomer/home.html:71
+msgid "用户画像"
+msgstr "User profiling"
+
+#: gcustomer/templates/gcustomer/home.html:86
+msgid "价值贡献（相当于把以前的个人画像分成三部分显示）"
+msgstr "Customer value"
+
+#: gcustomer/templates/gcustomer/home.html:94
+#: gcustomer/templates/gcustomer/start_activity.html:126
+msgid "目标用户群"
+msgstr "Taget user groups"
+
+#: gcustomer/templates/gcustomer/home.html:104
+msgid "已有群"
+msgstr "Current"
+
+#: gcustomer/templates/gcustomer/home.html:109
+msgid "系统推荐(原来的人群聚合)"
+msgstr "Recommended"
+
+#: gcustomer/templates/gcustomer/home.html:142
+msgid "等待"
+msgstr "Wait"
+
+#: gcustomer/templates/gcustomer/home.html:160
+msgid "导出"
+msgstr "Import"
+
+#: gcustomer/templates/gcustomer/home.html:165
+msgid "直邮"
+msgstr "Mail"
+
+#: gcustomer/templates/gcustomer/home.html:175
+msgid "客户经理"
+msgstr "Customer manager"
+
+#: gcustomer/templates/gcustomer/home.html:280
+msgid "周期"
+msgstr "Period"
+
+#: gcustomer/templates/gcustomer/home.html:285
+msgid "间隔"
+msgstr "Interval"
+
+#: gcustomer/templates/gcustomer/home.html:305
+#: gflux/apps/station/reports.py:217 gflux/apps/station/reports.py:244
+#: gflux/apps/station/reports.py:273 gflux/apps/station/reports.py:300
+#: gflux/apps/station/reports.py:327 gflux/apps/station/reports.py:383
+#: gflux/apps/station/reports.py:414 gflux/apps/station/reports.py:860
+#: gflux/apps/station/reports.py:1036 gflux/apps/station/reports.py:1120
+#: gflux/apps/station/reports.py:1205 gflux/apps/station/reports.py:1331
+#: gflux/apps/station/reports.py:1352 gflux/apps/station/reports.py:1374
+#: gflux/apps/station/reports.py:1386 gflux/apps/station/reports.py:1472
+#: gflux/apps/station/reports.py:1484 gflux/apps/station/reports.py:1566
+#: gflux/apps/station/reports.py:1573 gflux/apps/station/reports.py:1587
+#: gflux/apps/station/reports.py:1675 gflux/apps/station/reports.py:1717
+#: gflux/apps/station/reports.py:1747 gflux/apps/station/reports.py:1809
+#: gflux/apps/station/reports.py:1931 gflux/apps/station/reports.py:1988
+#: gflux/apps/station/reports.py:2046 gflux/apps/station/reports.py:2113
+#: gflux/apps/station/reports.py:2155 gflux/apps/station/reports.py:2182
+#: gflux/apps/station/reports.py:2265 gflux/apps/station/reports.py:2294
+#: gflux/apps/station/reports.py:2347 gflux/apps/station/reports.py:2407
+#: gflux/apps/station/reports.py:2490 gflux/apps/station/reports.py:2576
+#: gflux/apps/station/reports.py:2597 gflux/apps/station/reports.py:2616
+#: gflux/apps/station/reports.py:2640 gflux/apps/station/reports.py:2731
+#: gflux/apps/station/reports.py:2809 gflux/apps/station/reports.py:2903
+#: gflux/apps/station/reports.py:2960 gflux/apps/station/reports.py:3022
+#: gflux/apps/station/reports.py:3052 gflux/apps/station/reports.py:3106
+#: gflux/apps/station/reports.py:3222 gflux/apps/station/reports.py:3582
+#: gflux/apps/station/reports.py:3691 gflux/apps/station/reports.py:3707
+#: gflux/apps/station/reports.py:3723 gflux/apps/station/reports.py:3738
+#: gflux/apps/station/reports.py:3754 gflux/apps/station/reports.py:3770
+#: gflux/apps/station/reports.py:3786 gflux/apps/station/reports.py:3911
+#: gflux/apps/station/reports.py:4036 gflux/apps/station/reports.py:4040
+#: gflux/apps/station/reports.py:4501 gflux/apps/station/reports.py:4594
+#: gflux/templates/management.html:64
+#: gflux/templates/station_professional_analysis.html:63
+#: gflux/templates/welcome.html:110 gflux/templates/welcome.html.py:136
+msgid "站点"
+msgstr "Gas Station"
+
+#: gcustomer/templates/gcustomer/home.html:316
+msgid "更新"
+msgstr "Refresh"
+
+#: gcustomer/templates/gcustomer/home.html:320
+msgid "油站参数"
+msgstr "Station parameters"
+
+#: gcustomer/templates/gcustomer/home.html:323
+msgid "客户总数：xxx"
+msgstr "Customer number: xxx"
+
+#: gcustomer/templates/gcustomer/home.html:324
+msgid "分析样本时间范围：xxx-xxx"
+msgstr "Sampling time: xxx-xxx"
+
+#: gcustomer/templates/gcustomer/home.html:325
+msgid "总加油量：xxx"
+msgstr "Total gas amount: xxx"
+
+#: gcustomer/templates/gcustomer/home.html:326
+msgid "总非油品销售额:xxx"
+msgstr "Non-fuel Product Sales"
+
+#: gcustomer/templates/gcustomer/home.html:327
+msgid "总销售额：xxx"
+msgstr "Total Sales Volume"
+
+#: gcustomer/templates/gcustomer/home.html:331
+msgid "关注的人群"
+msgstr "Concerning groups"
+
+#: gcustomer/templates/gcustomer/home.html:334
+msgid "取消关注"
+msgstr "Cancel concern"
+
+#: gcustomer/templates/gcustomer/home.html:335
+msgid "特征：加油时间倾向于早上"
+msgstr "Attribute: gasfill in the morning"
+
+#: gcustomer/templates/gcustomer/home.html:365
+msgid "例如："
+msgstr "For example:"
+
+#: gcustomer/templates/gcustomer/home.html:368
+msgid "行为特征"
+msgstr "Behaviour attribute"
+
+#: gcustomer/templates/gcustomer/home.html:374
+msgid "所属人群"
+msgstr "People"
+
+#: gcustomer/templates/gcustomer/login.html:106
+msgid "注册账号"
+msgstr "Signup"
+
+#: gcustomer/templates/gcustomer/login.html:124
+msgid "用户登录"
+msgstr "Login"
+
+#: gcustomer/templates/gcustomer/login.html:130 gflux/templates/login.html:41
+msgid "请输入密码"
+msgstr "Please Enter Password"
+
+#: gcustomer/templates/gcustomer/login.html:135
+msgid "记住密码"
+msgstr "Remember password"
+
+#: gcustomer/templates/gcustomer/login.html:140
+msgid "请选择语言"
+msgstr "Choose language"
+
+#: gcustomer/templates/gcustomer/login.html:145
+msgid "登录"
+msgstr "Login"
+
+#: gcustomer/templates/gcustomer/main_customer_list.html:13
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:13
+msgid "请输入油站名称"
+msgstr "Station name"
+
+#: gcustomer/templates/gcustomer/main_customer_list.html:21
+msgid "排名前10客户"
+msgstr "Top 10 customers"
+
+#: gcustomer/templates/gcustomer/main_customer_list.html:26
+msgid "客户名"
+msgstr "Username"
+
+#: gcustomer/templates/gcustomer/main_customer_list.html:27
+msgid "加油额"
+msgstr "Gas volume"
+
+#: gcustomer/templates/gcustomer/main_customer_list.html:36
+msgid "客户贡献比例"
+msgstr "Contribution ratio"
+
+#: gcustomer/templates/gcustomer/manage_customer.html:25
+msgid "信息概况"
+msgstr "Information summary"
+
+#: gcustomer/templates/gcustomer/manage_customer.html:29
+msgid "客户信息"
+msgstr "Customer information"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:18
+msgid "请输入油站名称或编码"
+msgstr "Enter gas name or ID"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:30
+#: gcustomer/templates/gcustomer/my_station_page.html:55
+msgid "油站编码"
+msgstr "ID"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:33
+msgid "电话"
+msgstr "Phone"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:48
+msgid "新建油站"
+msgstr "Add a station"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:60
+msgid "请输入油站编码"
+msgstr "ID"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:71
+msgid "请输入油站名"
+msgstr "Name"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:76
+msgid "城市"
+msgstr "City"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:90
+msgid "请选择县"
+msgstr "County"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:96
+msgid "详细地址"
+msgstr "Address"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:101
+msgid "请输入油站地址"
+msgstr "Station address"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:136
+msgid "油站详细信息"
+msgstr "Station details"
+
+#: gcustomer/templates/gcustomer/my_station_page.html:143
+msgid "信息修改成功！"
+msgstr "Succeed to revise the information"
+
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:22
+msgid "非油品销售概况"
+msgstr "Non-fuel Product Sales"
+
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:37
+msgid "销售额前10的非油品"
+msgstr "Top 10 non-fuel products"
+
+#: gcustomer/templates/gcustomer/nonfuel_sale.html:53
+msgid "销售额倒数10名的非油品"
+msgstr "Last 10 non-fuel products"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:12
+msgid "请输入虚拟卡号"
+msgstr "Enter the virtual card no"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:25
+msgid "已完成交易"
+msgstr "Finished transactions"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:26
+msgid "待取货交易"
+msgstr "Transactions to deliver"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:27
+msgid "已预订交易"
+msgstr "Orders"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:28
+msgid "等待退款交易"
+msgstr "Transactions to refund"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:29
+msgid "退款完成交易"
+msgstr "Refunded transations"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:30
+msgid "待支付交易"
+msgstr "Transactions to pay"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:31
+msgid "充值交易"
+msgstr "Charges"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:40
+msgid "订单号"
+msgstr "Order no"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:41
+#: gcustomer/templates/gcustomer/score_exchange.html:19
+#: gcustomer/templates/gcustomer/score_member.html:19
+#: gcustomer/templates/gcustomer/score_rule_setting.html:62
+msgid "商品名"
+msgstr "Product name"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:42
+msgid "移动端用户"
+msgstr "App user"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:44
+msgid "下单日期"
+msgstr "Order date"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:45
+msgid "付款日期"
+msgstr "Payment date"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:46
+msgid "订单完成日期"
+msgstr "Complete date"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:47
+msgid "订单录入日期"
+msgstr "Creation date"
+
+#: gcustomer/templates/gcustomer/order_list_page.html:48
+msgid "当前状态"
+msgstr "Current status"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:13
+msgid "虚拟卡号"
+msgstr "Virtual card"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:17
+msgid "身份证号"
+msgstr "ID"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:28
+msgid "订单信息(每次处理一条退款订单)"
+msgstr "Order information"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:31
+msgid "订单号:"
+msgstr "Order no"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:36
+msgid "订单支付时间:"
+msgstr "Order payment time"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:41
+msgid "申请退款日期:"
+msgstr "Refund applition time"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:46
+msgid "订单状态:"
+msgstr "Order status"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:51
+msgid "商品信息"
+msgstr "Product information"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:54
+msgid "商家:"
+msgstr "Store"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:59
+msgid "商品名:"
+msgstr "Product name"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:64
+msgid "下单时间:"
+msgstr "Order time"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:69
+msgid "购买数量:"
+msgstr "Purcahse amount"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:74
+msgid "订单总额:"
+msgstr "Order subtotal"
+
+#: gcustomer/templates/gcustomer/order_refund_page.html:78
+msgid "完成退款申请"
+msgstr "Finish refund request"
+
+#: gcustomer/templates/gcustomer/register.html:53
+msgid "立即登录"
+msgstr "Login"
+
+#: gcustomer/templates/gcustomer/register.html:74
+msgid "请选择注册方式"
+msgstr "Choose the register way"
+
+#: gcustomer/templates/gcustomer/register.html:75
+msgid "注册已有公司的用户"
+msgstr "Join in an existent enterprise customer"
+
+#: gcustomer/templates/gcustomer/register.html:76
+msgid "注册新公司的用户"
+msgstr "Regsiter as a new enterprise customer"
+
+#: gcustomer/templates/gcustomer/register.html:88
+msgid "请选择公司"
+msgstr "Choose the company"
+
+#: gcustomer/templates/gcustomer/register.html:97
+msgid "请选择公司类型"
+msgstr "Company type"
+
+#: gcustomer/templates/gcustomer/register.html:115
+#: gflux/templates/register.html:27
+msgid "密码"
+msgstr "Password"
+
+#: gcustomer/templates/gcustomer/register.html:120
+#: gflux/templates/register.html:32
+msgid "再次输入密码"
+msgstr "Confirm Password"
+
+#: gcustomer/templates/gcustomer/register.html:144
+#: gflux/templates/register.html:58
+msgid "注册"
+msgstr "Register"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:10
+#: gcustomer/templates/gcustomer/score_exchange.html:31
+msgid "添加可积分兑换商品"
+msgstr "Add the products for score"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:18
+#: gcustomer/templates/gcustomer/score_member.html:18
+msgid "商品POS_ID"
+msgstr "Product POS ID"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:21
+msgid "可兑换积分"
+msgstr "Score"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:34
+#: gcustomer/templates/gcustomer/score_member.html:32
+msgid "商品pos id"
+msgstr "Product POS ID"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:35
+#: gcustomer/templates/gcustomer/score_member.html:33
+msgid "请输入商品id"
+msgstr "Enter product ID"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:41
+msgid "商品可兑换积分"
+msgstr "Score for the product"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:42
+msgid "请输入可兑换积分"
+msgstr "Enter the score"
+
+#: gcustomer/templates/gcustomer/score_exchange.html:45
+#: gcustomer/templates/gcustomer/score_member.html:60
+#: gflux/templates/fueltypemanage.html:56
+#: gflux/templates/fueltypemanage.html:93 gflux/templates/import.html:80
+#: gflux/templates/import.html.py:116
+#: gflux/templates/userstationmanage.html:64
+msgid "添加"
+msgstr "Add"
+
+#: gcustomer/templates/gcustomer/score_level_setting.html:4
+msgid "等级积分设置"
+msgstr "Score setting"
+
+#: gcustomer/templates/gcustomer/score_level_setting.html:13
+msgid "用户等级"
+msgstr "User level"
+
+#: gcustomer/templates/gcustomer/score_level_setting.html:14
+msgid "积分范围设置"
+msgstr "Score area setting"
+
+#: gcustomer/templates/gcustomer/score_level_setting.html:15
+msgid "积分系数设置"
+msgstr "Score multiplier setting"
+
+#: gcustomer/templates/gcustomer/score_level_setting.html:25
+msgid "提交"
+msgstr "submit"
+
+#: gcustomer/templates/gcustomer/score_member.html:10
+#: gcustomer/templates/gcustomer/score_member.html:29
+msgid "添加会员商品"
+msgstr "Add member specials"
+
+#: gcustomer/templates/gcustomer/score_member.html:42
+#: gcustomer/templates/gcustomer/score_member.html:71
+msgid "会员类型"
+msgstr "Membership type"
+
+#: gcustomer/templates/gcustomer/score_member.html:43
+#: gcustomer/templates/gcustomer/score_member.html:72
+#: gcustomer/templates/gcustomer/start_activity.html:188
+msgid "折扣"
+msgstr "Discount"
+
+#: gcustomer/templates/gcustomer/score_member.html:48
+#: gcustomer/templates/gcustomer/score_member.html:77
+msgid "普通会员"
+msgstr "Usual member"
+
+#: gcustomer/templates/gcustomer/score_member.html:52
+#: gcustomer/templates/gcustomer/score_member.html:81
+msgid "金卡会员"
+msgstr "Gold-card member"
+
+#: gcustomer/templates/gcustomer/score_query.html:16
+msgid "请输入用户卡号"
+msgstr "Please enter user card no"
+
+#: gcustomer/templates/gcustomer/score_query.html:25
+msgid "积分概况"
+msgstr "Score summary"
+
+#: gcustomer/templates/gcustomer/score_query.html:30
+msgid "当前积分"
+msgstr "Current score"
+
+#: gcustomer/templates/gcustomer/score_query.html:31
+msgid "等级"
+msgstr "Level"
+
+#: gcustomer/templates/gcustomer/score_query.html:32
+msgid "累计积分"
+msgstr "Total score"
+
+#: gcustomer/templates/gcustomer/score_query.html:33
+msgid "积分详情"
+msgstr "Score details"
+
+#: gcustomer/templates/gcustomer/score_query.html:44
+msgid "积分记录"
+msgstr "Records"
+
+#: gcustomer/templates/gcustomer/score_query.html:49
+msgid "交易号"
+msgstr "Transation"
+
+#: gcustomer/templates/gcustomer/score_query.html:50
+msgid "积分收支"
+msgstr "Score income"
+
+#: gcustomer/templates/gcustomer/score_query.html:51
+msgid "剩余积分"
+msgstr "Balance"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:9
+msgid "商品返还积分设置"
+msgstr "Score rules"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:14
+msgid "选择设置方式"
+msgstr "Specify the way"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:15
+msgid "设置商品积分基准返点"
+msgstr "Set the base number for score"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:16
+msgid "设置单个商品积分系数"
+msgstr "Set the multipler"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:25
+msgid "基准返点"
+msgstr "Base multiplier"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:29
+msgid "请输入商品积分基准返点:如0.5"
+msgstr "Please enter the base multplier, like 0.5"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:42
+#: gcustomer/templates/gcustomer/score_rule_setting.html:64
+msgid "积分系数"
+msgstr "Score multiplier"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:47
+msgid "请输入商品条形码"
+msgstr "Barcode"
+
+#: gcustomer/templates/gcustomer/score_rule_setting.html:63
+msgid "单价"
+msgstr "Price"
+
+#: gcustomer/templates/gcustomer/short_message_setting.html:10
+msgid "短信设置"
+msgstr "Message setting"
+
+#: gcustomer/templates/gcustomer/short_message_setting.html:18
+msgid "请选择联系电话"
+msgstr "Contact phone"
+
+#: gcustomer/templates/gcustomer/short_message_setting.html:30
+msgid "接受和发送"
+msgstr "Accept and submit"
+
+#: gcustomer/templates/gcustomer/short_message_setting.html:35
+msgid "2G/3G下自动接受图片／语音"
+msgstr "Recceive image/audio in 2G/3G"
+
+#: gcustomer/templates/gcustomer/short_message_setting.html:38
+msgid "是"
+msgstr "Yes"
+
+#: gcustomer/templates/gcustomer/short_message_setting.html:40
+msgid "否"
+msgstr "No"
+
+#: gcustomer/templates/gcustomer/show_activity.html:11
+msgid "活动列表"
+msgstr "Activity list"
+
+#: gcustomer/templates/gcustomer/show_activity.html:20
+msgid "活动商品优惠"
+msgstr "Activity promotions"
+
+#: gcustomer/templates/gcustomer/show_activity.html:25
+#: gcustomer/templates/gcustomer/start_activity.html:185
+msgid "优惠类型"
+msgstr "Promotion type"
+
+#: gcustomer/templates/gcustomer/show_activity.html:27
+msgid "折扣信息"
+msgstr "Discount information"
+
+#: gcustomer/templates/gcustomer/show_activity.html:28
+msgid "油站信息"
+msgstr "Station information"
+
+#: gcustomer/templates/gcustomer/show_activity.html:35
+msgid "活动推送详情"
+msgstr "Activity delivery details"
+
+#: gcustomer/templates/gcustomer/show_activity.html:40
+msgid "推送类型"
+msgstr "Delivery type"
+
+#: gcustomer/templates/gcustomer/show_activity.html:42
+msgid "商品类型"
+msgstr "Product type"
+
+#: gcustomer/templates/gcustomer/show_activity.html:43
+msgid "商品条形码"
+msgstr "Barcode"
+
+#: gcustomer/templates/gcustomer/show_activity.html:50
+msgid "活动效益跟踪"
+msgstr "Activity effect"
+
+#: gcustomer/templates/gcustomer/show_advert.html:40
+msgid "在播广告列表"
+msgstr "Current advertisement"
+
+#: gcustomer/templates/gcustomer/show_big_customer.html:17
+msgid "大客户列表"
+msgstr "Enterprise customers"
+
+#: gcustomer/templates/gcustomer/show_big_customer.html:22
+msgid "客户来源"
+msgstr "Source"
+
+#: gcustomer/templates/gcustomer/show_big_customer.html:26
+msgid "已充值量"
+msgstr "Charged amount"
+
+#: gcustomer/templates/gcustomer/show_big_customer.html:47
+msgid "福州客运公司"
+msgstr "Fuzhou guest company"
+
+#: gcustomer/templates/gcustomer/show_store_items.html:11
+msgid "管理商品"
+msgstr "Manage products"
+
+#: gcustomer/templates/gcustomer/show_store_items.html:17
+msgid "请输入商品名称或pos_id关键字"
+msgstr "Product name"
+
+#: gcustomer/templates/gcustomer/show_store_items.html:27
+msgid "商品编号"
+msgstr "Produc POS ID"
+
+#: gcustomer/templates/gcustomer/show_store_items.html:29
+msgid "商品单价(元)"
+msgstr "Price"
+
+#: gcustomer/templates/gcustomer/show_store_items.html:31
+#: gcustomer/templates/gcustomer/station_group.html:32
+msgid "删除"
+msgstr "Delete"
+
+#: gcustomer/templates/gcustomer/show_store_items.html:47
+msgid "商品详细信息"
+msgstr "Details"
+
+#: gcustomer/templates/gcustomer/show_store_items.html:54
+msgid "商品信息修改成功！"
+msgstr "Succeed to revise the product information"
+
+#: gcustomer/templates/gcustomer/start_activity.html:14
+msgid "创建营销活动"
+msgstr "Create a promotion"
+
+#: gcustomer/templates/gcustomer/start_activity.html:22
+msgid "选择创建类型"
+msgstr "Choose type"
+
+#: gcustomer/templates/gcustomer/start_activity.html:23
+msgid "手动创建"
+msgstr "Manaual"
+
+#: gcustomer/templates/gcustomer/start_activity.html:24
+msgid "自动创建"
+msgstr "Automatic"
+
+#: gcustomer/templates/gcustomer/start_activity.html:34
+msgid "请选择场景"
+msgstr "Choose a scene"
+
+#: gcustomer/templates/gcustomer/start_activity.html:35
+msgid "改善油站的设备运营效率"
+msgstr "Enhance the equipment efficiency"
+
+#: gcustomer/templates/gcustomer/start_activity.html:40
+msgid "清仓滞销非油品"
+msgstr "Clear the unsalable products"
+
+#: gcustomer/templates/gcustomer/start_activity.html:41
+msgid "快推热销商品和增加非油品销售额"
+msgstr "Accelerate the hot-sale prodcuts"
+
+#: gcustomer/templates/gcustomer/start_activity.html:51
+msgid "活动名称"
+msgstr "Activity name"
+
+#: gcustomer/templates/gcustomer/start_activity.html:52
+msgid "93汽油打折活动"
+msgstr "Discount of 93# gas"
+
+#: gcustomer/templates/gcustomer/start_activity.html:56
+msgid "活动时间"
+msgstr "Time"
+
+#: gcustomer/templates/gcustomer/start_activity.html:60
+msgid "开始时间"
+msgstr "Begin"
+
+#: gcustomer/templates/gcustomer/start_activity.html:74
+msgid "活动范围"
+msgstr "Area"
+
+#: gcustomer/templates/gcustomer/start_activity.html:81
+msgid "地域"
+msgstr "Area"
+
+#: gcustomer/templates/gcustomer/start_activity.html:89
+msgid "油站群组"
+msgstr "Station Group"
+
+#: gcustomer/templates/gcustomer/start_activity.html:130
+msgid "请选择目标用户群"
+msgstr "Target user group"
+
+#: gcustomer/templates/gcustomer/start_activity.html:138
+msgid "触发类型"
+msgstr "Trigger type"
+
+#: gcustomer/templates/gcustomer/start_activity.html:144
+msgid "主动推送"
+msgstr "Deliver all the time"
+
+#: gcustomer/templates/gcustomer/start_activity.html:152
+msgid "到站推送"
+msgstr "In-station delivery"
+
+#: gcustomer/templates/gcustomer/start_activity.html:160
+msgid "沟通类型"
+msgstr "Contact type"
+
+#: gcustomer/templates/gcustomer/start_activity.html:164
+msgid "请选择沟通类型"
+msgstr "Choose"
+
+#: gcustomer/templates/gcustomer/start_activity.html:176
+msgid "商品优惠"
+msgstr "Promotion"
+
+#: gcustomer/templates/gcustomer/start_activity.html:197
+msgid "添加优惠信息"
+msgstr "Add information"
+
+#: gcustomer/templates/gcustomer/start_activity.html:204
+msgid "描述信息"
+msgstr "Description"
+
+#: gcustomer/templates/gcustomer/start_activity.html:205
+msgid "2月25日至4月25日，对晚上十一点到第二天早上五点间加油活动实现98折优惠"
+msgstr "Discount of 98% for 11PM-5AM gasfill between Febr 25 and April 25"
+
+#: gcustomer/templates/gcustomer/start_activity.html:208
+#: gcustomer/templates/gcustomer/start_activity.html:210
+msgid "发布活动"
+msgstr "Publish"
+
+#: gcustomer/templates/gcustomer/start_activity.html:211
+#: gcustomer/templates/gcustomer/upload_advert.html:35
+msgid "效果预测"
+msgstr "Effect predication"
+
+#: gcustomer/templates/gcustomer/start_activity.html:226
+msgid "请选择沟通设置"
+msgstr "Contact setting"
+
+#: gcustomer/templates/gcustomer/start_activity.html:235
+msgid "请选择沟通方式"
+msgstr "Contact way"
+
+#: gcustomer/templates/gcustomer/start_activity.html:256
+msgid "请选择短信设置"
+msgstr "Message setting"
+
+#: gcustomer/templates/gcustomer/start_activity.html:290
+msgid "邮件预览"
+msgstr "Email preview"
+
+#: gcustomer/templates/gcustomer/start_activity.html:322
+#: gflux/templates/admin_page_tbd.html:112
+#: gflux/templates/fueltypemanage.html:100 gflux/templates/management.html:162
+#: gflux/templates/myselftationmanage.html:101 gflux/templates/tag.html:128
+#: gflux/templates/userstationmanage.html:112 gflux/templates/welcome.html:114
+#: gflux/templates/welcome.html.py:127 gflux/templates/welcome.html:163
+msgid "确认"
+msgstr "Submit"
+
+#: gcustomer/templates/gcustomer/start_activity.html:342
+msgid "活动效果预测"
+msgstr "Effect predication"
+
+#: gcustomer/templates/gcustomer/start_activity.html:349
+#: gcustomer/templates/gcustomer/upload_advert.html:55
+msgid "请输入转化率"
+msgstr "Conversion ratio"
+
+#: gcustomer/templates/gcustomer/start_activity.html:366
+#: gcustomer/templates/gcustomer/upload_advert.html:73
+msgid "总体加油量"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gcustomer/templates/gcustomer/start_activity.html:370
+#: gcustomer/templates/gcustomer/upload_advert.html:77
+msgid "总体销售额"
+msgstr "Daily Trend of Fuel Sales "
+
+#: gcustomer/templates/gcustomer/start_activity.html:374
+#: gcustomer/templates/gcustomer/upload_advert.html:81
+#: gflux/apps/station/ui_dash.py:397
+msgid "非油品销售额"
+msgstr "Non-fuel Product Sales"
+
+#: gcustomer/templates/gcustomer/start_activity.html:378
+#: gcustomer/templates/gcustomer/upload_advert.html:85
+msgid "对油站运营效率贡献"
+msgstr "Contribution to station operaion efficiency"
+
+#: gcustomer/templates/gcustomer/station_group.html:9
+msgid "油站群"
+msgstr "Station group"
+
+#: gcustomer/templates/gcustomer/station_group.html:14
+msgid "输入关键词"
+msgstr "Enter keyword"
+
+#: gcustomer/templates/gcustomer/station_group.html:27
+msgid "群名称"
+msgstr "Gas Station Name"
+
+#: gcustomer/templates/gcustomer/station_group.html:31
+msgid "油站列表"
+msgstr "Station list"
+
+#: gcustomer/templates/gcustomer/stop_activity.html:31
+msgid "已完成的营销活动"
+msgstr "Finished promotions"
+
+#: gcustomer/templates/gcustomer/stop_activity.html:39
+msgid "回收箱"
+msgstr "Trash bin"
+
+#: gcustomer/templates/gcustomer/stop_activity.html:50
+msgid "活动概况"
+msgstr "Activity summary"
+
+#: gcustomer/templates/gcustomer/stop_activity.html:65
+msgid "参与情况"
+msgstr "Effect"
+
+#: gcustomer/templates/gcustomer/stop_activity.html:70
+msgid "活动效益"
+msgstr "Income"
+
+#: gcustomer/templates/gcustomer/stop_activity.html:75
+msgid "人群分布"
+msgstr "User distribution"
+
+#: gcustomer/templates/gcustomer/upload_advert.html:17
+msgid "积分满4000免费洗车一次"
+msgstr "Free car-washing for 400 score "
+
+#: gcustomer/templates/gcustomer/upload_advert.html:20
+msgid "客户名称"
+msgstr "Customer name"
+
+#: gcustomer/templates/gcustomer/upload_advert.html:21
+msgid "福建盛成汽车贸易发展有限公司"
+msgstr "Fujian shengchan car trade co."
+
+#: gcustomer/templates/gcustomer/upload_advert.html:24
+msgid "广告图片"
+msgstr "Advertisement picture"
+
+#: gcustomer/templates/gcustomer/upload_advert.html:29
+msgid "广告内容"
+msgstr "Advertisement content"
+
+#: gcustomer/templates/gcustomer/upload_advert.html:30
+msgid ""
+"福建盛成汽车贸易发展有限公司成立于2007年5月22日，主营销售长安马自达品牌汽车、"
+"汽车配件、汽车售后服务、汽车租赁等，是经长安马自达汽车销售有限公司考核后授权"
+"指定的长安马自达“四位一体”销售服务店。公司位于厦门市海沧区马青路以北（翔鹭对"
+"面），总面积10000多平方米。目前，主要经销的汽车产品有：全球首发新概念紧凑型轿"
+"车—Mazda2劲翔、“2008全球年度风云车型”大奖得主的Mazda2，以及备受消费者亲睐的高"
+"性能紧凑型轿车--Mazda3共19款车型。 福建盛成4S店严格按照长安马自达的标准要求建"
+"设，店面建筑造型体现了马自达品牌的独特性。店内设有统一标准的展厅、洽谈区、客"
+"户休息区、交车区、精品区和售后服务区。宽敞、整洁、活泼、舒适、便利的店面设"
+"计，充分展示了马自达品牌“时尚”、“创意”及“活力”的品牌形象，体现出马自达品牌"
+"的“用户第一”的经营理念。维修车间内设备齐全，拥有汽车检测线和各种先进的汽车专"
+"业诊断、检测、矫正仪器及维修工具设备。公司配备了一支经长安马自达公司严格培训"
+"考核通过的专业化高素质的汽车销售服务队伍，并采用了先进的“四位一体”汽车销售服"
+"务管理系统软件进行科学的规范化管理，充分发挥“四位一体”销售服务体系的功能和作"
+"用，确保了工作效率和服务质量的不断提高。 盛成企业经过多年的努力，已建造了先"
+"进、优越的软件和硬件环境，树立了“诚信、致远、合力、奋进”的经营与管理理念，形"
+"成了专业化、规范化、现代化的汽车品牌经营模式。长安马自达福建盛成4S店全体员工"
+"诚挚邀请您加入马自达车主行列，我们将竭诚为您高品质的服务。"
+msgstr ""
+"Fujian shengchan car trade co. was established in May 2007, and it sells "
+"changan cars."
+
+#: gcustomer/templates/gcustomer/upload_advert.html:34
+msgid "发布广告"
+msgstr "Publish"
+
+#: gcustomer/templates/gcustomer/upload_advert.html:49
+msgid "广告效果预测"
+msgstr "Effect predication"
+
+#: gcustomer/templates/gcustomer/upload_advert.html:58
+msgid "转化率"
+msgstr "Conversion rate"
+
+#: gcustomer/templates/gcustomer/upload_app_img.html:370
+msgid "客服管理"
+msgstr "Customer service management"
+
+#: gcustomer/templates/gcustomer/upload_app_img.html:389
+msgid "图片"
+msgstr "Image"
+
+#: gflux/apps/station/ajax_views.py:95
+msgid "用户名格式错误"
+msgstr "Invalid user name"
+
+#: gflux/apps/station/ajax_views.py:99
+msgid "请输入长度在6到16位之间的密码"
+msgstr "The password must be 6 to 12 characters long"
+
+#: gflux/apps/station/ajax_views.py:112
+msgid "注册失败,用户名已存在"
+msgstr ""
+
+#: gflux/apps/station/ajax_views.py:117
+msgid "注册失败,邮箱已注册"
+msgstr "Failed to sign up"
+
+#: gflux/apps/station/ajax_views.py:142
+msgid "注册失败"
+msgstr "Failed to sign up"
+
+#: gflux/apps/station/ajax_views.py:1161
+msgid "设置成功"
+msgstr "Succeed to update the settings"
+
+#: gflux/apps/station/models.py:24
+#: gflux/templates/station_professional_analysis.html:134
+msgid "加满"
+msgstr "Gas card"
+
+#: gflux/apps/station/models.py:24
+#: gflux/templates/station_professional_analysis.html:135
+msgid "定额"
+msgstr "Sales Volume"
+
+#: gflux/apps/station/models.py:25 gflux/apps/station/reports.py:246
+#: gflux/apps/station/reports.py:275 gflux/apps/station/reports.py:302
+#: gflux/apps/station/reports.py:329 gflux/apps/station/reports.py:385
+#: gflux/apps/station/reports.py:416 gflux/apps/station/reports.py:728
+#: gflux/apps/station/reports.py:827 gflux/apps/station/reports.py:867
+#: gflux/apps/station/reports.py:1485 gflux/apps/station/reports.py:1567
+#: gflux/apps/station/reports.py:1588 gflux/apps/station/reports.py:1676
+#: gflux/apps/station/reports.py:1718 gflux/apps/station/reports.py:1748
+#: gflux/apps/station/reports.py:1810 gflux/apps/station/reports.py:1932
+#: gflux/apps/station/reports.py:1989 gflux/apps/station/reports.py:2047
+#: gflux/apps/station/reports.py:2904 gflux/apps/station/reports.py:2918
+#: gflux/apps/station/reports.py:3379 gflux/apps/station/reports.py:3400
+#: gflux/apps/station/reports.py:3548 gflux/apps/station/ui_dashlet.py:370
+#: gflux/apps/station/ui_portal.py:19 gflux/apps/station/ui_portal.py:48
+#: gflux/apps/station/ui_portal.py:63 gflux/apps/station/ui_portal.py:88
+msgid "油品"
+msgstr "Fuel"
+
+#: gflux/apps/station/models.py:25 gflux/apps/station/reports.py:2961
+#: gflux/apps/station/reports.py:2974 gflux/apps/station/ui_dashlet.py:282
+#: gflux/apps/station/ui_dashlet.py:288 gflux/apps/station/ui_portal.py:35
+#: gflux/apps/station/ui_portal.py:73 gflux/apps/station/ui_portal.py:96
+msgid "非油品"
+msgstr "Non-fuel"
+
+#: gflux/apps/station/models.py:26 gflux/apps/station/models.py:27
+msgid "任意"
+msgstr "Any"
+
+#: gflux/apps/station/models.py:26 gflux/apps/station/models.py:27
+#: gflux/templates/station_professional_analysis.html:119
+msgid "银联卡"
+msgstr "Union-pay card"
+
+#: gflux/apps/station/models.py:26 gflux/apps/station/models.py:27
+#: gflux/templates/station_professional_analysis.html:120
+msgid "加油卡"
+msgstr "Gas card"
+
+#: gflux/apps/station/models.py:26 gflux/apps/station/models.py:27
+#: gflux/templates/station_professional_analysis.html:121
+msgid "信用卡"
+msgstr "Credit card"
+
+#: gflux/apps/station/models.py:26
+#: gflux/templates/station_professional_analysis.html:122
+msgid "现金"
+msgstr "Cash"
+
+#: gflux/apps/station/models.py:28 gflux/templates/welcome.html:124
+msgid "全部"
+msgstr "All"
+
+#: gflux/apps/station/models.py:28
+msgid "早"
+msgstr "Morning"
+
+#: gflux/apps/station/models.py:28
+msgid "中"
+msgstr "Noon"
+
+#: gflux/apps/station/models.py:28
+msgid "晚"
+msgstr "Evening"
+
+#: gflux/apps/station/models.py:29
+msgid "瓶颈"
+msgstr ""
+
+#: gflux/apps/station/models.py:29
+msgid "重复客户"
+msgstr ""
+
+#: gflux/apps/station/models.py:29 gflux/apps/station/reports.py:2204
+#: gflux/apps/station/ui_page.py:586
+msgid "客单值"
+msgstr "Ticket Volume"
+
+#: gflux/apps/station/models.py:29
+msgid "92/93#平均单车加油量"
+msgstr ""
+
+#: gflux/apps/station/models.py:30
+msgid "95/97#平均单车加油量"
+msgstr ""
+
+#: gflux/apps/station/models.py:30
+msgid "高峰期油枪效率"
+msgstr "Gas Gun Efficiency in the Peak Period"
+
+#: gflux/apps/station/models.py:30
+msgid "92/93#加满率"
+msgstr ""
+
+#: gflux/apps/station/models.py:31
+msgid "95/97#加满率"
+msgstr ""
+
+#: gflux/apps/station/models.py:31
+msgid "柴油加满率"
+msgstr ""
+
+#: gflux/apps/station/models.py:31
+msgid "日常油非转化率"
+msgstr "Conversion from oil to non-fuel"
+
+#: gflux/apps/station/models.py:32
+msgid "高峰期油非转化率"
+msgstr "Conversion from oil to non-fuel"
+
+#: gflux/apps/station/models.py:32
+msgid "非油品相关性"
+msgstr "Association between Fuel Products and Non-fuel Products"
+
+#: gflux/apps/station/models.py:32 gflux/apps/station/ui_dash.py:333
+#: gflux/apps/station/ui_dash.py:425
+msgid "油品与非油品相关性"
+msgstr "Association between Fuel Products and Non-fuel Products"
+
+#: gflux/apps/station/reports.py:191
+msgid "比例"
+msgstr "Percentage"
+
+#: gflux/apps/station/reports.py:218 gflux/apps/station/reports.py:245
+#: gflux/apps/station/reports.py:274 gflux/apps/station/reports.py:301
+#: gflux/apps/station/reports.py:328 gflux/apps/station/reports.py:384
+#: gflux/apps/station/reports.py:415 gflux/apps/station/reports.py:729
+#: gflux/apps/station/reports.py:830 gflux/apps/station/reports.py:868
+#: gflux/apps/station/reports.py:2156 gflux/apps/station/reports.py:2183
+#: gflux/apps/station/reports.py:2266
+msgid "支付方式"
+msgstr "Payment Type"
+
+#: gflux/apps/station/reports.py:730 gflux/apps/station/reports.py:746
+#: gflux/apps/station/reports.py:832 gflux/apps/station/reports.py:851
+#: gflux/apps/station/reports.py:869 gflux/apps/station/reports.py:888
+#: gflux/apps/station/reports.py:907 gflux/apps/station/reports.py:930
+#: gflux/apps/station/reports.py:952 gflux/apps/station/reports.py:974
+#: gflux/apps/station/reports.py:996 gflux/apps/station/reports.py:1018
+#: gflux/apps/station/reports.py:3683 gflux/apps/station/reports.py:3699
+#: gflux/apps/station/reports.py:3715 gflux/apps/station/reports.py:3730
+#: gflux/apps/station/reports.py:3746 gflux/apps/station/reports.py:3762
+#: gflux/apps/station/reports.py:3778 gflux/apps/station/reports.py:3903
+#: gflux/apps/station/reports.py:4028 gflux/apps/station/reports.py:4395
+msgid "区域范围"
+msgstr "Area"
+
+#: gflux/apps/station/reports.py:748
+msgid "x指标"
+msgstr "Aspects"
+
+#: gflux/apps/station/reports.py:749
+msgid "y指标"
+msgstr "Aspects"
+
+#: gflux/apps/station/reports.py:852 gflux/apps/station/reports.py:3684
+#: gflux/apps/station/reports.py:3700 gflux/apps/station/reports.py:3716
+#: gflux/apps/station/reports.py:3731 gflux/apps/station/reports.py:3747
+#: gflux/apps/station/reports.py:3763 gflux/apps/station/reports.py:3779
+#: gflux/apps/station/reports.py:3904 gflux/apps/station/reports.py:4029
+msgid "月份"
+msgstr ""
+
+#: gflux/apps/station/reports.py:859
+msgid "加油量(单位:升)"
+msgstr "Gas Volume (in Liters)"
+
+#: gflux/apps/station/reports.py:1063 gflux/apps/station/reports.py:1380
+#: gflux/apps/station/reports.py:1478
+#: gflux/templates/station_professional_analysis.html:74
+msgid "加油量"
+msgstr "Volume"
+
+#: gflux/apps/station/reports.py:1221 gflux/templates/welcome.html:151
+msgid "环比"
+msgstr "Sequential Growth Rate"
+
+#: gflux/apps/station/reports.py:1223 gflux/templates/welcome.html:152
+msgid "同比"
+msgstr "Year-on-year Growth Rate"
+
+#: gflux/apps/station/reports.py:1226
+#, python-brace-format
+msgid "{trend_type}第{counter}天"
+msgstr "{trend_type} Day #{counter}"
+
+#: gflux/apps/station/reports.py:1243
+msgid "上月"
+msgstr "Previous Month"
+
+#: gflux/apps/station/reports.py:1245
+msgid "去年同期"
+msgstr "Same Month Previous Year"
+
+#: gflux/apps/station/reports.py:1247
+msgid "当月"
+msgstr "Current Month"
+
+#: gflux/apps/station/reports.py:1482 gflux/apps/station/reports.py:1564
+#: gflux/apps/station/reports.py:1571 gflux/apps/station/reports.py:2614
+msgid "日期A"
+msgstr "Date A"
+
+#: gflux/apps/station/reports.py:1483 gflux/apps/station/reports.py:1565
+#: gflux/apps/station/reports.py:1572 gflux/apps/station/reports.py:2615
+msgid "日期B"
+msgstr "Date B"
+
+#: gflux/apps/station/reports.py:2096 gflux/apps/station/reports.py:2101
+#: gflux/apps/station/reports.py:2145
+msgid "值"
+msgstr "Value"
+
+#: gflux/apps/station/reports.py:2097 gflux/apps/station/reports.py:2102
+msgid "高峰期时段"
+msgstr "Peak Period"
+
+#: gflux/apps/station/reports.py:2100
+#, python-brace-format
+msgid "{start}时-{end}时"
+msgstr "{start} o'clock-{end} o'clock"
+
+#: gflux/apps/station/reports.py:2104
+msgid "油站负荷峰谷差异"
+msgstr "Gas station peak valley load difference"
+
+#: gflux/apps/station/reports.py:2127
+msgid "总SKU数"
+msgstr "Total SKU"
+
+#: gflux/apps/station/reports.py:2127
+#, python-brace-format
+msgid "{count} 种"
+msgstr "{count} Categories"
+
+#: gflux/apps/station/reports.py:2128
+msgid "总销售额"
+msgstr "Total Sales Volume"
+
+#: gflux/apps/station/reports.py:2128
+#, python-brace-format
+msgid "{pay} 元"
+msgstr "{pay} RMB"
+
+#: gflux/apps/station/reports.py:2129
+msgid "总客户数"
+msgstr "Total Customer Number"
+
+#: gflux/apps/station/reports.py:2129
+#, python-brace-format
+msgid "{count} 位"
+msgstr "{count}"
+
+#: gflux/apps/station/reports.py:2131 gflux/apps/station/reports.py:2133
+msgid "总客单值"
+msgstr "Total Ticket Sales"
+
+#: gflux/apps/station/reports.py:2131 gflux/apps/station/reports.py:2133
+#, python-brace-format
+msgid "{count} 元"
+msgstr "{count} RMB"
+
+#: gflux/apps/station/reports.py:2336
+#, python-brace-format
+msgid "销售额({first},{last})"
+msgstr "Sales Volume({first},{last})"
+
+#: gflux/apps/station/reports.py:2371
+msgid "转化比例"
+msgstr ""
+
+#: gflux/apps/station/reports.py:2698 gflux/apps/station/reports.py:3085
+msgid "忠诚客户百分比"
+msgstr "Percentage of Loyal Customers"
+
+#: gflux/apps/station/reports.py:2756
+msgid "非油品所占油品交易比例"
+msgstr "Percentage of Non-fuel to Fuel"
+
+#: gflux/apps/station/reports.py:2851
+msgid "非油品交易占油品交易比例"
+msgstr "Percentage of Non-fuel to Fuel"
+
+#: gflux/apps/station/reports.py:2905 gflux/apps/station/reports.py:2962
+#: gflux/apps/station/reports.py:3549
+msgid "时段"
+msgstr "Time Period"
+
+#: gflux/apps/station/reports.py:2917 gflux/apps/station/reports.py:2973
+msgid "相关性(TOP10)"
+msgstr "Association(TOP10)"
+
+#: gflux/apps/station/reports.py:3037
+msgid "发卡总和"
+msgstr "Total Number of Cards"
+
+#: gflux/apps/station/reports.py:3046
+msgid "数量（单位：张）"
+msgstr "Number of cards"
+
+#: gflux/apps/station/reports.py:3096 gflux/apps/station/reports.py:3100
+#: gflux/apps/station/ui_dashlet.py:174 gflux/apps/station/ui_dashlet.py:306
+#: gflux/apps/station/ui_dashlet.py:312
+msgid "百分比（单位：%）"
+msgstr "Percentage（in %）"
+
+#: gflux/apps/station/reports.py:3096 gflux/apps/station/reports.py:3100
+#, python-brace-format
+msgid "(从{start}到{end}统计)"
+msgstr "(Statistics from {start} to {end})"
+
+#: gflux/apps/station/reports.py:3202
+#, python-brace-format
+msgid "上升（单位：个）({ppre}对比{pre})"
+msgstr "Increase of ({ppre} based on {pre})"
+
+#: gflux/apps/station/reports.py:3203
+#, python-brace-format
+msgid "下降（单位：个）({ppre}对比{pre})"
+msgstr "Decrease of ({ppre} based on {pre})"
+
+#: gflux/apps/station/reports.py:3298
+msgid "忠诚客户消费额"
+msgstr "Purchase Volume of Loyal Customers"
+
+#: gflux/apps/station/reports.py:3299
+msgid "持卡客户消费额"
+msgstr "Purchase Volume of Cardholders"
+
+#: gflux/apps/station/reports.py:3300
+msgid "所有客户消费额"
+msgstr "Purchase Volume of all customers"
+
+#: gflux/apps/station/reports.py:3318 gflux/apps/station/reports.py:3378
+#: gflux/apps/station/reports.py:3399 gflux/apps/station/reports.py:3420
+#: gflux/apps/station/reports.py:3441 gflux/apps/station/reports.py:3461
+#: gflux/apps/station/reports.py:3481 gflux/apps/station/reports.py:3503
+#: gflux/apps/station/reports.py:3525 gflux/templates/welcome.html:122
+msgid "区域"
+msgstr "Area"
+
+#: gflux/apps/station/reports.py:3496 gflux/apps/station/ui_dash.py:413
+msgid "忠实客户比例"
+msgstr "Percentage of Loyal Customers"
+
+#: gflux/apps/station/reports.py:3518 gflux/apps/station/ui_dash.py:417
+msgid "忠实客户流失率"
+msgstr "Lost Rate of Loyal Customers"
+
+#: gflux/apps/station/reports.py:3540
+msgid "忠实客户销售额占比"
+msgstr "Purchase Percentage of Loyal Customers"
+
+#: gflux/apps/station/reports.py:3557 gflux/apps/station/ui_page.py:688
+msgid "相关性"
+msgstr "Association"
+
+#: gflux/apps/station/reports.py:3624
+msgid "油品占总额比例"
+msgstr "Product total proportion"
+
+#: gflux/apps/station/reports.py:3690
+msgid "销售额(单位:元)"
+msgstr "Sales (in RMB)"
+
+#: gflux/apps/station/reports.py:3706
+msgid "时间(单位:分钟)"
+msgstr "Time (in Minutes)"
+
+#: gflux/apps/station/reports.py:3722 gflux/apps/station/ui_dashlet.py:77
+msgid "销量(单位:个)"
+msgstr "sales(in Single)"
+
+#: gflux/apps/station/reports.py:3737
+msgid "百分比(单位:%)"
+msgstr "Percentage (in %)"
+
+#: gflux/apps/station/reports.py:3753 gflux/apps/station/ui_dashlet.py:88
+msgid "出油量(单位:升)"
+msgstr "Gas Volume (in Liters)"
+
+#: gflux/apps/station/reports.py:3769 gflux/apps/station/reports.py:3785
+#: gflux/apps/station/reports.py:3910 gflux/apps/station/ui_dashlet.py:99
+#: gflux/apps/station/ui_dashlet.py:110 gflux/apps/station/ui_dashlet.py:121
+#: gflux/apps/station/ui_dashlet.py:143 gflux/apps/station/ui_dashlet.py:199
+#: gflux/apps/station/ui_dashlet.py:277
+msgid "百分比(单位：%)"
+msgstr "Percentage (in %)"
+
+#: gflux/apps/station/reports.py:4035 gflux/apps/station/ui_dashlet.py:9
+#: gflux/apps/station/ui_dashlet.py:55 gflux/apps/station/ui_dashlet.py:132
+#: gflux/apps/station/ui_dashlet.py:159 gflux/apps/station/ui_dashlet.py:231
+#: gflux/apps/station/ui_dashlet.py:236 gflux/apps/station/ui_dashlet.py:252
+#: gflux/apps/station/ui_dashlet.py:257 gflux/apps/station/ui_dashlet.py:262
+#: gflux/apps/station/ui_dashlet.py:267 gflux/apps/station/ui_dashlet.py:272
+msgid "销售额(单位：元)"
+msgstr "Sales (in RMB)"
+
+#: gflux/apps/station/reports.py:4053
+msgid "诊断结果"
+msgstr ""
+
+#: gflux/apps/station/ui_dash.py:11
+msgid "当日油品销售额趋势图"
+msgstr "Daily Trend of Fuel Sales "
+
+#: gflux/apps/station/ui_dash.py:16
+msgid "当日加油量趋势图"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gflux/apps/station/ui_dash.py:21
+msgid "当日进站车辆趋势图"
+msgstr "Daily Trend of Automobiles Entering Station"
+
+#: gflux/apps/station/ui_dash.py:28
+msgid "当日平均每车加油量趋势图"
+msgstr "Daily Trend of Average Automobile Gas"
+
+#: gflux/apps/station/ui_dash.py:34
+msgid "每车加油量趋势图"
+msgstr "Daily Trend of Average Automobile Gas"
+
+#: gflux/apps/station/ui_dash.py:40
+msgid "油站重复客户与瓶颈画像图"
+msgstr ""
+
+#: gflux/apps/station/ui_dash.py:46
+msgid "区域总体加油量趋势图"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gflux/apps/station/ui_dash.py:52
+msgid "区域总体加油量趋势排行"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gflux/apps/station/ui_dash.py:58
+msgid "区域总体销售额趋势图"
+msgstr "Daily Trend of Fuel Sales "
+
+#: gflux/apps/station/ui_dash.py:63
+msgid "区域总体销售额趋势排行"
+msgstr "Daily Trend of Fuel Sales "
+
+#: gflux/apps/station/ui_dash.py:69 gflux/apps/station/ui_dash.py:74
+msgid "区域总体出油时间趋势图"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gflux/apps/station/ui_dash.py:80
+msgid "区域非油品销量趋势图"
+msgstr "Daily Trend of Non-fuel Purchase Volume"
+
+#: gflux/apps/station/ui_dash.py:85
+msgid "区域非油品销售排行图"
+msgstr "Top 10 Non-fuel Products in a Month"
+
+#: gflux/apps/station/ui_dash.py:91
+msgid "区域高峰期平均出油量趋势图"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gflux/apps/station/ui_dash.py:96
+msgid "区域高峰期平均出油量趋势排行"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gflux/apps/station/ui_dash.py:102
+msgid "区域油品环比趋势图"
+msgstr "Daily Trend of Gas Compared to Previous Month"
+
+#: gflux/apps/station/ui_dash.py:107
+msgid "区域油品环比趋势排行"
+msgstr "Daily Trend of Gas Compared to Previous Month"
+
+#: gflux/apps/station/ui_dash.py:113
+msgid "区域非油品环比趋势图"
+msgstr "Daily Trend of Gas Compared to Previous Month"
+
+#: gflux/apps/station/ui_dash.py:118
+msgid "区域非油品环比趋势排行"
+msgstr "Daily Trend of Gas Compared to Previous Month"
+
+#: gflux/apps/station/ui_dash.py:124
+msgid "区域加油卡消费趋势图"
+msgstr "Regional refueling card consumption trend chart"
+
+#: gflux/apps/station/ui_dash.py:129
+msgid "区域加油卡消费趋势排行"
+msgstr "Regional refueling card consumption trend chart"
+
+#: gflux/apps/station/ui_dash.py:136
+msgid "区域加满率趋势图"
+msgstr "Area filled with rate trend chart"
+
+#: gflux/apps/station/ui_dash.py:142
+msgid "区域加满率趋势排行"
+msgstr "Area filled with rate trend chart"
+
+#: gflux/apps/station/ui_dash.py:148
+msgid "区域客单值趋势图"
+msgstr "Regional single value trend chart"
+
+#: gflux/apps/station/ui_dash.py:153
+msgid "区域客单值趋势排行"
+msgstr "Regional single value trend chart"
+
+#: gflux/apps/station/ui_dash.py:159
+msgid "近一月加油量趋势图"
+msgstr "Daily Trend of Gas in the Past Month"
+
+#: gflux/apps/station/ui_dash.py:164
+msgid "近一月加油量环比趋势图"
+msgstr "Daily Trend of Gas Compared to Previous Month"
+
+#: gflux/apps/station/ui_dash.py:169 gflux/apps/station/ui_dash.py:306
+msgid "近一季度销售额趋势图"
+msgstr "Sales Volume in a Month"
+
+#: gflux/apps/station/ui_dash.py:174
+msgid "近一月加油量同比趋势图"
+msgstr "Daily Trend of Gas Compared to 12-Month Ago"
+
+#: gflux/apps/station/ui_dash.py:179
+msgid "对比分析两天的加油量趋势"
+msgstr "Amount to trend of comparative analysis for two days"
+
+#: gflux/apps/station/ui_dash.py:184
+msgid "油品销售额占总销售额比例"
+msgstr "Product sales to total sales proportion"
+
+#: gflux/apps/station/ui_dash.py:189
+msgid "当日油枪效率"
+msgstr "Daily Gas Gun Efficiency"
+
+#: gflux/apps/station/ui_dash.py:200
+msgid "当日高峰期油枪效率"
+msgstr "Gas Gun Efficiency in the Peak Period"
+
+#: gflux/apps/station/ui_dash.py:207
+msgid "当月油枪效率"
+msgstr "Daily Gas Gun Efficiency"
+
+#: gflux/apps/station/ui_dash.py:212
+msgid "油枪效率鸟瞰图"
+msgstr "Gas Gun Efficiency"
+
+#: gflux/apps/station/ui_dash.py:217
+msgid "当月24小时平均加油量"
+msgstr "Hourly Gas Volume"
+
+#: gflux/apps/station/ui_dash.py:222
+msgid "油品加满率"
+msgstr ""
+
+#: gflux/apps/station/ui_dash.py:228
+msgid "总体出油效率"
+msgstr "The overall efficiency of the oil"
+
+#: gflux/apps/station/ui_dash.py:233
+msgid "当日油机效率"
+msgstr "Daily Gas Gun Efficiency"
+
+#: gflux/apps/station/ui_dash.py:244
+msgid "当日高峰期油机效率"
+msgstr "Gas Machine Efficiency in the Peak Period"
+
+#: gflux/apps/station/ui_dash.py:250
+msgid "当日通道效率"
+msgstr "Daily Gas Pipepline Efficiency"
+
+#: gflux/apps/station/ui_dash.py:261
+msgid "当日高峰期通道效率"
+msgstr "Daily Gas Pipeline Efficiency"
+
+#: gflux/apps/station/ui_dash.py:268
+msgid "高峰期时段定义"
+msgstr "Definition of Peak Period"
+
+#: gflux/apps/station/ui_dash.py:274
+msgid "SKU指标"
+msgstr "SKU Index"
+
+#: gflux/apps/station/ui_dash.py:280
+msgid "当日非油品销售额趋势图"
+msgstr "Daily Trend of Non-fuel Purchase Volume"
+
+#: gflux/apps/station/ui_dash.py:285
+msgid "当日销售额客单值"
+msgstr "Daily Sales Volume"
+
+#: gflux/apps/station/ui_dash.py:290
+msgid "上月非油品销售排行TOP10"
+msgstr "Top 10 Non-fuel Products in a Month"
+
+#: gflux/apps/station/ui_dash.py:296 gflux/apps/station/ui_dashlet.py:247
+msgid "油非转化率"
+msgstr "Conversion from oil to non-fuel"
+
+#: gflux/apps/station/ui_dash.py:301
+msgid "近一月销售额趋势"
+msgstr "Sales Volume in a Month"
+
+#: gflux/apps/station/ui_dash.py:311
+msgid "近一月销售额环比趋势图"
+msgstr "Sales Volume Trend in a Month compared to 12 Months Ago"
+
+#: gflux/apps/station/ui_dash.py:316
+msgid "近一月销售额同比趋势图"
+msgstr "Sales Volume Trend in a Month Compared to Last Month"
+
+#: gflux/apps/station/ui_dash.py:321
+msgid "对比分析两天的销售额趋势"
+msgstr "Analysis of the sales trend of two days"
+
+#: gflux/apps/station/ui_dash.py:327
+msgid "近一月非油品占油品交易比例"
+msgstr "Percentage of Non-fuel Sales to Fuel Sales in a Month"
+
+#: gflux/apps/station/ui_dash.py:340
+msgid "非油品之间的相关性"
+msgstr "Association between Non-fuel Products"
+
+#: gflux/apps/station/ui_dash.py:347
+msgid "当前持卡客户总数"
+msgstr "Total Number of CardHolders"
+
+#: gflux/apps/station/ui_dash.py:354
+msgid "近一月忠诚客户比例"
+msgstr "Percentage of Loyal Customers in a Month"
+
+#: gflux/apps/station/ui_dash.py:361
+msgid "前两月持卡客户消费趋势"
+msgstr "Sales to Card Users in the First Two Months"
+
+#: gflux/apps/station/ui_dash.py:367
+msgid "近一年忠诚客户比例趋势"
+msgstr "Percentage of Loyal Customers in a Year"
+
+#: gflux/apps/station/ui_dash.py:372
+msgid "近一月客户消费趋势"
+msgstr "Consumption Trend in a Month"
+
+#: gflux/apps/station/ui_dash.py:377 gflux/apps/station/ui_dashlet.py:322
+msgid "日均加油量"
+msgstr "Daily Gas Volume"
+
+#: gflux/apps/station/ui_dash.py:381 gflux/apps/station/ui_dashlet.py:326
+msgid "每小时平均加油量"
+msgstr "Hourly Gas Volume"
+
+#: gflux/apps/station/ui_dash.py:385 gflux/apps/station/ui_dashlet.py:330
+msgid "月均加油量"
+msgstr "Monthly Gas Volume"
+
+#: gflux/apps/station/ui_dash.py:389
+msgid "进站车辆"
+msgstr "Automobiles Entering Station"
+
+#: gflux/apps/station/ui_dash.py:393
+msgid "油枪效率"
+msgstr "Gas Gun Efficiency"
+
+#: gflux/apps/station/ui_dash.py:401
+msgid "当月24小时非油品平均销售额"
+msgstr "Hourly Sales of Non-fuel Products"
+
+#: gflux/apps/station/ui_dash.py:405
+msgid "非油品交易比例"
+msgstr "Percentage of Non-fuel Product Sales"
+
+#: gflux/apps/station/ui_dash.py:409
+msgid "Top10非油品销售规律"
+msgstr "Statistics of Top 10 Non-fuel Products"
+
+#: gflux/apps/station/ui_dash.py:421 gflux/apps/station/ui_dashlet.py:366
+msgid "忠实客户销售额占比变化"
+msgstr "Percentage of Loyal Customer Consumption"
+
+#: gflux/apps/station/ui_dash.py:431 gflux/apps/station/ui_dashlet.py:375
+#: gflux/apps/station/ui_dashlet.py:386
+msgid "健康指标"
+msgstr ""
+
+#: gflux/apps/station/ui_dash.py:437 gflux/apps/station/ui_dashlet.py:381
+msgid "性能瓶颈"
+msgstr ""
+
+#: gflux/apps/station/ui_dash.py:442
+msgid "多站健康指标"
+msgstr ""
+
+#: gflux/apps/station/ui_dashlet.py:14 gflux/apps/station/ui_dashlet.py:24
+#: gflux/apps/station/ui_dashlet.py:29 gflux/apps/station/ui_dashlet.py:34
+#: gflux/apps/station/ui_dashlet.py:44 gflux/apps/station/ui_dashlet.py:154
+#: gflux/apps/station/ui_dashlet.py:164 gflux/apps/station/ui_dashlet.py:169
+#: gflux/apps/station/ui_dashlet.py:194
+msgid "加油量(单位：升)"
+msgstr "Gas Volume (in Liters)"
+
+#: gflux/apps/station/ui_dashlet.py:19
+msgid "车辆数(单位：辆)"
+msgstr "Number of Automobiles"
+
+#: gflux/apps/station/ui_dashlet.py:66 gflux/apps/station/ui_dashlet.py:179
+#: gflux/apps/station/ui_dashlet.py:184 gflux/apps/station/ui_dashlet.py:189
+#: gflux/apps/station/ui_dashlet.py:204 gflux/apps/station/ui_dashlet.py:209
+#: gflux/apps/station/ui_dashlet.py:214
+msgid "时间(单位：分钟)"
+msgstr "Time (in Minutes)"
+
+#: gflux/apps/station/ui_dashlet.py:219 gflux/apps/station/ui_dashlet.py:225
+#: gflux/apps/station/ui_dashlet.py:294 gflux/apps/station/ui_dashlet.py:300
+msgid "指标"
+msgstr "Aspects"
+
+#: gflux/apps/station/ui_dashlet.py:241
+msgid "非油品名"
+msgstr "Non-fuel Product"
+
+#: gflux/apps/station/ui_dashlet.py:317
+msgid "销费额(单位：元)"
+msgstr "Sales (in RMB)"
+
+#: gflux/apps/station/ui_dashlet.py:334
+msgid "每小时平均进站车辆数"
+msgstr "Hourly Automobile Flow"
+
+#: gflux/apps/station/ui_dashlet.py:338
+msgid "油枪平均每小时工作时间"
+msgstr "Hourly Work Time of Gas Guns"
+
+#: gflux/apps/station/ui_dashlet.py:342
+msgid "非油品平均每小时销售额"
+msgstr "Hourly Sales of Non-fuel Products"
+
+#: gflux/apps/station/ui_dashlet.py:346
+msgid "当月非油品24小时平均销售额"
+msgstr ""
+
+#: gflux/apps/station/ui_dashlet.py:350
+msgid "非油品平均每小时交易比例"
+msgstr "Hourly Percentage of Non-fuel Products"
+
+#: gflux/apps/station/ui_dashlet.py:354
+msgid "Top10非油品平均每小时销售额"
+msgstr "Hourly Sales for Top 10 Non-fuel Products"
+
+#: gflux/apps/station/ui_dashlet.py:358
+msgid "忠实客户比例变化"
+msgstr "Percentage of Loyal Customers"
+
+#: gflux/apps/station/ui_dashlet.py:362
+msgid "忠实客户流失率变化"
+msgstr "Loss Rate of Loyal Customers"
+
+#: gflux/apps/station/ui_page.py:60
+msgid "导入数据"
+msgstr "Import Data"
+
+#: gflux/apps/station/ui_page.py:97
+msgid "已上传"
+msgstr "Uploaded"
+
+#: gflux/apps/station/ui_page.py:133
+msgid "所有用户"
+msgstr "All Users"
+
+#: gflux/apps/station/ui_page.py:181 gflux/templates/admin_page_tbd.html:100
+msgid "普通版用户"
+msgstr "Basic Plan Users"
+
+#: gflux/apps/station/ui_page.py:205 gflux/templates/admin_page_tbd.html:101
+msgid "专业版用户"
+msgstr "Professional Plan Users"
+
+#: gflux/apps/station/ui_page.py:253
+msgid "用户油站管理"
+msgstr "The user station management"
+
+#: gflux/apps/station/ui_page.py:288
+msgid "汽油牌号管理"
+msgstr "Gasoline brand management"
+
+#: gflux/apps/station/ui_page.py:351
+msgid "欢迎页面"
+msgstr "Welcome Page"
+
+#: gflux/apps/station/ui_page.py:393
+#: gflux/templates/station_professional_analysis.html:139
+#: gflux/templates/station_professional_analysis.html:178
+msgid "油枪分组"
+msgstr "Oil gun group"
+
+#: gflux/apps/station/ui_page.py:424
+msgid "自定义标签"
+msgstr "A custom title"
+
+#: gflux/apps/station/ui_page.py:478
+msgid "站点画像"
+msgstr ""
+
+#: gflux/apps/station/ui_page.py:487
+msgid "加油量趋势"
+msgstr "Daily Trend of Fuel Transaction Numbers"
+
+#: gflux/apps/station/ui_page.py:498
+msgid "销售额趋势"
+msgstr "Sales Volume in a Month"
+
+#: gflux/apps/station/ui_page.py:509
+msgid "出油时间趋势"
+msgstr "The oil time trend"
+
+#: gflux/apps/station/ui_page.py:520
+msgid "销量趋势"
+msgstr "Sales trends"
+
+#: gflux/apps/station/ui_page.py:531
+msgid "高峰期平均出油量趋势"
+msgstr "Daily Trend of Average Automobile Gas"
+
+#: gflux/apps/station/ui_page.py:542
+msgid "油品环比趋势"
+msgstr "Oil from trend"
+
+#: gflux/apps/station/ui_page.py:553
+msgid "非油品环比趋势"
+msgstr "The oil from the trend"
+
+#: gflux/apps/station/ui_page.py:564
+msgid "加油卡消费比例"
+msgstr "Refueling card consumption ratio"
+
+#: gflux/apps/station/ui_page.py:575
+msgid "加满率"
+msgstr "Gas card"
+
+#: gflux/apps/station/ui_page.py:597 gflux/apps/station/ui_page.py:671
+msgid "趋势"
+msgstr "Trend"
+
+#: gflux/apps/station/ui_page.py:616
+msgid "效率"
+msgstr "Efficiency"
+
+#: gflux/apps/station/ui_page.py:633
+msgid "高峰期"
+msgstr "Peak Period"
+
+#: gflux/apps/station/ui_page.py:701
+msgid "客户分析"
+msgstr "Customer Analysis"
+
+#: gflux/apps/station/ui_page.py:718
+msgid "自定义报表"
+msgstr "Custom reports"
+
+#: gflux/apps/station/ui_page.py:756
+msgid "加油量指数"
+msgstr "Consumed Gas Volume Index"
+
+#: gflux/apps/station/ui_page.py:761
+msgid "车流量指数"
+msgstr "Automobile Flow Index"
+
+#: gflux/apps/station/ui_page.py:766
+msgid "油枪效率指数"
+msgstr "Gas Gun Efficiency Index"
+
+#: gflux/apps/station/ui_page.py:771
+msgid "非油品指数"
+msgstr "Non-Fuel Index"
+
+#: gflux/apps/station/ui_page.py:776
+msgid "客户忠诚度"
+msgstr "Customer Loyalty"
+
+#: gflux/apps/station/ui_page.py:781
+msgid "相关性分析"
+msgstr "Association Analysis"
+
+#: gflux/apps/station/ui_page.py:787
+msgid "站点管理"
+msgstr "Site management"
+
+#: gflux/apps/station/ui_page.py:823
+msgid "性能诊断"
+msgstr ""
+
+#: gflux/apps/station/ui_page.py:834
+msgid "多站性能诊断"
+msgstr ""
+
+#: gflux/apps/station/ui_portal.py:9
+msgid "多站分析"
+msgstr "Area Analysis"
+
+#: gflux/apps/station/ui_portal.py:41 gflux/apps/station/ui_portal.py:82
+#: gflux/apps/station/ui_portal.py:101
+msgid "客户"
+msgstr "User"
+
+#: gflux/apps/station/ui_portal.py:59
+msgid "单站分析"
+msgstr "Station Analysis"
+
+#: gflux/apps/station/ui_portal.py:84 gflux/apps/station/ui_portal.py:103
+msgid "高级报表"
+msgstr "Advanced reporting"
+
+#: gflux/apps/station/ui_portal.py:117 gflux/templates/import.html:134
+#: gflux/templates/import.html.py:151 gflux/templates/import.html:162
+msgid "上传文件"
+msgstr "Data Uploading"
+
+#: gflux/apps/station/ui_portal.py:138
+msgid "我的账户"
+msgstr "Account"
+
+#: gflux/apps/station/ui_portal.py:144
+msgid "网感油站指数"
+msgstr "Wanggan Gas Station Index"
+
+#: gflux/templates/admin_page_tbd.html:46
+#: gflux/templates/fueltypemanage.html:39 gflux/templates/import.html:38
+#: gflux/templates/language_setting.html:40 gflux/templates/management.html:40
+#: gflux/templates/myselftationmanage.html:39
+#: gflux/templates/station_professional_analysis.html:37
+#: gflux/templates/tag.html:40 gflux/templates/uploaded_page.html:67
+#: gflux/templates/userstationmanage.html:39 gflux/templates/welcome.html:37
+msgid "退 出"
+msgstr "Quit"
+
+#: gflux/templates/admin_page_tbd.html:69
+msgid "权限"
+msgstr "Permission"
+
+#: gflux/templates/admin_page_tbd.html:96
+msgid "更改用户"
+msgstr "Change User Type"
+
+#: gflux/templates/admin_page_tbd.html:96
+msgid "的权限为："
+msgstr "Permission"
+
+#: gflux/templates/admin_page_tbd.html:98
+msgid "未批准用户"
+msgstr "Un-authorized User"
+
+#: gflux/templates/admin_page_tbd.html:102
+msgid "超级用户"
+msgstr "Administrator"
+
+#: gflux/templates/fueltypemanage.html:84
+msgid "名字:"
+msgstr "Name"
+
+#: gflux/templates/fueltypemanage.html:87
+msgid "油品类型:"
+msgstr "Product type"
+
+#: gflux/templates/fueltypemanage.html:90
+msgid "油品编号:"
+msgstr "Product serial number"
+
+#: gflux/templates/import.html:60
+msgid "数据来源"
+msgstr "Data Source"
+
+#: gflux/templates/import.html:64
+msgid "选择地区:"
+msgstr "Choose an Area"
+
+#: gflux/templates/import.html:70 gflux/templates/uploaded_page.html:156
+msgid "新增地区"
+msgstr "Add an Area"
+
+#: gflux/templates/import.html:75 gflux/templates/uploaded_page.html:159
+msgid "地区代码:"
+msgstr "Area Code"
+
+#: gflux/templates/import.html:76 gflux/templates/uploaded_page.html:160
+msgid "地区已存在！"
+msgstr "The Area already exists"
+
+#: gflux/templates/import.html:78 gflux/templates/uploaded_page.html:163
+msgid "地区名称:"
+msgstr "Area Name"
+
+#: gflux/templates/import.html:78 gflux/templates/uploaded_page.html:163
+msgid "北京"
+msgstr "Beijing"
+
+#: gflux/templates/import.html:87
+msgid "选择站点:"
+msgstr "Please Choose a Station"
+
+#: gflux/templates/import.html:93
+msgid "新增站点"
+msgstr "Add a New Station"
+
+#: gflux/templates/import.html:98 gflux/templates/uploaded_page.html:144
+msgid "站点代码:"
+msgstr "Station Code"
+
+#: gflux/templates/import.html:99
+msgid "站点已存在！"
+msgstr "The station already exists."
+
+#: gflux/templates/import.html:101 gflux/templates/uploaded_page.html:148
+msgid "站点名称:"
+msgstr "Gas Station Name"
+
+#: gflux/templates/import.html:101 gflux/templates/uploaded_page.html:148
+msgid "上地加油站"
+msgstr "Gas Station"
+
+#: gflux/templates/import.html:103 gflux/templates/language_setting.html:90
+#: gflux/templates/myselftationmanage.html:86
+#: gflux/templates/userstationmanage.html:97
+msgid "选择区/县:"
+msgstr "Select the district/county"
+
+#: gflux/templates/import.html:123
+msgid "选择数据类型:"
+msgstr "Select the type of data:"
+
+#: gflux/templates/import.html:126
+msgid "SP"
+msgstr "SP"
+
+#: gflux/templates/import.html:127
+msgid "中油油站"
+msgstr "CNPC"
+
+#: gflux/templates/import.html:128
+msgid "延长壳牌"
+msgstr "YCSHELL"
+
+#: gflux/templates/import.html:136
+msgid "all文件"
+msgstr "All Data File"
+
+#: gflux/templates/import.html:138 gflux/templates/import.html.py:144
+#: gflux/templates/import.html:155 gflux/templates/import.html.py:166
+msgid "点击选择上传文件"
+msgstr "Upload Files"
+
+#: gflux/templates/import.html:142
+msgid "card文件"
+msgstr "Card Data File"
+
+#: gflux/templates/import.html:153
+msgid "sp文件"
+msgstr "sp file"
+
+#: gflux/templates/import.html:164
+msgid "ycshell文件"
+msgstr "All Data File"
+
+#: gflux/templates/import.html:173
+msgid "开始导入数据"
+msgstr "Start to import data"
+
+#: gflux/templates/import.html:178
+msgid "导入状态"
+msgstr "Status of Imported Data"
+
+#: gflux/templates/language_setting.html:60
+msgid "用户名:"
+msgstr "User name:"
+
+#: gflux/templates/language_setting.html:64
+msgid "更改语言"
+msgstr ""
+
+#: gflux/templates/language_setting.html:65
+msgid "语言:"
+msgstr "Language:"
+
+#: gflux/templates/language_setting.html:75
+msgid "更改密码"
+msgstr ""
+
+#: gflux/templates/language_setting.html:77
+msgid "旧密码:"
+msgstr ""
+
+#: gflux/templates/language_setting.html:79
+msgid "新密码:"
+msgstr ""
+
+#: gflux/templates/language_setting.html:81
+msgid "再次输入新密码:"
+msgstr "Confirm Password"
+
+#: gflux/templates/language_setting.html:88
+msgid "更改区域"
+msgstr ""
+
+#: gflux/templates/login.html:45
+msgid "记住用户名"
+msgstr "Remember User Name"
+
+#: gflux/templates/login.html:52
+msgid "登陆"
+msgstr "Login"
+
+#: gflux/templates/management.html:78
+msgid "通道管理"
+msgstr "Channel management"
+
+#: gflux/templates/management.html:82
+msgid "新增通道"
+msgstr "The new channel"
+
+#: gflux/templates/management.html:93
+msgid "列道管理"
+msgstr ""
+
+#: gflux/templates/management.html:97
+msgid "新增列道"
+msgstr ""
+
+#: gflux/templates/management.html:108
+msgid "油机管理"
+msgstr "Oil machine management"
+
+#: gflux/templates/management.html:112
+msgid "新增油机"
+msgstr "New oil machine"
+
+#: gflux/templates/management.html:123
+msgid "油位管理"
+msgstr "The oil level management"
+
+#: gflux/templates/management.html:127
+msgid "新增油位"
+msgstr "New oil level"
+
+#: gflux/templates/management.html:155
+msgid "选择油枪"
+msgstr "Choose oil gun"
+
+#: gflux/templates/register_success.html:15
+msgid "你已经成功的注册了MarketCloud账户。在审核通过之前，请耐心等候"
+msgstr ""
+"You have already signed up to MarketCloud. Please be patient when we verify "
+"your account"
+
+#: gflux/templates/station_professional_analysis.html:55
+msgid "过滤条件"
+msgstr "Filter conditions"
+
+#: gflux/templates/station_professional_analysis.html:59
+msgid "必选"
+msgstr "Will choose"
+
+#: gflux/templates/station_professional_analysis.html:72
+msgid "统计量"
+msgstr "Statistic"
+
+#: gflux/templates/station_professional_analysis.html:75
+msgid "出油时间"
+msgstr "The oil time trend"
+
+#: gflux/templates/station_professional_analysis.html:100
+msgid "时间粒度"
+msgstr "Time granularity"
+
+#: gflux/templates/station_professional_analysis.html:102
+msgid "小时"
+msgstr "Cancel"
+
+#: gflux/templates/station_professional_analysis.html:107
+msgid "单天"
+msgstr "Day"
+
+#: gflux/templates/station_professional_analysis.html:108
+msgid "范围"
+msgstr "area"
+
+#: gflux/templates/station_professional_analysis.html:113
+msgid "可选"
+msgstr "optional"
+
+#: gflux/templates/station_professional_analysis.html:117
+#: gflux/templates/station_professional_analysis.html:168
+msgid "消费类型"
+msgstr "Consumption type"
+
+#: gflux/templates/station_professional_analysis.html:125
+#: gflux/templates/station_professional_analysis.html:159
+msgid "油品类型"
+msgstr "Product type"
+
+#: gflux/templates/station_professional_analysis.html:132
+#: gflux/templates/station_professional_analysis.html:173
+msgid "加油方式"
+msgstr "Go way"
+
+#: gflux/templates/station_professional_analysis.html:145
+#: gflux/templates/station_professional_analysis.html:180
+msgid "通道"
+msgstr "Channel management"
+
+#: gflux/templates/station_professional_analysis.html:146
+#: gflux/templates/station_professional_analysis.html:181
+msgid "油机"
+msgstr "Oil machine management"
+
+#: gflux/templates/station_professional_analysis.html:147
+#: gflux/templates/station_professional_analysis.html:182
+msgid "油位"
+msgstr "The oil level management"
+
+#: gflux/templates/station_professional_analysis.html:152
+msgid "曲线分类"
+msgstr "Curve classification"
+
+#: gflux/templates/station_professional_analysis.html:152
+msgid "至少选择一种分类,最多选择两种分类,过滤器中选择了则不能在曲线分类中选择"
+msgstr ""
+"Choose a classification, at least up to choose two kinds of classification, "
+"filter chose cannot choose in the curve classification"
+
+#: gflux/templates/station_professional_analysis.html:164
+msgid "油枪"
+msgstr "Gas Gun Efficiency"
+
+#: gflux/templates/station_professional_analysis.html:189
+msgid "渲染方式"
+msgstr "Rendering"
+
+#: gflux/templates/station_professional_analysis.html:196
+msgid "曲线形状"
+msgstr "The curve shape"
+
+#: gflux/templates/station_professional_analysis.html:208
+msgid "堆叠方式"
+msgstr "Stacked way"
+
+#: gflux/templates/station_professional_analysis.html:210
+msgid "不堆叠"
+msgstr "Don't stack"
+
+#: gflux/templates/station_professional_analysis.html:211
+msgid "数值"
+msgstr "Value"
+
+#: gflux/templates/station_professional_analysis.html:212
+msgid "百分比"
+msgstr "Percentage of Loyal Customers"
+
+#: gflux/templates/station_professional_analysis.html:218
+msgid "生成图表"
+msgstr "To generate the chart"
+
+#: gflux/templates/station_professional_analysis.html:227
+msgid "自定义标题"
+msgstr "A custom title"
+
+#: gflux/templates/station_professional_analysis.html:236
+msgid "图"
+msgstr "Chart"
+
+#: gflux/templates/station_professional_analysis.html:237
+msgid "表"
+msgstr "Table"
+
+#: gflux/templates/station_professional_analysis.html:249
+msgid "自定义统计量"
+msgstr "The custom statistics"
+
+#: gflux/templates/tag.html:64
+msgid "新建标签"
+msgstr ""
+
+#: gflux/templates/tag.html:84
+msgid "标签"
+msgstr ""
+
+#: gflux/templates/tag.html:92
+msgid "加入"
+msgstr "Import"
+
+#: gflux/templates/uploaded_page.html:86
+msgid "文件名称"
+msgstr "File Name"
+
+#: gflux/templates/uploaded_page.html:87
+msgid "上传时间"
+msgstr "Upload Time"
+
+#: gflux/templates/uploaded_page.html:88
+msgid "上传者"
+msgstr "Author"
+
+#: gflux/templates/uploaded_page.html:95
+#: gflux/templates/uploaded_page.html:116
+msgid "数据导入"
+msgstr "Import Data"
+
+#: gflux/templates/uploaded_page.html:131
+msgid "请选择区域"
+msgstr "Please Choose an Area"
+
+#: gflux/templates/uploaded_page.html:136
+msgid "请选择加油站"
+msgstr "Please Choose a Gas Station"
+
+#: gflux/templates/uploaded_page.html:141
+msgid "新增加油站"
+msgstr "Add a Gas Station"
+
+#: gflux/templates/uploaded_page.html:172
+msgid "导入"
+msgstr "Import"
+
+#: gflux/templates/welcome.html:54
+msgid "欢迎您,"
+msgstr "Welcome,"
+
+#: gflux/templates/welcome.html:69
+msgid "上传数据"
+msgstr "Upload data"
+
+#: gflux/templates/welcome.html:73
+msgid "上次上传站名:"
+msgstr "Last site of upload data:"
+
+#: gflux/templates/welcome.html:74
+msgid "上次上传数据时间:"
+msgstr "Last time of upload data:"
+
+#: gflux/templates/welcome.html:90
+msgid "查看结果"
+msgstr "View the results"
+
+#: gflux/templates/welcome.html:93
+msgid "上次查看站名:"
+msgstr "Last site of check:"
+
+#: gflux/templates/welcome.html:94
+msgid "上次查看站点时间:"
+msgstr "The last time look at the site:"
+
+#: gflux/templates/welcome.html:103
+msgid "快捷查看"
+msgstr "Quick view"
+
+#: gflux/templates/welcome.html:106
+msgid "单站查看"
+msgstr "Single site to see"
+
+#: gflux/templates/welcome.html:118
+msgid "指数查看"
+msgstr "Index view"
+
+#: gflux/templates/welcome.html:132
+msgid "单站对比查看"
+msgstr "Single site comparison view"
+
+#: gflux/templates/welcome.html:143
+msgid "趋势类型"
+msgstr "Type of trend"
+
+#: gflux/templates/welcome.html:145
+msgid "油品趋势"
+msgstr "The trend of oil"
+
+#: gflux/templates/welcome.html:146
+msgid "非油品趋势"
+msgstr "The trend of none oil"
+
+#: gflux/templates/welcome.html:149
+msgid "对比类型"
+msgstr "Contrast type"
+
+#~ msgid "<h1>你还未通过审核，请耐心等候。</h1>"
+#~ msgstr "<h1>Your account application is being processed.</h1>"
+
+#~ msgid "<h1>你的注册申请尚未被批准或该用户不存在！</h1>"
+#~ msgstr ""
+#~ "<h1>Your account is being processed or the account is not existent!</h1>"
+
+#~ msgid "公司名称只能包含汉字、字母和数字"
+#~ msgstr ""
+#~ "The company name can only contain Chinese characters, alphabet characters "
+#~ "and digital numbers"
+
+#~ msgid "用户信息"
+#~ msgstr "The user information"

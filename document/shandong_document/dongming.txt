@@ -1,0 +1,123 @@
+"SHANDONG_YANGGU_YINLIAN" : "阳谷银联0220站",
+"SHANDONG_DONGA_HONGDA" : "东阿宏达0270站",
+"SHANDONG_LINQING_YANGGUANG" : "临清阳光0230站",
+"SHANDONG_SHENXIAN_HEDIAN" : "莘县河店0251站",
+
+1. 数据时间范围
+
+
+SHANDONG_YANGGU_YINLIAN                 |        1    2015-06-27 15:00:00  ~  2015-09-08 14:00:00
+SHANDONG_LINQING_YANGGUANG              |        1   2015-06-28 08:00:00 ~ 2015-09-08 14:00:00
+
+SHANDONG_SHENXIAN_HEDIAN                |        2          2015-08-20 16:00:00  ~ 2015-09-06 15:00:00
+SHANDONG_DONGA_HONGDA                   |        2   2015-07-16 10:00:00 ~ 2015-09-08 14:00:00
+
+
+
+2. 单站和多站汇总数据对不上
+
+select sum(quantity) from fact_trans where site = 'SHANDONG_YANGGU_YINLIAN' and timestamp >= '2015-08-17 00:00:00.000' and timestamp<= '2015-08-17 23:59:59.000';
+
+select sum(quantity) from fact_trans where site = 'SHANDONG_DONGA_HONGDA' and timestamp >= '2015-08-17 00:00:00.000' and timestamp<= '2015-08-17 23:59:59.000';
+
+select * from fact_trans where site = 'SHANDONG_LINQING_YANGGUANG' and timestamp >= '2015-08-17 00:00:00.000' and timestamp<= '2015-08-17 23:59:59.000';
+
+
+select * from fact_trans where site = 'SHANDONG_SHENXIAN_HEDIAN' and timestamp >= '2015-08-17 00:00:00.000' and timestamp<= '2015-08-17 23:59:59.000';
+
+
+select num(quantity) from fact_trans where site = 'SHANDONG_YANGGU_YINLIAN' and timestamp >= '2015-08-17 00:00:00.000' and timestamp<= '2015-08-17 23:59:59.000';
+
+select sum(total_quantity) from station_daily_fuel_sales where site = 'SHANDONG_DONGA_HONGDA' and date >= '2015-08-17 00:00:00.000' and date<='2015-08-17 23:59:59.000';
+select sum(total_quantity) from station_daily_fuel_sales where site = 'SHANDONG_YANGGU_YINLIAN' and date >= '2015-08-17 00:00:00.000' and date<='2015-08-17 23:59:59.000';
+
+
+ 'No module named scipy.sparse'
+
+
+
+select payment_type,sum(quantity) as total_quantity,sum(pay) as total_pay from fact_trans where timestamp>='2015-08-17 00:00:00.000' and timestamp<'2015-08-17 23:59:59.000' and site='SHANDONG_YANGGU_YINLIAN'  group by payment_type;
+
+select payment_type,sum(quantity) as total_quantity,sum(pay) as total_pay from fact_trans where timestamp>='2015-08-17 00:00:00.000' and timestamp<'2015-08-17 23:59:59.000' and site='SHANDONG_LINQING_YANGGUANG'  group by payment_type;
+
+select payment_type,sum(quantity) as total_quantity,sum(pay) as total_pay from fact_trans where timestamp>='2015-08-17 00:00:00.000' and timestamp<'2015-08-17 23:59:59.000' and site='SHANDONG_SHENXIAN_HEDIAN'  group by payment_type;
+
+select payment_type,sum(quantity) as total_quantity,sum(pay) as total_pay from fact_trans where timestamp>='2015-08-17 00:00:00.000' and timestamp<'2015-08-17 23:59:59.000' and site='SHANDONG_DONGA_HONGDA'  group by payment_type;
+
+
+
+
+100 | 0号柴油
+97 | 97号车用汽油
+93 | 93号车用汽油
+0 | 0号车用柴油
+10 | -10号柴油 
+
+ 1094 | SHANDONG_YANGGU_YINLIAN                 |      100 | 0号柴油                             |     0
+ 1095 | SHANDONG_YANGGU_YINLIAN                 |       97 | 97号车用汽油                        |     0
+ 1096 | SHANDONG_YANGGU_YINLIAN                 |       93 | 93号车用汽油                        |     0
+ 1097 | SHANDONG_YANGGU_YINLIAN                 |        0 | 0号车用柴油                         |     0
+ 1098 | SHANDONG_YANGGU_YINLIAN                 |       10 | -10号柴油                           |     0
+ 1099 | SHANDONG_DONGA_HONGDA                   |       93 | 93号车用汽油                        |     0
+ 1100 | SHANDONG_DONGA_HONGDA                   |      100 | 0号柴油                             |     0
+ 1101 | SHANDONG_DONGA_HONGDA                   |       10 | -10号柴油                           |     0
+ 1102 | SHANDONG_DONGA_HONGDA                   |        0 | 0号车用柴油                         |     0
+ 1103 | SHANDONG_DONGA_HONGDA                   |       97 | 97号车用汽油                        |     0
+ 1104 | SHANDONG_LINQING_YANGGUANG              |      100 | 0号柴油                             |     0
+ 1105 | SHANDONG_LINQING_YANGGUANG              |       97 | 97号车用汽油                        |     0
+ 1106 | SHANDONG_LINQING_YANGGUANG              |        0 | 0号车用柴油                         |     0
+ 1107 | SHANDONG_LINQING_YANGGUANG              |       93 | 93号车用汽油                        |     0
+ 1108 | SHANDONG_LINQING_YANGGUANG              |       10 | -10号柴油                           |     0
+ 1109 | SHANDONG_SHENXIAN_HEDIAN                |       97 | 97号车用汽油                        |     0
+ 1110 | SHANDONG_SHENXIAN_HEDIAN                |      100 | 0号柴油                             |     0
+ 1111 | SHANDONG_SHENXIAN_HEDIAN                |       10 | -10号柴油                           |     0
+ 1112 | SHANDONG_SHENXIAN_HEDIAN                |       93 | 93号车用汽油                        |     0
+ 1113 | SHANDONG_SHENXIAN_HEDIAN                |        0 | 0号车用柴油                         |     0
+
+
+
+     id     |       name       |                             barcodes                             
+------------+------------------+------------------------------------------------------------------
+ 1101000589 | 89号汽油(国V)    | []
+ 1101000592 | 92号汽油(国V)    | [300585, 60206059]
+ 1101000595 | 95号汽油(国V)    | [300586, 60206060]
+ 1101000598 | 98号汽油(国V)    | [60209058]
+ 1101000505 | 5号柴油(国V)     | []
+ 1101000500 | 0号柴油(国V)     | [300603, 60189274, 300566, 16714339, 4603112]
+ 1101000510 | -10号柴油(国V)   | [300602]
+ 1101000520 | -20号柴油(国V)   | [300567, 300601]
+ 1101000535 | -35号柴油(国V)   | []
+ 1101000490 | 90号汽油(国IV)   | [300003]
+ 1101000493 | 93号汽油(国IV)   | [300656, 93, 12827124, 989976, 300007, 300590, 6448894, 1910560]
+ 1101000497 | 97号汽油(国IV)   | [300657, 97, 9661572, 5915711, 300014, 300591, 2523955, 8899677]
+ 1101000498 | 98号汽油(国IV)   | [300653]
+ 1101000405 | 5号柴油(国IV)    | []
+ 1101000410 | -10号柴油(国IV)  | []
+ 1101000420 | -20号柴油(国IV)  | []
+ 1101000435 | -35号柴油(国IV)  | []
+ 1101000390 | 90号汽油(国III)  | []
+ 1101000398 | 98号汽油(国III)  | [300314]
+ 1101000305 | 5号柴油(国III)   | []
+ 1101000300 | 0号柴油(国III)   | [300472]
+ 1101000320 | -20号柴油(国III) | [300470]
+ 1101000335 | -35号柴油(国III) | [300550]
+ 1101000350 | -50号柴油(国III) | []
+ 1101000397 | 97号汽油(国III)  | ["60090936", "300061", "97"]
+ 1101000393 | 93号汽油(国III)  | ["60090935", "300060"]
+ 1101000400 | 0号柴油(国IV)    | ["100", "0"]
+ 1101000310 | -10号柴油(国III) | ["300471", "10"]
+
+
+
+
+
+ 7ffcf63f764c9703f58b70f5137bc9179a35a5d5 | 2015-08-17 00:00:00 | SHANDONG_DONGA_HONGDA      |            2 | 1101000493 |           4046 |         24196.46
+ 8c0a44dfe7063d68494ba38eee6da668eef9e926 | 2015-08-17 00:00:00 | SHANDONG_DONGA_HONGDA      |            2 | 1101000497 |            406 |             2561
+ b804528a903811c61a3db426ad947c68d5be1447 | 2015-08-17 00:00:00 | SHANDONG_DONGA_HONGDA      |            2 | 1101000397 |            406 |             2561
+ ad9d9a8708d3ea90b398925f8394110f3504ceee | 2015-08-17 00:00:00 | SHANDONG_DONGA_HONGDA      |            2 | 1101000400 |           2070 | 
+
+
+
+
+3. 加油量排名有问题   
+select sum(quantity) from fact_trans where site = 'SHANDONG_YANGGU_YINLIAN' and timestamp < '2015-08-31 00:00:00' and timestamp > '2015-08-01 00:00:00';

@@ -1,0 +1,18 @@
+from gflux.apps.station.sql_utils import * 
+import datetime
+compute_station_daybatch('BJ_HD',datetime.datetime(2013,3,1),datetime.datetime(2013,3,31))
+compute_station_monthbatch('BJ_HD',2013,3)
+
+
+
+quantity_fuel | quantity_nonefuel | peak_fuel_avg_gun | peak_hour_num | peak_fuel_count | pay_amout | vip_pay_amout | fuel_trans_count | fuel_fillout_count | vip_trans_count | nonfuel_pay_amout | single_customer_pay 
+---------------+-------------------+-------------------+---------------+-----------------+-----------+---------------+------------------+--------------------+-----------------+-------------------+---------------------
+       2869.29 |                19 |  51.3331944444444 |             8 |         2104.03 |  23005.33 |      17958.08 |              102 |                 67 |              79 |               228 |    471.255813788202
+(1 row)
+
+
+ vip_trans_count | nonfuel_pay_amout 
+-----------------+-------------------
+              79 |               228
+select count(DISTINCT trans_id) as vip_trans_count from fact_trans where timestamp>='2013-3-1 00:00:00' and  timestamp<'2013-3-31 23:59:59' and site='BJ_HD'  and payment_type=2;
+357

@@ -1,0 +1,40 @@
+山东数据部署说明文档
+
+1. 脚本清单
+
+1.1 数据库服务器：
+
+shandong_upload_db.bat 数据备份上传任务
+
+1.2 中转服务器：
+
+1. shandong_ftp_mirror.py  实时下载任务
+2. shandong_ftp_upload.bat 定时恢复和上传数据任务
+
+
+2. 帐号密码
+
+2.1  cenos6.7 root pku123
+IP : 10.33.75.10
+
+2.2  xp Administrator pku123
+
+2.3 Teamerviewer 
+niyoufa@tmlsystem.com
+19922011nyf
+
+ 2.4  ftp用户密码
+10.33.75.10
+ftpuser
+ftpuser
+
+3. 远程登陆的Teamerviewer 帐号
+271428913@qq.com
+yu880127
+
+4. 通过隧道远程登陆到centos系统
+4.1 ssh work@glfux2.tmlsystem.com
+4.2 ssh -p 4445 work@localhost
+
+
+

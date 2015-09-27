@@ -1,0 +1,281 @@
+{%load i18n%}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <meta name="url_prefix" content="{{settings.GFLUX_URL_PREFIX}}" >
+    <title>{{ site.title }}</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+
+    {{ current_page.media_css }}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../s/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <!-- Navigation -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-header">
+              <a class="navbar-brand" target="_top" href="/{{ settings.GFLUX_URL_PREFIX }}" title="{{ site.title }}"></a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                {% for portal in site_portals %}
+                  <li {% if portal.uid == current_portal.uid %} class="active" {% endif %}>
+                    <a target="_top" id="head_tag" value="{{ portal.url }}" href="{{ portal.url }}">{{ portal.label }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:logout()">{% trans "退 出" %}</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="container-fluid">
+          <div class="row-fluid">
+            <!-- Sidebar -->
+              <div class="col-lg-2">
+                  <div class="row-fluid">
+                    {% block sidebar %}
+                        {% include "dash/includes/sidebar.html" %}
+                    {% endblock %}
+                  </div>
+              </div>
+              <!-- END Sidebar -->
+              <!-- Content -->
+              <div class="col-lg-10">
+                  <div id="creator_view">
+  <h4>{% trans "过滤条件" %}</h4>
+  <div style="
+    background-color: #F7ECEC;padding: 20px;
+">
+    <div>{% trans "必选" %}</div>
+<form class="dash-top-form form-inline" role="form">
+
+                      <div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "站点" %}</button>
+                        <select class="dash-control form-control" id="filter-site" name="site" style="width:100px;">
+</select>
+                      </div>
+
+
+
+
+<div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "统计量" %}</button>
+                        <select class="dash-control form-control" id="filter-count-type" name="fuel_type" style="width:100px;">
+<option value="L">{% trans "加油量" %}</option>
+<option value="T">{% trans "出油时间" %}</option>
+<option value="P">{% trans "销售额" %}</option>
+</select>
+                      </div>
+                    </form>
+    <form class="dash-top-form form-inline" role="form">
+<div id="one-date-selector" class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default" value="date">{% trans "日期" %}</button>
+                        <input class="dash-control form-control" data-date-format="yyyy-mm-dd" data-provide="datepicker" id="id_date" name="date" style="width:100px;" type="text" value="2014-07-30">
+                      </div>
+
+<div id="multi-date-selector" class="btn-group" style="
+    display: none;
+">
+
+  <div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default">{% trans "开始" %}</button>
+            <input class="dash-control form-control" data-date-format="yyyy-mm-dd" data-provide="datepicker" id="id_start_date" name="start_date" style="width:100px;" type="text" value="2013-09-21">
+          </div>
+
+<div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default">{% trans "结束" %}</button>
+            <input class="dash-control form-control" data-date-format="yyyy-mm-dd" data-provide="datepicker" id="id_end_date" name="end_date" style="width:100px;" type="text" value="2013-10-21">
+          </div></div>
+<div class="btn-group" style="margin-right: 5px">
+  <button type="button" class="btn btn-default">{% trans "时间粒度" %}</button>
+  <select class="dash-control form-control" id="filter-base-time" name="payment_type" style="width:100px;">
+      <option value="hour">{% trans "小时" %}</option>
+</select>
+</div>
+        <div id="filter-time-type" class="radio btn-group" style="margin-right: 5px">
+                              <div>
+        <label><input name="time_range" type="radio" value="ONE" checked="">{% trans "单天" %}</label>
+        <label><input name="time_range" type="radio" value="MULTI">{% trans "范围" %}</label>
+          </div>
+                            </div>
+
+</form>
+    <div>{% trans "可选" %}</div>
+    <form class="option-filter dash-top-form form-inline" role="form">
+
+                      <div class="btn-group checkbox" style="margin-right: 5px">
+                        <label><input name="checkbox-pay-type" type="checkbox">{% trans "消费类型" %}</label>
+                        <select id="filter-pay-type" class="dash-control form-control" name="pay_type" style="width:100px;">
+<option value="1">{% trans "银联卡" %}</option>
+<option value="2">{% trans "加油卡" %}</option>
+<option value="3">{% trans "信用卡" %}</option>
+<option value="1000">{% trans "现金" %}</option>
+</select>
+                      </div><div class="btn-group checkbox" style="margin-right: 5px">
+                        <label><input name="checkbox-fuel-type" type="checkbox">{% trans "油品类型" %}</label>
+                        <select id="filter-fuel-type" class="dash-control form-control" name="fuel_type" style="width:100px;">
+{%for fuel_type_barcode,fuel_type in user_fuel_types%}
+    <option value="{{fuel_type_barcode}}">{{fuel_type}}</option>
+{%endfor%}
+</select>
+                      </div><div class="btn-group checkbox" style="margin-right: 5px">
+                        <label><input name="checkbox-pump-type" type="checkbox">{% trans "加油方式" %}</label>
+                        <select id="filter-pump-type" class="dash-control form-control" name="pump_type" style="width:100px;">
+<option value="0">{% trans "加满" %}</option>
+<option value="1">{% trans "定额" %}</option>
+</select>
+                      </div>
+                      <div class="btn-group checkbox" style="margin-right: 5px">
+                          <label><input name="checkbox-guns-group" type="checkbox">{% trans "油枪分组" %}</label>
+                          <select id="filter-guns" class="dash-control form-control" name="guns_type" style="width:100px;">
+                          </select>
+                      </div>
+                      <div id="filter-guns-type" class="radio btn-group" style="margin-right: 5px">
+                          <div>
+                              <label><input name="passage-machine-level" type="radio" value="passages" checked="">{% trans "通道" %}</label>
+                              <label><input name="passage-machine-level" type="radio" value="machines">{% trans "油机" %}</label>
+                              <label><input name="passage-machine-level" type="radio" value="levels">{% trans "油位" %}</label>
+                        </div>
+                      </div>
+                    </form>
+  </div>
+  <h4>{% trans "曲线分类" %}</h4><h6>{% trans "至少选择一种分类,最多选择两种分类,过滤器中选择了则不能在曲线分类中选择" %}</h6>
+  <div style="
+    background-color: #F0E2E2;padding: 20px;
+">
+    <form class="series-category dash-top-form form-inline" role="form">
+
+        <div class="btn-group checkbox" style="margin-right: 5px">
+          <label><input value="fuel-type" name="checkbox-fuel-type" type="checkbox" checked>{% trans "油品类型" %}</label>
+
+        </div>
+
+<div class="btn-group checkbox" style="margin-right: 5px">
+  <label><input value="pump" name="checkbox-pump" type="checkbox">{% trans "油枪" %}</label>
+
+</div>
+                      <div class="btn-group checkbox" style="margin-right: 5px">
+                        <label><input value="pay-type" name="checkbox-pay-type" type="checkbox">{% trans "消费类型" %}</label>
+
+                      </div>
+
+                      <div class="btn-group checkbox" style="margin-right: 5px">
+                        <label><input value="pump-type" name="checkbox-pump-type" type="checkbox">{% trans "加油方式" %}</label>
+
+                      </div>
+
+                      <div class="btn-group checkbox" style="margin-right: 5px">
+                         <label><input value="guns-type" name="checkbox-guns-group" type="checkbox">{% trans "油枪分组" %}</label>
+                        <select id="select-guns" class="dash-control form-control" name="guns_type_select" style="width:100px;">
+                            <option value="passages">{% trans "通道" %}</option>
+                            <option value="machines">{% trans "油机" %}</option>
+                            <option value="levels">{% trans "油位" %}</option>
+                        </select>
+
+                      </div>
+
+                    </form>
+  </div>
+  <h4>{% trans "渲染方式" %}</h4>
+  <div style="
+    background-color: #E9D3D3;padding: 20px;
+">
+    <form class="dash-top-form form-inline" role="form">
+
+                      <div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "曲线形状" %}</button>
+                        <select class="dash-control form-control" id="id_series_type" name="payment_type" style="width:100px;">
+<option value="area">area</option>
+<option value="areaspline">areaspline</option>
+<option value="bar">bar</option>
+<option value="column">column</option>
+<option value="line">line</option>
+<option value="pie">pie</option>
+<option value="scatter">scatter</option>
+<option value="spline">spline</option>
+</select>
+                      </div><div class="btn-group" style="margin-right: 5px">
+                          <button type="button" class="btn btn-default">{% trans "堆叠方式" %}</button>
+                        <select class="dash-control form-control" id="id_stack_type" name="payment_type" style="width:100px;">
+<option value="null">{% trans "不堆叠" %}</option>
+<option value="normal">{% trans "数值" %}</option>
+<option value="percent">{% trans "百分比" %}</option>
+</select>
+                      </div>
+                    </form>
+  </div>
+  <div class="button">
+  <button onclick="clickCreateReportButton()" class="btn btn-success">{% trans "生成图表" %}</button>
+</div></div>
+<div id="reportor_view" style="display:none;">
+<div><button onclick="returnToCreatorView()" class="btn btn-success">{% trans "返回" %}</button></div>
+<div>
+<div id="" class="dash panel panel-default">
+  <div class="dash-header panel-heading">
+    <div class="row">
+      <div class="col-lg-3">
+        <h4 class="" contenteditable="true">{% trans "自定义标题" %}</h4>
+      </div>
+      <div class="col-lg-9">
+        <form class="dash-form form-inline pull-right" role="form" action="/__dummy__">
+
+
+
+          <div class="btn-group" style="margin-right: 2px">
+
+            <button type="button" renderer="chart" class="dash-renderer btn btn-default btn-info">{% trans "图" %}</button>
+            <button type="button" renderer="table" class="dash-renderer btn btn-default">{% trans "表" %}</button>
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="dash-tabbar btn-group  hidden  ">
+
+      <button contenteditable="true" \
+      class="btn   dash-tab btn-default btn-primary">{% trans "自定义统计量" %}</button>
+
+    </div>
+    <div class="dash-body">
+
+      <div id="professional_chart" dash-label="自定义统计量" renderer="chart" class="dashlet " style="display: block; position: static; zoom: 1;"></div>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+            <!-- END Content -->
+          </div> <!-- /.row-fluid -->
+        </div><!-- /.container-fluid -->
+
+        <!-- Foot -->
+         <div id="account_type" name="account_type" value="{{account_type}}"/>
+   	 <div id="enable_advanced_features" name="enable_advanced_features" value="{{enable_advanced_features}}"/>
+        {% include "dash/includes/foot.html" %}
+
+        <!-- End Foot -->
+      <!-- END Navigation -->
+        <!-- JavaScripts
+        ================================================== -->
+        {{ current_page.media_js }}
+        <script>
+        window.all_stations=$.parseJSON('{{all_stations|escapejs}}')
+        window.all_passage_machine_level=$.parseJSON('{{all_passage_machine_level|escapejs}}')
+        </script>
+  </body>
+</html>

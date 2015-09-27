@@ -1,0 +1,77 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_frame.html" %}
+{% load i18n %}
+{% block gcustomer_station_title %}
+<li class="nav-active item"><a href="/gcustomer/gcustomer_station/">{% trans "油站管理" %}</a></li>
+{% endblock %}
+
+{% block page_nav %}
+
+<div class="nav-item">
+    <h4>{% trans "油站画像" %}</h4>
+    <ul>
+        {% block my_station_nav %}
+        <li><a href="/gcustomer/my_station_list/">{% trans "我的油站" %}</a></li>
+        {% endblock %}
+
+        {% block main_customer_nav %}
+        <li><a href="/gcustomer/main_customer_list/">{% trans "主要客户" %}</a></li>
+        {% endblock %}
+
+        {% block fuel_sale_nav %}
+        <li><a href="/gcustomer/fuel_sale/">{% trans "油品销售" %}</a></li>
+        {% endblock %}
+
+        {% block nonfuel_sale_nav %}
+        <li><a href="/gcustomer/nonfuel_sale/">{% trans "非油品销售" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+
+<div class="nav-item">
+    <h4>{% trans "油站群管理" %}</h4>
+    <ul>
+        {% block create_station_group_nav %}
+        <li><a href="/gcustomer/create_station_group/">{% trans "新建油站群" %}</a></li>
+        {% endblock %}
+
+        {% block station_group_nav %}
+        <li><a href="/gcustomer/station_group/">{% trans "已有油站群" %}</a></li>
+        {% endblock %}
+
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block page_content %}
+<h3 style="padding: 10px;">{% trans "油站画像" %}</h3>
+<div class="col-md-9 col-lg-9">
+    <div class="row app-item">
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-13">
+                <a href="/gcustomer/main_customer_list/">{% trans "主要客户" %}</a>
+                <p>{% trans "油站主要客户列表" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-14">
+                <a href="/gcustomer/nonfuel_sale/">{% trans "非油品销售" %}</a>
+                <p>{% trans "油站非油品销售情况" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-15">
+                <a href="#">{% trans "运营效率" %}</a>
+                <p>{% trans "查看油站的运营效率" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-16">
+                <a href="#">{% trans "油非转化" %}</a>
+                <p>{% trans "油品和非油品之间的转化" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

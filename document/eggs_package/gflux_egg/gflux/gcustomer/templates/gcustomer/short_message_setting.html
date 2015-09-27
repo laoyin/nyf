@@ -1,0 +1,51 @@
+{% extends "gcustomer/gcustomer_activity.html" %}
+{% load i18n %}
+{% block short_message_setting_page_nav %}
+<li class="nav-active"><a href="/gcustomer/short_message_settings/">{% trans "短信" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding: 10px 20px">
+    <div class="row">
+    	<h4>{% trans "短信设置" %}</h4>
+    </div>
+    <div class="row">
+    		<div class="col-lg-3">
+    			<h4>{% trans "联系电话" %}</h4>
+    		</div>
+	    	<div class="col-lg-3" style="margin-top:10px;">
+	    		<select class="form-control" name="email_address_settings">
+	    			<option name="email" selected>{% trans "请选择联系电话" %}</option>
+	    			<option name="email" value="0">2547546731</option>
+	    			<option name="email" value="1">13852806848</option>
+	    			<option name="email" value="3">15996458299</option>
+	    			<option name="email" value="4">13852801595</option>
+	    		</select>
+	    	</div>
+    </div>
+   
+   
+	<div class="row" style="margin-top:20px;">
+		<div class="col-lg-3">
+			<h4>{% trans "接受和发送" %}</h4>
+		</div>
+	</div>
+    <div class  ="row">
+            <div class="col-lg-3" style="margin-left:20px;">
+                <h5>{% trans "2G/3G下自动接受图片／语音" %}</h5>
+            </div>
+            <div class="col-lg-3">
+                <label>{% trans "是" %}</label>
+                <input type="radio" name="image" value="0" checked />
+                <label style="margin-left:20px;">{% trans "否" %}</label>
+                <input type="radio" name="image" value="1" />
+            </div>
+    </div>
+   
+    <div class="row" style="margin-top:20px;">
+    	<div class="col-lg-3">
+    		<button class="btn btn-default" >{% trans "保存" %}</button>
+    	</div>
+    </div>
+</div>
+{% endblock %}

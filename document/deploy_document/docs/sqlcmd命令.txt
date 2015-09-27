@@ -1,0 +1,27 @@
+1）还原（需先建立一个数据库）：
+sqlcmd -S localhost -U lxyu -P 880127 -d master -Q"RESTORE DAT
+ABASE test2 from disk='C:\software\Backup\2015-06-15\00_EnablerDB.dmp' with repl
+ace"
+
+如果出现登陆失败，需要配置服务，参考http://www.soaspx.com/dotnet/sql/mssql/sql2005/sqlservr2005_20120716_9414.html
+
+2）导出查询结果
+
+C:\Documents and Settings\Administrator>sqlcmd -S localhost -d test -U lxyu -P 8
+80127 -i C:\tmp\test.sql -o C:\shell.txt
+
+
+3) sql语句
+
+select dbo.transaction_items.item_type,dbo.transaction_items.transaction_id,dbo.transaction_items.item_description,
+dbo.transaction_items.item_price,dbo.transaction_items.item_quantity,dbo.transaction_items.item_value,
+dbo.transactions.transaction_date,dbo.products.product_code,eftcard.card_number
+ from dbo.transaction_items left join dbo.products on (dbo.transaction_items.item_id=dbo.products.product_id) 
+ left join dbo.eftcard on (dbo.eftcard.transaction_id=dbo.transaction_items.transaction_id),dbo.transactions 
+ where 
+ dbo.transaction_items.transaction_id = dbo.transactions.transaction_id
+ group by dbo.transaction_items.item_type,dbo.transaction_items.transaction_id,dbo.transaction_items.item_description,
+dbo.transaction_items.item_price,dbo.transaction_items.item_quantity,dbo.transaction_items.item_value,
+dbo.transactions.transaction_date,dbo.products.product_code,eftcard.card_number
+ order by dbo.transaction_items.transaction_id,dbo.transaction_items.item_type
+

@@ -1,0 +1,8 @@
+sql 文档(postgres mysql)
+
+一、数据库安装配置 (ubuntu和centos平台的postgres和mysql安装和配置) 参考: 数据库安装配置文档
+二、数据库SQL语言 (DML DDL DCL 以及postgres和mysql对SQL的支持) 参考: http://www.runoob.com/sql/sql-tutorial.html
+三、数据库设计(需求分析 概念设计 逻辑设计 物理设计) 参考 : 数据库设计ppt 
+四、数据库持久化框架设计数据库(Ｄjango的模型   SQLAchemay框架) 
+五、其他数据存储方案 (SQLite MongoDB  Redis  Memcached)  参考: http://www.runoob.com/sql/sql-tutorial.html
+

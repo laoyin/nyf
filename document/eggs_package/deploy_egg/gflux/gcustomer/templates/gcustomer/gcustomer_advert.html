@@ -1,0 +1,76 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_frame.html" %}
+{% load i18n %}
+{% block gcustomer_advert_title %}
+<li class="nav-active item"><a href="/gcustomer/gcustomer_advert/">{% trans "广告管理" %}</a></li>
+{% endblock %}
+
+
+{% block page_nav %}
+<div class="nav-item">
+    <h4>{% trans "移动广告" %}</h4>
+    <ul>
+        {% block upload_advert_nav %}
+        <li><a href="/gcustomer/upload_advert/">{% trans "上传广告" %}</a></li>
+        {% endblock %}
+        {% block show_advert_nav %}
+        <li><a href="/gcustomer/show_advert/">{% trans "已有广告" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+
+<div class="nav-item">
+    <h4>{% trans "广告效果" %}</h4>
+    <ul>
+        {% block advert_count_nav %}
+        <li><a href="/gcustomer/advert_count/">{% trans "点击统计" %}</a></li>
+        {% endblock %}
+        {% block advert_convent_nav %}
+        <li style="display:none;"><a href="/gcustomer/advert_convert/" >{% trans "转化销量" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+
+<div class="nav-item">
+    <h4>{% trans "投放设置" %}</h4>
+    <ul>
+        {% block advert_launch_setting %}
+        <li><a href="/gcustomer/advert_launch_setting/">{% trans "设置周期" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block page_content %}
+<h3 style="padding: 10px;">{% trans "广告投放" %}</h3>
+<div class="col-md-9 col-lg-9">
+    <div class="row app-item">
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-5">
+                <a href="/gcustomer/show_advert/">{% trans "已有广告" %}</a>
+                <p>{% trans "查看已经发布的广告" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-6">
+                <a href="/gcustomer/upload_advert/">{% trans "上传广告" %}</a>
+                <p>{% trans "上传品牌相关的广告" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-7">
+                <a href="/gcustomer/advert_count/">{% trans "点击统计" %}</a>
+                <p>{% trans "查看广告访问统计" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-8">
+                <a href="/gcustomer/advert_convert/">{% trans "转化销量" %}</a>
+                <p>{% trans "查看广告销量转化" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% load i18n %}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+      {% csrf_token %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <meta name="url_prefix" content="{{settings.GFLUX_URL_PREFIX}}" >
+    <title>了解一下</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" media="all" rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css'%}">
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.cookie-1.4.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/utils.'%}{{version}}.js"></script>
+        <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+      <style>
+          body{
+              font-size:20px;
+          }
+          .center
+              {
+              margin-left:auto;
+              margin-right:auto;
+              width:70%;
+          }
+      </style>
+        <script>
+            function enterDemo(){
+                $.post('/gflux/ajax/check_login/',{username:'demo',password:'demo'},
+                    function(data){
+                        if (data['ret']=='1101') {
+                            $.cookie('username','demo',{path:'/'})
+                            parent.location.href="/gflux/setting_protal/welcome.html";
+                        }
+                        else if(data.ret=='0007'){
+                            alert(gettext("您已在他处登陆,请先退出他处的登陆!"))
+                        }
+                        else{
+                            alert(gettext("用户名或密码错误！"));
+                        }
+                    },'json')
+            }
+        </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ec689e69f34164aee5ad1a715bf6f7c7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  </head>
+<body dir="auto">
+<div class="container-fluid">
+	<div class="row-fluid" >
+        <img alt="no image" src="{% static 'images/tutorial_demo_head.png'%}" width="480" height="200" style="margin-left:180px;margin-top: -43px;"/>
+		<div class="span12 center">
+			<p>
+				G-flux是一款基于大数据及云计算的油站管理决策系统，它为各级油站管理<br>
+                者提供了：<br>
+			</p>
+			<ul>
+				<li>
+					目视化的油站日常管理图表
+				</li>
+				<li>
+					基于单站及整个运营网络数据分析得出的决策依据，包括：
+				</li>
+				<li>
+					油站整体运营及趋势分析
+				</li>
+				<li>
+					油站效率分析
+				</li>
+				<li>
+					油品、非油品购物篮及相关性分析
+				</li>
+				<li>
+					营销策略分析
+				</li>
+				<li>
+					油站网络运营数据分析
+				</li>
+                <li> ......</li>
+			</ul>
+            <div>
+                   <p>G-flux使用最前沿的基于大数据及云计算的数据挖掘技术，对油站运营的风<br>险进行预警，同时对油站未来的业绩建立模型，并提供预测。让油站管理者<br>胸有成竹，掌握今天，并远瞩未来。
+                   </p>
+            </div>
+            <br>
+            <div >
+               <button type="button" class="btn btn-primary btn-lg" style="margin-left:40px" onclick="enterDemo()">进入演示</button>
+               <a href="https://www.zcdata.com.cn/gflux/register.html"><button type="button" class="btn btn-primary btn-lg" style="margin-left:280px">我要试用</button>
+           </a></div>
+		</div>
+	</div>
+</div>
+</body>
+
+
+</html>

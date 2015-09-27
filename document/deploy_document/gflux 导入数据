@@ -1,0 +1,2 @@
+gflux 导入数据
+python manage.py submit_cnpc_task --user tao --site A --dir ../gflux/file/tao/ --location_name BJ_CN

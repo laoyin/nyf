@@ -1,0 +1,630 @@
+{% extends "gcustomer/gcustomer_goods.html" %}
+{% load i18n %}
+{% block goods_launch %}
+<li class="nav-active"><a href="/gcustomer/goods_launch/">{% trans "货运" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+
+<div id="the_goods_information_list">
+    <div style="padding: 10px 20px">
+        <div style="margin-bottom:20px;">
+            <button type="button" onclick="new_create()" class="btn create">{% trans "新建" %}</button>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-lg-3">
+                    <input class="form-control"  id="good_keyword" placeholder="{% trans "请输入货运名称关键字" %}" value=""></input>
+                </div>
+                <div class="col-lg-3">
+                    <button id="get_good_with_key_word" class="btn btn-default" type="button">{% trans "查询" %}</button>
+                </div>
+            </div>
+        </div>
+        <table class="table" contenteditable="false" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+            <thead>
+                <tr >
+                    <th style="width:100px;">{% trans "序号" %}</th>
+                    <th>{% trans "标题" %}</th>
+                    <th>{% trans "发货城市" %}</th>
+                    <th>{% trans "目的城市" %}</th>
+                    <th>{% trans "创建时间" %}</th>
+                    <th style="width:15%;">{% trans "编辑" %}</th>
+                </tr>
+            </thead>
+            <tbody id="nonfuel_survey">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="the_goods_information_detials" style="display:none;">
+    <div style="padding: 10px 20px">
+        <div>
+            <button onclick="get_back()" class="btn btn-default">{% trans "返回" %}</button>
+            <button id="modification" class="btn btn-default">{% trans "修改" %}</button>
+        </div>
+        <div class = "row">
+            <div class="col-lg-6">
+                <h4 class="title-label-class">{% trans "货运详细信息" %}</h4>
+                <table class="table border-table" contenteditable="false">
+                    <tbody id="detail_info">
+                    </tbody>
+                </table>
+                <div id="message" style="display:none;">
+                    <label>{% trans "货运信息修改成功" %}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="the_create_goods_information" style="display:none;">
+    <div style="padding: 10px 20px">
+        <div>
+            <h4>{% trans "新建货运信息" %}</h4>
+        </div>
+        <div id="goods_form" method="post" class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <div class="row">
+                        <div>
+                            <label for="exampleInputEmail1" style="padding: 10px 20px">{% trans "标题" %}</label>
+                        </div>
+                        <div class="col-lg-3">
+                            <input id = "good_tran_title" type="text" class="form-control" placeholder = "{% trans "请输入货运标题" %}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="exampleInputEmail1" style="padding: 10px 20px">{% trans "发货城市" %}</label>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control" id="shengcode">
+                                <option name="from_province" value="" selected>{% trans "请选择省" %}</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control" id="shicode" >
+                                <option name="from_city" selected value="">{% trans "请选择市" %}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="exampleInputEmail1" style="padding: 10px 20px">{% trans "目的城市" %}</label>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control" id="destshengcode">
+                                <option name="dest_province" value="" selected>{% trans "请选择省" %}</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control" id="destshicode" >
+                                <option name="dest_city" selected value="">{%trans "请选择市"%}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group">
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-lg-3">
+                            <label for="exampleInputEmail1">{%trans "价格"%}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <input type="text" name="address" id="good_price" class="form-control" placeholder="{% trans "请输入价格" %}" />
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-lg-3">
+                            <label class="control-label" for="exampleInputEmail1">{% trans "联系电话" %}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <input type="text"  id="phone_num" class="form-control" placeholder="{% trans "请输入电话" %}" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="exampleInputEmail1">{% trans "货物描述" %}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <textarea name="content" id="content" class="form-control" style="height:200px;" placeholder="{% trans "化肥，40吨，需高栏车，长度9.6m，1辆，运费800元" %}"></textarea>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                            <div class="col-lg-6">
+                                <label for="exampleInputEmail1">{% trans "上传图片" %}</label>
+                                <input type="file" name="files" id="transaction_goods_image_upload" ></input>
+                                <p class="help-block">{% trans "选择需要上传的文件，支持格式 JPG,PNG" %}</p>
+                            </div>
+                        </div>
+                    <div class="row" style="margin-top:20px;">
+                        <div class="col-lg-3">
+                            <button  class="btn btn-default" style="position:relative;" id="new_create">{% trans "新建" %}</button>
+                            <button type="button" id="cancel" class="btn btn-default" style="position:relative;">{% trans "返回" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block script_block %}
+<script>
+    $(function(){
+        if ($("#shengcode").length != 0){
+            init_china_location();
+        }
+    });
+
+    function init_china_location(){
+        var url_prefix = "gcustomer/";/*$('meta[name="url_prefix"]').attr('content');*/
+        ////取得省份的信息
+        $.post('/'+url_prefix+'ajax/get_china_location/',{'parent':0,'level':1},function(data){
+            //判断返回值是否正确
+             if (data.ret!=0001){
+                 $("#alert_modal_body").html(data.info);
+                 $("#alert_modal").modal("show");
+                 return
+             }
+             var all_ps=data['dict_city']
+
+             //循环遍历出城市的id和name,并填充到页面中
+             for(var i=0;i<all_ps.length;i++){
+                 var $html=String.format('<option value="{0}">{1}</option>',all_ps[i][0],all_ps[i][1])
+                 $('#shengcode').append($html)
+             }
+        },"json")
+        //监听选择市/县的事件
+
+        $('#shengcode').change(function(){
+            if($("#shengcode").val() == ""){
+                $("#alert_modal_body").html("请选择出发省！");
+                $("#alert_modal").modal("show");
+                return
+            }
+            //取出url地址
+            var url_prefix = "gcustomer/";/*$('meta[name="url_prefix"]').attr('content');*/
+            var parent = $('#shengcode').val()
+            //通过ajax请求取得城市的信息
+            $.post('/'+url_prefix+'ajax/get_china_location/',
+               {"parent":parent,"level":2},
+                function(data){
+                    //判断返回值是否正确
+                    if (data.ret!=0001){
+                        $("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var all_ps=data['dict_city']
+                    var $shicode = $('#shicode').empty();
+                    $shicode.append('<option selected value="">请选择市</option>')
+                    var $xiancode = $('#xiancode').empty();
+                    $xiancode.append('<option selected value="">请选择区/县</option>')
+                    //循环遍历出城市的id和name,并填充到页面中
+                    for(var i=0;i<all_ps.length;i++){
+                        var $html=String.format('<option value="{0}">{1}</option>',all_ps[i][0],all_ps[i][1])
+                        $('#shicode').append($html)
+                    }
+                },"json");
+        })
+
+        $("#shicode").change(function(){
+            if($("#shicode").val() == ""){
+                $("#alert_modal_body").html("请选择出发市！");
+                $("#alert_modal").modal("show");
+                return
+            }
+            //取出url地址
+            var url_prefix = "gcustomer/" /*$('meta[name="url_prefix"]').attr('content');*/
+            var parent = $('#shicode').val()
+
+            //通过ajax请求取得区县的信息
+            $.post('/'+url_prefix+'ajax/get_china_location/',
+               {"parent":parent,"level":3},
+                function(data) {
+                    //判断返回值是否正确
+                    if (data.ret!=0001){
+                        $("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var all_ps = data['dict_city']
+                    var $xiancode = $('#xiancode').empty();
+                    $xiancode.append('<option selected value="">请选择区/县</option>')
+
+                    //循环遍历出城市的id和name,并填充到页面中
+                    for (var i = 0; i < all_ps.length; i++) {
+                         var $html = String.format('<option value="{0}">{1}</option>', all_ps[i][0], all_ps[i][1])
+                         $('#xiancode').append($html)
+                    }
+                },"json");
+        })
+    }
+
+    $(function(){
+            if ($("#destshengcode").length != 0){
+                init_sec_china_location();
+            }
+    });
+
+    function init_sec_china_location(){
+        var url_prefix = "gcustomer/";/*$('meta[name="url_prefix"]').attr('content');*/
+        ////取得省份的信息
+        $.post('/'+url_prefix+'ajax/get_china_location/',{'parent':0,'level':1},function(data){
+            //判断返回值是否正确
+             if (data.ret!=0001){
+                 $("#alert_modal_body").html(data.info);
+                 $("#alert_modal").modal("show");
+                 return
+             }
+             var all_ps=data['dict_city']
+             //循环遍历出城市的id和name,并填充到页面中
+             for(var i=0;i<all_ps.length;i++){
+                 var $html=String.format('<option value="{0}">{1}</option>',all_ps[i][0],all_ps[i][1])
+                 $('#destshengcode').append($html)
+             }
+        },"json")
+        //监听选择市/县的事件
+        $('#destshengcode').change(function(){
+            if($("#destshengcode").val() == ""){
+                $("#alert_modal_body").html("请选择目的省！");
+                $("#alert_modal").modal("show");
+                return
+            }
+            //取出url地址
+            var url_prefix = "gcustomer/";/*$('meta[name="url_prefix"]').attr('content');*/
+            var parent = $('#destshengcode').val()
+            //通过ajax请求取得城市的信息
+            $.post('/'+url_prefix+'ajax/get_china_location/',
+               {"parent":parent,"level":2},
+                function(data){
+                    //判断返回值是否正确
+                    if (data.ret!=0001){
+                        $("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var all_ps=data['dict_city']
+                    var $shicode = $('#destshicode').empty();
+                    $shicode.append('<option selected value="">请选择市</option>')
+                    var $xiancode = $('#xiancode').empty();
+                    $xiancode.append('<option selected value="">请选择区/县</option>')
+                    //循环遍历出城市的id和name,并填充到页面中
+                    for(var i=0;i<all_ps.length;i++){
+                        var $html=String.format('<option value="{0}">{1}</option>',all_ps[i][0],all_ps[i][1])
+                        $('#destshicode').append($html)
+                    }
+                },
+            "json");
+        })
+        $("#destshicode").change(function(){
+            if($("#destshicode").val() == ""){
+                $("#alert_modal_body").html("请选择目的市！");
+                $("#alert_modal").modal("show");
+                return
+            }
+            //取出url地址
+            var url_prefix = "gcustomer/" /*$('meta[name="url_prefix"]').attr('content');*/
+            var parent = $('#destshicode').val()
+            //通过ajax请求取得区县的信息
+            $.post('/'+url_prefix+'ajax/get_china_location/',
+               {"parent":parent,"level":3},
+                function(data) {
+                    //判断返回值是否正确
+                    if (data.ret!=0001){
+                        $("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var all_ps = data['dict_city']
+                    var $xiancode = $('#xiancode').empty();
+                    $xiancode.append('<option selected value="">请选择区/县</option>')
+
+                    //循环遍历出城市的id和name,并填充到页面中
+                    for (var i = 0; i < all_ps.length; i++) {
+                         var $html = String.format('<option value="{0}">{1}</option>', all_ps[i][0], all_ps[i][1])
+                         $('#xiancode').append($html)
+                    }
+                }, "json");
+            })
+    }
+
+    function new_create () {
+        $("#the_goods_information_list").hide();
+        $("#the_create_goods_information").show();
+    }
+
+    $(function () {
+        $("#cancel").on('click', function () {
+            $("#the_goods_information_list").show();
+            $("#the_goods_information_detials").hide();
+            $("#the_create_goods_information").hide();
+            get_service_advertisement('');
+        });
+    })
+
+    $(function () {
+        image_sha1 = null
+        $("#new_create").attr("disabled",true)
+        $("#transaction_goods_image_upload").fileupload({
+                url:"/gcustomer/ajax/jquery_upload_images/",
+                formData:{},
+                dataType:"json",
+                done:function(e,result){
+                    data = result.result
+                    if(data['ret'] != "0001"){
+                        image_sha1 = null
+                        return
+                    }
+                    image_sha1 = data['image_sha1']
+                    $("#new_create").attr("disabled",false)
+                }
+        });
+
+        $('#new_create').on('click', function (e) {
+                var title = $("#good_tran_title").val();
+                var from_province_code = $("#shengcode").val();
+                var from_city_code = $("#shicode").val();
+                var dest_province_code = $("#destshengcode").val();
+                var dest_city_code = $("#destshicode").val();
+                var phone_num = $("#phone_num").val();
+                var content = $("#content").val();
+                if(title == ''){
+                    $("#alert_modal_body").html("请输入货运标题！");
+                    $("#alert_modal").modal("show");
+                    return 0;
+                }
+                if(from_province_code.length==0 || from_city_code.length==0){
+                    $("#alert_modal_body").html("请选择出发城市！");
+                    $("#alert_modal").modal("show");
+                    return 0;
+                }
+                else if(dest_province_code.length==0 || dest_city_code.length==0){
+                    $("#alert_modal_body").html("请选择目的城市！");
+                    $("#alert_modal").modal("show");
+                    return 0;
+                }
+                var price = $("#good_price").val()
+                    if(price == ""){
+                        $("#alert_modal_body").html("价格不能为空！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    if(isNaN(parseInt(price)) !=false){
+                        $("#alert_modal_body").html("请输入金额！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                if(phone_num.length == 0){
+                    $("#alert_modal_body").html("请输入联系电话！");
+                    $("#alert_modal").modal("show");
+                    return 0;
+                }
+                if(isNaN(parseInt(phone_num)) != false){
+                    $("#alert_modal_body").html("联系电话必须是数字！");
+                    $("#alert_modal").modal("show");
+                    return
+                }
+                if(content.length == 0){
+                    $("#alert_modal_body").html("请输入货运描述信息！");
+                    $("#alert_modal").modal("show");
+                    return 0;
+                }
+                if(image_sha1 == null){
+                    $("#alert_modal_body").html("请选择上传图片！");
+                    $("#alert_modal").modal("show");
+                    return 0;
+                }
+                var data = {
+                    'info_type':0,
+                    'title' : title,
+                    'from_province_code':from_province_code,
+                    'from_city_code':from_city_code,
+                    'dest_province_code':dest_province_code,
+                    'dest_city_code':dest_city_code,
+                    'phone_num':phone_num,
+                    'content':content,
+                    'image_sha1':image_sha1,
+                    'price': price
+                }
+                $.post("/gcustomer/ajax/create_service_advertisement/", data, function (data) {
+                    if(data['ret'] == '0001')
+                    {
+                        $("#good_tran_title").val("")
+                        $("#shengcode").val("");
+                        $("#shicode").val("");
+                        $("#destshengcode").val("");
+                        $("#destshicode").val("");
+                        $("#phone_num").val("");
+                        $("#content").val("");
+                        $("#good_price").val("");
+                        image_sha1 = null
+                        $("#new_create").attr("disabled",true)
+                        $("#alert_modal_body").html("货运信息添加成功！");
+                        $("#alert_modal").modal("show");
+                    }
+                    else if(data['ret'] == '0000') {
+                        $("#alert_modal_body").html("货运信息添加失败！");
+                        $("#alert_modal").modal("show");
+                    }
+                }, "json");
+            });
+
+    });
+
+    $(function () {
+        get_service_advertisement('');
+    });
+
+    function get_service_advertisement(keyword){
+        var data = {'info_type': 0,'keyword':keyword};
+        $.get("/gcustomer/ajax/get_service_advertisement/", data, function (data) {
+           if(data){
+                $("#nonfuel_survey").empty()
+                for(var i=0; i<data.obj.length; i++)
+                {
+                    var ad = data.obj[i];
+                    $("#nonfuel_survey").append('<tr>\
+                        <td>'+(i+1)+'</td>\
+                        <td>'+ad.title+'</td>\
+                        <td>'+ad.from_city+'</td>\
+                        <td>'+ad.dest_city+'</td>\
+                        <td>'+ad.create_time+'</td>\
+                        <td>\
+                            <button onclick="detail_info(\''+ad.info_id+'\')">点击查看</button>\
+                            <button onclick="delete_record(\''+ad.info_id+'\')" style="margin-top:5px;">删除</button>\
+                        </td>\
+                    </tr>')
+                }
+                    console.log(data);
+            }
+            else{
+                console.log("There is no data!");
+            }
+       }, "json")
+    }
+
+    function detail_info(info_id) {
+        var data = {'info_id':info_id}
+        $.post("/gcustomer/ajax/get_detail_advertisement/", data, function (data) {
+            if(data){
+                var title = data.obj.title
+                var info_id = data.obj.info_id;
+                var from_city = data.obj.from_city;
+                var dest_city = data.obj.dest_city;
+                var content = data.obj.content;
+                var phone_num = data.obj.phone_num;
+                var price = data.obj.price;
+                $("#the_goods_information_list").hide();
+                $("#the_goods_information_detials").show();
+                $("#detail_info").empty();
+                $("#detail_info").append('<tr>\
+                    <td style="width:100px;">标题</td>\
+                    <td id=\"tran_title\">'+title+'</td>\
+                    </tr>\
+                    <tr>\
+                    <td style="width:100px;">发货城市</td>\
+                    <td id="info_id" style="display:none;">'+info_id+'</td>\
+                    <td id=\"from_city\">'+from_city+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>目的城市</td>\
+                        <td id=\"dest_city\">'+dest_city+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>货物描述</td>\
+                        <td id=\"content\">'+content+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>价格</td>\
+                        <td id=\"detail_price\">'+price+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>联系电话：</td>\
+                        <td id=\"phone_num\">'+phone_num+'</td>\
+                    </tr>\
+                    ')
+                console.log(data);
+            }
+            else{
+                console.log("error!");
+            }
+        }, "json" )
+    }
+
+    function get_back () {
+        if($("#modification").html() == '确定'){
+
+            $("#alert_modal_body").html("请确定修改！");
+            $("#alert_modal").modal("show");
+            return
+        }
+        $("#the_goods_information_detials").hide();
+        $("#message").hide();
+        get_service_advertisement('');
+        $("#the_goods_information_list").show();
+    }
+
+    $(function () {
+        $("#modification").on('click', function () {
+            if($(this).html() == "修改") {
+                $("#the_goods_information_detials").find("table").attr("contenteditable","true");
+                $("#the_goods_information_detials").find("table").css("border","3px solid rgb(204,204,204)");
+                $(this).html("确定");
+            }
+            else if($(this).html() == "确定"){
+                $("#the_goods_information_detials").find("table").attr("contenteditable","false");
+                $("#the_goods_information_detials").find("table").css("border","1px solid rgb(204,204,204)");
+                var title = $("#tran_title").html();
+                var info_id = $("#info_id").html();
+                var from_city = $("#from_city").html();
+                var dest_city = $("#dest_city").html();
+                var content = $("#content").html();
+                var phone_num = $("#phone_num").html();
+                var price = Number($("#detail_price").html());
+                var data = {
+                    'title':title,
+                    'info_type':0,
+                    'info_id':info_id,
+                    'from_city':from_city,
+                    'dest_city':dest_city,
+                    'content':content,
+                    'phone_num':phone_num,
+                    'price':price
+                }
+                $.post("/gcustomer/ajax/modify_detail_advertisement/",data, function (data) {
+                    if (data.ret == "0001") {
+                        $("#message").show();
+                        console.log(data);
+                    }
+                    else if(data.ret == "0000"){
+                        $("#alert_modal_body").html("货运信息修改失败！");
+                        $("#alert_modal").modal("show");
+                        console.log(data);
+                    }
+                }, "json");
+                $(this).html("修改");
+            }
+        });
+    })
+
+$(function(){
+        $("#get_good_with_key_word").on('click',function(){
+                good_keyword = $("#good_keyword").val()
+                get_service_advertisement(good_keyword)
+        })
+})
+
+
+    function delete_record (info_id) {
+        var data = {'info_id':info_id}
+        if(confirm("确定要删除吗？")){
+                $.post("/gcustomer/ajax/delete_goods_advertisement/", data, function (data) {
+                if (data.ret == "0001") {
+                    console.log(data);
+                    get_service_advertisement('');
+                }
+                else {
+                    console.log("error");
+                }
+            }, "json");
+        } else {
+            return
+        }
+    }
+</script>
+{% endblock %}

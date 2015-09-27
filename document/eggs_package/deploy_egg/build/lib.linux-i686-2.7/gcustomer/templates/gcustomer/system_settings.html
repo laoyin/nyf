@@ -1,0 +1,194 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_frame.html" %}
+{% load i18n %}
+
+{% block page_content %}
+
+    {% if setting_type == 0 %}
+    <div id="the_password_setting">
+        <div class="col-lg-12">
+            <h4>修改密码</h4>
+                <div class="item col-lg-3">
+                        <input type="text" class="form-control" placeholder="请输入原密码" id="password" /><br>
+                        <input type="text" class="form-control" placeholder="请输入新密码" id="new_password" /><br>
+                        <input type="text" class="form-control" placeholder="请重复输入"  id="re_new_password" /><br>
+                        <button  class="btn" id="alter_password_button" >确认</button>
+
+                </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if setting_type == 1 %}
+    <div id="the_password_setting">
+        <div class="col-lg-3">
+                <label>请选择语言</label>
+                <select class="form-control" id="language_type">
+                    <option name="type" value="1">中文</option>
+                    <option name="type" value="0">英文</option>
+                </select>
+                <button class="btn" id="save_language" style="margin-top:20px;">保存</button>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if setting_type == 2 %}
+    <div id="user_feedback" class="col-lg-9">
+
+        
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" id="userFeedBack_Button"
+                    href="#collapseTwo">
+                    app用户反馈
+                    </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div id="user_feedback_list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" id="workerFeedBack_Button"
+                    href="#collapseThree">
+                    收银员反馈
+                    </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div id="worker_feedback_list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript">
+$(function(){
+    $("#save_language").on("click",function(){
+        var language_type = $("#language_type").val()
+        dict = {"language_type":language_type}
+        $.get("/gcustomer/ajax/language_type_setting/",dict,
+            function(data){
+                if(data.ret != '0001'){
+                        alert(data.info);
+                        return
+                }
+                parent.location.href="/gcustomer/";
+            },"json");
+    });
+
+    $("#userFeedBack_Button").on("click",function(){
+        get_user_feed_back("0")
+    })
+
+    $("#workerFeedBack_Button").on("click",function(){
+        get_user_feed_back("1")
+    })
+
+
+    function get_user_feed_back(Utype){
+        dict = {"Utype":Utype,}
+        $.get("/gcustomer/ajax/get_user_feed_back/",dict,function(data){
+            if (data.ret != '0001') {
+                alert("something wrong happened...")
+                return 0
+            }
+            else {
+                if( Utype == "0" ){
+                    $("#user_feedback_list").empty()
+                    var infoList = '' +
+                            '<div class="panel panel-info">'+
+                                '<div class="panel-heading">'+
+                                '<h3 class="panel-title">{0}<p style="float:right;margin-right:20px;">{1}</p></h3>'+
+                                '</div>'+
+                                '<div class="panel-body">'+
+                                '<p>{2}</p>'+
+                                '</div>'+
+                            '</div>'+''
+                    for(i in data.obj){
+                        $("#user_feedback_list").append(String.format(infoList,
+                                                            data.obj[i].cardnum,
+                                                            data.obj[i].time,
+                                                            data.obj[i].content
+                                        ))
+                    }
+                }
+                else if ( Utype == "1" ){
+                    $("#worker_feedback_list").empty()
+                    var infoList = '' +
+                            '<div class="panel panel-info">'+
+                                '<div class="panel-heading">'+
+                                '<h3 class="panel-title">{0}<p style="float:right;margin-right:20px;">{1}</p></h3>'+
+                                '</div>'+
+                                '<div class="panel-body">'+
+                                '<p>{2}</p>'+
+                                '</div>'+
+                            '</div>'+''
+                    for(i in data.obj){
+                        $("#worker_feedback_list").append(String.format(infoList,
+                                                            data.obj[i].cardnum,
+                                                            data.obj[i].time,
+                                                            data.obj[i].content
+                                        ))
+                    }                    
+                }
+                
+            }
+        },'json')
+    }
+
+
+
+    $("#alter_password_button").on("click",function(){
+        var password = $("#password").val();
+        var new_password = $("#new_password").val();
+        var re_new_password = $("#re_new_password").val();
+        if(password == ""){
+            alert("请输入原密码!");
+            return 
+        }
+        if(new_password == ""){
+            alert("请输入新密码!");
+            return 
+        }
+        if(re_new_password == ""){
+            alert("请重复输入新密码!");
+            return 
+        }
+        if(isNaN(password) != false || isNaN(new_password) != false || isNaN(re_new_password) != false){
+            alert("请输入数值!");
+            return
+        }
+        if(new_password != re_new_password){
+            alert("两次输入密码不一致");
+            return 
+        }
+        dict = {"password":password,"new_password":new_password,"re_new_password":re_new_password}
+        $.get("/gcustomer/ajax/alter_user_password/",dict,function(data){
+                if(data.ret != "0001"){
+                        alert("修改密码失败!")
+                        return 
+                }
+                alert("修改密码成功!");
+                $("#password").val("");
+                $("#new_password").val("");
+                $("#re_new_password").val("");
+        },"json");
+    });
+
+});
+</script>
+{% endblock%}

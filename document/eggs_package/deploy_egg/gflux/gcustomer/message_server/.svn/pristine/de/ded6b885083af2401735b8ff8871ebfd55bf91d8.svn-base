@@ -1,0 +1,156 @@
+
+package app;
+
+message AppMessage{
+    required MessageType type = 1;
+    required bytes buff = 2;
+}
+
+enum MessageType {
+    LOGIN = 1;
+    LOGINRESPONSE =2;
+    ECHOMESSAGE =3;
+    LOGOUT=4;
+    ROADMESSAGE=5;
+    ASKFORHELPMESSAGE=6;
+    SENDORRACCEPTGOOSMESSAGE=7;
+    CARPOOLINGMESSAGE=8;
+    CONSUMPTIONMESSAGE=9;
+    RECOMMENDEDMESSAGE=10;
+    MYSALESMESSAGE=11;
+    COMPLETETRANSMESSAGE =12;
+}
+
+//用户登陆消息
+message LoginRequest{
+    required string userSha1 = 1;
+    required string sessionid = 2;
+}
+
+//用户登陆响应
+message LoginResponse{
+  required int32 status = 1;
+  optional string cltId=2;
+}
+
+// hearbeat message
+//you can send this message to check if you're still connected to message server
+message EchoMessage {
+//注意
+//发送心跳包格式
+//username=sessionid
+//message_text=随机数@username
+//收到一个心跳包，有如下特征为正确的值：
+//username=>+sessionid
+//message_text=随机数@username
+
+  // from client to server: username=sessionid, message_text=random_number@username
+  // back from server to client: username=>+sessionid, message_text=random_number@username
+
+  required string username = 1;
+
+  required string messageText = 2;
+}
+
+//用户退出消息
+message Logout{
+    required string userSha1 = 1;
+    required string sessionid = 2;
+}
+
+//道路信息
+message RoadMessage{
+    required string authorSha1 = 1;
+    required string messagesha1 = 2;
+    optional string picSha1 = 3;
+    optional string audioSha1 = 4;
+    required double longitude = 5;
+    required double latitude = 6;
+
+}
+
+//故障求助
+message AskForHelpMessage{
+    required string authorSha1 = 1;
+    required string messagesha1 = 2;
+    optional string picSha1 = 3;
+    optional string audioSha1 = 4;
+    required double longitude = 5;
+    required double latitude = 6;
+}
+
+//发货运货
+message SendORacceptGoodsMessage{
+    required string authorSha1 = 1;
+    required string messagesha1 = 2;
+    optional string picSha1 = 3;
+    optional string audioSha1 = 4;
+    required double longitude = 5;
+    required double latitude = 6;
+}
+
+//拼车搭伙
+message CarPoolingMessage{
+    required string authorSha1 = 1;
+    required string messagesha1 = 2;
+    optional string picSha1 = 3;
+    optional string audioSha1 = 4;
+    required double longitude = 5;
+    required double latitude = 6;
+}
+
+//消费点评
+message ConsumptionMessage{
+    required string authorSha1 = 1;
+    required string messagesha1 = 2;
+    optional string picSha1 = 3;
+    optional string audioSha1 = 4;
+    required double longitude = 5;
+    required double latitude = 6;
+}
+
+//求荐服务
+message RecommendedMessage{
+    required string authorSha1 = 1;
+    required string messagesha1 = 2;
+    optional string picSha1 = 3;
+    optional string audioSha1 = 4;
+    required double longitude = 5;
+    required double latitude = 6;
+}
+
+//==========新版驾车宝
+
+//我的专享优惠通知
+message  MySalesMessage{
+
+    //专享信息的标题
+    required string promotion_title = 1;
+    
+    //专享信息的内容
+    required string promotion_content = 2;
+    
+    //专享信息的sha1
+    required string promotion_sha1 = 3;
+
+    //专享信息的类型
+    required int32 promotion_type = 4;
+
+    //用户sha1列表
+    required string user_sha1 = 5;
+    
+}
+
+//订单完成通知
+message CompleteTransMessage{
+
+    //订单号
+    required string order_sha1 = 1;
+    
+    //订单状态,0:交易成功；1:交易失败；2:交易取消
+    required int32 status = 2;
+
+    //用户sha1列表
+    required string user_sha1 = 3;
+}
+

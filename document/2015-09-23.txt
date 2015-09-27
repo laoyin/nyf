@@ -1,0 +1,11 @@
+1. 报表数据接口
+2. 修改报表下载页面前端显示和交互
+from gflux.apps.station.sql_utils import *
+import datetime
+get_station_fuel_quantity_month(1,datetime.datetime(2013,3,24))
+compute_fuel_ytd(1,datetime.datetime(2013,3,30))
+get_user_name_type
+
+
+
+

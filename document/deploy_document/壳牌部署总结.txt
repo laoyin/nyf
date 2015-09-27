@@ -1,0 +1,107 @@
+``壳牌的部署文档总结
+
+1. 在Dell服务器上安装Cenos6.7
+注意 : 安装时选择完全安装，需要手动选择,创建用户work 密码 pku123
+
+2. 给用户work添加sudo权限 
+(1) 切换到root用户 : su -l 
+(2) cd /etc
+(3) 使用命令“vim sudoers”，按“i”进入编辑模式后，找到“rootALL=(ALL) ALL ”，在后面添加："xxxALL=(ALL) ALL"(这里的xxx是你的用户名)，再按一下“Esc”键退出编辑，输入“wq”（write quit）后，退出sudoers。
+
+3.  将准备好的deployment目录拷贝至用户work根目录/home/work/
+
+4. 编译安装python2.7.10
+./configure --prefix=/usr/local --with-zlib
+make
+make install
+
+5. 将deployment目录下的site_package.tar解压到python2.7目录下
+(1) sudo mv site_package.tar  cd /usr/local/lib/python2.7/
+(2) sudo tar -xvf site_package.tar
+(3) 进入python命令行检测相关的库是否安装
+
+6. 安装配置初始化postgres数据库
+
+(1) 安装 : 
+
+安装将deployment目录下的postgres相关的三个rpm文件
+sudo rpm -ivh postgresql-libs-8.4.20-3.el6_6.x86_64.rpm
+sudo rpm -ivh postgresql-8.4.20-3.el6_6.x86_64.rpm
+sudo rpm -ivh postgresql-server-8.4.20-3.el6_6.x86_64.rpm
+
+(2) 配置 : 
+
+su -l 
+service postgresql initdb
+(会建立/var/lib/pgsql目录)
+
+启动postgresql
+service postgresql start 
+查看 ：ps -ef | grep postgres
+终端显示 ：
+
+配置密码登陆和监听远程登陆
+修改客户端认证配置文件pg_hba.conf  : 
+vi /var/lib/pgsql/data/pg_hba.conf
+将ident字段改为md5
+
+修改 /var/lib/pgsql/data/postgresql.conf
+将localhost字段改为*
+
+性能配置
+
+(3) 初始化postgres数据库
+
+新建用户tao和数据库gflux 
+sudo -u postgres psql 
+create user tao with password 'pku123';
+alter role tao with superuser;
+create database gflux with owner = tao;
+
+将备份文件gflux.sql导入到gflux数据库
+psql -U tao -d gflux 
+\i gflux.sql 
+
+7. 数据流程安装配置
+
+(1) centos上安装Vmware
+
+I. 进入到deployment目录找到VMware-Workstation-Full-10.0.2-1744117.x86_64.bundle 执行: 
+./VMware-Workstation-Full-10.0.2-1744117.x86_64.bundle 安装Vmware
+
+II. 在Vmware下基于iso新建xp虚拟机(安装xp需要30~40分钟)
+
+III. 在xp下安装 .net2.0 、SQL SERVER 2005 EXPRESS 、Teamviewer , Python27
+
+SQL SERVER 2005 EXPRESS远程登陆配置 
+http://www.cnblogs.com/skynothing/archive/2010/08/26/1809125.html
+启动SQL Server Browser
+在SQL Server Browser上点击右键 --> 属性  --> 服务 --> 启动模式，设置启动模式为自动，确定。
+
+Python27
+拷贝python27到C 盘, 设置环境变量c:Python27/ , 拷贝python27.dll到WINDOWS  -> SYSTEM32 下
+
+IV. cenos上配置ftp
+
+(2) 数据流程 
+
+I. 从数据库服务器上运行脚本上传数据库数据备份文件到ftp
+II. xp上从ftp下载数据备份文件
+III. xp上恢复数据到txt并用fabric上传到云服务器
+IV. 云服务器上运行脚本将txt中的数据导入到fact_trans数据库
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

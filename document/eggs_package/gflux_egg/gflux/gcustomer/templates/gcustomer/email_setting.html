@@ -1,0 +1,48 @@
+{% extends "gcustomer/gcustomer_activity.html" %}
+{% load i18n %}
+{% block emial_setting_page_nav %}
+<li class="nav-active"><a href="/gcustomer/contact_settings/">Email</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding: 10px 20px">
+    <div class="row">
+    	<h4>{% trans "邮件设置" %}</h4>
+    </div>
+    <div class="row">
+    		<div class="col-lg-3">
+    			<h4>{% trans "邮箱地址" %}</h4>
+    		</div>
+	    	<div class="col-lg-3" style="margin-top:10px;">
+	    		<select class="form-control" name="email_address_settings">
+	    			<option name="email" selected>{% trans "请选择发件邮箱地址" %}</option>
+	    			<option name="email" value="0">2547546731@qq.com</option>
+	    			<option name="email" value="1">niyoufa@tmlsystem.com</option>
+	    			<option name="email" value="3">niyoufa2015@126.com</option>
+	    			<option name="email" value="4">niyoufa2015@163.com</option>
+	    		</select>
+	    	</div>
+    </div>
+   
+    <div>
+    	<div class="row" style="margin-top:20px;">
+    		<div class="col-lg-3">
+    			<h4>{% trans "模板风格" %}</h4>
+    		</div>
+	    	<div class="col-lg-3" style="margin-top:10px;">
+	    		<select class="form-control" name="email_style_settings">
+	    			<option name="email" value="" selected>{% trans "请选择模板风格" %}</option>
+	    			<option name="email" value="0">{% trans "简约" %}</option>
+	    			<option name="email" value="1">{% trans "炫彩" %}</option>
+	    			<option name="email" value="2">{% trans "清新" %}</option>
+	    		</select>
+	    	</div>
+    	</div>
+    </div>
+    <div class="row" style="margin-top:20px;">
+    	<div class="col-lg-3">
+    		<button class="btn btn-default" >{% trans "保存" %}</button>
+    	</div>
+    </div>
+</div>
+{% endblock %}

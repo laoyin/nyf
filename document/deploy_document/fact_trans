@@ -1,0 +1,51 @@
+    Column    |            Type             |                        Modifiers                        
+--------------+-----------------------------+---------------------------------------------------------
+ id           | bigint                      | not null default nextval('fact_trans_id_seq'::regclass)
+ trans_type   | smallint                    | not null
+ trans_id     | bigint                      | not null
+ site         | character varying(255)      | not null
+ cardnum      | numeric(20,0)               | not null
+ payment_type | smallint                    | not null
+ pump_id      | smallint                    | not null
+ barcode      | bigint                      | not null
+ timestamp    | timestamp without time zone | not null
+ datehour     | timestamp without time zone | not null
+ quantity     | double precision            | not null
+ pay          | double precision            | not null
+ price        | double precision            | not null
+ desc         | character varying(255)      | not null
+ unitname     | character varying(255)      | not null
+ location     | smallint                    | not null default 0
+ sha1         | character(40)               | not null default ''::bpchar
+ pump_type    | smallint                    | not null default 0
+ district     | integer                     | not null default 0
+
+
+
+
+    id    | trans_type | trans_id |  site   |     cardnum      | payment_type | pump_id | barcode  |      timestamp      
+----------+------------+----------+---------+------------------+--------------+---------+----------+---------------------
+ 12801222 |          1 |   974370 | BJ-KDFX | 4367485071058277 |         1000 |       0 | 70004492 | 2014-01-25 10:02:51
+ 25268140 |          0 |  3987465 | CCPQ    |                0 |         1000 |       4 |   300656 | 2014-09-04 12:45:43
+ 12801224 |          0 |   974372 | BJ-KDFX | 9030230001952458 |            2 |      10 |   300585 | 2014-01-25 10:05:18
+ 12801225 |          0 |   974373 | BJ-KDFX | 9030230002089834 |            2 |      13 |   300586 | 2014-01-25 10:06:15
+ 12801226 |          1 |   974374 | BJ-KDFX | 9030230001816247 |            2 |       0 | 70000703 | 2014-01-25 10:06:36
+ 12801227 |          0 |   974375 | BJ-KDFX | 9030230000916614 |            2 |       7 |   300585 | 2014-01-25 10:07:08
+ 12801228 |          0 |   974376 | BJ-KDFX | 9030240001962537 |            2 |      12 |   300585 | 2014-01-25 10:08:39
+ 12801229 |          0 |   974378 | BJ-KDFX | 9030230000671864 |            2 |       7 |   300585 | 2014-01-25 10:10:34
+ 25268141 |          0 |  3987485 | CCPQ    |                0 |         1000 |       5 |   300656 | 2014-09-04 12:50:42
+ 25268142 |          0 |  3987490 | CCPQ    |                0 |         1000 |       8 |   300656 | 2014-09-04 12:52:04
+
+     datehour       | quantity |  pay   | price | unitname | location |                   sha1                   | pump_type | district 
+---------------------+----------+--------+-------+----------+----------+------------------------------------------+-----------+----------
+ 2014-01-25 10:00:00 |        1 |      2 |     2 | 包       |        4 | 10a26a0a4ad6e5a1170d5921571649a4838056d5 |         0 |        0
+ 2014-09-04 12:00:00 |    27.78 |    200 |   7.2 | 公升 20℃ |        8 | b8e1b6926dd27cf648c965ed72204ebe6a04c301 |         1 |        0
+ 2014-01-25 10:00:00 |    32.16 |    246 |  7.65 | 公升 20℃ |        4 | 0532875dae21071e22023af6d182d0c59334c6db |         0 |        0
+ 2014-01-25 10:00:00 |    40.01 | 320.07 |  8.15 | 公升 20℃ |        4 | d4db40093a7d3e18eb83fd97de130b560297f655 |         0 |        0
+ 2014-01-25 10:00:00 |        1 |    4.2 |   4.2 | 瓶       |        4 | dbc81159d35880de9e14a363f2a0c93db1c16982 |         0 |        0
+ 2014-01-25 10:00:00 |    37.91 |    290 |  7.65 | 公升 20℃ |        4 | 9bb8a15141334b906755a924b68845ae9321a73d |         0 |        0
+ 2014-01-25 10:00:00 |    71.49 | 536.17 |  7.65 | 公升 20℃ |        4 | 4bc7287d3e46a5b55143779b6a78c0f712c6c771 |         0 |        0
+ 2014-01-25 10:00:00 |       20 |    153 |  7.65 | 公升 20℃ |        4 | 35379d5cfd1d8dfb625711b2d7ad8a819f0b6db8 |         0 |        0
+ 2014-09-04 12:00:00 |    27.78 |    200 |   7.2 | 公升 20℃ |        8 | 736034a27592f685b7f858f675e5177e4b28ca99 |         1 |        0
+ 2014-09-04 12:00:00 |    27.78 |    200 |   7.2 | 公升 20℃ |        8 | 6297733e285b83237839c0bfa8e733b4cd91a137 |         1 |        0
+

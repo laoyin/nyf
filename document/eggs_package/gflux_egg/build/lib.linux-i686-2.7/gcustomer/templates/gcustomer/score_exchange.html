@@ -1,0 +1,163 @@
+{% extends "gcustomer/gcustomer_score.html" %}
+{% load i18n %}
+{% block good_score_exchange %}
+        <li class="nav-active"><a href="/gcustomer/score_exchange/">{% trans "积分兑换商品" %}</a></li>
+{% endblock %}
+
+
+{% block page_content %}
+<div style="margin-bottom:20px;">
+            <button type="button" id="add_good_score_exchange" class="btn create"><span class="glyphicon glyphicon-plus"></span>{% trans "添加可积分兑换商品" %}</button>
+            <button type="button" id="back_good_score_exchange" onclick="" class="btn create" style="display:none;"><span class="glyphicon glyphicon-arrow-left" ></span>{% trans "返回" %}</button>
+
+            <div id="the_good_score_exchange">
+	            <table class="table" contenteditable="false" style="border-bottom:1px solid;margin-top:20px;border-color:rgb(221, 221, 221)">
+		            <thead>
+		                <tr >
+	                	        <th>{% trans "序号" %}</th>
+		                    <th>{% trans "商品POS_ID" %}</th>
+		                    <th>{% trans "商品名" %}</th>
+		                   <!--  <th>积分系数</th> -->
+		                    <th>{% trans "可兑换积分" %}</th>
+		                    <!-- <th>编辑</th> -->
+		                </tr>
+		           </thead>
+		           <tbody id="the_exchange_good_info">
+		           </tbody>
+	            </table>
+        	</div>
+
+        	<div id="the_add_good_score_exchange" style="display:none;">
+        		<h4>{% trans "添加可积分兑换商品" %}</h4>
+        		<div class="row">
+        			<div class="col-lg-3">
+        				<h5>{% trans "商品pos id" %}<h5>
+        				<input id="good_pos_id" type="text" class="form-control" value="" placeholder="{% trans "请输入商品id" %}">
+        			</div>
+
+        		</div>
+        		<div class="row">
+        			<div class="col-lg-3">
+        				<h5>{% trans "商品可兑换积分" %}<h5>
+        				<input id="good_exchange_score" type="text" class="form-control" value="" placeholder="{% trans "请输入可兑换积分" %}">
+        			</div>
+        		</div>
+		<button id="add_good_exchange" class="btn btn-default" style="margin-top:20px;">{% trans "添加" %}</button>
+        	</div>
+
+
+</div>
+{% endblock %}
+
+
+{% block script_block %}
+<script>
+$(function(){
+	get_exchange_good_info()
+
+	$("#add_good_score_exchange").on("click",function(){
+		$("#add_good_score_exchange").hide()
+		$("#back_good_score_exchange").show()
+		$("#the_good_score_exchange").hide()
+		$("#the_add_good_score_exchange").show()
+
+	});
+	$("#back_good_score_exchange").on("click",function(){
+		$("#add_good_score_exchange").show()
+		$("#back_good_score_exchange").hide()
+		$("#the_good_score_exchange").show()
+		$("#the_add_good_score_exchange").hide()
+		$("#good_pos_id").val("")
+		$("#good_exchange_score").val("")
+		get_exchange_good_info();
+	});
+	$("#add_good_exchange").on("click",function(){
+		//get param
+		good_pos_id = $("#good_pos_id").val()
+		good_exchange_score = $("#good_exchange_score").val()
+		if(good_pos_id == ''){
+			$("#alert_modal_body").html("请输入商品pos id");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(isNaN(parseInt(good_pos_id)) !=false){
+			$("#alert_modal_body").html("商品pos id为数字！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(good_exchange_score == '' | Number(good_exchange_score) == 0 ){
+			$("#alert_modal_body").html("请输入商品可兑换积分");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(isNaN(parseInt(good_exchange_score)) !=false){
+			$("#alert_modal_body").html("商品可兑换积分为数字！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		message = "确定将" + good_pos_id + "添加到可积分兑换列表吗?"
+		if(confirm(message)){
+			dict = {
+			'good_pos_id' : good_pos_id,
+			'good_exchange_score' : good_exchange_score
+			}
+			$.get('/gcustomer/ajax/add_exchange_score_good/',dict,
+				function(data){
+					if (data.ret !="0001"){
+						$("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+						$("#good_pos_id").val("")
+						$("#good_exchange_score").val("")
+						return
+					}
+					$("#good_pos_id").val("")
+					$("#good_exchange_score").val("")
+					alert("成功添加商品<<"+data.good_name+">>到可积分兑换列表")
+				},"json");
+		}
+
+
+	});
+});
+
+function delete_exchange_good(obj){
+	exchange_pos_id = $(obj).parent().parent().find(".pos_id").html().trim()
+	$.get('/gcustomer/ajax/add_exchange_score_good/',{"exchange_pos_id":exchange_pos_id},
+		function(data){
+			if (data.ret !="0001"){
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+				return
+			}
+			get_exchange_good_info();
+		},"json");
+}
+
+function get_exchange_good_info(){
+	$.get("/gcustomer/ajax/get_exchange_good_info/",{},
+		function(data){
+			if(data.ret != "0001"){
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+			}
+
+			$("#the_exchange_good_info").empty()
+			objs = data.objs
+			var i = 0
+			$(objs).each(function(){
+				obj = $(this)
+				$("#the_exchange_good_info").append(String.format(''+
+					'<tr>'+
+				           	   	'<td>{0}</td>'+
+				           	   	'<td class="pos_id">{1}</td>'+
+				           	   	'<td>{2}</td>'+
+				           	   	'<td>{3}</td>'+
+				           	   	'<td><button class="btn btn-default" onclick="delete_exchange_good(this)">删除</button></td>'+
+				           	'</tr>',i+1,obj[0].pos_id,obj[0].name,obj[0].exchange_score))
+					i  = i + 1
+			})
+		},"json");
+}
+
+</script>
+{% endblock %}

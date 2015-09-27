@@ -1,0 +1,59 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_frame.html" %}
+{% load i18n %}
+{% block gcustomer_score_management %}
+                    <li class="item nav-active"><a href="/gcustomer/gcustomer_score/">{% trans "积分管理" %}</a></li>
+{% endblock %}
+
+{% block page_nav %}
+
+<div class="nav-item">
+    <h4>{% trans "积分商品" %}</h4>
+    <ul>
+        {% block start_page_nav %}
+        <li><a href="/gcustomer/score_rule_setting/" style="display:none;">{% trans "商品积分设置" %}</a></li>
+        {% endblock %}
+        {% block show_page_nav %}
+        <li><a href="/gcustomer/score_level_setting/" style="display:none;">{% trans "用户等级设置" %}</a></li>
+        {% endblock %}
+        {% block good_score_exchange %}
+        <li><a href="/gcustomer/score_exchange/">{% trans "积分兑换商品" %}</a></li>
+        {% endblock %}
+        {% block good_score_member %}
+        <li><a href="/gcustomer/score_member/">{% trans "会员商品" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+
+
+<div class="nav-item">
+    <h4>{% trans "积分查询" %}</h4>
+    <ul>
+        {% block consumption_habits_nav %}
+        <li><a href="/gcustomer/score_query/">{% trans "查询用户积分" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+
+{% endblock %}
+
+
+{% block page_content %}
+<h3 style="padding: 10px;">{% trans "积分管理" %}</h3>
+<div class="col-md-9 col-lg-9">
+    <div class="row app-item">
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-5">
+                <a href="/gcustomer/score_exchange/">{% trans "积分商品" %}</a>
+                <p>{% trans "公司的积分商城" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-6">
+                <a href="/gcustomer/score_query/">{% trans "积分查询" %}</a>
+                <p>{% trans "查询用户积分和积分记录详情" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

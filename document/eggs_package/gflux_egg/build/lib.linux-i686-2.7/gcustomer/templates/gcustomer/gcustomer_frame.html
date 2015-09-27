@@ -1,0 +1,585 @@
+{% load i18n %} {% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    {% csrf_token %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>GCustomer</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'bootstrap-datepicker/css/datepicker.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'css/core.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'css/main_framework.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'css/gcustomer_people.{{settings.STATIC_VERSION}}.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="/gflux/static/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/gflux/static/jtable/themes/metro/blue/jtable.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/gflux/static/css/bootstrapValidator.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .navbar-brand{
+        background-image: url('/gflux/static/images/customer_logo.png');
+        background-position: 50% 50%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 36px;
+        width: 140px;
+        margin-left: 15px;
+        margin-top:7px;
+        }
+        .footer-link a{
+            padding: 0px 10px;
+            font-size: 13px;
+        }
+        .footer-coryright,.footer-link{
+            font-size: 13px;
+            color: rgba(0,0,0,0.36);
+            padding: 5px;
+        }
+        .nav-kit{
+            clear: both;
+        }
+        .nav-kit a{
+            line-height: 50px;
+            color: #fafafa;
+            width: 100%;
+            display: inline-block;
+        }
+        .nav-kit .item{
+            text-align: center;
+            display: inline-block;
+            max-width: 200px;
+            padding: 0px 10px;
+            min-width: 100px;
+        }
+        .nav-kit .nav-active,.nav-kit .nav-active a{
+            background-color: #ddd;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        body{
+            background-color: #fafafa;
+        }
+        .nav-item{
+            background-color: #fff;
+            border-radius: 2px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .nav-item h4{
+            background-color: #eee;
+            padding: 12px 10px;
+            margin: 0px;
+            border: 1px solid #eee;
+        }
+        .nav-item ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav-item ul li{
+            list-style: none;
+            padding: 0px 10%;
+            border-top: 1px solid #eee;
+            cursor: pointer;
+        }
+        .nav-item ul li a{
+            color: #333;
+            padding: 10px 0px;
+            display: inline-block;
+            width: 100%;
+        }
+        .nav-item ul li:hover{
+            background-color: #f5f5f5;
+        }
+        .nav-item .nav-active{
+            background-color: #f5f5f5;
+            border-right: 3px solid #000000;
+        }
+
+        .app-item .item{
+            background-color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #eee;
+            height: 160px;
+        }
+        .app-item .item:hover{
+            background-color: #eee;
+        }
+        .app-item .item a{
+            color: rgba(0,0,0,0.87);
+            font-weight: bold;
+            font-size: 16px;
+            margin: auto;
+            padding: 10px 0px;
+            display: inline-block;
+            width: 100%;
+            height: 120px;
+        }
+
+
+        .home-nav .item{
+            background-color: #fff;
+            height: 200px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+        .home-nav .item:hover{
+            background-color: #eee;
+        }
+        .home-nav .item a{
+            color: rgba(0,0,0,0.87);
+            font-weight: bold;
+            font-size: 16px;
+            margin: auto;
+            padding: 10px 0px;
+            display: inline-block;
+            width: 100%;
+            height: 160px;
+        }
+        .home-nav .item p{
+            background-color: rgba(0,0,0,0.56);
+            padding: 3px 10px;
+            color: #fff;
+        }
+
+        .activity-item h4{
+            /*text-align: center;*/
+            padding: 0px 0px 10px 0px;
+        }
+        .activity-item .progress{
+            height: 14px;
+        }
+        .activity-item{
+            padding: 10px;
+            background-color: #eee;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .item-x-1{
+            background-image: url("{% static '/images/play-arrow.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-2{
+            background-image: url("{% static '/images/schedule.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-3{
+            background-image: url("{% static '/images/pause.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-4{
+            background-image: url("{% static '/images/settings.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-5{
+            background-image: url("{% static '/images/recent-actors.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-6{
+            background-image: url("{% static '/images/cloud-upload.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-7{
+            background-image: url("{% static '/images/trending-up.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-8{
+            background-image: url("{% static '/images/loop.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-9{
+            background-image: url("{% static '/images/favorite.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-10{
+            background-image: url("{% static '/images/trending-down.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-11{
+            background-image: url("{% static '/images/local-atm.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-12{
+            background-image: url("{% static '/images/group-add.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-13{
+            background-image: url("{% static '/images/people.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-14{
+            background-image: url("{% static '/images/shopping-cart.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-15{
+            background-image: url("{% static '/images/meter.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-x-16{
+            background-image: url("{% static '/images/shuffle.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+
+        .item-1{
+            background-image: url("{% static '/images/timer-auto.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-2{
+            background-image: url("{% static '/images/local-grocery-store.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-3{
+            background-image: url("{% static '/images/local-gas-station.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-4{
+            background-image: url("{% static '/images/recent-actors.png' %}");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .item-1-1{
+            /*background-image: url("{% static '/images/luntai.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-2-1{
+            /*background-image: url("{% static '/images/xiche2.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-3-1{
+            /*background-image: url("{% static '/images/changcheng.jpg' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-4-1{
+            /*background-image: url("{% static '/images/xiche1.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-5-1{
+            /*background-image: url("{% static '/images/4s1.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .item-6-1{
+            /*background-image: url("{% static '/images/4s2.png' %}");*/
+            background-repeat: round;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .border-table{
+            border: 1px solid #ccc;
+        }
+        .border-table th, .border-table td{
+            border: 1px solid #ddd;
+            border-collapse:collapse ;
+        }
+        .ui-dialog{
+            top: 500px;
+            left: 538px;
+            position:auto;
+        }
+        /*.title-label-class{
+            background-color: #EEEEEE;
+            position: relative;
+            border-top-right-radius: 15px;
+            height: 30px;
+            width: auto;
+            line-height: 30px;
+            padding-left: 20px;
+        }*/
+        /*.title-label-class::before{
+            position: absolute;
+            content: " ";
+            width: 23px;
+            height: 30px;
+            top: 0px;
+            left: -17px;
+            background-color: #fafafa;
+            border-right: 1px solid #fff;
+            border-radius: 15px;
+        }*/
+    </style>
+    {% block style_block %}
+    {% endblock %}
+</head>
+<body>
+{% include "gcustomer/alert_modal.html" %}
+<div class="container-fluid">
+    <div class="row" style="height: 50px;background-color: #101010">
+        <div class="col-md-2 col-lg-2">
+            <p style="color: rgba(255,255,255,0.87);text-align: center;margin: 0">
+                <a class='navbar-brand' style="font-size:20px;color: rgba(255,255,255,0.87);" href="/gcustomer/"></a> </p>
+                <p style="color: #fff;text-align: center"></p>
+        </div>  
+        <div class="col-md-9 col-lg-9">
+            <ul class="row nav-kit" style="margin-left:-55px;">
+                {% block gcustomer_manage_title %}
+                {% if user_type == 2 %}
+                    <li class="item">
+                        <a href="/gcustomer/gcustomer_manage/">{%trans "大客户"%}</a>
+                    </li>
+                {% else %}
+                    <li class="item">
+                        <a href="/gcustomer/gcustomer_manage/">{%trans "客户管理"%}</a>
+                    </li>
+                {% endif %}
+                {% endblock %}
+
+                {% if user_type == 4 or user_type == 3 %}
+                    {% block gcustomer_station_title %}
+                    <li class="item"><a href="/gcustomer/gcustomer_station/">{%trans "油站管理"%}</a></li>
+                    {% endblock %}
+                {% endif %}
+
+                {% if user_type == 4 or user_type == 3 %}
+                    {% block gcustomer_activity_title %}
+                    <li class="item"><a href="/gcustomer/gcustomer_activity/">{%trans "营销活动"%}</a></li>
+                    {% endblock %}
+                {% endif %}
+
+                {% if user_type == 4 or user_type == 3 %}
+                    {% block gcustomer_goods_title %}
+                    <li class="item"><a href="/gcustomer/gcustomer_goods/">{%trans "商品管理"%}</a></li>
+                    {% endblock %}
+                {% endif %}
+
+                {% if user_type == 4 or user_type == 3 %}
+                    {% block gcustomer_advert_title %}
+                    <li class="item"><a href="/gcustomer/gcustomer_advert/">{%trans "广告管理"%}</a></li>
+                    {% endblock %}
+                {% endif %}
+
+                {% if user_type == 4 or user_type == 3 %}
+                    {% block gcustomer_score_management %}
+                    <li class="item"><a href="/gcustomer/gcustomer_score/">{%trans "积分管理"%}</a></li>
+                    {% endblock %}
+                {% endif %}
+
+                {% if user_type == 4 or user_type == 3 %}
+                    {% block gcustomer_order_management %}
+                    <li class="item"><a href="/gcustomer/gcustomer_order/">{%trans "订单管理"%}</a></li>
+                    {% endblock %}
+                {% endif %}
+
+                 {% if user_type == 4 or role == 2 %}
+                    {% block gcustomer_user_management %}
+                    <li class="item"><a href="/gcustomer/gcustomer_admin/">{%trans "用户管理"%}</a></li>
+                    {% endblock %}
+                {% endif %}
+
+                {% if user_type == 4 or user_type == 3 %}
+                    {% block gcustomer_user_settings %}
+                    <li class="item">
+                        <select class="form-control" id="system_settings" style="background-color:black;border-color:black;color:white;">
+                        <option name="type" value="" selected>{% trans "系统设置" %}</option>
+                        <option name="type" value="0">{% trans "修改密码" %}</option>
+                        <option name="type" value="1">{% trans "设置语言" %}</option>
+                        <option name="type" value="2">{% trans "意见反馈" %}</option>
+                        </select>
+                    </li>
+                    {% endblock %}
+                {% endif %}
+
+
+            </ul>
+        </div>
+        <div class="col-md-1 col-lg-1">
+
+            <a style="line-height: 45px;width:100%;display:inline-block;font-size: 16px;color: rgba(255,255,255,0.87);text-align: center" href="javascript:logout()">{%trans "退出"%}</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="margin-top: 15px;">
+    <div class="row">
+        <div class="col-md-2 col-lg-2">
+            <div style="padding: 0px 0px 10px 10px;">
+                {% block page_nav %}
+
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="col-md-10 col-lg-10" style="min-height: 700px;border-radius: 5px;">
+            
+                    {% block page_content %}
+
+                    {% if user_type == 2 %}
+                        <h2 style="line-height: 100px;">{% trans "欢迎登录GCustomer系统" %}</h2>
+                        <div class="row home-nav">
+                            <div class="col-sm-3 col-md-2 col-lg-2">
+                                <div class="item item-1">
+                                    <a href="/gcustomer/gcustomer_manage/">{% trans "大客户" %}</a>
+                                    <p>{% trans "大客户，查看用户和用户组的消费情况" %}</p>
+                                </div>
+                            </div>
+                    {% else %}
+                        <h2 style="line-height: 100px;">{% trans "欢迎登录GCustomer系统" %}</h2>
+                        <div class="row home-nav">
+                            <div class="col-sm-3 col-md-2 col-lg-2">
+                                <div class="item item-1">
+                                    <a href="/gcustomer/gcustomer_manage/">{% trans "客户管理" %}</a>
+                                    <p>{% trans "管理客户，查看用户以及用户组的消费情况" %}</p>
+                                </div>
+                            </div>
+                    {% endif %}
+
+                        {% if user_type == 4 or user_type == 3%}
+                            <div class="col-sm-3 col-md-2 col-lg-2">
+                                <div class="item item-2">
+                                    <a href="/gcustomer/gcustomer_activity/">{% trans "营销活动" %}</a>
+                                    <p>{% trans "创建营销活动，查看营销活动的状态和结果" %}</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2 col-lg-2">
+                                <div class="item item-3">
+                                    <a href="/gcustomer/gcustomer_station/">{% trans "油站管理" %}</a>
+                                    <p>{% trans "查看油站的客户，运营以及油品非油品销售情况" %}</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-md-2 col-lg-2">
+                                <div class="item item-4">
+                                    <a href="/gcustomer/gcustomer_advert/">{% trans "广告管理" %}</a>
+                                    <p>{% trans "查看投放广告，广告的效益，设置广告相关信息。" %}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endblock %}
+            
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <div style="padding: 3px;text-align: center;margin-top: 20px;">
+                <p class="footer-link">
+                    <a href="#">{% trans "关于我们" %}</a>
+                    <a href="#">{% trans "联系我们" %}</a>
+                    <a href="#">{% trans "在线客服" %}</a>
+                    <a href="#">{% trans "销售联盟" %}</a>
+                </p>
+               <p class="footer-coryright">Powered by:
+                    <a href="https://www.zcdata.com.cn" target="_blank" class="graya3">{% trans "北京志察数据科技有限公司" %}</a>
+               </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid
+<!-- JavaScripts
+      ================================================== -->
+<script type="text/javascript" src="{% static 'js/underscore.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-migrate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.blockUI.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.cookie-1.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/utils.{{settings.STATIC_VERSION}}.js' %}"></script>
+<script type="text/javascript" src="{% static 'highcharts/js/highcharts.js' %}"></script>
+<script type="text/javascript" src="{% static 'highcharts/js/highcharts-more.js' %}"></script>
+<script type='text/javascript' src='/gflux/static/jqueryui/jquery-ui.min.js'></script>
+<script type='text/javascript' src='/gflux/static/jtable/jquery.jtable.min.js'></script>
+<!-- <script type = "text/javascript" src="/gflux/static/js/jquery.jtable.min.js"></script> -->
+<script src="/gflux/static/js/bootstrapValidator.js"></script>
+<!-- 文件上传 -->
+<script src="/gflux/static/js/jquery.ui.widget.js"></script>
+<script src="/gflux/static/js/jquery.iframe-transport.js"></script>
+<script src="/gflux/static/js/jquery.fileupload.js"></script>
+
+<script>
+function logout(){
+    $.post('/gcustomer/ajax/logout/').complete(function(){
+        window.location.href="https://www.zcdata.com.cn/marketcloud/";
+    })
+}
+$(function(){
+    $("#system_settings").on("change",function(){
+            var setting_type = $("#system_settings").val()
+            if(setting_type == ""){
+                return 
+            }
+            else{
+                window.location.href="/gcustomer/system_settings/?type="+setting_type;
+            }
+    });
+});
+</script>
+{% block script_block %}
+{% endblock %}
+</body>
+</html>

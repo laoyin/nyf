@@ -1,0 +1,44 @@
+{% extends "gcustomer/gcustomer_station.html"%}
+{% load i18n%}
+{% block main_customer_nav %}
+<li class="nav-active"><a href="/gcustomer/main_customer_list">{% trans "主要客户" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+    <h4>{% trans "选择油站" %}</h4>
+    <div class="form-group">
+            <div class="row">
+                <div class="col-lg-3">
+                    <input class="form-control"  placeholder="{% trans "请输入油站名称" %}" value=""></input>
+                </div>
+                <div class="col-lg-3"> 
+                    <button id="add_behavior" class="btn btn-default" type="button">{% trans "确定" %}</button>
+                </div>
+            </div>
+    </div>
+    <div id="the_top_ten_big_customer" style="display:none;">
+        <h4 class="title-label-class">{% trans "排名前10客户" %}</h4>
+        <table class="table border-table" contenteditable="false" >
+                <thead>
+                    <tr class="success">
+                        <th style="width:300px;">{% trans "序号" %}</th>
+                        <th>{% trans "客户名" %}</th>
+                        <th>{% trans "加油额" %}</th>
+                    </tr>
+                </thead>
+                <tbody id="the_main_customer_list">
+                   
+                </tbody>
+        </table>
+    </div>
+    <div id="the_big_customer_contribution" style="display:none;">
+        <h4 class="title-label-class">{% trans "客户贡献比例" %}</h4>
+        <div id="customer_main" style="height: 600px;"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src='/gflux/static/js/render_station_data{{settings.GCUSTOMER_STATIC_VERSION}}.js'></script>
+{% endblock %}

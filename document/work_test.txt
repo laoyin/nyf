@@ -1,0 +1,94 @@
+from gflux.apps.station.sql_utils import *
+import datetime
+
+data = get_station_all_fuel_quantity('BJ_HD',datetime.datetime(2013,3,24))
+
+data = get_location_fuel_quantity(1,110000,datetime.datetime(2013,3,24))
+
+data = get_user_location_fuel_quantity(1,datetime.datetime(2013,3,24))
+
+data = get_user_location_fuel_quantity_month(1,datetime.datetime(2013,3,24))
+
+data = get_station_all_fuel_quantity_month('BJ_HD',datetime.datetime(2013,3,24))
+
+data = get_user_station_all_fuel_quantity_month(1,datetime.datetime(2013,3,24))
+
+data = get_fuel_month_complete_rate('BJ_HD',datetime.datetime(2013,3,24))
+[[0.0, 0.0, 46823.840000000004], [0.0, 0.0, 46823.840000000004]]
+
+data = get_all_fuel_month_complete_rate(1,datetime.datetime(2013,3,24))
+[{u'BJ_HD': [[0.0, 0.0, 394], [0.0, 0.0, 421]]}]
+
+
+1. 整合于珑xue写的报表数据接口,测试所有的报表数据接口,自动生成用户所有报表的BaseCommand，后面的工作交给孙成路继续完成
+2. 修改gcustomer的获取我的订单列表的bug
+3. 修改支付宝和微信支付的后台接口，测试和部署
+
+
+#获取用户的区域列表
+    locations = getUserLocationInfo(request)
+    location_list = locations.values()
+
+session = get_dash_session_maker()()
+    sql = 'select distinct  province  from station'
+    rets = session.execute(sql)
+    for ret in rets :
+        if not ret.province == 0 :
+            location_list.append(ret.province)
+    for location in location_list :
+            #获取区域名称
+            session = get_dash_session_maker()()
+            location_name = session.query(DimChinaProvinceCityDistrict).filter_by(id=location).one().name
+
+
+            while curr_month <= end_month :
+
+            #获取天数
+            import calendar
+            monthRange = calendar.monthrange(year-1,curr_month)
+            day_count = monthRange[1]
+            
+            last_per_fuel_quantity = 0.0
+            curr_per_fuel_quantity_plan = 0.0
+            curr_per_fuel_quantity = 0.0
+
+            total_last_fuel_quantity = 0.0
+            total_curr_fuel_quantity_plan = 0.0
+            total_curr_fuel_quantity = 0.0
+
+            
+            site = station.station
+            #查询语句
+            sql = "select total_quantity from station_month_fuel_sales where site=\'%s\' and year=%s and month=%s " %(site,year-1,month)
+            rets = session.execute(sql)
+            for ret in rets :
+                total_last_fuel_quantity += ret.total_quantity
+
+            #今年实际
+            sql = "select total_quantity from station_month_fuel_sales where site=\'%s\' and year=%s and month=%s " %(site,year,month)
+            rets = session.execute(sql)
+            for ret in rets :
+                total_curr_fuel_quantity += ret.total_quantity
+            if not station_count == 0:
+                last_per_fuel_quantity = total_last_fuel_quantity/station_count
+                curr_per_fuel_quantity = total_curr_fuel_quantity/station_count
+            
+            temp_station_data.append([last_per_fuel_quantity,curr_per_fuel_quantity_plan,curr_per_fuel_quantity])
+            data.append({site:temp_station_data})
+
+            curr_month += 1
+
+
+
+            {'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0.0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}
+{'\xe5\x8e\xbb\xe5\xb9\xb4\xe5\x90\x8c\xe6\x9c\x9f': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe5\xae\x9e\xe9\x99\x85': 0, '\xe4\xbb\x8a\xe5\xb9\xb4\xe7\x9b\xae\xe6\xa0\x87': 0}

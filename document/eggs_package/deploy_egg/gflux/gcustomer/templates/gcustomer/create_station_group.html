@@ -1,0 +1,56 @@
+{% extends "gcustomer/gcustomer_station.html"%}
+{% load i18n %}
+{% block create_station_group_nav %}
+<li class="nav-active"><a href="/gcustomer/create_station_group/">{% trans "新建油站群" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding: 20px">
+    <h4>{% trans "新建群" %}</h4>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "油站群名称" %}</label>
+                        <input type="text" class="form-control" id="group_name" placeholder="{% trans "名称" %}" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "油站范围" %}</label>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select class="form-control" id="shengcode">
+                                    <option name="gcustomer_station_range" value="" selected>{% trans "请选择省" %}</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select class="form-control" id="shicode" >
+                                    <option selected value="">{% trans "请选择市" %}</option>
+                                </select>
+                            </div>
+                            <div class ="col-lg-4">
+                                <select class="form-control" id="xiancode" >
+                                    <option selected value="">{% trans "请选择区/县" %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "油站总销售额" %}</label>
+                        <input type="text" class="form-control" id="total_sales_amount"  placeholder="{% trans "销售额最小值" %}" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "油站排名" %}</label>
+                        <input type="text" class="form-control" id="rank"  placeholder="{% trans "排名前多少的数值" %}" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>{% trans "油站群描述" %}</label>
+                        <textarea rows="4" placeholder="{% trans "建立一个地域范围为福州市的群油站" %}" id="group_info" class="form-control"></textarea>
+                    </div>
+                    <button id="create_station_group" class="btn btn-info">{% trans "新建" %}</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_station_data{{settings.GCUSTOMER_STATIC_VERSION}}.js" ></script>
+{% endblock %}

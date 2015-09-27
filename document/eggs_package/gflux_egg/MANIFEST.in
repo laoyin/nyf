@@ -1,0 +1,26 @@
+recursive-include gflux/collectstatic.sh
+recursive-include gflux/crontab.conf
+recursive-include gflux/debug_local_settings.py 
+recursive-include gflux/local_settings.py 
+recursive-include gflux/debug_manage.py 
+recursive-include gflux/install.sh
+recursive-include gflux/manage.py
+recursive-include gflux/score_settings.py
+
+
+
+
+
+recursive-include gflux/gflux/static *
+recursive-include gflux/gflux/templates *
+
+recursive-include gflux/gcustomer/static * 
+recursive-include gflux/gcustomer/templates * 
+recursive-include gflux/gcustomer/server_rsa_private_key 
+recursive-include gflux/gcustomer/server_rsa_public_key 
+
+recursive-include gflux/gcustomer/message_server *
+
+
+
+

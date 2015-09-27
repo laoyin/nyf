@@ -1,0 +1,164 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_advert.html" %}
+{% load i18n%}
+
+{% block upload_advert_nav %}
+<li class="nav-active"><a href="/gcustomer/upload_advert/">{% trans "上传广告" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding:10px 20px">
+    <h4>{% trans "上传广告" %}</h4>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-lg-6">
+            <form class="form-horizontal" id="advert_form" method='POST' action='/gcustomer/ajax/create_advertisement/' enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">{% trans "广告标题" %}</label>
+                    <input type="text" name="advert_title" class="form-control" id="exampleInputEmail1" placeholder="{% trans "积分满4000免费洗车一次" %}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">{% trans "客户名称" %}</label>
+                    <input type="text" name='advert_customer_name' class="form-control" id="exampleInputPassword1" placeholder="{% trans "福建盛成汽车贸易发展有限公司" %}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">{% trans "广告图片" %}</label>
+                    <input type="file" name='advert_image' id="exampleInputFile">
+                    <p class="help-block">{% trans "选择需要上传的文件，支持格式 JPG,PNG" %}</p>
+                </div>
+                <div class="form-group">
+                    <label for="">{% trans "广告内容" %}</label>
+                    <textarea rows="14" name="advert_content"  value="" class="form-control" placeholder="{% trans "福建盛成汽车贸易发展有限公司成立于2007年5月22日，主营销售长安马自达品牌汽车、汽车配件、汽车售后服务、汽车租赁等，是经长安马自达汽车销售有限公司考核后授权指定的长安马自达“四位一体”销售服务店。公司位于厦门市海沧区马青路以北（翔鹭对面），总面积10000多平方米。目前，主要经销的汽车产品有：全球首发新概念紧凑型轿车—Mazda2劲翔、“2008全球年度风云车型”大奖得主的Mazda2，以及备受消费者亲睐的高性能紧凑型轿车--Mazda3共19款车型。 福建盛成4S店严格按照长安马自达的标准要求建设，店面建筑造型体现了马自达品牌的独特性。店内设有统一标准的展厅、洽谈区、客户休息区、交车区、精品区和售后服务区。宽敞、整洁、活泼、舒适、便利的店面设计，充分展示了马自达品牌“时尚”、“创意”及“活力”的品牌形象，体现出马自达品牌的“用户第一”的经营理念。维修车间内设备齐全，拥有汽车检测线和各种先进的汽车专业诊断、检测、矫正仪器及维修工具设备。公司配备了一支经长安马自达公司严格培训考核通过的专业化高素质的汽车销售服务队伍，并采用了先进的“四位一体”汽车销售服务管理系统软件进行科学的规范化管理，充分发挥“四位一体”销售服务体系的功能和作用，确保了工作效率和服务质量的不断提高。 盛成企业经过多年的努力，已建造了先进、优越的软件和硬件环境，树立了“诚信、致远、合力、奋进”的经营与管理理念，形成了专业化、规范化、现代化的汽车品牌经营模式。长安马自达福建盛成4S店全体员工诚挚邀请您加入马自达车主行列，我们将竭诚为您高品质的服务。" %}"></textarea>
+                </div>                
+                <input type="submit" class="btn btn-info" value="发布广告" style="display:none;" id="launch_advertisement"/>
+            </form>
+                <button class="btn btn-info" id="pub_advertisement">{% trans "发布广告" %}</button>
+                <button class="btn btn-info" id="forecast_advert_activity">{% trans "效果预测" %}</button>
+        </div>
+    </div>
+</div>
+
+<!-- 效果预测模态框 -->
+<div class="modal fade" id="ConvertRateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"> 
+                <button type="button" class="close" 
+                data-dismiss="modal" aria-hidden="true">
+                &times;
+                </button>
+ <h4>{% trans "广告效果预测" %}</h4>
+            </div>
+            <div class="modal-body" id="big_image_body">
+                <div style="width:600px;height:500px;">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h4>{% trans "请输入转化率" %}</h4>
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="sale_rate" value="" placeholder="{% trans "转化率" %}" />
+                        </div>
+                        <div class="col-lg-3">
+                            <button class="btn btn-default" id="cal_forcase_sale_value">{% trans "确定" %}</button>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top:20px;display:none;" id="the_sale_forcase">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <table class="table border-table" contenteditable="false">
+                                    <thead>
+                                    </thead>
+                                    <tbody id="nonfuel_survey">
+                                        <tr>
+                                            <td>{% trans "总体加油量" %}</td>
+                                            <td><h4 id="pump_amount"></h4></td>
+                                        </tr> 
+                                        <tr>
+                                            <td>{% trans "总体销售额" %}</td>
+                                            <td><h4 id="total_sale_value"></h4></td>
+                                        </tr> 
+                                        <tr>
+                                            <td>{% trans "非油品销售额" %}</td>
+                                            <td><h4 id="nonfuel_sale_value"></h4></td>
+                                        </tr> 
+                                        <tr>
+                                            <td>{% trans "对油站运营效率贡献" %}</td>
+                                            <td><h4 id="efficiency_value"></h4></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p id="message" style="display:none;">{{message}}</p>
+{% endblock %}
+{% block script_block %}
+<script>
+    $(document).ready(function () {
+        $("#pub_advertisement").on("click",function(){
+            $("#launch_advertisement").click();
+        });
+    });
+    
+    $("#forecast_advert_activity").on('click',function(){
+            $("#ConvertRateModal").modal("show")
+    })
+
+    $("#cal_forcase_sale_value").on('click',function(){
+            $("#the_sale_forcase").show()
+            sale_rate = $("#sale_rate").val()
+            $("#sale_value").html(String(Number(sale_rate)*3423)+"万元")
+    })
+    var message=$("#message").text()
+    if(message){
+        $("#alert_modal_body").html(message);
+        $("#alert_modal").modal("show");
+    }
+
+    $(function () {
+        $("#advert_form").bootstrapValidator({
+           fields: {
+                advert_title: {
+                    //message: 'The title is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: "标题不可以为空！"
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 30,
+                            message: '请输入不少于1个且不多于30个字符的标题！'
+                        },
+                    },
+                },
+                advert_name: {
+                    validators: {
+                        notEmpty: {
+                            message: "客户名称不可以为空！"
+                        },
+                        stringLength: {
+                            min: 3,
+                            max: 30,
+                            message: "请输入不少于3个且不多于30个字符的客户名！"
+                        },
+                    },
+                },
+            }
+        });    
+    })
+    $("#cal_forcase_sale_value").on('click',function(){
+            $("#the_sale_forcase").show()
+            sale_rate = $("#sale_rate").val()
+            $("#pump_amount").html(String(Number(sale_rate)*343)+"升")
+            $("#total_sale_value").html(String(Number(sale_rate)*34230)+"万元")
+            $("#nonfuel_sale_value").html(String(Number(sale_rate)*1423)+"万元")
+            $("#efficiency_value").html("暂无")
+    })
+    </script>
+{% endblock %}

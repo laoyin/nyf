@@ -1,0 +1,55 @@
+<div id="{{ dash.uid }}" class="dash panel panel-default">
+  <div class="dash-header panel-heading" >
+    <div class="row">
+      <div class="col-lg-3">
+        <h4 class="">{{ dash.label }}</h4>
+      </div> 
+      <div class="col-lg-9">        
+        <form class="dash-form form-inline pull-right" role="form" action="/__dummy__">
+          {% if not standalone %}
+          {% for field in dash.filters %}
+          <div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default">{{ field.label }}</button>
+            {{ field.field }}
+          </div>
+          {% endfor %}
+          {% else %}
+          {% for field in dash.full_filters %}
+          <div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default">{{ field.label }}</button>
+            {{ field.field }}
+          </div>
+          {% endfor %}
+          {% endif %}
+          <div class="btn-group" style="margin-right: 2px">
+            {% if dash.renderer == 'chart' %}
+            <button type="button" renderer="chart" class="dash-renderer btn btn-info hidden">图</butto>n
+            {% elif dash.renderer == 'table' %}
+            <button type="button" renderer="table" class="dash-renderer btn btn-info hidden">表</button>
+            {% else %}
+            <button type="button" renderer="chart" class="dash-renderer btn btn-info">图</button>
+            <button type="button" renderer="table" class="dash-renderer btn btn-default">表</button>
+            {% endif %}
+          </div>
+          <button type="submit" class="dash-submit btn btn-default {% if dash.renderer == None %} hidden {% endif %}">更新</button>
+          {% if not standalone %}
+          <span class="glyphicon glyphicon-chevron-down dash-fold" style="cursor:pointer; margin-right: 2px;"></span>
+          <span dash-url="{{ dash.url }}" class="glyphicon glyphicon-resize-full dash-resize-full" style="cursor:pointer;"></span>
+          {% endif %}
+        </form>        
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="dash-tabbar btn-group {% if dash.size == 1 %} hidden {% endif %} ">
+      {% for dashlet in dash %}
+      <button class="btn {% if forloop.counter == 1 %} btn-primary {% else %} btn-default {% endif %} dash-tab">{{ dashlet.label }}</button>
+      {% endfor %}
+    </div>
+    <div class="dash-body">
+      {% for dashlet in dash %}
+      <div id='{{ dash.uid }}-{{ dashlet.uid }}' dash-label="{{ dashlet.label }}" renderer="{{ dashlet.renderer }}" report-url="{{ dashlet.report.url }}" class="dashlet {% if forloop.counter > 1 %} collapse {% endif %}"></div>
+      {% endfor %}      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+div.collapse.navbar-collapse{
+    padding-left: 18%
+}
+
+.navbar-brand{
+    background-image: url('/gflux/static/images/logo.png');
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100px;
+    margin-left: 15px;
+}
+
+.navbar-nav .active{
+    border-bottom: solid 5px #428bca;
+}
+
+.navbar-nav .active #head_tag{
+    color: #00a3d8;
+    background-color: #222222;
+}
+
+center.description{
+    display:none;
+    border: 1px solid rgb(144, 144, 144);
+    border-radius: 5px;
+    color: rgb(144, 144, 144);
+}

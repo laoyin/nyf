@@ -1,0 +1,57 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_activity.html" %}
+{% load i18n %}
+{% block show_page_nav %}
+<li class="nav-active"><a href="/gcustomer/show_activity/">{% trans "跟踪" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div id="the_promotion_activity_list" style="display:none;">
+	<div style="padding:10px 20px;">
+	    <h4 class="title-label-class">{% trans "活动列表" %}</h4>
+	    <div class="row" style="margin-top: 20px;" id="current_activity_list">
+	    </div>
+	</div>
+</div>
+
+<div id="the_benefit_tracking_dash" style="display:none;">
+	<button class="btn back_pre">{% trans "返回" %}</button>
+              <div style="margin-top:40px;">
+              	<h4>{% trans "活动商品优惠" %}</h4>
+              	<div>
+              		<table class="table" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+              			<thead>
+              				<tr>
+              					<th>{% trans "优惠类型" %}</th>
+              					<th>{% trans "商品名称" %}</th>
+              					<th>{% trans "折扣信息" %}</th>
+              					<th>{% trans "油站信息" %}</th>
+              				</tr>
+              			</thead>
+              			<tbody id = "promotion_goods_list">
+              			</tbody>
+              		</table>
+              	</div>
+                     <h4>{% trans "活动推送详情" %}</h4>
+                     <div>
+                            <table class="table" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+                                   <thead>
+                                          <tr>
+                                                 <th>{% trans "推送类型" %}</th>
+                                                 <th>{% trans "用户名" %}</th>
+                                                 <th>{% trans "商品类型" %}</th>
+                                                 <th>{% trans "商品条形码" %}</th>
+                                          </tr>
+                                   </thead>
+                                   <tbody id = "the_promotion_good_lanch_info">
+                                   </tbody>
+                            </table>
+                     </div>
+	<h4 class="title-label-class" style="margin-top:20px;display:none;">{% trans "活动效益跟踪" %}</h4>
+	<div id="activity_efficiency_tracking_dash"  style="margin-top:20px;width:1000px;height:500px;" ></div>	
+              </div> 
+</div>
+{% endblock %}
+{% block script_block%}
+<script type="text/javascript" src='/gflux/static/js/render_promotion_data{{settings.GCUSTOMER_STATIC_VERSION}}.js' ></script>
+{% endblock %}

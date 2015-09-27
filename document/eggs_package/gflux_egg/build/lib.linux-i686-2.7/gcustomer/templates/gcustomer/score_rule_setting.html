@@ -1,0 +1,188 @@
+{% extends "gcustomer/gcustomer_score.html" %}
+{% load i18n%}
+{% block start_page_nav %}
+        <li class="nav-active"><a href="/gcustomer/score_rule_setting/">{% trans "商品积分设置" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+	<h4>{% trans "商品返还积分设置" %}</h4>
+	<div id="the_good_score_choose">
+	        <div class="row" style="margin-top:20px;">
+	            <div class="col-lg-3">
+	                <select class="form-control" id="goods_score_return_setting">
+	                    <option name="type" value selected>{% trans "选择设置方式" %}</option>
+	                    <option name="type" value="0">{% trans "设置商品积分基准返点" %}</option>
+	                    <option name="type" value="1">{% trans "设置单个商品积分系数" %}</option>
+	                </select>
+	            </div>
+	        </div>
+             </div>
+
+            <!-- 设置商品积分基准返点 -->
+            <div id="the_set_good_score_base_point" style="margin-top:20px;display:none;">
+	            	<div class="row">
+	            		<h5 style="margin-left:17px;">{% trans "基准返点" %}</h5>
+		            <div class="col-lg-12">
+			            <div class="form-inline">
+			                <div class="form-group col-lg-3" style="margin-left:-30px;">
+			                    <input type="text" name="base_point" class="form-control" style="margin-left:15px;margin-top:10px;" placeholder="{% trans "请输入商品积分基准返点:如0.5" %}">
+			                </div>
+			                <div class="col-lg-3">
+			                	<input type="button" class="btn btn-info" value="{% trans "确定" %}" id="set_good_score_point" style="margin-top:10px;" />
+		            		  </div>
+			            </div>
+			</div>
+		</div>
+	</div>
+	<!-- 单个商品积分系数 -->
+	<div id="the_set_good_score_ratio" style="margin-top:20px;display:none;">
+
+		<div class="row">
+		            	<h5 style="margin-left:17px;">{% trans "积分系数" %}</h5>
+			<div class="col-lg-12">
+				            <div class="form-inline">
+						<div class="form-group col-lg-3" style="margin-left:-30px;">
+
+						    <input type="text" name="good_pos_id" class="form-control" style="margin-left:15px;margin-top:10px;" placeholder="{% trans "请输入商品条形码" %}" value="70240092">
+						</div>
+					             <div class="col-lg-3">
+						<input type="submit" class="btn btn-info" value="{% trans "查询" %}" id="get_good_score_ratio" style="margin-top:10px;" />
+
+				            		</div>
+				</div>
+			</div>
+		</div>
+		<div id="the_good_score_edit" style="display:none;">
+			<div class="row">
+				<div class="col-lg-4">
+					<table class="table" contenteditable="false" style="border-bottom:1px solid;margin-top:20px;border-color:rgb(221, 221, 221)">
+					            <thead>
+					                <tr >
+					                    <th >{% trans "商品名" %}</th>
+					                    <th >{% trans "单价" %}</th>
+					                    <th >{% trans "积分系数" %}</th>
+					                    <th >{% trans "编辑" %}</th>
+					                </tr>
+					           </thead>
+					           <tbody id="good_score_detials">
+					           </tbody>
+				            </table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
+
+{% block script_block %}
+<script>
+$(function(){
+
+	$("#goods_score_return_setting").change(function(){
+		var option = $("#goods_score_return_setting").val()
+		if(option == ''){
+			$("#alert_modal_body").html("请选择设置方式！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		else if(option == "0"){
+			$("#the_set_good_score_base_point").show()
+			$("#the_set_good_score_ratio").hide()
+
+		}
+		else if(option == "1"){
+			$("#the_set_good_score_base_point").hide()
+			$("#the_set_good_score_ratio").show()
+		}
+	});
+
+	//根据基准返点设置商品积分规则
+	$("#set_good_score_point").on("click",function(){
+		var base_point = $("input[name='base_point']").val()
+		if(base_point == ''){
+			$("#alert_modal_body").html("基准返点不能为空！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(isNaN(parseInt(base_point))){
+			$("#alert_modal_body").html("基准返点必须为数值！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		$.get("/gcustomer/ajax/update_score_rule/",{"base_point":base_point},
+			function(data){
+				if(data.ret != '0001'){
+					$("#alert_modal_body").html(data.info);
+                    $("#alert_modal").modal("show");
+				}
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+				$("input[name='base_point']").val("")
+		},"json");
+	});
+
+	//获取单个商品的当前积分系数
+	$("#get_good_score_ratio").on("click",function(){
+		var pos_id = $("input[name='good_pos_id']").val()
+		if(pos_id == ''){
+			$("#alert_modal_body").html("商品条形码不能为空！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(isNaN(parseInt(pos_id))){
+			$("#alert_modal_body").html("商品条形码必须为数值！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		$.get("/gcustomer/ajax/get_good_score_ratio/",{"pos_id":pos_id},
+			function(data){
+				if(data.ret != "0001"){
+					$("#alert_modal_body").html(data.info);
+                    $("#alert_modal").modal("show");
+					return
+				}
+				$("#the_good_score_edit").show()
+				$("#good_score_detials").empty()
+				$("#good_score_detials").append(String.format(''+
+
+				'<tr>'+
+			           	   '<td>{0}</td>'+
+			           	   '<td name="good_price">{3}</td>'+
+			           	   '<td name="good_score_ratio">{1}</td>'+
+			           	   '<td style="display:none" name="good_id">{2}</td>'+
+			           	   '<td><button class="btn btn-default" onclick="alert_good_score_ratio(this);">点击修改</button></td>'+
+	           	   		'</tr>',data.obj.name,data.obj.score_ratio,data.obj.good_id,data.obj.price))
+				$("table").find("td[name='good_score_ratio']").attr("contenteditable","true")
+			},"json");
+	});
+
+
+	//手动设置单个商品的规则
+
+
+});
+
+function alert_good_score_ratio(obj){
+	good_id = $(obj).parent().parent().find("td[name='good_id']").text().trim()
+	score_ratio = $(obj).parent().parent().find("td[name='good_score_ratio']").text().trim()
+	$.get("/gcustomer/ajax/alter_good_score_ratio/",
+		{"good_id":good_id,"score_ratio":score_ratio},function(data){
+			if(data.ret != "0001"){
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+				return
+			}
+			$("#alert_modal_body").html(data.info);
+			$("#alert_modal").modal("show");
+			$("input[name='good_pos_id']").val("")
+			$("#the_good_score_edit").empty()
+			$("#the_good_score_edit").show()
+
+
+	},"json");
+}
+
+
+</script>
+{% endblock %}

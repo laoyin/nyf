@@ -1,0 +1,58 @@
+１、返回所有数据库信息（数据库名，创建日期，存储路径等）。
+ 
+1 use master;
+2 GO
+3 select * from dbo.sysdatabases
+ 
+
+２、返回当前数据库所有对象（可根据type字段过滤出用户表，索引等）。
+1 USE AdventureWorks2008R2;
+2 GO
+3 SELECT * FROM SYS.objects WHERE TYPE='U'
+３、查询指定库中所有表信息（记录数，使用空间等）。
+
+
+
+ 1 USE AdventureWorks2008R2;
+ 2 GO
+ 3 exec sp_MSForEachTable 
+ 4 @precommand=N'create table ##(
+ 5 表名 sysname,
+ 6 记录数 int,
+ 7 保留空间 Nvarchar(10),
+ 8 使用空间 varchar(10),
+ 9 索引使用空间 varchar(10),
+10 未用空间 varchar(10))',
+11 @command1=N'insert ## exec sp_spaceused ''?''',
+12 @postcommand=N'select * from ## order by 记录数 '
+13 
+14 DROP TABLE ##
+
+
+结果如下：
+
+表名        记录数      保留空间   使用空间   索引使用空间  未用空间       
+----------  ----------- ---------- ---------- ------------ ---------- 
+discounts   3           16 KB      8 KB       8 KB         0 KB
+stores      6           24 KB      8 KB       16 KB        0 KB
+
+
+ 
+
+４、返回指定库所有表的记录数（使用系统函数sp_MSforeachtable(Table))。
+
+
+
+1 USE AdventureWorks2008R2;
+2 go
+3 CREATE TABLE #temp (TableName VARCHAR (255), RowCnt INT)
+4 EXEC sp_MSforeachtable 'INSERT INTO #temp SELECT ''?'', COUNT(*) FROM ?'
+5 SELECT TableName, RowCnt FROM #temp ORDER BY RowCnt
+6 
+7 DROP TABLE #temp;
+
+
+ 
+
+ 全部在SQL Server 2008　R2环境下测试通过。
+

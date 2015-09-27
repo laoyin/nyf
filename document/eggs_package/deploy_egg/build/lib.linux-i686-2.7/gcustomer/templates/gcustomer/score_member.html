@@ -1,0 +1,276 @@
+{% extends "gcustomer/gcustomer_score.html" %}
+{% load i18n %}
+{% block good_score_member %}
+        <li class="nav-active"><a href="/gcustomer/score_member/">{% trans "会员商品" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="margin-bottom:20px;">
+	<div id="the_add_good_score_member_list" style="display:none">
+	            <button type="button" id="add_good_score_member" class="btn create"><span class="glyphicon glyphicon-plus"></span>{% trans "添加会员商品" %}</button>
+	            <button type="button" id="back_good_score_member" onclick="" class="btn create" style="display:none;"><span class="glyphicon glyphicon-arrow-left" ></span>{% trans "返回" %}</button>
+
+	            <div id="the_good_score_member">
+		            <table class="table" contenteditable="false" style="border-bottom:1px solid;margin-top:20px;border-color:rgb(221, 221, 221)">
+			            <thead>
+			                <tr >
+		                	        <th>{% trans "序号" %}</th>
+			                    <th>{% trans "商品POS_ID" %}</th>
+			                    <th>{% trans "商品名" %}</th>
+			                    <th>{% trans "详情" %}</th>
+			                </tr>
+			           </thead>
+			           <tbody id="the_member_good_info">
+			           </tbody>
+		            </table>
+	        	</div>
+
+	        	<div id="the_add_good_score_member" style="display:none;">
+	        		<h4>{% trans "添加会员商品" %}</h4>
+	        		<div class="row">
+	        			<div class="col-lg-3">
+	        				<h5>{% trans "商品pos id" %}<h5>
+	        				<input id="good_pos_id" type="text" class="form-control" value="" placeholder="{% trans "请输入商品id" %}">
+	        			</div>
+	        		</div>
+	        		<div id="the_member_good_settings" style="display:none;">
+		        			<div class="row">
+		        				<div class="col-lg-3">
+				        			<table class="table" style="border:2px solid;margin-top:10px;border-color: rgb(221, 221, 221);">
+				        				<thead>
+				        					<tr>
+					        					<th>{% trans "会员类型" %}</th>
+					        					<th>{% trans "折扣" %}</th>
+				        					</tr>
+				        				</thead>
+				        				<tbody>
+				        					<tr>
+										<td>{% trans "普通会员" %}</td>
+										<td id="ordinary_member_discount" contenteditable="true"></td>
+				        					</tr>
+				        					<tr>
+										<td>{% trans "金卡会员" %}</td>
+										<td id="gold_member_discount"  contenteditable="true"></td>
+				        					</tr>
+				        				</tbody>
+				        			</table>
+			        			</div>
+		        			</div>
+	        		</div>
+			<button id="add_good_member" class="btn btn-default" style="margin-top:20px;">{% trans "添加" %}</button>
+	        	</div>
+        	</div>
+        	<div  id="the_add_good_score_member_info" style="display:none">
+        		<button id="back_good_member" class="btn btn-default" style="margin-top:20px;">{% trans "返回" %}</button>
+        		<button id="alter_good_member_discount" class="btn btn-default" style="margin-top:20px;">{% trans "修改" %}</button>
+	        	<div class="row">
+	        		<div class="col-lg-3">
+	        			<table class="table" style="border:2px solid;margin-top:10px;border-color: rgb(221, 221, 221);">
+	        				<thead>
+	        					<tr>
+		        					<th>{% trans "会员类型" %}</th>
+		        					<th>{% trans "折扣" %}</th>
+	        					</tr>
+	        				</thead>
+	        				<tbody>
+	        					<tr>
+							<td>{% trans "普通会员" %}</td>
+							<td class="ordinary_member_discount"></td>
+	        					</tr>
+	        					<tr>
+							<td>{% trans "金卡会员" %}</td>
+							<td class="gold_member_discount"></td>
+	        					</tr>
+	        					<tr style="display:none;"><td id="member_discount_pos_id"></td></tr>
+	        				</tbody>
+	        			</table>
+	        			<h4 id="alter_message" style="display:none;"></h4>
+        			</div>
+	        	</div>
+        	</div>
+
+
+</div>
+{% endblock %}
+
+{% block script_block %}
+<script>
+$(function(){
+	$("#the_add_good_score_member_list").show()
+	$("#the_add_good_score_member_info").hide()
+	get_member_good_info();
+	$("#add_good_score_member").on("click",function(){
+		$("#add_good_score_member").hide()
+		$("#back_good_score_member").show()
+		$("#the_good_score_member").hide()
+		$("#the_add_good_score_member").show()
+		$("#the_member_good_settings").show()
+
+	});
+	$("#back_good_score_member").on("click",function(){
+		$("#add_good_score_member").show()
+		$("#back_good_score_member").hide()
+		$("#the_good_score_member").show()
+		$("#the_add_good_score_member").hide()
+		$("#good_pos_id").val("")
+		$("#good_member_score").val("")
+		$("#the_member_good_settings").hide()
+		$("#good_pos_id").val("")
+		$("#ordinary_member_discount").html("")
+		$("#gold_member_discount").html("")
+		get_member_good_info();
+	});
+	$("#add_good_member").on('click',function(){
+		var pos_id = $("#good_pos_id").val()
+		var ordinary_member_discount = $("#ordinary_member_discount").html()
+		var gold_member_discount = $("#gold_member_discount").html()
+		if(pos_id == ""){
+			$("#alert_modal_body").html("请输入商品posID！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(ordinary_member_discount == ""){
+			$("#alert_modal_body").html("请输入普通会员折扣！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(gold_member_discount == ""){
+			$("#alert_modal_body").html("请输入金卡会员折扣！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(isNaN(parseFloat(pos_id)) != false || isNaN(parseFloat(ordinary_member_discount)) != false || isNaN(parseFloat(gold_member_discount)) != false){
+			$("#alert_modal_body").html("请输入数值");
+			$("#alert_modal").modal("show");
+			return
+		}
+		if(parseFloat(ordinary_member_discount) >1 || parseFloat(gold_member_discount) >1){
+			$("#alert_modal_body").html("折扣数值小于等于1！");
+			$("#alert_modal").modal("show");
+			return
+		}
+		dict = {}
+		dict['pos_id'] = Number(pos_id)
+		dict['ordinary_member_discount'] = Number(ordinary_member_discount)
+		dict['gold_member_discount'] = Number(gold_member_discount)
+		$.get("/gcustomer/ajax/add_member_good/",dict,
+			function(data){
+				if(data.ret != "0001"){
+					$("#alert_modal_body").html(data.info);
+                    $("#alert_modal").modal("show");
+					return
+				}
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+				$("#good_pos_id").val("")
+				$("#ordinary_member_discount").html("")
+				$("#gold_member_discount").html("")
+			},"json")
+
+	})
+
+	$("#back_good_member").on("click",function(){
+		if($("#alter_good_member_discount").html() == "确定" ){
+			$("#alert_modal_body").html("请先确定修改");
+                $("#alert_modal").modal("show");
+			return
+		}
+		$("#good_pos_id").val("")
+		$("#ordinary_member_discount").html("")
+		$("#gold_member_discount").html("")
+		$("#the_add_good_score_member_list").show();
+		$("#the_add_good_score_member_info").hide();
+		$("#alter_message").hide()
+		get_member_good_info();
+	});
+	$("#alter_good_member_discount").on("click",function(){
+		if($("#alter_good_member_discount").html() == "修改" ){
+			$(".ordinary_member_discount").attr("contenteditable",true);
+			$(".gold_member_discount").attr("contenteditable",true);
+			$("#alter_good_member_discount").html("确定")
+			$("#alter_message").hide()
+		}
+		else if($("#alter_good_member_discount").html() == "确定"){
+			$(".ordinary_member_discount").attr("contenteditable",false);
+			$(".gold_member_discount").attr("contenteditable",false);
+			$("#alter_good_member_discount").html("修改")
+			var pos_id = $("#member_discount_pos_id").html()
+			var ordinary_member_discount = $(".ordinary_member_discount").html()
+			var gold_member_discount = $(".gold_member_discount").html()
+			dict = {}
+			dict['pos_id'] = pos_id
+			dict['ordinary_member_discount'] = ordinary_member_discount
+			dict['gold_member_discount'] = gold_member_discount
+			$.get('/gcustomer/ajax/alter_good_member_discount/',dict,
+				function(data){
+					if(data.ret != "0001"){
+						$("#alert_modal_body").html(data.info);
+                        $("#alert_modal").modal("show");
+					}
+					$("#alter_message").show()
+					$("#alter_message").html(data.info)
+				},"json")
+		}
+
+	});
+});
+
+function delete_member_good(obj){
+	member_pos_id = $(obj).parent().parent().find(".pos_id").html().trim()
+	$.get("/gcustomer/ajax/delete_member_good/",{"member_pos_id":member_pos_id},
+		function(data){
+			if(data.ret !="0001"){
+				$("#alert_modal_body").html("删除失败！");
+                $("#alert_modal").modal("show");
+				return
+			}
+			get_member_good_info();
+		},"json")
+}
+
+function get_member_good_info(){
+	$.get("/gcustomer/ajax/get_member_good_info/",{"pos_id":""},
+		function(data){
+			if(data.ret != "0001"){
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+			}
+
+			$("#the_member_good_info").empty()
+			objs = data.objs
+			var i = 0
+			$(objs).each(function(){
+				obj = $(this)
+				$("#the_member_good_info").append(String.format(''+
+					'<tr>'+
+				           	   	'<td>{0}</td>'+
+				           	   	'<td class="pos_id">{1}</td>'+
+				           	   	'<td>{2}</td>'+
+				           	   	'<td><button class="btn btn-default" onclick="get_member_good_discount(this)">详情</button></td>'+
+				           	   	'<td><button class="btn btn-default" onclick="delete_member_good(this)">删除</button></td>'+
+				           	'</tr>',i+1,obj[0].pos_id,obj[0].name))
+					i  = i + 1
+			})
+		},"json");
+}
+
+function get_member_good_discount(obj){
+	var pos_id = Number($(obj).parent().parent().find(".pos_id").html().trim())
+	$.get("/gcustomer/ajax/get_member_good_info/",{"pos_id":pos_id},
+		function(data){
+			if(data.ret != "0001"){
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+				return
+			}
+			$("#the_add_good_score_member_list").hide()
+			$("#the_add_good_score_member_info").show()
+			$(".ordinary_member_discount").html(data.objs[0].ordinary_discount)
+			$(".gold_member_discount").html(data.objs[0].gold_discount)
+			$("#member_discount_pos_id").html(data.objs[0].pos_id)
+
+		},"json")
+}
+
+</script>
+{% endblock %}

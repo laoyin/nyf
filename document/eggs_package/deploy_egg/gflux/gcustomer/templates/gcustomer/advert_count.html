@@ -1,0 +1,157 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_advert.html" %}
+{% load i18n %}
+
+{% block style_block %}
+<style type="text/css">
+    .advert-list .item{
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        height: 80px;
+        text-align: center;
+    }
+    .advert-list .item a{
+        line-height: 80px;
+        width: 100%;
+        display: inline-block;
+        height: 80px;
+    }
+
+</style>
+{% endblock %}
+
+
+{% block advert_count_nav %}
+<li class="nav-active"><a href="/gcustomer/advert_count/">{% trans "点击统计" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding:10px 20px">
+    <div id="the_advertisement_information_list" style="display:none;">
+        <h4>{% trans "投放广告" %}</h4>
+        <div class="row advert-list" id='advert_count_panel' ></div>
+    </div>
+    <div id="the_advert_visited_count" style="display:none;">
+        <button class="btn btn-default" onclick="get_back()">{% trans "返回" %}</button>
+        <h4 id = "current_advertisement" style="display:none;"></h4>
+        <h4>{%  trans "广告查看量" %}</h4>
+        <div id="advert_visited_count"></div>
+    </div>
+    <div id="the_advert_visited_map" style="display:none;">
+        <h4 class="title-label-class">{% trans "查看人群分布" %}</h4>
+        <div class="row" style="margin-bottom:10px;">
+            <div class="col-lg-3">
+                <select class="form-control" id="people_dimensions">
+                    <option name="people_dimensions" value>{% trans "请选择维度" %}</option>
+                    <option name="people_dimensions" value="0">{% trans "年龄" %}</option>
+                    <option name="people_dimensions" value="1">{% trans "性别" %}</option>
+                    <option name="people_dimensions" value="2">{% trans "职业" %}</option>
+                    <option name="people_dimensions" value="3">{% trans "加油消费次数" %}</option>
+                <select>
+            </div>
+        </div>
+        <div id="advert_visited_map"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_advertisement_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#the_advert_visited_count").hide()
+    $("#the_advert_visited_map").hide()
+    $("#the_advertisement_information_list").show()
+
+    $("#people_dimensions").change(function(){
+        $("#advert_visited_map").show()
+        if($(this).val() == ""){
+            $("#advert_visited_map").hide()
+            alert("请选择维度")
+        }
+        else {
+            url=$(window.event.srcElement);
+            var dimension = $(this).val()
+            $.get("/gcustomer/ajax/get_advertisement_information/",{'name':$("#current_advertisement").html()},
+                function(data){
+                    if(data.ret != '0001'){
+                        alert("获取广告人群分布信息失败!");
+                        return 
+                    }
+                    data_age = data.obj[0].data_age
+                    data_gender = data.obj[0].data_gender
+                    data_career = data.obj[0].data_career
+                    renderPeopleDimensionsAgeDash(dimension,data_age,data_gender,data_career)
+                    $("body").scrollTop(10000)
+                },"json");
+
+        }
+    })
+
+    //根据不同维度显示不同表
+    function renderPeopleDimensionsAgeDash(dimension,data_age,data_gender,data_career){
+        if(dimension){
+            switch(dimension){
+                case "0" :
+                    advertVisitedMapDash(data_age)
+                    break;
+                case "1" :
+                    advertVisitedMapDash(data_gender)
+                    break;
+                case "2" :
+                    advertVisitedMapDash(data_career)
+                    break;
+                case "3" :
+                    data_oil_pay = []
+                    advertVisitedMapDash(data_oil_pay)
+                    break;
+                default :
+                    alert("该维度信息暂无!")
+            }
+
+        }
+    }
+})
+//饼状图
+function advertVisitedMapDash(data){
+    if($("#advert_visited_map").length !=0){
+        $('#advert_visited_map').highcharts({
+                                chart: {
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false
+                                },
+                                title: {
+                                    text: '参与广告人群类型分布图'
+                                },
+                                credits: {
+                             enabled: false
+                        },
+                                tooltip: {
+                                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true,
+                                            color: '#000000',
+                                            connectorColor: '#000000',
+                                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                                        }
+                                    }
+                                },
+                                series: [{
+                                    type: 'pie',
+                                    name: '比例',
+                                    data: data
+                                }]
+                            });
+    }
+}
+</script>
+{% endblock %}

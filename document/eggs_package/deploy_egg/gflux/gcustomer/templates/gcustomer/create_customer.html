@@ -1,0 +1,90 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block create_customer_nav %}
+<li class="nav-active"><a href="/gcustomer/create_customer/">{% trans "新建大客户" %}</a></li>
+{% endblock %}
+
+
+{% block page_content %}
+<div style="padding: 10px 20px" id="create_big_customer_step1">
+    <h4>{% trans "新建大客户" %}</h4>
+    <div class="row" style="margin-top: 20px;">
+
+        <div class="col-md-6 col-lg-6">
+            <div class="form-group">
+                <label for="exampleInputEmail1">{% trans "大客户卡号" %}</label>
+                <input type="text" class="form-control" id="customer_cardnum" placeholder="{% trans "请绑定主卡号" %}" value="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">{% trans "大客户名称" %}</label>
+                <input type="text" class="form-control" id="customer_name" placeholder="{% trans "请输入单位名称" %}" value="">
+            </div>
+            <div class="form-group">
+                <label>{% trans "选择客户来源" %}</label>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <select class="form-control" name="base_characteristic" >
+                            <option name="user_source" selected value="">{% rans "请选择客户来源" %}</option>
+                            <option name="user_source" value="1">{% trans "中石油" %}</option>
+                            <option name="user_source" value="2">{% trans "中石化" %}</option>
+                            <option name="user_source" value="3">{% trans "中海油" %}</option>
+                            <option name="user_source" value="4">{% trans "延长壳牌 "%}</option>
+                            <option name="user_source" value="5">{% trans "中化" %}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>{% trans "副卡数量" %}</label>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <input type="text" class="form-control" id="sub_card_num" placeholder="{% trans "请输入副卡数量" %}" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="create_bigcustomer_next" onclick="" class="btn btn-info">{% trans "完成" %}</button>
+</div>
+<div style="padding: 10px 20px;display:none;" id="create_big_customer_step2" >
+    <h4>{% trans "编辑副卡信息" %}</h4>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <select class="form-control" name="choose_slave_card">
+                        <option selected>{% trans "请选择编辑方式" %}</option>
+                        <option name="type" value="0" >{% trans "导入数据文件" %}</option>
+                        <option name="type" value="1" >{% trans "手动输入" %}</option>
+                </select>
+            </div>
+        </div>
+        <!-- <div class="col-lg-1">
+            <button id="create_bigcustomer_back" onclick="" class="btn btn-info">返回</button>
+        </div> -->
+        <div class="col-lg-1">
+             <button id="create_bigcustomer_ok" class="btn btn-info" style="display:none;">{% trans "完成" %}</button>
+        </div>
+    </div>
+    <div style="margin"></div>
+    <div id="edit_slave_card_information" style="display:none;margin:20px;"></div>
+    <div id="import_slave_card__file" style="display:none;position:relative">
+        <form id="file_form" enctype="multipart/form-data" method='POST' action='/gcustomer/ajax/upload_cards_file/'>
+            <div>
+                <h4>{% trans "选择导入文件" %}</h4>
+            </div>
+            <div>
+                <input type="file" name="cards_data">
+            </div>
+            <div style="margin:20px; position:absolute;left:245px;top:0px;">
+                <button type="submit" id="upload_file" class="btn btn-info">{% trans "上传" %}</button>
+            </div>
+        </form>
+        <p id="message" style="display:none;">{{message}}</p>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+{% endblock %}

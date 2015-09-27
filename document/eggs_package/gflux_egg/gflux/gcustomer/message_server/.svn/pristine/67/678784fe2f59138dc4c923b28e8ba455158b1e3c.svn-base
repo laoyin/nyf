@@ -1,0 +1,71 @@
+Message Server 结构和一些文件的说明
+
+1. /message_server/core/ 文件夾
+.
+├── config.js
+├── logger_client.js
+├── message_router.js
+├── message_server.js
+├── message_server.log
+└── protobuf_message.desc
+
+ -  config.js                 里面是message server相关的配置，mysql ,redis, gearman 等
+ -  logger_client.js          log4j的一个导出的模块，里面是配置logger的信息
+ -  message_router.js         message router对不同消息进行路由处理,把消息的处理过程从message server的代码中分离
+ -  message_server.js         message server是message server的核心代码，建立连接，事件监听等
+ -  message_server.log        message server相关的log文件
+ -  protobuf_message.desc     protobuf_message是node使用的protobuf描述文件，用来解析protobuf封装的消息
+
+
+2. /message_server/service/ 文件夹
+
+.
+├── message_client.py
+├── message_service.py
+└── protobuf_message_pb2.py
+
+
+ -  message_client.py         message client提供一个连接message server的功能，和发消息的功能
+ -  message_service.py        为django提供一个gearman的接口，调用消息客户端发送消息
+ -  protobuf_message_pb2.py   python能识别的protobuf文件
+
+
+3. /message_server/package.json 文件
+
+ - package.json               纪录message server开发的版本信息，依赖库，作者等信息
+
+ ＋ 如何使用package.json
+    当需要添加一些node依赖包，需要现在package.json里面配置，然后使用 sudo npm install
+
+
+4. /message_server/node_modules 文件夹
+
+ － node_modules               用来存放node一些依赖包
+
+
+5. /message_server/protobuf_message.proto 文件
+
+ － protobuf_message.proto    是protobuf的源文件，通过不同的编译命令可以生成不同环境所需要的文件
+
+ ＋ 如何生成node protobuf 能读取的desc 文件
+    protoc --descriptor_set_out=core/protobuf_message.desc --include_imports protobuf_message.proto
+
+ ＋ 如何生成python protobuf pb2文件
+   protoc protobuf_message.proto --python_out=service/  ("."为当前目录，可以指定其他路径)
+
+
+
+Message Server的部署
+
+1. 代码打包
+
+
+2. 代码上传
+
+
+3. 启动
+
+
+4. 调试
+
+

@@ -1,0 +1,96 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_activity.html" %}
+{% load i18n %}
+{% block style_block %}
+<style type="text/css">
+    .activity-list .item{
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        height: 80px;
+        text-align: center;
+    }
+    .activity-list .item a{
+        line-height: 80px;
+        width: 100%;
+        display: inline-block;
+        height: 80px;
+    }
+
+</style>
+{% endblock %}
+
+
+{% block stop_page_nav %}
+<li class="nav-active"><a href="/gcustomer/stop_activity/">{% trans "结果" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding: 10px 20px;">
+    <div id="the_finished_promotion_activity" style="display:none;">
+        <h4 class="title-label-class">{% trans "已完成的营销活动" %}</h4>
+        <div id="the_recover_box" style="display:none;" ondrop="drop(event)"  ondragover="allowDrop(event)" onclick="hide_recover_box();">
+            <div id="recover_box" style="display:block;width:50px;height:50px;margin-left:auto;margin-right:auto;">
+                    <div style="margin-left:auto;margin-right:auto;">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    <br/>
+                    </div>
+                    <div style="margin-left:auto;margin-right:auto;">
+                        <span class="glyphicon-class">{% trans "回收箱" %}</span>
+                    </div>
+                    
+            </div>
+        </div>
+        
+        <div class="row activity-list" id='completed_activity'></div>
+    </div>
+    <div id="the_promotion_simulation" style="display:none;">
+        <button class="btn back_pre">{% trans "返回" %}</button>
+        <div id="the_activity_summary"> 
+            <h4>{% trans "活动概况" %}</h4>
+            <table class="table" contenteditable="false" style="border: 1px solid #ddd">
+                <thead>
+                <tr class="success">
+                    <th style="width:300px;">{% trans "详情" %}</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="activity_survey">
+                
+                </tbody>
+            </table>
+        </div>
+
+        <div id="the_activity_paticipation" >
+            <h4>{% trans "参与情况" %}</h4>
+            <div id="show_time_people"></div>
+        </div>
+
+        <div id="the_activity_efficiency" >
+            <h4>{% trans "活动效益" %}</h4>
+            <div id="show_activity_result"></div>
+        </div>
+
+        <div id="the_activity_population_distribution">
+            <h4>{% trans "人群分布" %}</h4>
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-lg-3">
+                    <select class="form-control" id="activity_people_dimensions">
+                        <option name="people_dimensions" value>{% trans "请选择维度" %]}</option>
+                        <option name="people_dimensions" value="0">{% trans "年龄" %}</option>
+                        <option name="people_dimensions" value="1">{% trans "性别" %}</option>
+                        <option name="people_dimensions" value="2">{% trans "职业" %}</option>
+                        <option name="people_dimensions" value="3">{% trans "加油消费次数" %}</option>
+                    </select>
+                </div>
+            </div>
+            <div id="show_type_people"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script_block %}
+<script type='text/javascript' src='/gflux/static/js/render_promotion_data{{settings.GCUSTOMER_STATIC_VERSION}}.js'></script>
+{% endblock %}

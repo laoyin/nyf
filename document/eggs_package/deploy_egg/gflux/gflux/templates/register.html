@@ -1,0 +1,71 @@
+    {% load i18n %}
+    {% load staticfiles%}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+         {% csrf_token %}
+    <meta name="url_prefix" content="{{url_prefix}}" >
+    <title>{{ settings.SITE_NAME }}</title>
+    <link type="text/css" media="all" rel="stylesheet" href="{%static 'css/login.'%}{{version}}.css">
+    <link type="text/css" media="all" rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css'%}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/utils.'%}{{version}}.js"></script>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+    <script type="text/javascript" src="{% static 'js/register.'%}{{version}}.js"></script>
+    </head>
+    <body>
+        <div id="login_form" class="login_form_position" style="display: block; z-index: 10; min-height: 550px; width: 400px;  top: 55px;  margin-left: auto; margin-right: auto;">
+                <div class="login_form" style="padding:25px 25px 15px 25px;opacity: 0.8;border: 1px solid rgb(221, 221, 221); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;background-color: rgb(255, 255, 255); ">
+                        <div class="input-group" style="margin-bottom: 10px;">
+                                <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-user"></i></span>
+                                <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="username" placeholder={% trans "用户名" %} type="text">
+                        </div>
+                        <p class="error_message" id="username_error"></p>
+
+                        <div class="input-group" style="margin-bottom: 10px;">
+                                <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="password" placeholder={% trans "密码" %} type="password">
+                        </div>
+
+                        <div class="input-group" style="margin-bottom: 10px;">
+                                <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="repassword" placeholder={% trans "再次输入密码" %} type="password">
+                        </div>
+
+                        <div class="input-group" style="margin-bottom: 10px;">
+                                <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="email" placeholder={% trans "邮箱" %} type="text">
+                        </div>
+
+                        <div class="input-group" style="margin-bottom: 10px;">
+                                <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-copyright-mark"></i></span>
+                                <input class="login_input_show" style="padding: 5px 10px;width: 100%" id="company" placeholder={% trans "公司名称" %} type="text">
+                        </div>
+                        <div class="input-group" style="margin-bottom: 10px;">
+                                <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-home"></i></span>
+                                <select id="shengcode" class="form-control" style="width: 40%;">
+                                    <option selected value="">{% trans "请选择省份" %}</option>
+                                </select>
+                                <select id="shicode" class="form-control" style="width: 30%;">
+                                    <option selected value="">{% trans "请选择" %}</option>
+                                </select>
+                                <select id="xiancode" class="form-control" style="width: 30%;">
+                                    <option selected value="">{% trans "请选择" %}</option>
+                                </select>
+                        </div>
+                        <p id="password_error" style="clear:both;padding:3px;text-align: center;font-size: 12px;font-weight: bold;color: #b94a48"></p>
+
+                        <div id="login" class="btn btn-primary btn-lg btn-block" style="font-size: 17px;" onclick="register()" role="button" data-toggle="modal">{% trans "注册" %}</div>
+                </div>
+        </div>
+
+        <!-- Foot -->
+
+        {% include "dash/includes/foot.html" %}
+
+        <!-- End Foot -->
+
+
+    </CENTER>
+    </body>
+    </html>

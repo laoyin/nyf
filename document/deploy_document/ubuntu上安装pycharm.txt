@@ -1,0 +1,99 @@
+安装pycharm:
+1.从http://www.jetbrains.com/pycharm/download/下载最新的Pycharm
+
+2.在终端中进入Pycharm的下载目录，输入命令 tar xfz pycharm-*.tar.gz，将Pycharm文件夹解压到当前目录
+
+3.找到bin文件夹运行Pycharm.sh（.sh 是一个脚本文件，相当于win下的.exe）,输入注册码
+
+
+user name: EMBRACE
+key:
+14203-12042010
+0000107Iq75C621P7X1SFnpJDivKnX
+6zcwYOYaGK3euO3ehd1MiTT"2!Jny8
+bff9VcTSJk7sRDLqKRVz1XGKbMqw3G
+5,点击Create New Project.
+
+
+
+安装JDK
+1）返回到Home目录：“~”，然后依次执行一下几条command
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+安装过程中会跳出Oracle license对话框，选择接受就是了。
+
+（2）安装完成后，运行"java -version"或者"javac -version"查看是否安装成功。如果得到类似如下的输出，表明安装成功了。
+
+$ java -version
+java version "1.8.0_20"
+Java(TM) SE Runtime Environment (build 1.8.0_20-b26)
+Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)
+$ javac -version
+javac 1.8.0_20
+（3） 在【3】中说道，如果想automatically set up the Java 8 environment variables，可以使用下面的command：
+
+sudo apt-get install oracle-java8-set-default
+我使用该command后，在Terminal中运行 echo $JAVA_HOME，没有任何输出。看来是没起什么作用。有可能是在一开始配置完repository后，安装时使用该条命令，可以以后尝试一下。
+
+UPDATED: 使用 sudo apt-get install oracle-java8-set-default，测试echo $JAVA_HOME，仍然是没有$JAVA_HOME环境变量的。还是需要手动设置。
+
+由于一些程序在运行时可能默认需要 $JAVA_HOME 环境变量，因此还是需要设置一下环境变量的。
+4. 配置$JAVA_HOME 环境变量
+参考【4】中 Setting the "JAVA_HOME" environment variable 一节进行设置。
+
+（1）Find out the path of your Java installation:
+
+sudo update-alternatives --config java
+它将返回类似如下的结果，列出了本机所安装的所有Java运行时环境JRE。（共有2个：JDK7和OpenJDK6，0和2是同一个，auto mode和manual mode的差别）
+
+复制代码
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+Selection    Path                                            Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      auto mode
+  1            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      manual mode
+  2            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      manual mode
+
+Press enter to keep the current choice[*], or type selection number:
+复制代码
+对应的各个JRE的 安装路径分别为：
+
+0. /usr/lib/jvm/java-7-oracle
+
+1. /usr/lib/jvm/java-6-openjdk-amd64
+
+2. /usr/lib/jvm/java-7-oracle
+
+在我本机 执行 sudo update-alternatives --config java 的结果为：
+
+Selection    Path                                     Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-8-oracle/jre/bin/java   1         auto mode
+* 1            /usr/lib/jvm/java-8-oracle/jre/bin/java   1         manual mode
+
+Press enter to keep the current choice[*], or type selection number:
+可见只安装了一个Java环境： JDK8。它对应的安装路径为：
+
+/usr/lib/jvm/java-8-oracle
+
+（2）编辑/etc/environment文件
+
+sudo nano /etc/environment
+复制上面的路径 /usr/lib/jvm/java-8-oracle，添加如下一行
+
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+（3） Reload该文件，使之立即生效，而不必注销并重新登录
+
+source /etc/environment
+（4）使用下面的命令测试
+
+echo $JAVA_HOME
+会输出刚才所设置的路径 /usr/lib/jvm/java-8-oracle。
+
+5. 再次安装PyCharm
+（1）cd到Downloads/pycharm-community-3.4.1/bin/目录，执行./pycharm.sh。询问是否导入settings，选择不导入->OK.
+ (2) 初始设置，保持默认->OK.
+(3) 创建一个Launcher脚本，需要输入密码。

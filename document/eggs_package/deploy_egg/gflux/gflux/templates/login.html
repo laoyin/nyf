@@ -1,0 +1,66 @@
+    {% load i18n %}
+    {% load staticfiles%}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html lang="en">
+    <head>
+    <title>{{ settings.SITE_NAME }}</title>
+    {% csrf_token %}
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" media="all" rel="stylesheet" href="{%static 'css/login.'%}{{version}}.css">
+    <link type="text/css" media="all" rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css'%}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.cookie-1.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/utils.'%}{{version}}.js"></script>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+    <script type="text/javascript" src="{% static 'js/login.'%}{{version}}.js"></script>
+    <script type="text/javascript" src="/gflux/static/js/bowser.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ec689e69f34164aee5ad1a715bf6f7c7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    </head>
+    <body style="height: 100%;">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div id="login_form" class="col-ld-10 col-ld-offset-2" style="display: block; z-index: 10; min-height: 550px; height: auto; width: 300px;    top: 55px;  margin-left: auto; margin-right: auto;">
+                    <div class="login_form" style="padding:25px 25px 65px 25px;opacity: 0.8;background-color: rgb(255, 255, 255);border: 1px solid rgb(221, 221, 221);border-top-left-radius: 8px;border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
+                        <div class="input-group" style="margin-bottom: 10px;">
+                            <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-info-sign"></i></span>
+                            <input class="login_input_show" style="padding: 5px 10px;width: 80%" id="username" placeholder="{% trans "请输入用户名" %}" type="text">
+                        </div>
+                        <p class="error_message" id="username_error"></p>
+
+                        <div class="input-group" style="margin-bottom: 10px;">
+                            <span class="input-group-addon" style="padding: 5px 10px"><i class="glyphicon glyphicon-info-sign"></i></span>
+                            <input class="login_input_show" style="padding: 5px 10px;width: 80%" id="password" placeholder="{% trans "请输入密码" %}" type="password" onkeypress="enter_login(event);">
+                        </div>
+                        <p style="padding-top: 10px;clear: both;">
+                            <label class="checkbox pull-left" style="font-size: 12px;">
+                                <input id="rmb" type="checkbox">{% trans "记住用户名" %}
+                            </label>
+                            <span class="pull-right" style="font-size: 12px;"><a onclick="register()" style="cursor:pointer">register</a></span>
+                        </p>
+
+                        <p id="password_error" style="clear:both;padding:3px;text-align: center;font-size: 12px;font-weight: bold;color: #b94a48"></p>
+
+                        <p id="login" class="btn btn-primary btn-lg btn-block" style="font-size: 17px;margin: auto;float: left" onclick="login()" role="button" data-toggle="modal" onkeydown=>{% trans "登陆"%}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Foot -->
+
+            {% include "dash/includes/foot.html" %}
+
+            <!-- End Foot -->
+        </div>
+    </body>
+
+
+    </html>

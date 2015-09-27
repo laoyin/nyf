@@ -1,0 +1,495 @@
+
+
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_activity.html" %}
+{% load i18n %}
+{% block start_page_nav %}
+<li class="nav-active"><a href="/gcustomer/start_activity/">{% trans "新建" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding: 10px 20px">
+    <div class="row">
+        <div class="col-lg-3">
+            <h4 class="title-label-class">{% trans "创建营销活动" %}</h4>
+        </div>
+    </div>
+
+    <div id="the_choose_create_promotion_type">
+        <div class="row" style="margin-top:20px;">
+            <div class="col-lg-3">
+                <select class="form-control" id="choose_create_promotion_type">
+                    <option name="type" value="" selected>{% trans "选择创建类型" %}</option>
+                    <option name="type" value="0">{% trans "手动创建" %}</option>
+                    <option name="type" value="1">{% trans "自动创建" %}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="the_choose_auto_type" style="display:none;margin-top:20px;">
+        <div class="row">
+            <div class="col-lg-3">
+                <select class="form-control" id="auto_create_option">
+                    <option name="auto_type" value="" selected>{% trans "请选择场景" %}</option>
+                    <option name="auto_type" value="1" >{% trans "改善油站的设备运营效率" %}</option>
+                    <!--<option name="auto_type" value="2">增加非忠诚用户回头率</option>-->
+                    <option name="auto_type" value="3">{5 trans "改善加油用户流失率" %}</option>
+                     <!--<option name="auto_type" value="4">提高换枪率</option>
+                    <option name="auto_type" value="5">表彰忠诚用户</option>-->
+                    <option name="auto_type" value="6">{% trans "清仓滞销非油品" %}</option>
+                    <option name="auto_type" value="7">{% trans "快推热销商品和增加非油品销售额" %}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="the_create_promotion" style="display:none;">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6 col-lg-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "活动名称" %}</label>
+                        <input type="text" name="activity_name" class="form-control" id="activity_name" placeholder="{% trans "93汽油打折活动" %}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "活动时间" %}</label>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">{% trans "开始时间" %}</div>
+                                    <input name="start_time" type="text" class="form-control datepicker" id="start_time"placeholder="02/25/2015"><span class="input-group-addon" ><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">{% trans "结束时间" %}</div>
+                                    <input name='end_time' id="end_time" type="text" class="form-control datepicker" placeholder="04/25/2015"><span class="input-group-addon" ><i class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id = "the_promotion_station_range">
+                            <label for="exampleInputEmail1">{% trans "活动范围" %}</label>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div class="radio" name="activity_range" id="activity_range_type">
+                                        <label>
+                                            <input type="radio" name="activity_range"  checked value="0">
+
+                                            {% trans "地域" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="radio" name="activity_range">
+                                        <label>
+                                            <input type="radio" name="activity_range"  value="1">
+                                            {% trans "油站群组" %}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="area_select_option" style="display:none;">
+                                <div class="row">
+                                        <div class="col-lg-4">
+                                            <select id="shengcode" class="form-control">
+                                                <option selected value="">{% trans "请选择省份" %}</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <select id="shicode" class="form-control">
+                                                <option selected value="">{% trans "请选择" %}</option>
+                                            </select>
+                                        </div>
+                                        <div class ="col-lg-4">
+                                            <select id="xiancode" class="form-control">
+                                                <option selected value="">{% trans "请选择" %}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div id="station_group_select_option" style="display:none;">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <select class="form-control" id="station_group_name">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- 自动创建时这部分由系统引擎自动计算 -->
+                    <div id="the_auto_create_promotion_choose_hide">
+                        <div class="form-group">
+                            <label for="">{% trans "目标用户群" %}</label>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <select class="form-control" id="target_audience" name="target_audience">
+                                        <option name='target_audience' value="" selected>{% trans "请选择目标用户群" %}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "触发类型" %}</label>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="radio" name="launch_type">
+                                    <label>
+                                        <input type="radio" name="launch_type" id="launch_type" checked value="0">
+                                        {% trans "主动推送" %}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="launch_type" id="launch_type" value="1">
+                                        {% trans "到站推送" %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">{% trans "沟通类型" %}</label>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select class="form-control" name="communication_type" id="communication_type">
+                                    <option name='communication_type' value="" selected>{% trans "请选择沟通类型" %}</option>
+                                    <option name='communication_type' value="0">Email</option>
+                                    <option name='communication_type' value="3">{% trans "短信" %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 商品优惠 -->
+                    <div class="form-group" id="the_promotion_good_list">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label>{% trans "商品优惠" %}</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table class="table" style="margin-bottom: 5px">
+                                    <thead>
+                                    <tr>
+                                        <th>{% trans "序号" %}</th>
+                                        <th>{% trans "优惠类型" %}</th>
+                                        <th id="station_name">{% trans "油站名" %}</th>
+                                        <th>{% trans "名称" %}</th>
+                                        <th>{% trans "折扣" %}</th>
+                                        <th>{% trans "操作" %}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="promotion_info_table">
+
+                                    </tbody>
+                                </table>
+                                <p style="text-align: center;padding: 5px 10px">
+                                    <span class="btn btn-success btn-sm" onclick="addPromotionInfo()">{% trans "添加优惠信息" %}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">{% trans "描述信息" %}</label>
+                        <textarea rows="4" placeholder="{% trans "2月25日至4月25日，对晚上十一点到第二天早上五点间加油活动实现98折优惠" %}" class="form-control" name='description' id="description_info"></textarea>
+                    </div>
+
+                    <button class="btn btn-info" style="display:none;">{% trans "发布活动" %}</button>
+                <!--</form>-->
+                <button class="btn btn-info" id="launch_promotion_activity">{% trans "发布活动" %}</button>
+                <button class="btn btn-info" id="forecast_promotion_activity">{% trans "效果预测" %}</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="Contact_Setting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                    data-dismiss="modal" aria-hidden="true">
+                    &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        {% trans "请选择沟通设置" %}
+                    </h4>
+                </div>
+
+                <div class="modal-body" id="big_image_body">
+                    <div style="width:300px;height:500px;">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <select class="form-control" id="contact_type">
+                                    <option name="setting" value="0">{% trans "请选择沟通方式" %}</option>
+                                    <option name="setting" value="1">Email</option>
+                                    <option name="setting" value="2">{% trans "短信" %}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:20px;display:none;" id="the_email_setting_information" >
+                            <div class="col-lg-9">
+                                <select class="form-control">
+                                        <option name="email" selected>{% trans "请选择发件邮箱地址" %}</option>
+                                        <option name="email" >2547546731@qq.com</option>
+                                        <option name="email" >niyoufa@tmlsystem.com</option>
+                                        <option name="email" >niyoufa2015@126.com</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:20px;display:none;" id="the_short_message_setting_information">
+                            <div class="col-lg-9">
+                                <select class="form-control">
+                                        <option name="email" selected>{% trans "请选择短信设置" %}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:20px;display:none;" id="the_contact_setting_ok">
+                            <div class="col-lg-3">
+                                <input type="button" class="btn btn-default" value="{ % trans "确定" %}"></input>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="email_contact_settings">
+                    </div>
+
+                    <div id="short_message_contact_settings">
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="Mail_preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                    data-dismiss="modal" aria-hidden="true">
+                    &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        {% trans "邮件预览" %}
+                    </h4>
+                </div>
+
+                <div class="modal-body" id="big_image_body">
+                    <div class="row">
+                        <p style="font-weight: bold;padding: 10px 0px;">{% trans "Email预览" %}</p>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">{% trans "主题" %}</div>
+                                        <input type="text" class="form-control" id="exampleInputAmount" value="{% trans "定额加油500元送矿泉水一瓶" %}"></input>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">{% trans "发件人" %}</div>
+                                            <input type="text" class="form-control" id="exampleInputAmount" value="{% trans "中森美福州市公司" %}"></input>
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">{% trans "邮件内容" %}</label>
+                                <textarea rows="12" class="form-control">
+                                {% trans "
+                                1.此活动仅限于2015.03.12—2015.03.31期间，所有囤油兑付成功的囤油宝用户， 享受每升0.6元囤油兑付补贴；
+                                2.囤油宝每两次线上兑付时间间隔须>7日，每次线上兑付加油量须≤50升，参与活动的用户兑付每升补贴0.6元；
+                                3.囤油宝用户在线兑付后，加油补贴款会同用户所兑付油量的油款一起汇入用户绑定的银行卡内）；
+                                4.囤油宝有权取消、终止、修改或暂停本活动，囤油网对本活动拥有最终解释权。" %}
+                                </textarea>
+                            </div>
+                            <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <button class="btn btn-default" id="launch_ok" >{% trans "确认" %}</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 效果预测模态框 -->
+    <div class="modal fade" id="ConvertRateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                    data-dismiss="modal" aria-hidden="true">
+                    &times;
+                    </button>
+                    <h4>{% trans "活动效果预测" %}</h4>
+                </div>
+
+                <div class="modal-body" id="big_image_body">
+                    <div style="width:600px;height:500px;">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <h4>{% trans "请输入转化率" %}</h4>
+                            </div>
+                            <div class="col-lg-3">
+                                <input type="text" class="form-control" id="sale_rate" value="" placeholder="转化率" />
+                            </div>
+                            <div class="col-lg-3">
+                                <button class="btn btn-default" id="cal_forcase_sale_value">{% trans "确定" %}</button>
+                            </div>
+                        </div>
+                        <div style="margin-top:20px;display:none;" id="the_sale_forcase">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table border-table" contenteditable="false">
+                                        <thead>
+                                        </thead>
+                                        <tbody id="nonfuel_survey">
+                                            <tr>
+                                                <td>{% trans "总体加油量" %}</td>
+                                                <td><h4 id="pump_amount"></h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>{% trans "总体销售额" %}</td>
+                                                <td><h4 id="total_sale_value"></h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>{% trans "非油品销售额" %}</td>
+                                                <td><h4 id="nonfuel_sale_value"></h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>{% trans "对油站运营效率贡献" %}</td>
+                                                <td><h4 id="efficiency_value"></h4></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <p id="message" style="display:none;">{{message}}</p>
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_promotion_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+<script>
+$(function(){
+    //选择优惠商品的类型
+    $("#promotion_type").change(function(){
+            promotion_type = $("#promotion_type").val();
+            if(promotion_type == ""){
+                $("#alert_modal_body").html("请选择活动类型！");
+                $("#alert_modal").modal("show");
+                return
+            }
+            $.get("/gcustomer/ajax/get_promotion_goods_map/",{"promotion_type":promotion_type},
+                    function(data){
+                            if(data.ret != '0001'){
+                                $("#alert_modal_body").html(data.info);
+                                $("#alert_modal").modal("show");
+                                return
+                            }
+                            $("#promotion_goods_map").empty()
+                            $("#promotion_goods_map").append("<option name='promotion_goods_map' value=''>请选择关联商品</option>")
+                            $(data.goods_list).forEach(function(obj){
+                                    $("#promotion_goods_map").append(String.format(''+
+                                            '<option name="promotion_goods_map" value="{1}">{0}</option>'+
+                                        '',obj.name,obj.id))
+                            })
+
+                },"json");
+                $("#promotion_goods_map").show();
+    });
+
+    //获取目标用户群
+    $.get("/gcustomer/ajax/get_target_audience/", {}, function (data) {
+            if(data.ret == '0001'){
+                $("#target_audience").empty();
+                $("#target_audience").append('<option name="target_audience" value="">请选择目标用户群</option>');
+                $(data.obj).each(function () {
+                    $("#target_audience").append(String.format(''+
+                            '<option name="target_audience" value="{1}">{0}</option>'+
+                            '', this.group_name,this.id))
+                })
+            }
+            else {
+                $("#alert_modal_body").html("error!");
+                $("#alert_modal").modal("show");
+            }
+        }, 'json');
+
+    //添加活动关联商品
+    $("#promotion_goods_map").on("change",function(){
+
+            var promotion_type = $("#promotion_type").val()
+            var promotion_type_name = ''
+            if (promotion_type == "0") {
+                    promotion_type_name = $("#promotion_type").find("option[value='0']").text().trim()
+            }
+            else if (promotion_type == "1"){
+                promotion_type_name = $("#promotion_type").find("option[value='1']").text().trim()
+            }
+            else if(promotion_type == '2'){
+                promotion_type_name = $("#promotion_type").find("option[value='2']").text().trim()
+            }
+            //当前该类型已添加的商品
+            var has_add_promotion_goods = $("#add_promotion_goods_map").find("span")
+            var has_add_promotion_goods_values = []
+            $(has_add_promotion_goods).each(function(){
+                if($(this).parent().text().split(":")[0].trim() == promotion_type_name){
+                    has_add_promotion_goods_values.push($(this).attr('name'))
+                }
+            })
+            //添加新的商品
+            var promotion_goods_map_value = $("#promotion_goods_map").val()
+            if(promotion_goods_map_value == ''){
+                $("#alert_modal_body").html("请选择商品");
+                $("#alert_modal").modal("show");
+                return
+            }
+            //如果已添加则不再添加
+            for(var i = 0,len = has_add_promotion_goods_values.length;i< len ;i++){
+                    if(has_add_promotion_goods_values[i] == promotion_goods_map_value){
+                        return
+                    }
+            }
+            promotion_goods_map_name = $("#promotion_goods_map").find("option[value="+String(promotion_goods_map_value)+"]").text().trim()
+            $("#add_promotion_goods_map").append(String.format('<button type="button" class="btn btn-default btn-sm remove">' +
+                '<span class="glyphicon glyphicon-remove-circle" name={2}></span> {0}:{1}' +
+                '</button>', promotion_type_name,promotion_goods_map_name, promotion_goods_map_value))
+
+
+             $('button.remove').on('click', function (e) {
+                    if ($(this).attr("name") == "age") {
+                        $("input[name='start_age']").val("");
+                        $("input[name='end_age']").val("");
+                    }
+                    $(this).remove()
+            })
+    })
+})
+</script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block contribution_nav %}
+<li class="nav-active"><a href="/gcustomer/contribution/">{% trans "价值贡献" %}</a></li>
+{% endblock %}
+
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+    <div class="form-inline" style="padding-bottom: 15px;">
+        <div class="form-group">
+            <input type="text"  style="width: 300px;" class="form-control" id="exampleInputName2" value="15996458299" placeholder = "15996458299"/>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default" id ="contribution_search">{% trans "查询" %}</button>
+
+    <div id="the_contribution_rank" style="display:none;">
+        <h4>{% trans "贡献排名" %}</h4>
+        <table class="table border-table" contenteditable="false" >
+            <thead>
+                <tr class="success">
+                    <th>{% trans "编号" %}</th>
+                    <th>{% trans "贡献类型" %}</th>
+                    <th>{% trans "排名" %}</th>
+                </tr>
+            </thead>
+            <tbody id="contribution_rank">
+            </tbody>
+        </table>
+    </div>
+   <!-- <h4>价值贡献</h4> -->
+    <div id="contribution"></div>
+</div>
+{% endblock %}
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"><>
+<script>
+/*$(function () {
+    $('#contribution').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: '价值贡献百分比'
+        },
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'value contribution',
+            data: [
+                ['油品消费',   35.0],
+                ['非油品消费',       16.0],
+                {
+                    name: '活动参与',
+                    y: 25,
+                    sliced: true,
+                    selected: true
+                },
+                ['积分', 24.0],
+            ]
+        }]
+    });
+});*/
+        </script>
+{% endblock %}

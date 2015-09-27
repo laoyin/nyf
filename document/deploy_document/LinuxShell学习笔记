@@ -1,0 +1,21 @@
+Linux Shell 学习不笔记
+
+1.如何从普通用户切换为root用户
+$ sudo su
+[sudo] password for nyf: 
+
+2.命令行下用户管理
+新建用户: $ useradd newUserName
+          $ passwd newUserName 
+新建组:$ groupadd groupName
+3.新建用户同时增加到工作组: $ useradd -g groupName userName
+4.给已有的用户增加工作组
+$ usermod -G groupname userName
+或:gpasswd -a userName groupName
+5.临时关闭用户:将 /etc/shadow 文件中属于该用户的字段的第二个改为*
+或者使用命令:passwd username -l
+重新释放:passwd username -u
+6.永久删除用户:userdel userName
+              groupdel groupName
+7.从组中删除用户:编辑 /etc/group文件或使用命令 $ gpasswd -d userName groupName 
+8.显示用户信息:id userName或查看/etc/passwd文件

@@ -1,0 +1,188 @@
+{%load i18n%}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="filter_user_type" content="{{filter_user_type}}" >
+    <meta name="url_prefix" content="{{settings.GFLUX_URL_PREFIX}}" >
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>{{ site.title }}</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+    <style>
+     td {text-align:center}
+     th {text-align: center}
+    .input-check-message{
+         min-height: 20px;
+         font-size: 12px;
+         color: #fff;
+         background-color: rgba(241, 12, 49, 0.99);
+         margin-top: 5px;
+         border-radius: 3px;
+         line-height: 20px;
+         padding-left: 10px
+      }
+
+    .input-check-message::before{
+      content: "";
+      position: absolute;
+      bottom: 20px;
+      left: 10%;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid rgba(241, 12, 49, 0.99);
+
+    }
+  </style>
+
+    {{ current_page.media_css }}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../s/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+
+    <![endif]-->
+  </head>
+ <body>
+  <!-- Navigation -->
+
+    <div class="container-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" target="_top" href="/{{ settings.GFLUX_URL_PREFIX }}" title="{{ site.title }}"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    {% for portal in site_portals %}
+                        <li {% if portal.uid == current_portal.uid %} class="active" {% endif %}>
+                            <a target="_top" value="{{ portal.url }}" id="head_tag" href="{{ portal.url }}">{{ portal.label }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:logout()">{% trans "退 出" %}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+        <!-- Sidebar -->
+            <div id="left_area" class="col-lg-2" style="margin-top: 10px">
+                <div class="row-fluid">
+                    {% block sidebar %}
+                            {% include "dash/includes/sidebar.html" %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div id="right_area" class="col-lg-10" style="margin-top: 10px;min-height:550px">
+                <div class="row">
+                  <table border="1" cellpadding="10" width="800" id="uploaded_table" class="table table-bordered">
+                      <tr class="active">
+                          <th style="text-align: center;">{% trans "文件名称" %}</th>
+                          <th style="text-align: center;">{% trans "上传时间" %}</th>
+                          <th style="text-align: center;">{% trans "上传者" %}</th>
+                          <th style="text-align: center;">{% trans "操作" %}</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 col-md-offset-10 ">
+            <button type="button" class="btn btn-primary btn-lg" onclick="showDataModel();">{% trans "数据导入" %}</button>
+          </div> -->
+
+            <!-- Foot -->
+
+            {% include "dash/includes/foot.html" %}
+
+            <!-- End Foot -->
+        </div>
+
+
+
+    </div>
+
+
+
+<div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel2">{% trans "数据导入" %}</h4>
+      </div>
+      <div class="modal-body">
+        <div >
+          <select id="select_all_file" class="select_all_file_type" style="float:left;height:27px;border:none;outline:1px solid #fff;font-size:12px;width:120px;" name="" id="">
+
+          </select>
+        </div>
+        <div >
+          <select id="select_card_file" class="select_card_file_type" style="float:left;height:27px;border:none;outline:1px solid #fff;font-size:12px;width:120px;" name="" id="">
+
+          </select>
+        </div>
+        <div >
+          <select id="select_location" class="select_location_type" style="float:left;height:27px;border:none;outline:1px solid #fff;font-size:12px;width:120px;" name="" id="">
+            <option value="-1" selected="">{% trans "请选择区域" %}</option>
+          </select>
+        </div>
+        <div >
+          <select id="select_site" class="select_site_type" style="float:left;height:27px;border:none;outline:1px solid #fff;font-size:12px;width:120px;" name="" id="">
+              <option value="-1" selected="">{% trans "请选择加油站" %}</option>
+          </select>
+        </div>
+        <br>
+        <div class="add_new_site" style="display:none;">
+            <h4 style="padding: 10px 0px;border-bottom: 1px solid #dddddd">{% trans "新增加油站" %}</h4>
+            <div style="width: 260px;margin: 10px 0px">
+                <div style="position:relative">
+                    <label>{% trans "站点代码:" %}</label><input class="form-control input-sm" placeholder="BJ_HD_SD" id="add_site_name" type="text"  onblur="checkStationUnique();">
+                    <p class="input-check-message" id="input-check-site-message" style="display: none">{"% trans "站点已存在！" %"}</p>
+                </div>
+                <div>
+                    <label>{% trans "站点名称:" %}</label><input class="form-control input-sm" placeholder={% trans "上地加油站" %} id="add_site_description" type="text">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" onclick="addSite()">{% trans "确定" %}</button>
+            <button type="button" class="btn btn-default btn-sm" onclick="hideSite()">{% trans "取消" %}</button>
+        </div>
+        <br>
+        <div class="add_new_location"  style="display:none;">
+          <h4 style="padding: 10px 0px;border-bottom: 1px solid #dddddd">{% trans "新增地区" %}</h4>
+            <div style="width: 260px;margin: 10px 0px">
+                <div style="position:relative">
+                    <label>{% trans "地区代码:" %}</label><input class="form-control input-sm" placeholder="CN_BJ" id="add_location_name" type="text" onblur="checkLocationUnique();">
+                    <p class="input-check-message" id="input-check-location-message" style="display: none">{% trans "地区已存在！" %}</p>
+                </div>
+                <div>
+                    <label>{% trans "地区名称:" %}</label><input class="form-control input-sm" placeholder={% trans "北京" %} id="add_location_description" type="text">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" onclick="addLocation()">{% trans "确定" %}</button>
+            <button type="button" class="btn btn-default btn-sm" onclick="hideLocation()">{% trans "取消" %}</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "取消" %}</button>
+        <button type="button" class="btn btn-primary" onclick="importData()">{% trans "导入" %}</button>
+      </div>
+    </div>
+  </div>
+    </div>
+
+
+    <!-- JavaScripts
+    ================================================== -->
+    {{ current_page.media_js }}
+
+    <script>
+        window.all_locations=$.parseJSON('{{all_locations|escapejs}}')
+        window.all_stations=$.parseJSON('{{ all_stations|escapejs}}')
+    </script>
+  </body>
+</html>

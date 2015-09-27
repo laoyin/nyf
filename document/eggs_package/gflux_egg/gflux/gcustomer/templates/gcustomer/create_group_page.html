@@ -1,0 +1,180 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block create_group_nav %}
+<li class="nav-active"><a href="/gcustomer/create_group">{% trans "新建客户群" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding: 20px">
+    <h4>{% trans "新建客户群" %}</h4>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "客户群名称" %}</label>
+                        <input type="text" class="form-control" id="group_name" placeholder="{% trans "都市白领" %}" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{% trans "客户群范围" %}</label>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select id="shengcode" class="form-control">
+                                    <option selected value="">{% trans "请选择省份" %}</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select id="shicode" class="form-control">
+                                    <option selected value="">{% trans "请选择市" %}</option>
+                                </select>
+                            </div>
+                            <div class ="col-lg-4">
+                                <select id="xiancode" class="form-control">
+                                    <option selected value="">{% trans "请选择区/县" %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>{% trans "添加基本属性" %}</label>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select class="form-control" name="base_characteristic" >
+                                    <option value="">{% trans "请选择基本属性" %}</option>
+                                    <option value="sex">{% trans "性别" %}</option>
+                                    <option value="age">{% trans "年龄" %}</option>
+                                    <option value="occupation">{% trans "职业" %}</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="add_base_characteristics">
+                    </div>
+
+
+                    <div id="customer_sex" style="display:none">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">{% trans "性别" %}</label>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="radio">
+                                       <label name='sex'>
+                                            <input type="radio" name="optionsRadios"  value="男">
+                                            {% trans "男" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="radio">
+                                        <label name='sex'>
+                                            <input type="radio" name="optionsRadios"  value="女">
+                                            {% trans "女" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                     <button class="btn" type="button" onclick="add_base_characteristic()">{% trans "确定" %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="customer_age" style="display:none">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">{% trans "年龄范围" %}</label>
+                            <div class="row">
+
+                                <div style='float:left;margin-left:15px;'>
+                                    <label >
+                                        {% trans "起始年龄" %}
+                                    </label>
+                                    <input type="text" name="start_age"  value="" name='start'>
+                                </div>
+
+                                <div style='float:left;margin-left:15px;'>
+                                    <label>
+                                        {% trans "截止年龄" %}
+                                    </label>
+                                    <input type="text" name="end_age" id="optionsRadios2" value="" name='end'>
+                                </div>
+
+                                <div>
+                                        <button class="btn" type="button" onclick="add_base_characteristic()" style="margin-left:15px;">{% trans "确定" %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="customer_occupation" style="display:none">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">{%trans "职业"%}</label>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="radio">
+                                       <label name='occupation'>
+                                            <input type="radio" name="optionsRadios"  value="司机">
+                                            {% trans "司机" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="radio">
+                                        <label name='occupation'>
+                                            <input type="radio" name="optionsRadios"  value="学生">
+                                            {% trans "学生" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="radio">
+                                        <label name='occupation'>
+                                            <input type="radio" name="optionsRadios"  value="教师">
+                                            {% trans "教师" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div style='float:left;'>
+                                    <div class="radio">
+                                        <label name='occupation'>
+                                            <input type="radio" name="optionsRadios"  value="其他">
+                                            {% trans "其他" %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div style='float:left;margin-left:15px;'> <button class="btn" type="button" onclick="add_base_characteristic()">{% trans "确定" %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <div class="form-group">
+                        <label>{% trans "添加行为特征" %}</label>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <select class="form-control" name="behavior_characteristic" >
+                                    <option value="">{% trans "请选择行为特征" %}</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3" id="the_behavior_characteristic_choose" style="display:none;">
+                                <select class="form-control" name="behavior_choose" >
+                                   <option value="">{% trans "请选择" %}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="add_behavior_characteristics">
+                    </div>
+                    <div class="form-group" style="margin-top:40px;">
+                        <label>{% trans "群描述" %}</label>
+                        <textarea rows="4" placeholder="{% trans "群描述信息" %}" id="description" class="form-control"></textarea>
+                    </div>
+                    <button onclick="create_audience()" class="btn btn-info">{% trans "创建群" %}</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{
+  "name": "message_server",
+  "version": "1.0.0",
+  "description": "This is a new message server!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "binary": "^0.3.0",
+    "log4js": "^0.6.24",
+    "node-gearman": "^0.2.2",
+    "protobuf": "^0.11.0",
+    "redis": "^0.12.1",
+    "hiredis":"~0.3.0",
+    "colors":"~1.1.0",
+    "mysql":"~2.6.0",
+    "socket.io":"~1.3.5",
+    "async":"~0.9.0",
+    "sha1":"~1.1.0"
+  },
+  "author": "Vaster Chen",
+  "license": "ISC"
+}

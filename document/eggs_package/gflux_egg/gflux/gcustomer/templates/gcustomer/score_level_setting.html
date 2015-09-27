@@ -1,0 +1,224 @@
+{% extends "gcustomer/gcustomer_score.html" %}
+{% load i18n%}
+{% block show_page_nav %}
+        <li class="nav-active"><a href="/gcustomer/score_level_setting/">{% trans "等级积分设置" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+	<!-- <h4>用户积分系数</h4> -->
+	<table class="table" contenteditable="false" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+	            <thead>
+	                <tr >
+	                    <th style="width:100px;">{% trans "用户等级" %}</th>
+	                    <th style="text-align:center;">{% trans "积分范围设置" %}</th>
+	                    <th>{% trans "积分系数设置" %}</th>
+	                    <th>{% trans "编辑" %}</th>
+	                </tr>
+	            </thead>
+	            <tbody id="level_score_info">
+
+	            </tbody>
+        </table>
+        <div class="row">
+	        <div class="col-lg-1">
+		        <input id="level_score_setting" class="form-control" type="button"  value="{% trans "提交" %}"
+		        "/>
+	        </div>
+        </div>
+
+</div>
+{% endblock %}
+
+{% block style_block %}
+<style>
+	input{
+		border-style:hidden;
+		background-color: aliceblue;
+		text-align:center;
+		width:60px;
+	}
+</style>
+{% endblock %}
+
+{% block script_block %}
+<script>
+$(function(){
+
+	//修改等级 积分系数
+	old_start = 0
+	old_end = 0
+	//get score level
+	$.get("/gcustomer/ajax/get_score_level_info/",{},function(data){
+		if(data.ret != "0001"){
+			$("#alert_modal_body").html(data.info);
+			$("#alert_modal").modal("show");
+		}
+		$("#level_score_info").append(String.format(''+
+			'<tr>'+
+		                	'<td>{0}星</td>'+
+		                	'<td style="text-align:center;" class="score-range score-first">'+
+		                		'<input type="text" value="{1}" placeholder="最大值" readonly="true" class="score-range-input">'+
+	                		'</td>'+
+		                	'<td class="score-ratio"><input type="text" value="{2}" readonly="true" class="score-ratio-input"></td>'+
+		                	'<td><button class="btn alter-score">修改</button></td>'+
+
+		                '</tr>',data.objs[0].level,data.objs[0].level_range,data.objs[0].score_ratio))
+		for(var i = 1,len = data.objs.length;i<len-1;i++){
+			$("#level_score_info").append(String.format(''+
+				'<tr>'+
+			                	'<td>{0}星</td>'+
+			            		'<td style="text-align:center;" class="score-range">'+
+			                		'<input type="text" value="{1}" placeholder="最小值" readonly="true"class="score-range-input">'+
+			                		'<input type="text" value="{2}" placeholder="最大值" readonly="true"class="score-range-input" style="margin-left: 10px">'+
+		                		'</td>'+
+			            		'<td class="score-ratio"><input type="text" value="{3}" readonly="true" class="score-ratio-input" ></td>'+
+			            		'<td><button class="btn alter-score">修改</button></td>'+
+			             '</tr>',data.objs[i].level,data.objs[i].level_range.split(":")[0],data.objs[i].level_range.split(":")[1],data.objs[i].score_ratio))
+		}
+		$("#level_score_info").append(String.format(''+
+			'<tr>'+
+		                	'<td>{0}星</td>'+
+		            		'<td style="text-align:center;" class="score-range score-end">'+
+		                		'<input type="text" value="{1}" placeholder="最小值"  readonly="true" class="score-range-input">'+
+	                		'</td>'+
+		            		'<td class="score-ratio"><input type="text" value="{2}" readonly="true" class="score-ratio-input"></td>'+
+		            		'<td><button class="btn alter-score">修改</button></td>'+
+		             '</tr>',data.objs[4].level,data.objs[4].level_range,data.objs[4].score_ratio))
+
+		// 修改等级 积分系数
+		$(".alter-score").on("click",function(){
+		var temp = false
+		var obj = $(this)
+		if(obj.html() !="确定"){
+			$($("button")).each(function(){
+			if($(this).html().trim() == "确定"){
+				$("#alert_modal_body").html("请先确定修改！");
+                $("#alert_modal").modal("show");
+				temp = true
+				return
+			}
+
+			})
+			if(temp){
+				return
+			}
+			old_start = Number($(obj.parent().parent().find("td.score-range").find("input")[0]).val())
+			old_end = Number($(obj.parent().parent().find("td.score-range").find("input")[1]).val())
+			obj.html("确定")
+			obj.parent().parent().find("td.score-range").find("input").removeAttr("readonly")
+			obj.parent().parent().find("td.score-ratio").find("input").removeAttr("readonly")
+
+		}
+		else{
+			obj.html("修改")
+			obj.parent().parent().find("td.score-range").find("input").attr("readonly","true")
+			obj.parent().parent().find("td.score-ratio").find("input").attr("readonly","true")
+
+			var next = obj.parent().parent().next()
+			var pre = obj.parent().parent().prev()
+
+			if (obj.parent().parent().find("input.score-range-input").length == 2){
+				var start = Number($(obj.parent().parent().find("td.score-range").find("input")[0]).val())
+				var end = Number($(obj.parent().parent().find("td.score-range").find("input")[1]).val())
+				if(start > end){
+					$("#alert_modal_body").html("设置错误");
+                    $("#alert_modal").modal("show");
+					$(obj.parent().parent().find("td.score-range").find("input")[0]).val(String(old_start))
+					$(obj.parent().parent().find("td.score-range").find("input")[1]).val(String(old_end))
+					return
+				}
+				var old_value = $(next.find("input.score-range-input")[0]).val()
+
+				if(pre.find("input.score-range-input").length == 1){
+					$(pre.find("input.score-range-input")[0]).val(String(start-1))
+				}
+				else{
+					$(pre.find("input.score-range-input")[1]).val(String(start-1))
+				}
+				$(next.find("input.score-range-input")[0]).val(String(end+1))
+				if(next.find("input.score-range-input").length == 2){
+					var new_value = Number($(next.find("input.score-range-input")[0]).val())
+					if(new_value > Number($(next.find("input.score-range-input")[1]).val())){
+						alert("设置错误")
+						$(obj.parent().parent().find("td.score-range").find("input")[0]).val(String(old_start))
+						$(obj.parent().parent().find("td.score-range").find("input")[1]).val(String(old_end))
+						$(next.find("input.score-range-input")[0]).val(old_value)
+						return
+					}
+				}
+
+
+
+
+
+			}
+			else{
+				if($(obj.parent().parent().find("td")[1]).hasClass("score-first")){
+					var next = obj.parent().parent().next()
+					var new_value = Number($(obj.parent().parent().find("td.score-range").find("input")[0]).val())
+					if(new_value >= Number($(next.find("input.score-range-input")[1]).val())){
+						$("#alert_modal_body").html("设置错误");
+                        $("#alert_modal").modal("show");
+						$(obj.parent().parent().find("td.score-range").find("input")[0]).val(String(old_start))
+						return
+					}
+					$(next.find("input.score-range-input")[0]).val(String(new_value+1))
+
+				}
+				else{
+					var pre = obj.parent().parent().prev()
+					var new_value = Number($(obj.parent().parent().find("td.score-range").find("input")[0]).val())
+					if(new_value <= Number($(pre.find("input.score-range-input")[0]).val())){
+						$("#alert_modal_body").html("设置错误");
+                        $("#alert_modal").modal("show");
+						$(obj.parent().parent().find("td.score-range").find("input")[0]).val(String(old_start))
+						return
+					}
+					$(pre.find("input.score-range-input")[1]).val(String(new_value-1))
+				}
+			}
+
+
+		}
+
+	});
+
+	},"json");
+
+
+
+
+
+	//提交
+       $("#level_score_setting").on("click",function(){
+	var score_range = $("input.score-range-input")
+	var score_ratio = $("input.score-ratio-input")
+	var score_range_list = []
+	var score_ratio_list = []
+	//等级范围
+	score_range_list[0] = $(score_range[0]).val().trim()
+	score_range_list[1] =$(score_range[1]).val().trim()+':'+$(score_range[2]).val().trim()
+	score_range_list[2] = $(score_range[3]).val().trim()+':'+ $(score_range[4]).val().trim()
+	score_range_list[3] = $(score_range[5]).val().trim()+':'+ $(score_range[6]).val().trim()
+	score_range_list[4] = $(score_range[7]).val().trim()
+	//积分系数
+	$(score_ratio).each(function(i){
+		score_ratio_list.push($(score_ratio[i]).val())
+	});
+
+	$.get("/gcustomer/ajax/alter_level_score_ratio/",
+		{"range_list":JSON.stringify(score_range_list),"ratio_list":JSON.stringify(score_ratio_list)},
+		function(data){
+			if(data.ret != '0001'){
+				$("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+			}
+			$("#alert_modal_body").html(data.info);
+			$("#alert_modal").modal("show");
+		},"json");
+
+        });
+});
+</script>
+{% endblock %}

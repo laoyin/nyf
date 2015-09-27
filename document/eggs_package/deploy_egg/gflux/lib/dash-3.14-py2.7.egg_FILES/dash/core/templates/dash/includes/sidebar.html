@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>{{ current_portal.label }}</h4>
+  </div>
+  <div id="sidebar" class="list-group">
+    {% for page_group in current_portal.page_groups %}
+      {% if page_group.label == None %}
+        {% for page in page_group %}
+          <div id="{{ page.uid }}">
+            <a href="{{ page.url }}" target="_top" data-parent="#sidebar" class="list-group-item {% if page.uid == current_page.uid %} active {% endif %}">
+              <i class="glyphicon {{page.icon}}"></i>
+              {{ page.label }}
+              {% if page.desc|length > 0 %}
+                <p class="list-group-item-text">{{ page.desc }}</p>
+              {% endif %}
+            </a>
+          </div>
+        {% endfor %}
+      {% elif page_group.pages|length > 0 %}
+        <a href="#{{ page_group.uid }}" data-parent="#sidebar" class="list-subgroup">
+           <b>{{ page_group.label }}</b>
+          <span class="badge bg_danger">{{ page_group.pages|length }}</span>
+        </a>                    
+        <div id="{{ page_group.uid }}">
+          {% for page in page_group %}
+            <a href="{{ page.url }}" target="_top" class="list-group-item {% if page.uid == current_page.uid %} active {% endif %}">                        
+              {{ page.label}}
+              {% if page.desc|length > 0 %}
+                <p class="list-group-item-text">{{ page.desc }}</p>
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>            

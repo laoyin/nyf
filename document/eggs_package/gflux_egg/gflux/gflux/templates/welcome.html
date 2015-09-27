@@ -1,0 +1,187 @@
+{% load i18n %}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="url_prefix" content="{{settings.GFLUX_URL_PREFIX}}" >
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>{{ site.title }}</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+
+    {{ current_page.media_css }}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../s/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <!-- Navigation -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-header">
+              <a class="navbar-brand" target="_top" href="/{{ settings.GFLUX_URL_PREFIX }}" title="{{ site.title }}"></a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                {% for portal in site_portals %}
+                  <li {% if portal.uid == current_portal.uid %} class="active" {% endif %}>
+                    <a target="_top" id="head_tag" value="{{ portal.url }}" href="{{ portal.url }}">{{ portal.label }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="javascript:logout()">{% trans "退 出" %}</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="container-fluid">
+          <div class="row-fluid">
+            <!-- Sidebar -->
+              <div class="col-lg-2">
+                  <div class="row-fluid" style="margin-top: 10px">
+                    {% block sidebar %}
+                        {% include "dash/includes/sidebar.html" %}
+                    {% endblock %}
+                  </div>
+              </div>
+              <!-- END Sidebar -->
+              <!-- Content -->
+              <div class="col-lg-10" style="margin-bottom: 30px;">
+  <h4 style="width: 90%;margin-top: 40px">{% trans "欢迎您,"%}<label>{{user_company}}</label>!</h4>
+
+<div style="border: 1px solid #cccccc;border-radius:4px;padding: 80px 0px;background-color: #f6f6f6;width: 90%;text-align: center">
+  <div style="
+    width: 50%;
+    float: left;
+    padding-left: 10%;
+">
+
+  <button type="button" class="btn btn-info" style="
+    font-size: 250%;background-color: #00a3d8
+"><a href="/gflux/upload_portal" style="
+    color: #ffffff;
+    text-decoration: none;
+">
+  {% trans "上传数据" %}</a>
+  </button>
+
+  <div class="last_user_actin_history" style="padding-top: 10px;">
+  <p>{% trans "上次上传站名:" %}<label id="last-upload-site">xxx</label></p>
+  <p>{% trans "上次上传数据时间:" %}<label id="last-upload-time">xxx</label></p>
+  </div>
+</div>
+  <div style="
+    width: 50%;
+    float: left;
+    padding-right: 10%;
+">
+
+
+  <div type="button" class="btn btn-info" style="
+    font-size: 250%;background-color: #00a3d8
+"><a href="/gflux/station_portal" style="
+    color: #ffffff;
+    text-decoration: none;
+">
+  {% trans "查看结果" %}</a>
+  </div>
+  <div class="last_user_actin_history" style="padding-top: 10px;">
+  <p>{% trans "上次查看站名:" %}<label id="last-look-site">xxx</label></p>
+  <p>{% trans "上次查看站点时间:" %}<label id="last-look-time">xxx</label></p>
+  </div>
+
+</div>
+  <div style="clear: both"></div>
+</div>
+
+<!--img -->
+<div style="clear: both;"></div>
+<div style="width: 90%;margin-top: 50px;font-size: 16px"><b>{% trans "快捷查看" %}</b></div>
+<div style="border: 1px solid #cccccc;border-radius:4px;background-color: #f6f6f6;width: 90%;padding: 80px 0px">
+  <div style="width: 50%;float: left;padding-left: 5px">
+<div style="font-size: 16px;">{% trans "单站查看" %}</div>
+<div><form class="dash-top-form form-inline" role="form" >
+
+                      <div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "站点" %}</button>
+                        <select id="signal-site-selector" class="dash-control form-control site-select" name="site" style="width:100px;">
+</select>
+                      </div>
+                      <button onclick="signalSiteLook()" type="button" class="dash-top-button btn btn-success" style="background-color: #00a3d8">{% trans "确认" %}</button>
+                    </form></div>
+</div>
+  <div style="width: 50%;float: left">
+<div style="font-size: 16px;">{% trans "指数查看" %}</div>
+<div><form class="dash-top-form form-inline" role="form" >
+
+                      <div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "区域" %}</button>
+                        <select id="signal-location-selector" class="dash-control form-control location-select" name="site" style="width:100px;">
+<option value="0">{% trans "全部" %}</option>
+</select>
+                      </div>
+                      <button onclick="signalLocationLook()" type="button" class="dash-top-button btn btn-success" style="background-color: #00a3d8">{% trans "确认" %}</button>
+                    </form></div>
+</div>
+<div style="clear: both"></div>
+
+<div style="font-size: 16px;padding-top: 50px;padding-left: 5px">{% trans "单站对比查看" %}</div>
+<div style="padding-left: 5px"><form class="dash-top-form form-inline" role="form" >
+
+                      <div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "站点" %}</button>
+                        <select id="vs-site-selector" class="dash-control form-control site-select" name="site" style="width:100px;">
+</select>
+                      </div>
+
+
+<div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "趋势类型" %}</button>
+                        <select class="dash-control form-control" id="id_type_obj" name="site" style="width:100px;">
+<option value="FUEL">{% trans "油品趋势" %}</option>
+<option value="NONE-FUEL">{% trans "非油品趋势" %}</option>
+</select>
+                      </div><div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default">{% trans "对比类型" %}</button>
+                        <select class="dash-control form-control" id="id_type_vs" name="site" style="width:100px;">
+<option value="HB">{% trans "环比" %}</option>
+<option value="TB">{% trans "同比" %}</option>
+</select>
+                      </div>
+
+<div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default" value="start_date">{% trans "开始" %}</button>
+            <input class="dash-control form-control" data-date-format="yyyy-mm-dd" data-provide="datepicker" id="id_start_date" name="start_date" style="width:100px;" type="text" value="2013-09-21">
+          </div><div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default" value="end_date">{% trans "结束" %}</button>
+            <input class="dash-control form-control" data-date-format="yyyy-mm-dd" data-provide="datepicker" id="id_end_date" name="end_date" style="width:100px;" type="text" value="2013-10-21">
+          </div>
+<button onclick="vsLook()" type="button" class="dash-top-button btn btn-success" style="background-color: #00a3d8">{% trans "确认" %}</button>
+                    </form></div>
+</div>
+
+              </div>
+            <!-- END Content -->
+          </div> <!-- /.row-fluid -->
+
+          <!-- Foot -->
+
+          {% include "dash/includes/foot.html" %}
+
+          <!-- End Foot -->
+
+        </div><!-- /.container-fluid -->
+      <!-- END Navigation -->
+        <!-- JavaScripts
+        ================================================== -->
+        {{ current_page.media_js }}
+        <script>
+            window.all_locations=$.parseJSON('{{all_locations|escapejs}}')
+            window.all_stations=$.parseJSON('{{all_stations|escapejs}}')
+        </script>
+  </body>
+</html>

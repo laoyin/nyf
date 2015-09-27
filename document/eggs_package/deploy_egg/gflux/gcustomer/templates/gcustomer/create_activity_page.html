@@ -1,0 +1,234 @@
+<!-- 新建活动页面-->
+{% load i18n %}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% csrf_token %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="url_prefix" content="{{settings.GCUSTOMER_URL_PREFIX}}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>Dash Analytics</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" type="text/css" media="all" rel="stylesheet"/>
+    <link href="{% static 'css/core.v0113.css' %}" type="text/css" media="all" rel="stylesheet"/>
+    <link href="{% static 'css/main_framework.v0113.css' %}" type="text/css" media="all" rel="stylesheet"/>
+    <link href="{% static 'css/welcome.v0113.css' %}" type="text/css" media="all" rel="stylesheet"/>
+    <link href="{% static 'bootstrap-datepicker/css/datepicker.css' %}" type="text/css" media="all" rel="stylesheet"/>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+    <style>
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        .left {
+            float: left;
+        }
+
+        #activityContent {
+            height: 600px;
+            width: 400px margin-top : 20 px;
+            background: #C0C0C0;
+            border: 1px solid #001;
+
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" target="_top" href="" title="{{settings.SITE_NAME}}"></a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+
+            <li class="active">
+                <a target="_top" id="head_tag" value="/gcustomer/population_protal" href="population_protal">{% trans "人群分析" %}</a>
+            </li>
+
+            <li>
+                <a target="_top" id="head_tag" value="/gcustomer/activity_portal" href="#">{% trans "营销活动" %}</a>
+            </li>
+
+            <li>
+                <a target="_top" id="head_tag" value="/gcustomer/purchase_portal" href="#">{% trans "推荐进货" %}</a>
+            </li>
+            <li class="dropdown pull-right">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{% trans "切换" %}</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">{% trans "产品1" %}</a>
+                    </li>
+                    <li>
+                        <a href="#">{% trans "产品2" %}</a>
+                    </li>
+                    <li>
+                        <a href="#">{% trans "产品3" %}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="dropdown" style="float:right">
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- EndNavigation -->
+<div class="container-fluid" style="margin-top:40px;">
+    <!-- Sidebar -->
+    <div class="row-fluid center">
+        <div class="span12">
+
+            <div class="span2" style="float:left;">
+                <ul class="nav nav-list well">
+                    <li class="nav-header">
+                        <h3>{% trans "人群分析" %}<h3>
+                    </li>
+                    <li>
+                        <a href="#" class="active">{% trans "客户概览" %}</a>
+                    </li>
+                    <li>
+                        <a href="#">{% trans "我来筛选" %}</a>
+                    </li>
+                    <li>
+                        <a href="#">{% trans "自定义客户" %}</a>
+                    </li>
+
+                    <li class="divider">
+                    </li>
+
+                    <li class="nav-header">
+                        <h3>{% trans "营销活动" %}<h3>
+                    </li>
+                    <li>
+                        <a href="create_new_activity">{% trans "新建活动" %}</a>
+                    </li>
+                    <li>
+                        <a href="#">{% trans "最近活动" %}</a>
+                    </li>
+
+                    <li>
+                        <a href="#">{% trans "历史活动" %}</a>
+                    </li>
+
+                    <li class="divider">
+                    </li>
+
+                    <li class="nav-header">
+                        <h3>{% trans "推荐进货" %]<h3>
+                    </li>
+                    <li>
+                        <a href="#">{% trans "平均加油间隔" %}</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+
+                    <li class="divider">
+                    </li>
+
+                </ul>
+            </div>
+            <!-- EndSidebar -->
+            <div class="span6" style="float:left;margin-left:40px;">
+                <!-- Context -->
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <form>
+                                <fieldset>
+                                    <legend>{% trans "新建活动" %}</legend>
+                                    <div>
+                                        <label>{% trans "活动类型：" %}</label>
+                                        <select name="cars">
+                                            <option value="volvo">{% trans "类型1" %}</option>
+                                            <option value="saab">{% trans "类型2" %}</option>
+                                            <option value="fiat">{% trans "类型3" %}</option>
+                                            <option value="audi">{% trans "类型4" %}</option>
+                                        </select>
+                                    </div>
+                                    <div class="span12 btn-group" style="margin-right: 2px;">
+                                        <label style="float:left;">{% trans "活动时间：" %}</label>
+                                        <button type="button" class="btn btn-default left" value=date>{% trans "起始日期" %}</button>
+                                        <input class="dash-control form-control left" data-date-format="yyyy-mm-dd"
+                                               data-provide="datepicker" id="id_date" name="date" style="width:100px;"
+                                               type="text" value="2015-01-30"/>
+                                        <button type="button" class="btn btn-default left" value=date>{% trans "结束日期" %}</button>
+                                        <input class="dash-control form-control left" data-date-format="yyyy-mm-dd"
+                                               data-provide="datepicker" id="id_date" name="date" style="width:100px;"
+                                               type="text" value="2015-02-30"/>
+
+                                        <div style="clear:both;"></div>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <div class="span12 btn-group">
+                                        <label style="float:left;">{% trans "活动内容：" %}</label>
+
+                                        <div id="activityContent">
+                                            <textarea name="yj" cols="100" rows="27">
+
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <button type="button" class="btn">{% trans "保存" %}</button>
+                                    <button type="button" class="btn">{% trans "取消" %}</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- EndContext -->
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div style="clear:both">
+    </div>
+    <div align="center">
+        <p class="graya3">Powered by:
+            <a href="https://www.zcdata.com.cn" target="_blank" class="graya3">
+                {% trans "北京志察数据科技有限公司" %}</a>. &nbsp; &nbsp;</p>
+        <!--
+                    <a href="http://www.miibeian.gov.cn/">京ICP备13026416号
+                    </a>  &nbsp; &nbsp; 京公网安备1101080212309号</p>
+        -->
+    </div>
+</div>
+<!-- /.container-fluid -->
+<!-- JavaScripts
+================================================== -->
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-migrate.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.blockUI.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/utils.v0113.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/underscore.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/core.v0113.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main_framework.v0113.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.cookie-1.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/welcome.v0113.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+<script>
+    window.all_locations = $.parseJSON('[{\u0022description\u0022: \u0022BJ\u0022, \u0022name\u0022: \u0022BJBJ\u0022, \u0022id\u0022: 1}, {\u0022description\u0022: \u0022NJNJ\u0022, \u0022name\u0022: \u0022NJ\u0022, \u0022id\u0022: 2}]')
+    window.all_stations = $.parseJSON('[{\u0022description\u0022: \u0022BJBJ\u0022, \u0022name\u0022: \u0022BJBJ\u0022}, {\u0022description\u0022: \u0022njstation\u0022, \u0022name\u0022: \u0022NJNJ\u0022}]')
+</script>
+</body>
+</html>
+

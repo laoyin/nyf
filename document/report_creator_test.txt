@@ -1,0 +1,2 @@
+from gflux.apps.station.report_class import *
+report = DailyFuelTypeReportCreator()

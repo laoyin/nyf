@@ -1,0 +1,48 @@
+1. 支付宝
+
+<QueryDict: {u'seller_email': [u'mengtao@marketcloud.com.cn'], u'sign': [u'nyjh6TmAYiBWEsMLwnV3WzgVMVwy3Os5RA/5MS8S28lGP2dW7Pd5e/FCD3C8OG6YwCL79hsUxlQ8fNscc23cusnLpkpdb2g4ZFxfA0jMaeO58FCZcP5vm9zPD8YbFNh4PjYn+3ZX5FsS2MjIlTtdHb0MpaQmCcYvrjMmHsFb/9k='], u'subject': [u'\u9648\u6dd1\u5764\u6d4b\u8bd5'], u'is_total_fee_adjust': [u'Y'], u'gmt_create': [u'2015-09-25 14:31:19'], u'out_trade_no': [u'SPK54OX2LI74MEX'], u'sign_type': [u'RSA'], u'body': [u'\u6211\u5546\u54c1\u63cf\u8ff0'], u'price': [u'0.01'], u'buyer_email': [u'18604516215'], u'discount': [u'0.00'], u'trade_status': [u'WAIT_BUYER_PAY'], u'trade_no': [u'2015092500001000560061220160'], u'seller_id': [u'2088911851004081'], u'use_coupon': [u'N'], u'payment_type': [u'1'], u'total_fee': [u'0.01'], u'notify_time': [u'2015-09-25 14:31:19'], u'quantity': [u'1'], u'notify_id': [u'7d90e49509207bc79c9e55275fe0887054'], u'notify_type': [u'trade_status_sync'], u'buyer_id': [u'2088402396613565']}>
+
+
+#支付宝回调
+def notify_view(request):
+    context = Context({'text':"success"})
+    return render(request,"notify_url.html",context)
+
+
+
+url(r'^%snotify_url.html$'% settings.GFLUX_URL_PREFIX,"notify_view"),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 
+
+
+{'openid': 'otHuQs-QbyCVco_lMkRHk_YWJuNU', 'trade_type': 'APP', 'cash_fee': '1', 'trade_state': 'SUCCESS', 'fee_type': 'CNY', 'is_subscribe': 'N', 'nonce_str': 'ojuYIvz892s0gmLY', 'device_info': 'APP-001', 'return_msg': 'OK', 'return_code': 'SUCCESS', 'bank_type': 'CFT', 'attach': '7aad3eea3fcd285155c28f14cc9976ad9001203f;15330261075', 'mch_id': '1252933401', 'out_trade_no': '1442823434', 'transaction_id': '1004240761201509210947134426', 'total_fee': '1', 'appid': 'wxbc8b2ea585528c56', 'sign': 'E7498EB99FD26A693740CEEB80836EDD', 'time_end': '20150921161823', 'result_code': 'SUCCESS'}
+
+{'openid': 'otHuQs6uaIam7P25vijYJ5nVj3Fg', 'trade_type': 'APP', 'trade_state': 'SUCCESS', 'cash_fee': '1', 'is_subscribe': 'N', 'nonce_str': 'nf9XQ1TpXfGC7JkZ', 'return_code': 'SUCCESS', 'return_msg': 'OK', 'sign': '0EC4BC5E142B99FA714AA4ED44FA8DEC', 'bank_type': 'CFT', 'attach': None, 'mch_id': '1252933401', 'out_trade_no': '021506116d4ffa2f1fb0a144375126f8', 'transaction_id': '1007410761201509250990516787', 'total_fee': '1', 'appid': 'wxbc8b2ea585528c56', 'fee_type': 'CNY', 'time_end': '20150925173707', 'result_code': 'SUCCESS'}
+
+
+
+48f0e3f88d88cb8a365d9d110e38444402e1319f

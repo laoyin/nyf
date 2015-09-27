@@ -1,0 +1,305 @@
+{% extends "gcustomer/gcustomer_order_page.html" %}
+{% load i18n %}
+{% block my_order_list_nav %}
+        <li class="nav-active"><a href="/gcustomer/my_order_list/">{% trans "订单流水" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="col-lg-12">
+	<div class="row">
+		<div class="col-lg-2">
+			<div>
+		                    <input class="form-control"  id="search_order_string" placeholder="{% trans "请输入虚拟卡号" %}" value="" style="width:125px;"></input>
+			</div>
+		</div>
+		<div class="col-lg-1">
+			<button id="search_order_by_vcard_id" class="btn btn-default" type="button">{% trans "查询" %}</button>
+		</div>
+		
+	</div>
+	
+</div>
+
+<div class="col-lg-12" style="margin-top:20px;">
+	<ul class="nav nav-tabs">
+		<li role="presentation" class="order_type_option active" type="order_complete"><a href="#">{% trans "已完成交易" %}</a></li>
+		<li role="presentation" class="order_type_option" type="order_pick_up"><a href="#">{% trans "待取货交易" %}</a></li>
+		<li role="presentation" class="order_type_option" type="order_has_purchase"><a href="#">{% trans "已预订交易" %}</a></li>
+		<li role="presentation" class="order_type_option" type="order_wait_refund"><a href="#">{% trans "等待退款交易" %}</a></li>
+		<li role="presentation" class="order_type_option" type="order_refund_complete"><a href="#">{% trans "退款完成交易" %}</a></li>
+		<li role="presentation" class="order_type_option" type="order_wait_purchase"><a href="#">{% trans "待支付交易" %}</a></li>
+		<li role="presentation" class="order_type_option" type="order_recharge" style="display:none;"><a href="#">{% trans "充值交易" %}</a></li>
+	</ul>
+</div>
+<div class="col-lg-12">
+	<table class="table">
+<!--  order-complete  order-pick-up order-has-purchase order-wait-refund 
+	order-refund-complete  order-wait-purchase order-recharge  -->
+		<thead>
+		    <tr>
+			<th class="order_list_th order-complete order-pick-up order-has-purchase order-wait-refund order-refund-complete order-wait-purchase" style="display:none;width:32%;" id="order_id">{% trans "订单号" %}</th>
+			<th class="order_list_th order-complete order-pick-up order-has-purchase order-wait-refund order-refund-complete order-wait-purchase" style="display:none;width:15%;" id="order_item_name">{% trans "商品名" %}</th>
+			<th class="order_list_th order-complete order-pick-up order-has-purchase order-wait-refund order-refund-complete order-wait-purchase" style="display:none;width:9%;" id="order_item_name">{% trans "移动端用户" %}</th>
+			<th class="order_list_th order-complete order-pick-up order-has-purchase order-wait-refund order-refund-complete order-wait-purchase" style="display:none;width:15%;" id="order_address">{% trans "地址" %}</th>
+			<th class="order_list_th order-complete order-pick-up order-has-purchase order-wait-refund order-refund-complete order-wait-purchase" style="display:none;width:9%;" id="order_create_time">{% trans "下单日期" %}</th>
+			<th class="order_list_th order-complete order-pick-up order-wait-refund order-refund-complete" style="display:none;width:9%;" id="order_purchase_time">{% trans "付款日期" %}</th>
+			<th class="order_list_th " style="display:none;width:10%;" id="order_complete_time">{% trans "订单完成日期" %}</th>
+			<th class="order_list_th" style="display:none;width:9%;" id="order_import_time">{% trans "订单录入日期" %}</th>
+			<th class="order_list_th order-complete order-pick-up order-has-purchase order-wait-refund order-refund-complete order-wait-purchase" style="display:none;" id="order_current_status">{% trans "当前状态" %}</th>
+		    </tr>
+		</thead>
+		<tbody class="order_list_body" id="order_list_body_1" style="display:none;"></tbody>
+		<tbody class="order_list_body" id="order_list_body_2" style="display:none;"></tbody>
+		<tbody class="order_list_body" id="order_list_body_3" style="display:none;"></tbody>
+		<tbody class="order_list_body" id="order_list_body_4" style="display:none;"></tbody>
+		<tbody class="order_list_body" id="order_list_body_5" style="display:none;"></tbody>
+		<tbody class="order_list_body" id="order_list_body_6" style="display:none;"></tbody>
+	</table>
+
+</div>
+
+{% endblock %}
+{% block script_block %}
+<script type="text/javascript">
+	$(function(){
+		//缓冲提示
+        		$.blockUI({"message":"正在加载..."});
+
+		$(".order-complete").show();
+		$("#order_list_body_1").show()
+		//获取所有订单
+		$.get("/gcustomer/ajax/get_comp_order_list/",function(data){
+			if(data.ret != '0001'){
+				$("#alert_modal_body").html("没有订单");
+				return ;
+			}
+			//渲染数据
+			order_list = data.order_list;
+			show_order_list_info(order_list);
+			//撤销缓存提示效果
+			$.blockUI({"message":"加载成功"});
+            			$.unblockUI();
+		},"json");
+		
+	});
+	//控制显示
+	 /*order-complete  order-pick-up order-has-purchase order-wait-refund 
+	order-refund-complete  order-wait-purchase order-recharge  */
+	$(".order_type_option").on("click",function(){
+		order_type_option = $(this)
+		if(order_type_option.attr("type") == "order_complete"){
+
+			$(".order_type_option").removeClass("active");
+			$(".order_type_option[type='order_complete']").addClass("active");
+
+			$(".order_list_th").hide();
+			$(".order-complete").show();
+
+			$(".order_list_body").hide()
+			$("#order_list_body_1").show()
+
+		}else if(order_type_option.attr("type") == "order_pick_up"){
+
+			$(".order_type_option").removeClass("active");
+			$(".order_type_option[type='order_pick_up']").addClass("active");
+
+			$(".order_list_th").hide();
+			$(".order-pick-up").show();
+
+			$(".order_list_body").hide()
+			$("#order_list_body_2").show()
+
+		}else if(order_type_option.attr("type") == "order_has_purchase"){
+
+			$(".order_type_option").removeClass("active");
+			$(".order_type_option[type='order_has_purchase']").addClass("active");
+
+			$(".order_list_th").hide();
+			$(".order-has-purchase").show();
+
+			$(".order_list_body").hide()
+			$("#order_list_body_3").show()
+
+		}else if(order_type_option.attr("type") == "order_wait_refund"){
+
+			$(".order_type_option").removeClass("active");
+			$(".order_type_option[type='order_wait_refund']").addClass("active");
+
+			$(".order_list_th").hide();
+			$(".order-wait-refund").show();
+
+			$(".order_list_body").hide()
+			$("#order_list_body_4").show()
+
+		}else if(order_type_option.attr("type") == "order_refund_complete"){
+
+			$(".order_type_option").removeClass("active");
+			$(".order_type_option[type='order_refund_complete']").addClass("active");
+
+			$(".order_list_th").hide();
+			$(".order-refund-complete").show();
+
+			$(".order_list_body").hide()
+			$("#order_list_body_5").show()
+
+		}else if(order_type_option.attr("type") == "order_wait_purchase"){
+
+			$(".order_type_option").removeClass("active");
+			$(".order_type_option[type='order_wait_purchase']").addClass("active");
+
+			$(".order_list_th").hide();
+			$(".order-wait-purchase").show();
+
+			$(".order_list_body").hide()
+			$("#order_list_body_6").show()
+
+		}
+	});
+	//根据虚拟卡号查询订单列表
+	$("#search_order_by_vcard_id").on("click",function(){
+		//缓冲提示
+        		$.blockUI({"message":"正在加载..."});
+        		//虚拟卡号
+		var vcard_id = $("#search_order_string").val();
+		if(vcard_id == ""){
+			$("#alert_modal_body").html("请输入虚拟卡号!");
+			$("#alert_modal").modal("show");
+			//撤销缓存提示效果
+			$.blockUI({"message":"加载成功"});
+            			$.unblockUI();
+			return;
+		}
+		var dict = {"vcard_id":vcard_id}
+		$.get("/gcustomer/ajax/search_order_by_vcard_id/",dict,
+			function(data){
+				if(data.ret != '0001'){
+					$("#alert_modal_body").html("查询失败!");
+					$("#alert_modal").modal("show");
+					//撤销缓存提示效果
+					$.blockUI({"message":"加载成功"});
+		            			$.unblockUI();
+					return
+				}
+				//渲染数据
+				order_list = data.order_list;
+				show_order_list_info(order_list);
+				//撤销缓存提示效果
+				$.blockUI({"message":"加载成功"});
+	            			$.unblockUI();
+			},"json")
+	});
+
+//渲染订单数据
+function show_order_list_info(order_list){
+	$(".order_list_body").empty();
+	//订单分类
+	//订单类型 0:充值  1:购买油品 2:购买非油品 3:购买车后服务 4:积分商城
+	//订单状态  0 代表订单生成  1代表支付完成 2代表交易完成 3代表交易被收银员录入 
+	//4商品预订状态  5 申请退款完成状态 6 工作人员完成退款  7 订单已过期
+	for(var i = 0,len = order_list.length;i<len;i++){
+		var order = order_list[i]
+		if(order.status_flag == 2){
+
+
+			
+
+			$("#order_list_body_1").append(String.format(''+
+				'<tr>'+
+				    '<td>{0}</td>'+
+				    '<td>{1}</td>'+
+				    '<td>{7}</td>'+
+				    '<td>{6}</td>'+
+				    '<td>{2}</td>'+
+				    '<td>{3}</td>'+
+				    '<td>{5}</td>'+
+				'</tr>'
+			,order.sha1,order.good_name,order.time,order.time,'',order.status,order.station_name,order.vcard_id));
+
+
+		}else if(order.status_flag == 1){
+
+
+			
+
+			$("#order_list_body_2").append(String.format(''+
+				'<tr>'+
+				    '<td>{0}</td>'+
+				    '<td>{1}</td>'+
+				    '<td>{6}</td>'+
+				    '<td>{5}</td>'+
+				    '<td>{2}</td>'+
+				    '<td>{3}</td>'+
+				    '<td>{4}</td>'+
+				'</tr>'
+			,order.sha1,order.good_name,order.time,order.time,order.status,order.station_name,order.vcard_id));
+
+
+		}else if(order.status_flag == 4){
+
+			
+
+			$("#order_list_body_3").append(String.format(''+
+				'<tr>'+
+				    '<td>{0}</td>'+
+				    '<td>{1}</td>'+
+				    '<td>{5}</td>'+
+				    '<td>{4}</td>'+
+				    '<td>{2}</td>'+
+				    '<td>{3}</td>'+
+				'</tr>'
+			,order.sha1,order.good_name,order.time,order.status,order.station_name,order.vcard_id));
+
+
+		}else if(order.status_flag == 5){
+			
+			
+
+			$("#order_list_body_4").append(String.format(''+
+				'<tr>'+
+				    '<td>{0}</td>'+
+				    '<td>{1}</td>'+
+				    '<td>{6}</td>'+
+				    '<td>{5}</td>'+
+				    '<td>{2}</td>'+
+				    '<td>{3}</td>'+
+				    '<td>{4}</td>'+
+				'</tr>'
+			,order.sha1,order.good_name,order.time,order.time,order.status,order.station_name,order.vcard_id));
+
+		}else if(order.status_flag == 6){
+			
+			
+
+			$("#order_list_body_5").append(String.format(''+
+				'<tr>'+
+				    '<td>{0}</td>'+
+				    '<td>{1}</td>'+
+				    '<td>{6}</td>'+
+				    '<td>{5}</td>'+
+				    '<td>{2}</td>'+
+				    '<td>{3}</td>'+
+				    '<td>{4}</td>'+
+				'</tr>'
+			,order.sha1,order.good_name,order.time,order.time,order.status,order.station_name,order.vcard_id));
+
+		}else if(order.status_flag == 0){
+
+			
+
+			$("#order_list_body_6").append(String.format(''+
+				'<tr>'+
+				    '<td>{0}</td>'+
+				    '<td>{1}</td>'+
+				    '<td>{5}</td>'+
+				    '<td>{4}</td>'+
+				    '<td>{2}</td>'+
+				    '<td>{3}</td>'+
+				'</tr>'
+			,order.sha1,order.good_name,order.time,order.status,order.station_name,order.vcard_id));
+
+		}
+	};
+};
+
+</script>
+{% endblock %}

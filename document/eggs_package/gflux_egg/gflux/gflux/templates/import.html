@@ -1,0 +1,209 @@
+{% load i18n %}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="url_prefix" content="{{settings.GFLUX_URL_PREFIX}}" >
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>{{ site.title }}</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+    {{ current_page.media_css }}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="{% static 'js/html5shiv.min.js' %}"></script>
+      <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/{{ settings.GFLUX_URL_PREFIX }}" target="_top" title="{{ site.title }}"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            {% for portal in site_portals %}
+              <li {% if portal.uid == current_portal.uid %} class="active" {% endif %}>
+                <a href="{{ portal.url }}" id="head_tag" target="_top">{{ portal.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user != None %}
+               <li><a href="javascript:logout()">{% trans "退 出" %}</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END Navigation -->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <!-- Sidebar -->
+        <div class="col-lg-2" id="left_container" style="margin-top: 10px">
+          <div class="row-fluid">
+            {% block sidebar %}
+                {% include "dash/includes/sidebar.html" %}
+            {% endblock %}
+          </div>
+        </div>
+        <!-- END Sidebar -->
+        <!-- Content -->
+
+        <div id="right_container" class="col-lg-10">
+            <div class="main-form">
+                <h4 >{% trans "数据来源" %}</h4>
+                <div style="overflow: auto;margin: 20px 15px;min-width: 620px;">
+                    <div class="location-form" style="width: 300px;float:left;">
+                        <div class="select">
+                            <label>{% trans "选择地区:" %}</label>
+                            <select id="select_location">
+                                <option value="-1">{% trans "请选择"%}</option>
+                            </select>
+                            <button  onclick="showAddLocation()" type="button" class="btn btn-default btn-xs">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                {% trans "新增地区" %}
+                            </button>
+                        </div>
+                        <div class="new-select-option add_new_location">
+                          <div style="position:relative">
+                            <p><label>{% trans "地区代码:" %}</label><input class="form-control input-sm" id="add_location_name" type="text" onblur="checkLocationUnique();" placeholder="CN_BJ" /></p>
+                            <p class="input-check-message" id="input-check-location-message" style="display: none">{% trans "地区已存在！" %}</p>
+                          </div>
+                            <p><label>{% trans "地区名称:" %}</label><input class="form-control input-sm" id="add_location_description" type="text" placeholder={% trans "北京" %} /></p>
+                            <div>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addLocation()">{% trans "添加" %}</button>
+                                <button type="button" class="btn btn-default btn-sm" onclick="hideNewArea(this)">{% trans "取消" %}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-form" style="width: 300px;float: left">
+                        <div class="select">
+                            <label>{% trans "选择站点:" %}</label>
+                            <select id="select_site">
+                                <option value="-1">{% trans "请选择" %}</option>
+                            </select>
+                            <button  onclick="showAddSite()" type="button" class="btn btn-default btn-xs">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                {% trans "新增站点" %}
+                            </button>
+                        </div>
+                        <div class="new-select-option add_new_site">
+                          <div style="position:relative">
+                            <p><label>{% trans "站点代码:" %}</label><input class="form-control input-sm" id="add_site_name" type="text" placeholder="BJ_HD_SD" onblur="checkStaionUnique();"/></p>
+                            <p class="input-check-message" id="input-check-site-message" style="display: none">{% trans "站点已存在！" %}</p>
+                          </div>
+                            <p><label>{% trans "站点名称:"%}</label><input class="form-control input-sm" id="add_site_description" type="text" placeholder={% trans "上地加油站" %}/></p>
+                            <div class="input-group">
+                                <p><label>{% trans "选择区/县:"%}</label><br>
+                                <select id="shengcode" >
+                                    <option selected value="">{% trans "请选择省份" %}</option>
+                                </select>
+                                <select id="shicode" >
+                                    <option selected value="">{% trans "请选择" %}</option>
+                                </select>
+                                <select id="xiancode" >
+                                    <option selected value="">{% trans "请选择" %}</option>
+                                </select>
+                                </p>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addSite()">{% trans "添加" %}</button>
+                                <button type="button" class="btn btn-default btn-sm" onclick="hideNewArea(this)">{% trans "取消" %}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-form" style="width: 300px;float: left;  margin-top:15px">
+                      <div class="select">
+                        <label>{% trans "选择数据类型:" %}</label>
+                        <select id="select_type" onchange="checkDataType()">
+                          <option value="-1">{% trans "请选择" %}</option>
+                          <option value="0">{% trans "SP" %}</option>
+                          <option value="1">{% trans "中油油站" %}</option>
+                          <option value="2">{% trans "延长壳牌" %}</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+                <div class="upload-form" id="upload-form">
+                    <h4>{% trans "上传文件" %}</h4>
+                    <div style="margin: 20px 15px;width: 500px;">
+                        <label style="color: rgba(0,0,0,0.87)">{% trans "all文件" %}</label>
+                        <div id="upload-all" class="upload_icon"></div>
+                        <span style="font-size: 16px;color: #09c;font-weight: bold;float:left;margin-left: 50px;margin-top:-20px">{% trans "点击选择上传文件" %} </span>
+                        <div class="progress all-file" style="visibility: hidden">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">0%</div>
+                        </div>
+                        <label style="color: rgba(0,0,0,0.87)">{% trans "card文件" %}</label>
+                        <div id="upload-card" class="upload_icon"></div>
+                        <span style="font-size: 16px;color: #09c;font-weight: bold;float:left;margin-left: 50px;margin-top:-20px">{% trans "点击选择上传文件" %} </span>
+                        <div class="progress card-file" style="visibility: hidden">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">60%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload-form" id="upload-form-sp">
+                    <h4>{% trans "上传文件" %}</h4>
+                    <div style="margin: 20px 15px;width: 500px;">
+                        <label style="color: rgba(0,0,0,0.87)">{% trans "sp文件" %}</label>
+                        <div id="upload-sp" class="upload_icon"></div>
+                        <span style="font-size: 16px;color: #09c;font-weight: bold;float:left;margin-left: 50px;margin-top:-20px">{% trans "点击选择上传文件" %} </span>
+                        <div class="progress sp-file" style="visibility: hidden">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload-form" id="upload-form-ycshell">
+                    <h4>{% trans "上传文件" %}</h4>
+                    <div style="margin: 20px 15px;width: 500px;">
+                        <label style="color: rgba(0,0,0,0.87)">{% trans "ycshell文件" %}</label>
+                        <div id="upload-ycshell" class="upload_icon"></div>
+                        <span style="font-size: 16px;color: #09c;font-weight: bold;float:left;margin-left: 50px;margin-top:-20px">{% trans "点击选择上传文件" %} </span>
+                        <div class="progress ycshell-file" style="visibility: hidden">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="operate-form">
+                    <button type="button" class="btn btn-default btn-sm" onclick="startImportData()">{% trans "开始导入数据" %}</button>
+                </div>
+            </div>
+
+            <div class="process-form">
+                <h1>{% trans "导入状态" %}</h1>
+                <img class="image-loading" src="{% static 'images/ajax-loader.gif' %}" />
+                <pre id="process-log"></pre>
+            </div>
+
+
+        </div>
+
+        <!-- Foot -->
+
+        {% include "dash/includes/foot.html" %}
+
+      <!-- End Foot -->
+        <!-- END Content -->
+      </div> <!-- /.row-fluid -->
+    </div><!-- /.container-fluid -->
+
+    <div name="account_type" value="{{account_type}}"/>
+    <div id="init-masking" class="modal-backdrop fade in" style="text-align:center;">
+    <img src="{% static 'images/ajax-loader.gif' %}" style="    top: 50%;    position: fixed;" />
+    </div>
+
+    <!-- JavaScripts
+    ================================================== -->
+    {{ current_page.media_js }}
+
+    <script>
+        window.all_locations=$.parseJSON('{{all_locations|escapejs}}')
+        window.all_stations=$.parseJSON('{{all_stations|escapejs}}')
+    </script>
+  </body>
+</html>

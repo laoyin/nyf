@@ -1,0 +1,2 @@
+1. E-R 图设计工具
+apt-get install umbrello

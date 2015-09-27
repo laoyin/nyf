@@ -1,0 +1,92 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block customer_consume_statistics_nav %}
+<li class="nav-active"><a href="/gcustomer/customer_consume_statistics/">{% trans "加油卡消费统计" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div style="padding: 10px 20px">
+    <h4>{% trans "消费卡管理" %}</h4>
+    <div class="form-inline" style="padding-bottom: 15px;margin-top:20px;" id='main_card_search_form'>
+        <div class="form-group">
+            {% if user_type == 2 %}
+            <input type="text"  style="width: 300px;display:none;" class="form-control" id="exampleInputName2" value="4367420011310479058" placeholder="{% trans "请输入大客户卡号" %}" />
+            <button type="button" class="btn btn-default" id ="main_card_consume_information_record_search">{% trans "查看" %}</button>
+            {% else %}
+            <input type="text"  style="width: 300px;" class="form-control" id="exampleInputName2" value="4367420011310479058" placeholder="{% trans "请输入大客户卡号" %}" />
+            <button type="button" class="btn btn-default" id ="main_card_consume_information_record_search">{% trans "搜索" %}</button>
+            {% endif %}
+        </div>
+    </div>
+    <button class="btn btn-default" id="back_to_previous" style="display:none;" value="返回">{% trans "返回" %}</button>
+    <div id="main_card_information_statistic" style="display:none;">
+    	<h4 class="title-label-class">{% trans "主卡消费统计" %}</h4>
+    	<table class="table border-table" contenteditable="false">
+            <thead>
+            <tr class="success">
+                <th>{% trans "序号" %}</th>
+                <th>{% trans "单位名称" %}</th>
+                <th>{% trans "主卡号" %}</th>
+                <th>{% trans "当前余额(元)" %}</th>
+                <th class="consume_record" name="slave_consume_record">{% trans "副卡消费信息" %}</th>
+            </tr>
+            </thead>
+            <tbody  id="infornation_survey">  
+            </tbody>
+        </table>
+    </div>
+        
+    <div id="slave_card_information_statistic" style="display:none;"> 
+        <h4 class="title-label-class">{% trans "副卡消费统计" %} </h4>   
+        <h5 id="current_main_card_information">{% trans "主卡号：4367420011310479058" %}</h5>
+        <table class="table border-table" contenteditable="false">
+            <thead>
+            <tr class="success">
+                <th>{% trans "序号" %]</th>
+                <th>{% trans "副卡号" %}</th>
+                <th>{% trans "当前余额(元)" %}</th>
+                <th class="consume_record" name="slave_consume_details">{% trans "详细消费记录" %}</th>
+            </tr>
+            </thead>
+            <tbody  id="slave_card_infornation_survey">  
+            </tbody>
+        </table>
+    </div>
+
+    <div id="slave_card_account_record" style="display:none;">
+        <h4 class="title-label-class">{% trans "副卡消费明细" %} </h4>   
+        <h5 id="current_slave_card_information">{% trans "副卡号：9030230000007810" %}</h5>
+        <table class="table border-table" contenteditable="false">
+            <thead>
+            <tr class="success">
+                <th width="20%">{% trans "日期" %}</th>
+                <th>{% trans "支出(元)" %}</th>
+                <th>{% trans "余额(元)" %}</th>
+            </tr>
+            </thead>
+            <tbody  id="slave_card_detials">  
+                <tr>
+                    <td>2015-5-4 08:30:15 </td>
+                    <td>500</td>
+                    <td>3000</td>
+                </tr>  
+                </tr>
+                <tr>
+                    <td>2015-5-1 08:15:15 </td>
+                    <td>200</td>
+                    <td>3500</td>
+                </tr>  
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript" src="/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+{% endblock %}
+
+

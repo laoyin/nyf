@@ -1,0 +1,75 @@
+山西部署详细操作流程
+
+一、部署列表 : 
+
+0. 配置磁盘阵列
+http://jingyan.baidu.com/article/ca41422fd9013c1eaf99ed74.html
+
+1. 安装centos系统
+注意 : 安装时选择完全安装，需要手动选择一些程序包,root密码pku123,创建用户work 密码 pku123
+
+2. work增加sudo权限
+(1) 切换到root用户 : su -l 
+(2) cd /etc
+(3) 使用命令“vim sudoers”，按“i”进入编辑模式后，找到“rootALL=(ALL) ALL ”，在后面添加："xxxALL=(ALL) ALL"(这里的xxx是你的用户名)，再按一下“Esc”键退出编辑，输入“wq”（write quit）后，退出sudoers。
+
+3.  将准备好的deployment目录拷贝至用户work根目录/home/work/
+
+4. 安装配置Vmware
+4.1 安装
+cd 中转服务器目录
+./VMware-Workstation-Full-10.0.2-1744117.x86_64.bundle
+注 : 安装完需要输入的序列号 在vware_license_key文件中
+4.2 配置
+新建一个空虚拟机目地是生成虚拟机存放目录vmware
+
+4. 部署XP虚拟机和相关软件
+将deployment目录下的Windows XP Professional目录拷贝到虚拟机目录(vmware)下,启动虚拟机即可进入xp系统
+(虚拟机中包含的程序列表 : 
+Windows XP
+Teamviewer
+.net4.0
+SQL SERVER 2008 R2 SP1
+)
+
+8. 搭建FTP
+8.1 安装
+rpm -ivh ftp-0.17-54.el6.x86_64.rpm
+rpm -ivh vsftpd-2.2.2-14.el6.x86_64.rpm
+
+8.2 配置
+配置文件的参数设置参考deployment目录下的ftp_param.conf文件
+设置ftp目录权限 : chmod 777 dir_name
+关闭防火墙 : sudo /etc/init.d/iptables stop 
+
+8.3 测试
+用ftp命令行工具测试上传下载
+ftp
+open localhost
+put README
+get README
+
+二、数据测试流程 : 
+
+0. 检查网络
+数据库服务器是否可以连接中转服务器
+中转服务器是否能连接wheel服务器
+
+1. 从数据库服务器上运行脚本上传数据库数据备份文件到ftp(关闭防火墙，开启定时任务)
+将deployment目录的数据库服务器目录下的gzip解压缩工具和shandong_upload_db.bat拷贝到数据库服务器的D盘
+修改查看bat文件配置是否正确
+运行脚本shandong_upload_db.bat 测试备份文件上传
+
+2. 测试数据下载恢复和上传
+以下三个步骤只要运行shandong_ftp_upload.bat 脚本
+
+2.1  xp上从ftp下载数据备份文件
+
+2.2 恢复数据
+
+2.3 ftp上传数据文本到ftp.zcdata.com.cn
+
+三. 设置和测试定时任务
+
+四 . 测试Teamviewer 和隧道
+登陆参考山东数据部署说明文档

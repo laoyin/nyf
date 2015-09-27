@@ -1,0 +1,11 @@
+wheel文档
+
+1.数据文件
+gcustomer.app_models.py     手机端数据模型
+gcustomer.models.py         后台数据模型
+
+2.请求响应流程
+(1)api_views.py             解析请求参数
+(2)app_views.py             检查返回数据,组织响应数据
+(3)app_data_interface.py    后台服务
+(4)app_util.py              常用操作接口

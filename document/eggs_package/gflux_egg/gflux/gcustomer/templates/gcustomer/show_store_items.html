@@ -1,0 +1,257 @@
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_goods.html" %}
+{% load i18n%}
+{% block show_store_items %}
+<li class="nav-active"><a href="/gcustomer/show_store_items/">{% trans "商品管理" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" id="commodity_summary" style="padding:10px 20px">
+    <div>
+        <h4 class="title-label-class">{% trans "管理商品" %}</h4>
+        <div class="row advert-list" id="advert_convert_panel"></div>
+    </div>
+    <div class="form-group">
+            <div class="row" style="margin-top:20px;">
+                <div class="col-lg-3">
+                    <input class="form-control"  id="search_good_list_string" placeholder="{% trans "请输入商品名称或pos_id关键字" %}" value=""></input>
+                </div>
+                <div class="col-lg-3">
+                    <button id="search_good_info_list" class="btn btn-default" type="button">{% trans "查询" %}</button>
+                </div>
+            </div>
+        </div>
+    <table class="table" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+        <thead>
+            <tr>
+                <th>{% trans "商品编号" %}</th>
+                <th>{% trans "商品名称" %}</th>
+                <th>{% trans "商品单价(元)" %}</th>
+                <th>{% trans "详情" %}</th>
+                <th>{% trans "删除" %}</th>
+            </tr>
+        </thead>
+	    <tbody id="goods_list"></tbody>
+    </table>
+</div>
+
+<div id="commodity_detail" style="display:none;">
+    <div class="form-group">
+        <div style="padding: 10px 20px">
+            <div>
+                <button onclick="get_back()" class="btn btn-default">{% trans "返回" %}</button>
+                <button id="modification" class="btn btn-default">{% trans "修改" %}</button>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="title-label-class">{% trans "商品详细信息" %}</h4>
+                    <table id="detail_table" class="table border-table" contenteditable="false" >
+                        <tbody id="detail_info"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="message" class="col-lg-6" style="display:none;">
+                <label>{% trans "商品信息修改成功！" %}</label>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script_block %}
+<script type="text/javascript">
+$(function () {
+    get_goods_list("");
+    $("#search_good_info_list").on("click",function(){
+            var searchString = $("#search_good_list_string").val().trim();
+            get_goods_list(searchString);
+    });
+})
+
+function get_goods_list (searchString) {
+    data = {"search_string":searchString}
+    $.get("/gcustomer/ajax/get_goods_list/", data, function (data) {
+        if(data.ret != '0001'){
+            $("#alert_modal_body").html("暂无商品信息！");
+            $("#alert_modal").modal("show");
+            return 0;
+        }
+        else if(data.ret == '0001'){
+            $("#goods_list").empty()
+            var obj_str = '' +
+                    '<tr>'+
+                        '<td>{0}</td>'+
+                        '<td>{1}</td>'+
+                        '<td>{2}</td>'+
+                        '<td><button onclick="get_detail_info(\'{3}\')" class="btn">查看</button></td>'+
+                        '<td><button disabled="disabled" onclick="delete_goods(\'{3}\')" class="btn">删除</button></td>'+
+                    '</tr>' + ''
+            for(var i=0; i<data.obj.length; i++){
+                $("#goods_list").append(String.format(obj_str,
+                                                data.obj[i].pos_id,
+                                                data.obj[i].name,
+                                                data.obj[i].price,
+                                                data.obj[i].sha1
+                                        ))
+            }
+        }
+    }, 'json')
+}
+
+$(function () {
+    $("#modification").on('click', function () {
+        if($(this).html() == "修改") {
+            $("#detail_table").attr("contenteditable","true");
+            $("#detail_table").css("border","3px solid rgb(204,204,204)");
+            $(this).html("确定");
+        }
+        else if($(this).html() == "确定"){
+            $("#detail_table").attr("contenteditable","false");
+            $("#detail_table").css("border","1px solid rgb(204,204,204)");
+            var sha1 = $('#store_sha1').html();
+            var pos_id = $("#pos_id").html();
+            var name = $("#goods_name").html();
+            var price = $("#goods_price").html();
+            var description = $("#description").html();
+            var exchange_score = $("#exchange_score").html();
+            var information = $("#good_information").html();
+            var discount = $("#good_discount").html();
+            var discount_info = $("#good_discount_info").html();
+            var count = $("#good_count").html()
+            var data = {
+                'sha1':sha1,
+                'pos_id':pos_id,
+                'name':name,
+                'price':price,
+                'exchange_score':exchange_score,
+                'information':information,
+                'discount':discount,
+                'discount_info':discount_info,
+                'count':count
+            }
+            $.post("/gcustomer/ajax/modify_goods_detail/",data, function (data) {
+                if (data.ret == '0001') {
+                    $("#message").show();
+                    console.log(data);
+                }
+                else if(data.ret != '0001'){
+                    $("#alert_modal_body").html(data.info);
+                    $("#alert_modal").modal("show");
+                    console.log(data);
+                }
+            }, "json");
+            $(this).html("修改");
+        }
+    });
+})
+
+function get_detail_info (sha1) {
+    var data = {'sha1':sha1};
+    $.get("/gcustomer/ajax/get_goods_detail/", data, function (data) {
+            if(data.ret == '0001'){
+                $("#commodity_summary").hide();
+                $("#commodity_detail").show();
+                $("#detail_info").empty();
+                var obj = data.obj;
+                var detail_str = '' +
+                            '<tr><td id="store_sha1" style="display:none;">{10}</td></tr>'+
+                            '<tr>'+
+                                '<td>商品编号</td>'+
+                                '<td id="pos_id" contenteditable="false">{0}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                                '<td>商品名称</td>'+
+                                '<td id="goods_name" contenteditable="false">{1}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                                '<td>商品单价（元）</td>'+
+                                '<td id="goods_price">{2}</td>'+
+                            '</tr>'+
+                            '<tr>'+
+                                '<td>商品描述</td>'+
+                                '<td id="good_information">{3}</td>'+
+                            '</tr>'+
+                          /*  '<tr>'+
+                                '<td>最后一次修改人</td>'+
+                                '<td id="creater_id">{4}</td>'+
+                            '</tr>' +*/
+                            '<tr>'+
+                                '<td>折扣</td>'+
+                                '<td id="good_discount">{5}</td>'+
+                            '</tr>' +
+                            '<tr>'+
+                                '<td>折扣信息</td>'+
+                                '<td id="good_discount_info">{6}</td>'+
+                            '</tr>' +
+                            /*'<tr>'+
+                                '<td>价格有效时间</td>'+
+                                '<td id="">{7}</td>'+
+                            '</tr>' +*/
+                            '<tr>'+
+                                '<td>兑换积分</td>'+
+                                '<td id="exchange_score">{8}</td>'+
+                            '</tr>' +
+                            '<tr>'+
+                                '<td>库存数量</td>'+
+                                '<td id="good_count">{11}</td>'+
+                            '</tr>' +
+                            ''
+                if(! obj.discount_info) {
+                    obj.discount_info = '无优惠描述';
+                }
+                if(obj.discount_end_time = "None"){
+                      obj.discount_end_time = '暂无';
+                }
+                $("#detail_info").append(String.format(
+                    detail_str,
+                    obj.pos_id,
+                    obj.name,
+                    obj.price,
+                    obj.information,
+                    '',
+                    obj.discount,
+                    obj.discount_info,
+                    obj.discount_end_time,
+                    obj.exchange_score ,
+                     obj.source_id,obj.sha1,
+                     obj.count))
+            }
+            else if(data.ret != '0001'){
+                $("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+            }
+    }, 'json')
+}
+
+function delete_goods (sha1) {
+    var data = {'sha1':sha1};
+    if(confirm("确定要删除吗？")){
+        $.post("/gcustomer/ajax/delete_goods/", data, function (data) {
+            if(data.ret == '0001'){
+                console.log(data.info);
+                get_goods_list("");
+            }
+            else if(data.ret != '0001'){
+                $("#alert_modal_body").html(data.info);
+                $("#alert_modal").modal("show");
+            }
+        }, 'json')
+    }
+    else {
+        return 0;
+    }
+}
+
+function get_back () {
+    if($("#modification").html() == '确定'){
+        $("#alert_modal_body").html("请确定修改！");
+        $("#alert_modal").modal("show");
+        return
+    }
+    $('#message').hide()
+    $("#commodity_detail").hide();
+    get_goods_list("");
+    $("#commodity_summary").show();
+}
+</script>
+{% endblock %}

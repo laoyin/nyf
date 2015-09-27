@@ -1,0 +1,49 @@
+
+<!-- 页面继承editor frame页面 -->
+{% extends "gcustomer/gcustomer_advert.html" %}
+{% load i18n %}
+
+
+{% block style_block %}
+<style type="text/css">
+    .advert-list .item{
+        list-style: none;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+    }
+    .advert-list{
+        margin: 0;
+        padding: 0;
+    }
+    .advert-list .logo{
+        position: absolute;
+        top: 10px;
+        left: 0px;
+    }
+    .advert-list .detail{
+        padding:10px 20px 20px 110px;
+        color: rgba(0,0,0,0.87);
+    }
+
+</style>
+
+{% endblock %}
+
+
+{% block show_advert_nav %}
+<li class="nav-active"><a href="/gcustomer/show_advert/">{% trans "已有广告" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div class="" style="padding:10px 20px">
+    <div class="col-lg-9">
+        <h4 class="title-label-class" style="margin-bottom:10px;">{% trans "在播广告列表" %}</h4>
+    </div>
+    <div class="col-lg-9" style="background-color: #fff">
+        <ul class="advert-list" id='advert-list'></ul>
+    </div>
+</div>
+{% endblock %}
+{% block script_block%}
+<script type="text/javascript" src="/gflux/static/js/render_advertisement_data{{settings.GCUSTOMER_STATIC_VERSION}}.js"></script>
+{% endblock%}

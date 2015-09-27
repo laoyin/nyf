@@ -1,0 +1,115 @@
+{%load i18n%}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="url_prefix" content="{{settings.GFLUX_URL_PREFIX}}" >
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <title>{{ site.title }}</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+
+    {{ current_page.media_css }}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="{% static 'js/html5shiv.min.js' %}"></script>
+      <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+     <!-- Navigation -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/{{ settings.GFLUX_URL_PREFIX }}" target="_top" title="{{ site.title }}"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            {% for portal in site_portals %}
+              <li {% if portal.uid == current_portal.uid %} class="active" {% endif %}>
+                <a href="{{ portal.url }}" id="head_tag" target="_top">{{ portal.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user != None %}
+               <li><a href="javascript:logout()">{% trans "退 出" %}</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END Navigation -->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <!-- Sidebar -->
+        <div class="col-lg-2" id="left_container" style="margin-top:10px">
+          <div class="row-fluid">
+            {% block sidebar %}
+                {% include "dash/includes/sidebar.html" %}
+            {% endblock %}
+          </div>
+        </div>
+        <!-- END Sidebar -->
+    <div id="right_container" class="col-lg-10">
+        <div>
+            <h4>{% trans "用户名:" %}<span id="user_name"></span></h4>
+        </div>
+
+        <div class="select" style="margin-top:25px">
+            <h4>{% trans "更改语言" %}</h4>
+            <label>{% trans "语言:" %}</label>
+                <select id="select_language">
+                    {% for value,label in language %}
+                    <option value="{{value}}"> {{label}}</option>
+                    {% endfor %}
+                </select>
+                <button type="button" class="btn btn-info btn-sm" onclick="setLanguage()">{% trans "保存" %}</button>
+        </div>
+
+        <div style="margin-top:25px">
+            <h4>{% trans "更改密码" %}</h4>
+            <div class="input-group">
+                <label>{% trans "旧密码:"%}</label><br>
+                <input class="form-control" type="password" id="old_password"/><br>
+                <label>{% trans "新密码:"%}</label><br>
+                <input class="form-control" type="password" id="new_password"/><br>
+                <label>{% trans "再次输入新密码:"%}</label><br>
+                <input class="form-control" type="password" id="repeat_new_password"/><br>
+                <button type="button" class="btn btn-info btn-sm" onclick="savePassword()">{% trans "保存" %}</button>
+            </div>
+        </div>
+
+        <div id="user_info" style="margin-top:25px">
+            <h4>{% trans "更改区域" %}</h4>
+            <div class="input-group">
+              <p><label>{% trans "选择区/县:"%}</label><br>
+                <select id="shengcode">
+                  <option selected value="">{% trans "请选择省份" %}</option>
+                </select>
+                <select id="shicode" >
+                  <option selected value="">{% trans "请选择" %}</option>
+                </select>
+                <select id="xiancode" >
+                  <option selected value="">{% trans "请选择" %}</option>
+                </select>
+                <button type="button" class="btn btn-info btn-sm" onclick="saveUserInfo()">{% trans "保存" %}</button>
+              </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Foot -->
+
+    {% include "dash/includes/foot.html" %}
+
+    <!-- End Foot -->
+
+  {{ current_page.media_js }}
+
+  </body>
+</html>

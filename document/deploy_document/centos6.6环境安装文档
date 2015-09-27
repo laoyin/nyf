@@ -1,0 +1,165 @@
+centos环境配置文档
+0.＃ 安装编译源码所需的工具和库
+yum -y install wget gcc readline-devel zlib-devel make
+
+1.centos add sudoers
+http://www.centoscn.com/CentOS/help/2014/0815/3499.html
+(1) su -l 
+(2) cd /etc
+(3) 使用命令“vim sudoers”，按“i”进入编辑模式后，找到“rootALL=(ALL) ALL ”，在后面添加："xxxALL=(ALL) ALL"(这里的xxx是你的用户名)，再按一下“Esc”键退出编辑，输入“wq”（write quit）后，退出sudoers。
+
+2.rpm & yum 
+http://blog.163.com/yang_jianli/blog/static/1619900062012912115552188/
+
+3. install chromium
+http://www.freehao123.com/linux-chrome/
+
+4. install python2.7
+http://ypf3027.iteye.com/blog/2018553
+(1) install gcc
+sudo yum install -y gcc
+
+(2)download python2.7
+wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz
+
+(3)install 
+./configure --prefix=/usr/local --with-zlib
+make
+make install
+
+(4) 建立软链接
+# /usr/local/bin/python2.7 -V    
+# mv /usr/bin/python  /usr/bin/python.bak 
+# ln -s /usr/local/bin/python2.7 /usr/bin/python
+
+(5) 修改yum指向的python
+vi /usr/bin/yum
+在打开的文件里的头一行，也就是指定python环境的那行代码，修改成：
+#!/usr/bin/python2.6
+
+5. install pip 问题：
+(1) 安装setuptools
+http://jingyan.baidu.com/article/e52e3615aba39640c60c51c3.html
+yum install zlib
+yum install zlib-devel
+安装完成后，重新编译 python2.7【不需要删除，只需要重新编译，make，安装就行了
+
+6.修改文件权限
+sudo chown -R nyf:nyf dirname
+
+7.pip install psycopy2 问题
+(1) ImportError: cannot import name HTTPSHandler
+yum install openssl -y
+yum install openssl-devel -y
+./configure --prefix=/usr/local --with-zlib
+make
+make install
+
+(2) install postgresql-devel*
+http://www.th7.cn/system/lin/201301/36821.shtml
+
+rpm install postgres : http://www.cnblogs.com/mchina/archive/2012/06/06/2539003.html
+
+8. install postgres 
+http://blog.sina.com.cn/s/blog_546abd9f0101fvke.html
+
+9. install mysql 
+(1) yum install 
+yum -y install mysql-server mysql mysql-devel 
+启动mysql : 
+su -l 
+service mysqld start 
+su -l work
+mysql -u root -p 
+(2) rpm install 
+rpm -ivh mysql-5.1.73-5.el6_6.x86_64.rpm
+rpm -ivh mysql-devel-5.1.73-5.el6_6.x86_64.rpm
+rpm -ivh mysql-server-5.1.73-5.el6_6.x86_64.rpm
+rpm -ivh perl-DBD-MySQL-4.013-3.el6.x86_64.rpm
+rpm -ivh perl-DBI-1.609-4.el6.x86_64.rpm
+
+
+10.centos install svn 
+http://www.cnblogs.com/zhoulf/archive/2013/02/02/2889949.html
+
+
+11.centos 5.6 安装xen : 参考文档 http://os.51cto.com/art/201107/273032.htm  http://os.51cto.com/art/200804/70166.htm
+(1) 安装centos5.6
+(2) 检查一下CPU是否支持Xen虚拟化 : egrep '(vmx|svm)' /proc/cpuinfo
+如果什么结果都不显示，则表示CPU是不支持Xen虚拟化的 
+(3) 安装 : yum -y install kernel-xen xen
+(4) 修改/boot/grub/grub.conf文件 : default 
+(5) 重新启动系统 
+
+12.安装xen虚拟机 : 参考文档 : http://blog.chinaunix.net/uid-11121450-id-3128697.html
+
+
+13.centos 常用操作
+(1) 图形用户界面开机自启动
+vim /etc/inittab
+id:5:initdefault
+
+(2) 关机
+shutdown -r now
+
+14. install gcc
+ 离线安装GCC
+ #设置光驱挂载点
+mkdir -p /Application/cdrom
+#挂载光驱
+mount /dev/cdrom /Application/cdrom
+#备份原yum源
+cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+#把光驱设为yum源
+echo "[base]" > /etc/yum.repos.d/CentOS-Base.repo
+echo "name=CentOS-$releasever - Base" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "baseurl=file:///Application/cdrom/" >> /etc/yum.repos.d/CentOS-Base.repo
+echo "gpgcheck=0" >> /etc/yum.repos.d/CentOS-Base.repo
+#安装gcc
+yum install gcc -y
+#恢复原yum源
+cp –f /etc/yum.repos.d/CentOS-Base.repo.bak /etc/yum.repos.d/CentOS-Base.repo
+
+
+15. 挂载CD
+
+(1) 方案1
+ mount -t auto /dev/cdrom /mnt/cdrom
+ sudo rpm -ivh telnet-server-0.17-48.el6.x86_64.rpm
+
+ (2) 方案2
+mkdir -p /Application/cdrom
+mount /dev/cdrom /Application/cdrom
+
+16. 搭建ftp服务器
+搭建ftp
+http://www.centoscn.com/CentosServer/ftp/2013/0730/816.html
+http://shuany.iteye.com/blog/850568
+使用ftp命令行工具上传下载
+http://www.cnblogs.com/weafer/archive/2011/06/13/2079509.html
+python ftplib
+http://blog.csdn.net/linda1000/article/details/8255771
+
+(1) 安装
+rpm -ivh vsftpd-2.2.2-14.el6.x86_64.rpm
+rpm -ivh ftp-0.17-54.el6.x86_64.rpm
+(2) 配置
+sudo  vi /etc/vsftpd.conf
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+local_umask=022
+chroot_local_user=YES
+
+/usr/sbin/adduser -d /opt/ftp -g ftp -s /sbin/nologin ftpuser
+passwd ftpuser
+ chmod  777 /opt/ftp
+
+ (3) 测试上传下载
+ftp 
+ftp localhost
+ftpuser
+ftpuser
+ls
+上传 : put 文件名
+下载 : get 文件名

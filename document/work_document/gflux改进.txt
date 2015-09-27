@@ -1,0 +1,65 @@
+1. 加满率，横轴可以按周小时、天、月选择    oil_full_rate_dashlet_report
+if self.uid == "oil_full_rate_dashlet_report" :
+            pdb.set_trace()
+{
+'categories':['0 - 1', '1 - 2', '2 - 3', '3 - 4', '4 - 5', '5 - 6', '6 - 7', '7 - 8', '8 - 9', '9 - 10', '10 - 11', '11 - 12', '12 - 13', '13 - 14', '14 - 15', '15 - 16', '16 - 17', '17 - 18', '18 - 19', '19 - 20', '20 - 21', '21 - 22', '22 - 23', '23 - 24'], 
+'dataset':
+ [
+{'stacking': None, 'type': 'spline', 'data': [100.0, 100.0, 0, 100.0, 100.0, 100.0, 60.0, 80.85, 76.69, 74.88, 74.85, 70.37, 65.12, 66.2, 60.76, 74.77, 75.24, 71.63, 73.02, 85.0, 84.62, 88.89, 100.0, 33.33], 'name': u'92\u53f7\u6cb9'}, 
+{'stacking': None, 'type': 'spline', 'data': [0, 0, 0, 0, 0, 0, 0, 0.0, 60.0, 54.55, 75.0, 66.67, 50.0, 61.54, 62.5, 66.67, 11.11, 75.0, 66.67, 0, 75.0, 50.0, 50.0, 100.0], 'name': u'95\u53f7\u6cb9'}, 
+{'stacking': None, 'type': 'spline', 'data': [100.0, 0, 100.0, 0, 100.0, 60.0, 84.62, 100.0, 68.75, 90.91, 63.16, 80.0, 100.0, 90.91, 100.0, 66.67, 88.89, 66.67, 100.0, 100.0, 88.89, 92.31, 80.0, 100.0], 'name': u'0\u53f7\u8f66\u7528\u67f4\u6cb9'}
+]
+}
+TransReport.report
+
+(Pdb) conditions
+[<sqlalchemy.sql.elements.BinaryExpression object at 0xb2bdcf8c>, <sqlalchemy.sql.elements.BinaryExpression object at 0xb2bdc12c>, <sqlalchemy.sql.elements.BinaryExpression object at 0xb2bdcc8c>, <sqlalchemy.sql.elements.BinaryExpression object at 0xb43fc0cc>]
+
+
+sql = 
+SELECT count(fact_trans.id) AS count, sum(fact_trans.pump_type) AS fix_pump_count, fact_trans.barcode AS barcode, dim_datehour.hour AS hour FROM fact_trans JOIN dim_datehour ON dim_datehour.id = fact_trans.datehour WHERE fact_trans.site = 'BJ_HD' AND fact_trans.datehour >= '2013-03-09' AND fact_trans.datehour < '2013-04-09' AND fact_trans.trans_type = 0 GROUP BY fact_trans.barcode, dim_datehour.hour;
+
+
+(
+SELECT count(fact_trans.id) AS count, sum(fact_trans.pump_type) AS fix_pump_count, fact_trans.barcode AS barcode, timestamp AS day FROM fact_trans JOIN dim_datehour ON dim_datehour.id = fact_trans.datehour WHERE fact_trans.site = 'BJ_HD' AND fact_trans.datehour >= '2013-03-09' AND fact_trans.datehour < '2013-04-09' AND fact_trans.trans_type = 0 GROUP BY fact_trans.barcode, timestamp order by timestamp;
+
+
+)
+
+
+
+data = 
+'[{"barcode": 300586, "hour": 18, "count": 3, "fix_pump_count": 1}, {"barcode": 300586, "hour": 12, "count": 6, "fix_pump_count": 3}, {"barcode": 300585, "hour": 1, "count": 2, "fix_pump_count": 0}, {"barcode": 300585, "hour": 22, "count": 6, "fix_pump_count": 0}, {"barcode": 300586, "hour": 11, "count": 3, "fix_pump_count": 1}, {"barcode": 300585, "hour": 4, "count": 2, "fix_pump_count": 0}, {"barcode": 300585, "hour": 16, "count": 105, "fix_pump_count": 26}, {"barcode": 300603, "hour": 20, "count": 9, "fix_pump_count": 1}, {"barcode": 300603, "hour": 18, "count": 6, "fix_pump_count": 0}, {"barcode": 300603, "hour": 12, "count": 4, "fix_pump_count": 0}, {"barcode": 300603, "hour": 2, "count": 1, "fix_pump_count": 0}, {"barcode": 300585, "hour": 9, "count": 207, "fix_pump_count": 52}, {"barcode": 300585, "hour": 14, "count": 79, "fix_pump_count": 31}, {"barcode": 300603, "hour": 11, "count": 15, "fix_pump_count": 3}, {"barcode": 300586, "hour": 20, "count": 4, "fix_pump_count": 1}, {"barcode": 300585, "hour": 3, "count": 1, "fix_pump_count": 0}, {"barcode": 300603, "hour": 13, "count": 11, "fix_pump_count": 1}, {"barcode": 300603, "hour": 5, "count": 5, "fix_pump_count": 2}, {"barcode": 300586, "hour": 13, "count": 13, "fix_pump_count": 5}, {"barcode": 300603, "hour": 19, "count": 12, "fix_pump_count": 0}, {"barcode": 300585, "hour": 5, "count": 3, "fix_pump_count": 0}, {"barcode": 300585, "hour": 13, "count": 71, "fix_pump_count": 24}, {"barcode": 300585, "hour": 19, "count": 20, "fix_pump_count": 3}, {"barcode": 300603, "hour": 22, "count": 5, "fix_pump_count": 1}, {"barcode": 300586, "hour": 9, "count": 11, "fix_pump_count": 5}, {"barcode": 300603, "hour": 16, "count": 9, "fix_pump_count": 1}, {"barcode": 300585, "hour": 20, "count": 26, "fix_pump_count": 4}, {"barcode": 300586, "hour": 14, "count": 8, "fix_pump_count": 3}, {"barcode": 300603, "hour": 4, "count": 4, "fix_pump_count": 0}, {"barcode": 300603, "hour": 9, "count": 11, "fix_pump_count": 1}, {"barcode": 300586, "hour": 22, "count": 2, "fix_pump_count": 1}, {"barcode": 300585, "hour": 18, "count": 63, "fix_pump_count": 17}, {"barcode": 300585, "hour": 12, "count": 43, "fix_pump_count": 15}, {"barcode": 300586, "hour": 16, "count": 9, "fix_pump_count": 8}, {"barcode": 300585, "hour": 11, "count": 54, "fix_pump_count": 16}, {"barcode": 300603, "hour": 14, "count": 5, "fix_pump_count": 0}, {"barcode": 300586, "hour": 10, "count": 12, "fix_pump_count": 3}, {"barcode": 300585, "hour": 23, "count": 3, "fix_pump_count": 2}, {"barcode": 300586, "hour": 17, "count": 12, "fix_pump_count": 3}, {"barcode": 300585, "hour": 7, "count": 47, "fix_pump_count": 9}, {"barcode": 300603, "hour": 10, "count": 19, "fix_pump_count": 7}, {"barcode": 300603, "hour": 0, "count": 1, "fix_pump_count": 0}, {"barcode": 300603, "hour": 17, "count": 15, "fix_pump_count": 5}, {"barcode": 300603, "hour": 21, "count": 13, "fix_pump_count": 1}, {"barcode": 300585, "hour": 8, "count": 163, "fix_pump_count": 38}, {"barcode": 300603, "hour": 15, "count": 9, "fix_pump_count": 3}, {"barcode": 300585, "hour": 6, "count": 15, "fix_pump_count": 6}, {"barcode": 300586, "hour": 21, "count": 2, "fix_pump_count": 1}, {"barcode": 300586, "hour": 15, "count": 9, "fix_pump_count": 3}, {"barcode": 300585, "hour": 21, "count": 18, "fix_pump_count": 2}, {"barcode": 300585, "hour": 15, "count": 107, "fix_pump_count": 27}, {"barcode": 300603, "hour": 8, "count": 16, "fix_pump_count": 5}, {"barcode": 300603, "hour": 6, "count": 13, "fix_pump_count": 2}, {"barcode": 300586, "hour": 8, "count": 10, "fix_pump_count": 4}, {"barcode": 300586, "hour": 7, "count": 1, "fix_pump_count": 1}, {"barcode": 300603, "hour": 23, "count": 1, "fix_pump_count": 0}, {"barcode": 300603, "hour": 7, "count": 4, "fix_pump_count": 0}, {"barcode": 300585, "hour": 10, "count": 163, "fix_pump_count": 41}, {"barcode": 300585, "hour": 0, "count": 7, "fix_pump_count": 0}, {"barcode": 300585, "hour": 17, "count": 141, "fix_pump_count": 40}, {"barcode": 300586, "hour": 23, "count": 1, "fix_pump_count": 0}]'
+
+
+
+
+
+
+{'categories': ['0 - 1', '1 - 2', '2 - 3', '3 - 4', '4 - 5', '5 - 6', ...], 'dataset': [{'data': [100.0, 100.0, 0, 100.0, 100.0, 100.0, ...], 'flag': {}, 'name': u'92\u53f7\u6cb9', 'stacking': None, ...}, {'data': [0, 0, 0, 0, 0, 0, ...], 'flag': {}, 'name': u'95\u53f7\u6cb9', 'stacking': None, ...}, {'data': [100.0, 0, 100.0, 0, 100.0, 60.0, ...], 'flag': {'0 - 1': '\xe4\xbc\x98', '1 - 2': '\xe7\x98\xa6\xe5\xbc\xb1', '10 - 11': '\xe7\x98\xa6\xe5\xbc\xb1', '11 - 12': '\xe5\xa5\xbd', ...}, 'name': u'0\u53f...f4\u6cb9', 'stacking': None, ...}]}
+
+{'categories':[],'dataset':[]}
+
+
+
+按天 :
+[{u'count': 31, u'fix_pump_count': 9, u'barcode': 300585, u'day': 1}, {u'count': 2, u'fix_pump_count': 0, u'barcode': 300585, u'day': 22}, {u'count': 4, u'fix_pump_count': 3, u'barcode': 300586, u'day': 2}, {u'count': 43, u'fix_pump_count': 12, u'barcode': 300585, u'day': 4}, {u'count': 63, u'fix_pump_count': 6, u'barcode': 300603, u'day': 20}, {u'count': 2, u'fix_pump_count': 0, u'barcode': 300586, u'day': 31}, {u'count': 2, u'fix_pump_count': 1, u'barcode': 300586, u'day': 27}, {u'count': 1, u'fix_pump_count': 1, u'barcode': 300603, u'day': 2}, {u'count': 3, u'fix_pump_count': 1, u'barcode': 300603, u'day': 31}, {u'count': 29, u'fix_pump_count': 9, u'barcode': 300586, u'day': 20}, {u'count': 53, u'fix_pump_count': 19, u'barcode': 300585, u'day': 3}, {u'count': 1, u'fix_pump_count': 1, u'barcode': 300603, u'day': 5}, {u'count': 1, u'fix_pump_count': 0, u'barcode': 300586, u'day': 5}, {u'count': 21, u'fix_pump_count': 9, u'barcode': 300585, u'day': 5}, {u'count': 1, u'fix_pump_count': 0, u'barcode': 300603, u'day': 22}, {u'count': 44, u'fix_pump_count': 16, u'barcode': 300585, u'day': 27}, {u'count': 3, u'fix_pump_count': 2, u'barcode': 300603, u'day': 1}, {u'count': 353, u'fix_pump_count': 63, u'barcode': 300585, u'day': 20}, {u'count': 6, u'fix_pump_count': 4, u'barcode': 300586, u'day': 3}, {u'count': 5, u'fix_pump_count': 3, u'barcode': 300603, u'day': 4}, {u'count': 1, u'fix_pump_count': 1, u'barcode': 300586, u'day': 1}, {u'count': 29, u'fix_pump_count': 11, u'barcode': 300585, u'day': 2}, {u'count': 2, u'fix_pump_count': 0, u'barcode': 300603, u'day': 3}, {u'count': 33, u'fix_pump_count': 8, u'barcode': 300585, u'day': 31}, {u'count': 2, u'fix_pump_count': 1, u'barcode': 300586, u'day': 4}, {u'count': 7, u'fix_pump_count': 2, u'barcode': 300603, u'day': 26}, {u'count': 6, u'fix_pump_count': 3, u'barcode': 300603, u'day': 25}, {u'count': 2, u'fix_pump_count': 2, u'barcode': 300585, u'day': 23}, {u'count': 1, u'fix_pump_count': 0, u'barcode': 300586, u'day': 26}, {u'count': 6, u'fix_pump_count': 2, u'barcode': 300586, u'day': 25}, {u'count': 54, u'fix_pump_count': 19, u'barcode': 300585, u'day': 7}, {u'count': 2, u'fix_pump_count': 1, u'barcode': 300586, u'day': 24}, {u'count': 68, u'fix_pump_count': 4, u'barcode': 300603, u'day': 21}, {u'count': 39, u'fix_pump_count': 12, u'barcode': 300585, u'day': 30}, {u'count': 51, u'fix_pump_count': 13, u'barcode': 300585, u'day': 28}, {u'count': 47, u'fix_pump_count': 19, u'barcode': 300585, u'day': 8}, {u'count': 3, u'fix_pump_count': 0, u'barcode': 300603, u'day': 24}, {u'count': 53, u'fix_pump_count': 13, u'barcode': 300585, u'day': 29}, {u'count': 32, u'fix_pump_count': 19, u'barcode': 300585, u'day': 6}, {u'count': 29, u'fix_pump_count': 8, u'barcode': 300586, u'day': 21}, {u'count': 331, u'fix_pump_count': 73, u'barcode': 300585, u'day': 21}, {u'count': 1, u'fix_pump_count': 1, u'barcode': 300586, u'day': 6}, {u'count': 8, u'fix_pump_count': 6, u'barcode': 300586, u'day': 29}, {u'count': 6, u'fix_pump_count': 1, u'barcode': 300603, u'day': 8}, {u'count': 3, u'fix_pump_count': 2, u'barcode': 300603, u'day': 30}, {u'count': 3, u'fix_pump_count': 2, u'barcode': 300603, u'day': 28}, {u'count': 3, u'fix_pump_count': 0, u'barcode': 300603, u'day': 6}, {u'count': 5, u'fix_pump_count': 3, u'barcode': 300603, u'day': 29}, {u'count': 33, u'fix_pump_count': 12, u'barcode': 300585, u'day': 24}, {u'count': 3, u'fix_pump_count': 1, u'barcode': 300586, u'day': 8}, {u'count': 1, u'fix_pump_count': 1, u'barcode': 300586, u'day': 30}, {u'count': 5, u'fix_pump_count': 3, u'barcode': 300586, u'day': 28}, {u'count': 45, u'fix_pump_count': 9, u'barcode': 300585, u'day': 26}, {u'count': 50, u'fix_pump_count': 15, u'barcode': 300585, u'day': 25}, {u'count': 3, u'fix_pump_count': 1, u'barcode': 300586, u'day': 7}, {u'count': 5, u'fix_pump_count': 2, u'barcode': 300603, u'day': 7}]
+
+
+
+sql_params_dict
+{u'site_1': u'BJ_HD', u'datehour_1': datetime.date(2013, 3, 9), u'trans_type_1': 0, u'datehour_2': datetime.date(2013, 4, 9)}
+
+horizonal = ['year', 'month', 'day']
+cat = '%d-%02d-%02d' % (result['year'], result['month'], result['day'])
+
+
+if kwargs.has_key("cat_type") == True :
+                kwargs['cat_type'] = kwargs['cat_type']
+            else :
+                kwargs = {}
+
+小结 : 
+(1) gflux的后台数据查询的高度复用框架
+(2) gflux的后台使用sql作为数据缓存的键值，实现对查询的缓存
+(3) 不要去改后台的框架，尽量修改自扩展的代码实现功能的扩展

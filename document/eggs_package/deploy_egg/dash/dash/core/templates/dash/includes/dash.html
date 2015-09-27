@@ -1,0 +1,67 @@
+{% load i18n %}
+<div id="{{ dash.uid }}" class="dash panel panel-default">
+  <div class="dash-header panel-heading" >
+    <div class="row">
+      <div class="col-lg-3">
+        <h4 class="">  {% trans dash.label %} </h4>
+      </div>
+      <div class="col-lg-9">
+        <form class="dash-form form-inline pull-right" role="form" action="/__dummy__" value={{ dash.uid}}>
+          {% if standalone %}
+          {% for field in dash_full_filters %}
+          <div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default" value={{ field.field.name }}>{{ field.label }}</button>
+            {{ field.field }}
+          </div>
+          {% endfor %}
+          {% else %}
+          {% for field in dash_filters %}
+          <div class="btn-group" style="margin-right: 2px">
+            <button type="button" class="btn btn-default" value={{ field.field.name }}>{{ field.label }}</button>
+            {{ field.field }}
+          </div>
+          {% endfor %}
+          {% endif %}
+          <div class="btn-group" style="margin-right: 2px">
+            {% if dash.renderer == 'chart' %}
+            <button type="button" renderer="chart" class="dash-renderer btn btn-info hidden">{% trans "图" %}</button>
+            {% elif dash.renderer == 'table' %}
+            <button type="button" renderer="table" class="dash-renderer btn btn-info hidden">{% trans "表" %}</button>
+            {% else %}
+            <button type="button" renderer="chart" class="dash-renderer btn btn-info">{% trans "图" %}</button>
+            <button type="button" renderer="table" class="dash-renderer btn btn-default">{% trans "表" %}</button>
+            <button type="button" id="export" renderer="" class="dash-renderer btn btn-default" onclick="exportToXls(this)">{% trans "导出数据" %}</button>
+            {% if standalone %}
+            <button type="submit" class="dash-top-submit btn btn-default">{% trans "更新" %}</button>
+            {% endif %}
+            {% endif %}
+          </div>
+          <button type="submit" class="dash-submit btn btn-default {% if dash.renderer == None %} hidden {% endif %}">{% trans "更新" %}</button>
+          {% if standalone %}
+          {%else%}
+          <span class="glyphicon glyphicon-chevron-down dash-fold" style="cursor:pointer; margin-right: 2px;"></span>
+          <span dash-url="{{ dash.url }}" class="glyphicon glyphicon-resize-full dash-resize-full" style="cursor:pointer;"></span>
+          {% endif %}
+        </form>
+        <form method="post" action="/gflux/ajax/download_xls_file/" >
+            <div style="display:none;"><input id=submit_cookie type="hidden" name="csrfmiddlewaretoken" value=""></div>
+            <input id="submit_download" type="submit" style="display:none;" />
+            <input id="submit_filename" type="text" style="display:none;" name='filename' value=''/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="dash-tabbar btn-group {% if dash.size == 1 %} hidden {% endif %} ">
+      {% for dashlet in dash %}
+      <button class="btn {% if forloop.counter == 1 %} btn-primary {% else %} btn-default {% endif %} dash-tab">{{ dashlet.label }}</button>
+      {% endfor %}
+    </div>
+    <div class="dash-body">
+      {% for dashlet in dash %}
+      <div id='{{ dash.uid }}-{{ dashlet.uid }}' dash-label="{% trans dashlet.label %}" renderer="{{ dashlet.renderer }}" report-url="{{ dashlet.report.url }}" class="dashlet {% if forloop.counter > 1 %} collapse {% endif %}"></div>
+      {% endfor %}
+    </div>
+    <center class="description" style="display:none;"><label>{% trans dash.description %}</label></center>
+  </div>
+</div>

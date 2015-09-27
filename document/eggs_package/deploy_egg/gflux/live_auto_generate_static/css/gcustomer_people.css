@@ -1,0 +1,26 @@
+.unfollow{
+    cursor:pointer;
+}
+
+.group_items,.group_users{
+    max-height: 300px;
+    overflow: scroll;
+}
+.group_users,.group_items{
+    margin:0;
+    padding:0;
+    width:400px;
+    overflow:hidden
+
+
+}
+.group_users li,.group_items li{
+    list-style:none;
+    padding:5px 10px;
+    font-size:13px;
+    border-bottom:1px solid #ddd;
+}
+.group_users li:last-child,.group_items li:last-child{
+    border-bottom:none
+
+}

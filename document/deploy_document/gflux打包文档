@@ -1,0 +1,135 @@
+安装gflux相关的开发环境
+
+0. 在空闲机器上安装好python2.7.10
+1. 按照gflux的部署文档安装必要的库
+2. 按照gcustomer的部署文档安装必要的库
+
+3. egg打包安装 
+
+3.1  egg文件生成和使用   参考文档 : http://berdy.iteye.com/blog/1106662
+
+3.1.1 安装easy-install
+
+3.1.2 制作egg示例
+
+(1) 新建目录egg-demo 新建文件 setup.py (setup.py其实是python工具包distutils的配置文件，setuptools就是基于 distutils来做的)
+(2) 编辑 setup.py 文件如下 : 
+#!/usr/bin/env python 
+#-*- coding:utf-8 -*- 
+
+from setuptools import setup 
+setup() 
+
+(3) 使用下面命令生成egg包 : 
+python setup.py bdist_egg 
+查看文件类型 : file dist/UNKNOWN-0.0.0-py2.6.egg
+查看zip文件内部结构 : unzip -l dist/UNKNOWN-0.0.0-py2.6.egg
+
+(4) 重新编辑setup文件 
+#!/usr/bin/env python 
+#-*- coding:utf-8 -*- 
+
+from setuptools import setup, find_packages 
+
+setup( 
+name = "demo", 
+version="0.1.0", 
+packages = find_packages(), 
+zip_safe = False, 
+
+description = "egg test demo.", 
+long_description = "egg test demo, haha.", 
+author = "amoblin", 
+author_email = "amoblin@ossxp.com", 
+
+license = "GPL", 
+keywords = ("test", "egg"), 
+platforms = "Independant", 
+url = "", 
+) 
+
+生成打包目录
+$ mkdir demo 
+$ cat demo/__init__.py 
+#!/usr/bin/env python 
+#-*- coding:utf-8 -*- 
+
+def test(): 
+print "Hello, I'm amoblin." 
+
+if __name__ == '__main__': 
+test() 
+
+重新打包
+
+
+(5) 安装
+安装成功输出 : 
+running install
+running bdist_egg
+running egg_info
+writing demo.egg-info/PKG-INFO
+writing top-level names to demo.egg-info/top_level.txt
+writing dependency_links to demo.egg-info/dependency_links.txt
+reading manifest file 'demo.egg-info/SOURCES.txt'
+writing manifest file 'demo.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-i686/egg
+running install_lib
+running build_py
+creating build/bdist.linux-i686/egg
+creating build/bdist.linux-i686/egg/demo
+copying build/lib.linux-i686-2.7/demo/__init__.py -> build/bdist.linux-i686/egg/demo
+byte-compiling build/bdist.linux-i686/egg/demo/__init__.py to __init__.pyc
+creating build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/PKG-INFO -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/SOURCES.txt -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/dependency_links.txt -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/not-zip-safe -> build/bdist.linux-i686/egg/EGG-INFO
+copying demo.egg-info/top_level.txt -> build/bdist.linux-i686/egg/EGG-INFO
+creating 'dist/demo-0.1.0-py2.7.egg' and adding 'build/bdist.linux-i686/egg' to it
+removing 'build/bdist.linux-i686/egg' (and everything under it)
+Processing demo-0.1.0-py2.7.egg
+creating /usr/local/lib/python2.7/dist-packages/demo-0.1.0-py2.7.egg
+Extracting demo-0.1.0-py2.7.egg to /usr/local/lib/python2.7/dist-packages
+Adding demo 0.1.0 to easy-install.pth file
+
+Installed /usr/local/lib/python2.7/dist-packages/demo-0.1.0-py2.7.egg
+Processing dependencies for demo==0.1.0
+Finished processing dependencies for demo==0.1.0
+
+(6) 卸载
+查看安装信息 : 
+$ cd /usr/local/lib/python2.6/dist-packages 
+$ cat easy-install.pth|grep demo 
+./demo-0.1.0-py2.6.egg 
+$ ls -F|grep demo 
+demo-0.1.0-py2.6.egg/ 
+卸载 : 
+删除easy-install.pth中对应的行 
+删除目录 demo-0.1.0-py2.6.egg
+
+3.2  打包安装django项目
+注 : 查看python包安装目录 site-package/dist-package
+(1) 新建egg包
+(2) 拷贝打包目录
+cp -r  /home/nyf/develop/gflux/trunk/gflux ./
+(3) 编辑 setup.py 文件
+(4) 编辑 MANIFEST.in 文件
+(5) 打包 : python setup.py sdist  (python setup.py bdist_egg)
+查看安装目录 : unzip -l dist/xxx
+执行deployment.sh 一键安装 : 
+(6) 安装 : sudo python setup.py install  
+(7) 打包相关文件 : tar -cvf deployment.tar config lib live_auto_generate_static locale logs scripts tools collectstatic.sh collectstatic_manage.py crontab.conf dash debug_manage.py install.sh local_settings.py manage.py score_settings.py /usr/local/lib/python2.7/dist-packages/gflux-0.1.0-py2.7.egg/gflux
+(8) python pyc 
+python -c "import compileall; import re; compileall.compile_dir('gflux', rx=re.compile(r'[/\\][.]svn'), force=True)"
+(8)  去除py文件
+rm -rfv  ./*.py 
+rm -rfv ./*/*.py
+(9) 拷贝启动脚本manage.py到/usr/local/lib/python2.7/dist-packages/gflux-0.1.0-py2.7.egg/gflux/
+sudo cp gflux/manage.py /usr/local/lib/python2.7/dist-packages/gflux-0.1.0-py2.7.egg/gflux/
+
+3.3 启动django项目测试
+python manage.py runserver 
+
+3.4 打包site-package目录到deployment目录下
+sudo tar -cvf site_package.tar site-package

@@ -1,0 +1,106 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block consumption_forecase_nav %}
+<li class="nav-active"><a href="/gcustomer/consumption_forecase/">{% trans "消费预测" %}</a></li>
+{% endblock %}
+
+
+{% block page_content %}
+
+<div style="padding: 10px 20px;">
+    <div class="form-inline" style="padding-bottom: 15px;" id="search_user_profile_forecase">
+        <div class="form-group" >
+            <!--<label for="exampleInputName2">Name</label>-->
+            <input type="text"  style="width: 300px;" class="form-control" id="exampleInputName2" value="15996458299"  placeholder = "15996458299" />
+        </div>
+    </div>
+    <button id="get_user_profile_forecase" class='btn default-btn' style="float:left;margin-bottom:20px;">{% trans "查询" %}</button>
+
+    <div id="the_consume_forecase_list"  style="display:none;">
+        <table class="table border-table" contenteditable="false">
+                <thead>
+                    <tr class="success">
+                        <th style="width:300px;">{% trans "预测列表" %}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="profile_feature_table">
+
+                </tbody>
+        </table>
+    </div>
+
+    <div id="the_information_push_record" style="display:none;">
+        <h4>{% trans "信息推送记录" %}</h4>
+        <table class="table border-table" contenteditable="false">
+                <thead>
+                    <tr class="success">
+                        <th>{% trans "序号" %}</th>
+                        <th>{% trans "类型" %}</th>
+                        <th>{% trans "优惠信息标题" %}</th>
+                        <th>{% trans "推送时间" %}</th>
+                        <th>{% trans "详情" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>{% trans "加油优惠信息" %}</td>
+                        <td>{% trans "95#汽油8折" %}</td>
+                        <td>{% trans "5天" %}</td>
+                        <td><a href="#">{% trans "点击查看" %}</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>{% trans "非油品优惠信息" %}</td>
+                        <td>{% trans "周日买一盒奥利奥赠一包牛奶" %}</td>
+                        <td>{%trans "1天"%}</td>
+                        <td><a href="#">{% trans "点击查看" %}</a></td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+   <!--  <table class="table border-table" contenteditable="false">
+        <thead>
+            <tr class="success">
+                <th style="width:300px;">相似客户编号</th>
+                <th>客户卡号</th>
+                <th>详细</th>
+            </tr>
+        </thead>
+        <tbody id="profile_feature_grouped">
+            <tr>
+                <td>1</td>
+                <td>9130270000415916</td>
+                <td>点击查看</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>9030270001464196</td>
+                <td>点击查看</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>9030270000297344</td>
+                <td>点击查看</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>9030270000430424</td>
+                <td>点击查看</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>9030270001928140</td>
+                <td>点击查看 </td>
+            </tr>
+        </tbody>
+    </table> -->
+</div>
+
+{% endblock%}
+
+
+{% block script_block %}
+<script type='text/javascript' src='/gflux/static/js/render_gcustomer_data{{settings.GCUSTOMER_STATIC_VERSION}}.js'></script>
+{% endblock %}

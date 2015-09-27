@@ -1,0 +1,153 @@
+{% load i18n %}
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <meta name="url_prefix" content="{{settings.GFLUX_URL_PREFIX}}" >
+    <title>{{ site.title }}</title>
+    <script type="text/javascript" src="{% url 'gflux.apps.station.i18n.javascript_catalog' %}"></script>
+    <script type="text/javascript" src="/gflux/static/js/canvasXpress.min.js"></script>
+    {{ current_page.media_css }}
+    <style>
+    body{
+      background-color:whitesmoke;
+    }
+      .nav_panel{
+          border-left: aliceblue;
+          border-right: aliceblue;
+          border-top-color: rgb(255, 255, 255);
+          margin-top: 10px;
+      }
+      .panel{
+         border-top-color: whitesmoke;
+         background-color: whitesmoke;
+         border:0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+   <!--  <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(46, 55, 64);">
+      <div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/{{ settings.GFLUX_URL_PREFIX }}" target="_top" title="{{settings.SITE_NAME}}"></a>
+        </div> -->
+        <!-- Top Menu Items
+        <ul class="nav navbar-right top-nav">
+
+        </ul> -->
+       <!--  <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            {% for portal in site_portals %}
+              <li {% if portal.uid == current_portal.uid %} class="active" {% endif %}>
+                <a href="{{ portal.url }}" target="_top" id="head_tag">{{ portal.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user != None %}
+               <li><a href="javascript:logout()">{% trans "退 出"%}</a></li>
+            {% endif %}
+          </ul>
+        </div> -->
+      </div>
+    </div>
+    <!-- END Navigation -->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <!-- Sidebar -->
+        <div class="col-lg-2" id="left_container" style="margin-top: 10px;padding-right:0px;">
+          <div class="row-fluid">
+            <div class='panel' style="background-color:rgb(47, 56, 65);">
+                <img src="/gflux/static/images/gflux_logo.png" class="img-responsive center-block" alt="Responsive image" />
+                {% block sidebar %}
+                    {% include "dash/includes/test_sidebar.html" %}
+                {% endblock %}
+            </div>
+          </div>
+        </div>
+        <!-- END Sidebar -->
+        <!-- Content -->
+
+        <div id="right_container" class="col-lg-10" style="margin-top:10px;background-color:whitesmoke;">
+            <div class="row" style="background-color:rgb(47, 56, 65);height:50px;">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="panel nav_panel" style="" >
+                  <div class="panel-body" style="background-color:whitesmoke;">
+                      {% for portal in site_portals %}
+                      <div class="col-lg-2" style="margin-bottom: 20px;">
+                        <div class="item" style="margin:auto;text-align:center;background-color:white;" name={{portal.label}}>
+                            <div style="margin:auto;padding-top:20px;">
+                            <img src="/gflux/static/images/{{portal.uid}}.png" class="img-responsive center-block" alt="Responsive image" style="height:50px;margin:auto;" />
+                          </div>
+                            <a href="{{ portal.url }}" target="_top" id="head_tag" style="color:black;" {% if portal.uid == current_portal.uid %} class="active" {% endif %} >{{ portal.label }}</a>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% if current_page.filters|length > 0 %}
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="panel">
+                  <div class="panel-body">
+                    <form class="dash-top-form form-inline pull-right" role="form" action="/__dummy__">
+                      {% for field in page_filters %}
+                      <div class="btn-group" style="margin-right: 5px">
+                        <button type="button" class="btn btn-default" value={{ field.field.name }}>{{ field.label }}</button>
+                        {{ field.field }}
+                      </div>
+                      {% endfor %}
+                      <button type="submit" class="dash-top-submit btn btn-default">{%trans "更新"%}</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% for spec, row in current_dash_row %}
+            <div class="row">
+              {% for module in row %}
+                <div class="col-lg-{{ spec }}">
+                  {{ module }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+        <!-- END Content -->
+
+        <!-- Foot -->
+        {% include "dash/includes/foot.html" %}
+        <!-- End Foot -->
+
+      </div> 
+    </div><!-- /.container-fluid -->
+
+    <div id="account_type" name="account_type" value="{{account_type}}"/>
+    <div id="enable_advanced_features" name="enable_advanced_features" value="{{enable_advanced_features}}"/>
+    <div id="init-masking" class="modal-backdrop fade in" style="text-align:center;">
+    <img src="{% static 'images/ajax-loader.gif' %}" style="    top: 50%;    position: fixed;" />
+    </div>
+
+    <!-- JavaScripts
+    ================================================== -->
+    {{ current_page.media_js }}
+  </body>
+</html>

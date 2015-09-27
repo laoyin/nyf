@@ -1,0 +1,57 @@
+{% extends "gcustomer/gcustomer_manage.html"%}
+{% load i18n %}
+{% block customer_grade_nav %}
+<li class="nav-active"><a href="/gcustomer/customer_grade/">{% trans "大客户等级积分" %}</a></li>
+{% endblock %}
+
+
+{% block page_content %}
+
+<div style="padding: 10px 20px">
+    <h4>{% trans "客户等级积分" %}</h4>
+
+    <div class="row" style="margin-top: 20px;">
+
+        <div class="col-md-12 col-lg-12">
+            <form class="form-inline" style="padding-bottom: 15px;" id='big_customer'>
+                <div class="form-group">
+                    <input type="text"  style="width: 300px;" class="form-control" id="exampleInputName2" value="" placeholder="{% trans "福州汽车公司" %}" />
+                    <button type="submit" class="btn btn-default" id ="big_customer_search">{% trans "搜索" %}</button>
+                </div>
+            </form>
+
+            <h4>{% trans "等级详情" %}</h4>
+
+            <table class="table border-table" contenteditable="false">
+                <thead>
+                <tr class="success">
+                    <th>{% trans "公司名称" %}</th>
+                    <th>{% trans "等级积分" %}</th>
+                    <th>{% trans "积分排名" %}</th>
+                </tr>
+                </thead>
+                <tbody  id="infornation_survey">
+                    <tr>
+                        <td>{% trans "福州汽车公司" %}</td>
+                        <td>3030</td>
+                        <td>30/30200</td>
+
+                    </tr>
+
+                    <tr>
+                        <td>{% trans "泉州汽车公司" %}</td>
+                        <td>2900</td>
+                        <td>25/25023</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

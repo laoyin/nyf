@@ -1,0 +1,22 @@
+wheel部署文档
+
+1.在服务器工作目录下checkout源码
+
+2.在服务器上创建wheel数据库
+
+3.在local_settings.py 文件中配置数据库
+在DATABASES中设置：
+'gcustomer': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wheel',                      
+        'USER': 'jinjiaqi',
+        'PASSWORD': 'jinjiaqi',
+        'HOST': '',            
+        'PORT': '5432', 
+}
+
+4.登录wheel数据库，在命令行下执行\i psql_wheel.sql 建表；
+
+5.在settings.py 设置DATABASE_ROUTERS=['gcustomer.router.GcustomerRouter',]
+
+6. 执行python manage.py runserver 0.0.0.0:8000 启动服务器

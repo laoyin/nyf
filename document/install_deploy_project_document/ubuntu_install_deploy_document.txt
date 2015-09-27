@@ -1,0 +1,52 @@
+Ubuntu 安装程序文档
+
+0. ubuntu 下安装程序的三种方法
+I. apt-get方法
+apt-get install xxx 安装xxx  。如果带有参数，那么-d 表示仅下载 ，-f 表示强制安装  
+apt-get remove xxx 卸载xxx  
+apt-get update 更新软件信息数据库  
+apt-get upgrade 进行系统升级  
+apt-cache search 搜索软件包  
+
+apt-get理论上是要求能够联网，但是如果制作了本地源，就不需要联网
+制作本地源 : 
+应用场景  1. 先在有网络的服务器上面进行apt-get install安装 
+                   2. 然后制作本地源 
+                   3. 将本地源拷贝到没有网络的服务器上，然后在那台机器上设定sourcelist指向这个本地源，此时在那台没有网络的服务器上也可以执行apt-get install安装。
+制作方法 : 
+1. 首先通过apt-get install 下载 : sudo apt-get install redis-server 
+2.  查看下载安装了哪些包 : dpkg -l | grep redis 
+3. 将下载安装的包从 /var/cache/apt/archives/ 复制到自己创建的packs目录下
+4. 修改文件用户和用户组 : sudo chown -R enadmin.enadmin *
+5. 修改文件权限 : sudo chmod ug+rw,o+r *
+6. 建立Packages.gz包 : dpkg-scanpackages packs /dev/null |gzip > packs/Packages.gz -r
+7. 将packs文件夹复制到一个不常格式化的分区中，作为长久使用，比如我将它放在一个fat32的分区时面，
+路径是 /media/packs
+8. 加本地源 : sudo gedit /etc/apt/sources.list   添加deb file:///media/ packs/ 
+9. 更新源 : sudo apt-get update
+
+II. dpkg安装deb包
+dpkg -i package.deb	安装包
+dpkg -r package	删除包
+dpkg -P package	删除包（包括配置文件）
+dpkg -L package	列出与该包关联的文件
+dpkg -l package	显示该包的版本
+dpkg –unpack package.deb	解开 deb 包的内容
+dpkg -S keyword	搜索所属的包内容
+dpkg -l	列出当前已安装的包
+dpkg -c package.deb	列出 deb 包的内容
+dpkg –configure package	配置包
+
+使用apt-get方法安装的软件，所有下载的deb包都缓存到了/var/cache/apt/archives目录下了，所以可以把常用的deb包备份出来，甚至做成ISO工具包、刻盘，以后安装Ubuntu时就可以在没有网络环境的情况下进行了。下面的命令是拷贝archives这个目录到/var/cache/apt/目录下，替换原有的archives
+
+III. make install源代码安装
+如果要使用make安装的话，那么必须得安装build-essential这个依赖包，安装方法已经在前面说过了。在安装完毕以后，我们就可以进行源码安装。源码安装大致可以分为三步骤：（./configure）–＞ 编译（sudo make） –＞ 安装（sudo make install）。
+配置：这是编译源代码的第一步，通过 ./configure 命令完成。执行此步以便为编译源代码作准备。常用的选项有 --prefix=PREFIX，用以指定程序的安装位置。更多的选项可通过 --help 查询。也有某些程序无需执行此步。
+编译：一旦配置通过，可即刻使用 make 指令来执行源代码的编译过程。视软件的具体情况而定，编译所需的时间也各有差异，我们所要做的就是耐心等候和静观其变。此步虽然仅下简单的指令，但有时候所遇到的问题却十分复杂。较常碰到的情形是程序编译到中途却无法圆满结束。此时，需要根据出错提示分析以便找到应对之策。
+安装：如果编译没有问题，那么执行 sudo make install 就可以将程序安装到系统中了。
+
+
+
+
+
+

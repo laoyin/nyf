@@ -1,0 +1,93 @@
+
+´
+protobuf_message.protoapp":
+
+AppMessage
+type (2.app.MessageType
+buff ("3
+LoginRequest
+userSha1 (	
+	sessionid (	".
+LoginResponse
+status (
+cltId (	"4
+EchoMessage
+username (	
+messageText (	"-
+Logout
+userSha1 (	
+	sessionid (	"
+RoadMessage
+
+authorSha1 (	
+messagesha1 (	
+picSha1 (	
+	audioSha1 (	
+	longitude (
+latitude ("…
+AskForHelpMessage
+
+authorSha1 (	
+messagesha1 (	
+picSha1 (	
+	audioSha1 (	
+	longitude (
+latitude ("Œ
+SendORacceptGoodsMessage
+
+authorSha1 (	
+messagesha1 (	
+picSha1 (	
+	audioSha1 (	
+	longitude (
+latitude ("…
+CarPoolingMessage
+
+authorSha1 (	
+messagesha1 (	
+picSha1 (	
+	audioSha1 (	
+	longitude (
+latitude ("†
+ConsumptionMessage
+
+authorSha1 (	
+messagesha1 (	
+picSha1 (	
+	audioSha1 (	
+	longitude (
+latitude ("†
+RecommendedMessage
+
+authorSha1 (	
+messagesha1 (	
+picSha1 (	
+	audioSha1 (	
+	longitude (
+latitude ("‡
+MySalesMessage
+promotion_title (	
+promotion_content (	
+promotion_sha1 (	
+promotion_type (
+	user_sha1 (	"M
+CompleteTransMessage
+
+order_sha1 (	
+status (
+	user_sha1 (	*ƒ
+MessageType	
+LOGIN
+LOGINRESPONSE
+ECHOMESSAGE
+
+LOGOUT
+ROADMESSAGE
+ASKFORHELPMESSAGE
+SENDORRACCEPTGOOSMESSAGE
+CARPOOLINGMESSAGE
+CONSUMPTIONMESSAGE	
+RECOMMENDEDMESSAGE
+
+MYSALESMESSAGE
+COMPLETETRANSMESSAGE

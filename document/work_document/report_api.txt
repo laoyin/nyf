@@ -1,0 +1,52 @@
+报表接口文档
+
+1 . 生成报表样式
+create_report_style(**options) 
+(1) 参数: workbook 
+	  sheet_type
+
+(2) 返回值:  format_list[]
+
+2. 写入报表内容
+ create_report_context(**options)
+
+(1) 参数: worksheet
+                format_list : 使用的时候按索引使用
+                sheet_type : 报表类型
+                content_list : 表头
+(2) 返回值: 无
+
+3. 写入报表计算函数
+ create_report_func_define(**options)
+
+(1) 参数: worksheet
+                format_list 
+                data
+                sheet_type
+
+(2) 返回值: 无
+
+
+4. 写入报表数据
+ create_report_data(**options)
+
+(1)参数 : worksheet
+                data
+                format_list
+                sheet_type
+
+(2)返回值: 无
+
+5. 写入报表图表
+ create_report_dash(**options)
+
+(1)参数: workbook
+	worksheet
+               data
+               sheet_type 
+
+(2)返回值
+
+
+6. 接口所在文件
+py文件名 : report_xlsxwriter.py

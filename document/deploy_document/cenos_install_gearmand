@@ -1,0 +1,16 @@
+rpm -ivh http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/epel-release-6-5.noarch.rpm
+yum install -y gearmand
+
+ Installing : tokyocabinet-1.4.33-6.el6.x86_64                                                                                                          1/5 
+  Installing : boost-program-options-1.41.0-27.el6.x86_64                                                                                                2/5 
+  Installing : libgearman-1.1.8-2.el6.x86_64                                                                                                             3/5 
+  Installing : libevent-1.4.13-4.el6.x86_64                                                                                                              4/5 
+  Installing : gearmand-1.1.8-2.el6.x86_64                                                                                                               5/5 
+  Verifying  : libevent-1.4.13-4.el6.x86_64                                                                                                              1/5 
+  Verifying  : libgearman-1.1.8-2.el6.x86_64                                                                                                             2/5 
+  Verifying  : boost-program-options-1.41.0-27.el6.x86_64                                                                                                3/5 
+  Verifying  : tokyocabinet-1.4.33-6.el6.x86_64                                                                                                          4/5 
+  Verifying  : gearmand-1.1.8-2.el6.x86_64        
+
+
+

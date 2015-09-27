@@ -1,0 +1,54 @@
+{% extends "gcustomer/gcustomer_frame.html" %}
+{% load i18n %}
+{% block gcustomer_goods_title %}
+<li class="item nav-active"><a href="/gcustomer/gcustomer_goods/">{% trans "商品管理" %}</a></li>
+{% endblock %}
+
+{% block page_nav %}
+<div class="nav-item">
+    <h4>{% trans "商品服务" %}</h4>
+    <ul>
+        {% block add_store_items %}
+        <li><a href="/gcustomer/add_store_items/">{% trans "添加商品" %}</a></li>
+        {% endblock %}
+        {% block show_store_items %}
+        <li><a href="/gcustomer/show_store_items/">{% trans "商品管理" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+
+<div class="nav-item">
+    <h4>{% trans "车后服务" %}</h4>
+    <ul>
+        {% block goods_launch %}
+        <li><a href="/gcustomer/goods_launch/">{% trans "货运" %}</a></li>
+        {% endblock %} 
+        {% block repair_launch %}
+        <li><a href="/gcustomer/repair_launch/">{% trans "维修" %}</a></li>
+        {% endblock %}
+        {% block maintenance_launch %}
+        <li><a href="/gcustomer/maintenance_launch/">{% trans "保养" %}</a></li>
+        {% endblock %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block page_content %}
+<h3 style="padding: 10px;">{% trans "商品管理" %}</h3>
+<div class="col-md-9 col-lg-9">
+    <div class="row app-item">
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-5">
+                <a href="/gcustomer/add_store_items/">{% trans "商品服务" %}</a>
+                <p>{% trans "管理油站便利店的商品" %}</p>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="item item-x-6">
+                <a href="/gcustomer/goods_launch/">{% trans "车后服务" %}</a>
+                <p>{% trans "提供货运维修保养相关的车后服务" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

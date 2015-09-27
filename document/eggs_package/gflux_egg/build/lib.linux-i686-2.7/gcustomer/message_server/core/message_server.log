@@ -1,0 +1,187 @@
+[2015-07-23 16:27:32.721] [DEBUG] app - =================================
+[2015-07-23 16:27:32.721] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:27:32.723] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:27:32.726] [INFO] app - disconnect from server
+[2015-07-23 16:27:33.101] [INFO] app - receive a connection
+[2015-07-23 16:27:33.103] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:33.104] [INFO] app - object
+[2015-07-23 16:27:33.104] [TRACE] app - received object [63 bytes] from websocket 2f88d7aa214048b738381b8cb74bf779775326bd.
+[2015-07-23 16:27:33.105] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:27:33.106] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:33.106] [DEBUG] app - =================================
+[2015-07-23 16:27:33.107] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:27:33.107] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:27:33.109] [INFO] app - disconnect from server
+[2015-07-23 16:27:33.421] [INFO] app - receive a connection
+[2015-07-23 16:27:33.422] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:33.422] [INFO] app - object
+[2015-07-23 16:27:33.422] [TRACE] app - received object [63 bytes] from websocket 943ac47a2902e21b7062fc12b2c820474854d2af.
+[2015-07-23 16:27:33.423] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:27:33.423] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:33.423] [DEBUG] app - =================================
+[2015-07-23 16:27:33.423] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:27:33.424] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:27:33.426] [INFO] app - disconnect from server
+[2015-07-23 16:27:33.751] [INFO] app - receive a connection
+[2015-07-23 16:27:33.753] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:33.754] [INFO] app - object
+[2015-07-23 16:27:33.754] [TRACE] app - received object [63 bytes] from websocket 45889fea0d3690f80609483042eeb90f78d9532a.
+[2015-07-23 16:27:33.755] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:27:33.756] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:33.757] [DEBUG] app - =================================
+[2015-07-23 16:27:33.757] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:27:33.758] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:27:33.759] [INFO] app - disconnect from server
+[2015-07-23 16:27:34.087] [INFO] app - receive a connection
+[2015-07-23 16:27:34.088] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:34.089] [INFO] app - object
+[2015-07-23 16:27:34.089] [TRACE] app - received object [63 bytes] from websocket 83068c989e5a3a9f587f6440d8cfad6050bc90f4.
+[2015-07-23 16:27:34.090] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:27:34.091] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:34.091] [DEBUG] app - =================================
+[2015-07-23 16:27:34.093] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:27:34.094] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:27:34.095] [INFO] app - disconnect from server
+[2015-07-23 16:27:34.421] [INFO] app - receive a connection
+[2015-07-23 16:27:34.422] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:34.423] [INFO] app - object
+[2015-07-23 16:27:34.424] [TRACE] app - received object [63 bytes] from websocket db79898931fac5aeaf6ac37c2acfc359315a87f1.
+[2015-07-23 16:27:34.425] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:27:34.426] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:27:34.428] [DEBUG] app - =================================
+[2015-07-23 16:27:34.429] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:27:34.431] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:27:34.431] [INFO] app - disconnect from server
+[2015-07-23 16:29:08.200] [INFO] app - receive a connection
+[2015-07-23 16:29:08.202] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:08.202] [INFO] app - object
+[2015-07-23 16:29:08.203] [TRACE] app - received object [63 bytes] from websocket 172be7c9c0d03adca3c29e073188166962ad5a37.
+[2015-07-23 16:29:08.204] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:29:08.204] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:08.205] [DEBUG] app - =================================
+[2015-07-23 16:29:08.205] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:29:08.206] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:29:08.207] [INFO] app - disconnect from server
+[2015-07-23 16:29:09.545] [INFO] app - receive a connection
+[2015-07-23 16:29:09.546] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:09.547] [INFO] app - object
+[2015-07-23 16:29:09.547] [TRACE] app - received object [63 bytes] from websocket 30f7f5cfe5b4d8fc08bd6dcc90f7112820cab9b9.
+[2015-07-23 16:29:09.549] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:29:09.549] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:09.550] [DEBUG] app - =================================
+[2015-07-23 16:29:09.550] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:29:09.551] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:29:09.554] [INFO] app - disconnect from server
+[2015-07-23 16:29:09.867] [INFO] app - receive a connection
+[2015-07-23 16:29:09.870] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:09.871] [INFO] app - object
+[2015-07-23 16:29:09.872] [TRACE] app - received object [63 bytes] from websocket e05af5e1738a69320e6fee9e00a10ff5f4e1ccc0.
+[2015-07-23 16:29:09.873] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:29:09.874] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:09.875] [DEBUG] app - =================================
+[2015-07-23 16:29:09.875] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:29:09.875] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:29:09.877] [INFO] app - disconnect from server
+[2015-07-23 16:29:10.167] [INFO] app - receive a connection
+[2015-07-23 16:29:10.169] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:10.170] [INFO] app - object
+[2015-07-23 16:29:10.170] [TRACE] app - received object [63 bytes] from websocket 9d4ce91131aeb7f29a809536cf290e41c623bf14.
+[2015-07-23 16:29:10.171] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:29:10.172] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:10.172] [DEBUG] app - =================================
+[2015-07-23 16:29:10.173] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:29:10.173] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:29:10.174] [INFO] app - disconnect from server
+[2015-07-23 16:29:10.445] [INFO] app - receive a connection
+[2015-07-23 16:29:10.447] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:10.447] [INFO] app - object
+[2015-07-23 16:29:10.448] [TRACE] app - received object [63 bytes] from websocket 1b88e8f04315aab87d795ba5d45df47d8df15845.
+[2015-07-23 16:29:10.449] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:29:10.450] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:10.451] [DEBUG] app - =================================
+[2015-07-23 16:29:10.451] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:29:10.452] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:29:10.454] [INFO] app - disconnect from server
+[2015-07-23 16:29:10.733] [INFO] app - receive a connection
+[2015-07-23 16:29:10.735] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:10.736] [INFO] app - object
+[2015-07-23 16:29:10.736] [TRACE] app - received object [63 bytes] from websocket 6303eecf41bb1e8b5abbdd33fa3590174a3edbb9.
+[2015-07-23 16:29:10.737] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 16:29:10.737] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 16:29:10.738] [DEBUG] app - =================================
+[2015-07-23 16:29:10.738] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 16:29:10.739] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 16:29:10.740] [INFO] app - disconnect from server
+[2015-07-23 18:09:22.550] [INFO] app - Server is listening on prot 8088
+[2015-07-23 18:09:45.113] [INFO] app - receive a connection
+[2015-07-23 18:09:45.121] [TRACE] app - <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 18:09:45.140] [INFO] app - object
+[2015-07-23 18:09:45.141] [TRACE] app - received object [63 bytes] from websocket 0ef6aaca605dab63eb45d044d08307953592284f.
+[2015-07-23 18:09:45.214] [DEBUG] app - receive protobuf message ;
+promotion_titlepromotion_contentpromotion_sha1 *nyf
+[2015-07-23 18:09:45.214] [ERROR] app - proto message <Buffer 08 0b 12 3b 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f ... >
+[2015-07-23 18:09:45.215] [DEBUG] app - =================================
+[2015-07-23 18:09:45.215] [DEBUG] app - my_sale_message data is : <Buffer 0a 0f 70 72 6f 6d 6f 74 69 6f 6e 5f 74 69 74 6c 65 12 11 70 72 6f 6d 6f 74 69 6f 6e 5f 63 6f 6e 74 65 6e 74 1a 0e 70 72 6f 6d 6f 74 69 6f 6e 5f 73 68 ... >
+[2015-07-23 18:09:45.216] [DEBUG] app - push message data is : <Buffer 08 0b 12 00>
+[2015-07-23 18:09:45.220] [INFO] app - disconnect from server
+[2015-07-23 18:12:18.282] [INFO] app - receive a connection
+[2015-07-23 18:12:18.287] [INFO] app - disconnect from server
+[2015-07-23 18:12:28.747] [INFO] app - Server is listening on prot 8088
+[2015-07-23 18:13:25.459] [INFO] app - receive a connection
+[2015-07-23 18:13:25.468] [INFO] app - disconnect from server
+[2015-07-23 18:31:03.162] [INFO] app - receive a connection
+[2015-07-23 18:33:40.566] [INFO] app - receive a connection
+[2015-07-23 18:33:40.570] [INFO] app - disconnect from server
+[2015-07-23 18:34:41.519] [INFO] app - receive a connection
+[2015-07-23 18:34:41.521] [INFO] app - disconnect from server
+[2015-07-23 18:34:48.893] [INFO] app - disconnect from server
+[2015-07-23 18:34:58.725] [INFO] app - receive a connection
+[2015-07-23 18:35:04.154] [TRACE] app - <Buffer 08 0c 12 1a 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:35:04.158] [INFO] app - object
+[2015-07-23 18:35:04.158] [TRACE] app - received object [30 bytes] from websocket 7b8591cfee8f51e88a04b20f49a07756fc4484cc.
+[2015-07-23 18:35:04.169] [DEBUG] app - receive protobuf message 
+
+order_sha1
+chenshukun
+[2015-07-23 18:35:04.170] [ERROR] app - proto message <Buffer 08 0c 12 1a 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:35:04.171] [DEBUG] app - =================================
+[2015-07-23 18:35:04.171] [DEBUG] app - complete_trans_message data is : <Buffer 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:35:04.172] [DEBUG] app - push message data is : <Buffer 08 0c 12 00>
+[2015-07-23 18:35:21.499] [INFO] app - Server is listening on prot 8088
+[2015-07-23 18:35:44.864] [INFO] app - receive a connection
+[2015-07-23 18:35:47.893] [TRACE] app - <Buffer 08 0c 12 1a 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:35:47.914] [INFO] app - object
+[2015-07-23 18:35:47.915] [TRACE] app - received object [30 bytes] from websocket 986bb5b86b9c4f1f93fe22fab18f5c2148b2f66d.
+[2015-07-23 18:35:47.927] [DEBUG] app - receive protobuf message 
+
+order_sha1
+chenshukun
+[2015-07-23 18:35:47.928] [ERROR] app - proto message <Buffer 08 0c 12 1a 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:35:47.929] [DEBUG] app - =================================
+[2015-07-23 18:35:47.929] [DEBUG] app - complete_trans_message data is : <Buffer 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:35:47.931] [DEBUG] app - push message data is : <Buffer 08 0c 12 0e 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:35:48.576] [INFO] app - disconnect from server
+[2015-07-23 18:36:08.358] [INFO] app - receive a connection
+[2015-07-23 18:36:08.360] [TRACE] app - <Buffer 08 0c 12 1a 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:36:08.360] [INFO] app - object
+[2015-07-23 18:36:08.361] [TRACE] app - received object [30 bytes] from websocket 7ba04afc177117e717cf164cdcb8e3750324a0b7.
+[2015-07-23 18:36:08.362] [DEBUG] app - receive protobuf message 
+
+order_sha1
+chenshukun
+[2015-07-23 18:36:08.363] [ERROR] app - proto message <Buffer 08 0c 12 1a 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:36:08.364] [DEBUG] app - =================================
+[2015-07-23 18:36:08.365] [DEBUG] app - complete_trans_message data is : <Buffer 0a 0a 6f 72 64 65 72 5f 73 68 61 31 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:36:08.365] [DEBUG] app - push message data is : <Buffer 08 0c 12 0e 10 02 1a 0a 63 68 65 6e 73 68 75 6b 75 6e>
+[2015-07-23 18:36:08.370] [INFO] app - disconnect from server

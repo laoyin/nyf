@@ -1,0 +1,59 @@
+{% load i18n %} {% load staticfiles%}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>首页</title>
+  <link rel="stylesheet" type="text/css" href="{%static 'bootstrap/css/bootstrap.min.css'%}">
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript">
+    $(function() {
+    	$('#ljyx').click(function() {
+    		window.location = "https://www.zcdata.com.cn";
+    	});
+    	$('#register').click(function() {
+    		window.location = "/gflux/login.html";
+    	});
+    });
+  </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ec689e69f34164aee5ad1a715bf6f7c7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body style="overflow: hidden;">
+  <div>
+    <hr width="100%" style="border: 3px solid #3333CC" color="#3333CC" size="4">
+  </div>
+  <div class="container" style="overflow:hidden;">
+    <div style="float:left;width:50%;">
+      <img src="{%static 'images/gflux1.png'%}" class="img-responsive" alt="Responsive image">
+    </div>
+    <div style="float:left;width:49%;margin-top:15%;">
+      <img src="{%static 'images/gflux2.png'%}" class="img-responsive" alt="Responsive image">
+    </div>
+  </div>
+  <div class="container" style="overflow:hidden;">
+    <div style="float:left;width:50%;">
+      <p class="lead">帮助油站管理者从运营数据中发现机会，提高销售和利润。</p>
+    </div>
+    <div style="float:left;width:49%;">
+      <a href="/gflux/demo.html"><button id="ljyx" type="button" class="btn btn-primary btn-lg" style="margin-left:70px">了解一下</button></a>
+      <button id="register" type="button" class="btn btn-primary btn-lg" style="margin-left:50px">已注册用户</button>
+    </div>
+  </div>
+  <div>
+    <hr width="100%" style="border: 3px solid #3333CC" color="#3333CC" size="4">
+  </div>
+</body>
+
+
+</html>

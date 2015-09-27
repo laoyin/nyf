@@ -1,0 +1,397 @@
+{% extends "gcustomer/gcustomer_goods.html" %}
+{% load i18n %}
+{% block maintenance_launch %}
+<li class="nav-active"><a href="/gcustomer/maintenance_launch/">{% trans "保养" %}</a></li>
+{% endblock %}
+
+{% block page_content %}
+<div id="the_maintenance_launch">
+    <div style="padding: 10px 20px">
+    	<div style="margin-bottom:20px;">
+            <button onclick="new_create()" class="btn">{% trans "新建" %}</button>
+    	</div>
+            <div class="form-group">
+            <div class="row">
+                <div class="col-lg-3">
+                    <input class="form-control" id="maintenane_keyword"  placeholder="{% trans "请输入货运名称关键字" %}" value=""></input>
+                </div>
+                <div class="col-lg-3">
+                    <button id="get_maintenance_with_key_word" class="btn btn-default" type="button">{% trans "查询" %}</button>
+                </div>
+            </div>
+        </div>
+        <table class="table " contenteditable="false" style="border-bottom:1px solid;border-color:rgb(221, 221, 221)">
+            <thead>
+                <tr>
+                    <th style="width:100px;">{% trans "序号" %}</th>
+                    <th>{% trans "标题" %}</th>
+                    <th>{% trans "创建时间" %}</th>
+                    <th>{% trans "地址" %}</th>
+                    <th>{% trans "编辑" %}</th>
+                </tr>
+            </thead>
+            <tbody id="nonfuel_survey">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="the_create_maintenance_launch" style="display:none;">
+    <div style="padding: 10px 20px">
+        <div>
+            <h4>{% trans "新建保养信息" %}</h4>
+        </div>
+        <div id="new_maintenance" class="form-horizontal">
+            <div class="form-group">
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "标题" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="title" id="title" class="form-control" placeholder="{% trans "请输入标题" %}">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "地址" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="address" id="address" class="form-control" placeholder="{% trans "请输入保养店地址" %}">
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "价格" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="address" id="maintenance_price" class="form-control" placeholder="{% trans "请输入价格" %}" />
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "联系电话" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="phone_num" id="phone_num" class="form-control" placeholder="{% trans "请输入电话" %}" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="exampleInputEmail1">{% trans "主营范围" %}</label>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col-lg-6">
+                        <textarea class="form-control" name="business_scope" id="business_scope" placeholder="{% trans "引擎、变速箱系统、空调系统、冷却系统、燃油系统、动力转向系统等" %}"></textarea>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                            <div class="col-lg-6">
+                                <label for="exampleInputEmail1">{% trans "上传图片" %}</label>
+                                <input type="file" name="files" id="maintenance_goods_image_upload" ></input>
+                                <p class="help-block">{% trans "选择需要上传的文件，支持格式 JPG,PNG" %}</p>
+                            </div>
+                        </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                    <button id="new_create" class="btn btn-default" style="position:relative;top:10px;">{% trans "新建" %}</button>
+                    <button type="button" id="cancel" class="btn btn-default" style="position:relative;top:10px;">{% trans "返回" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="the_maintenance_launch_detials" style="display:none;">
+    <div class="form-group">
+        <div>
+            <div style="padding: 10px 20px">
+                <div>
+                    <button onclick="get_back()"  class="btn btn-default">{% trans "返回" %}</button>
+                    <button id="modification" class="btn btn-default alert_information">{% trans "修改" %}</button>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="title-label-class">{% trans "保养详细信息" %}</h4>
+                        <table id="detail_info" class="table border-table" contenteditable="false">
+                        </table>
+                    </div>
+                </div>
+                <div id="message" style="display:none;">
+                    <label>{% trans "保养信息修改成功！" %}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script_block %}
+<script>
+    function new_create () {
+        $("#the_maintenance_launch").hide();
+        $("#the_create_maintenance_launch").show();
+    }
+            
+
+    $(function () {
+            get_service_advertisement('');
+            image_sha1 = null
+            $("#new_create").attr("disabled",true)
+            $("#maintenance_goods_image_upload").fileupload({
+                        url:"/gcustomer/ajax/jquery_upload_images/",
+                        formData:{},
+                        dataType:"json",
+                        done:function(e,result){
+                            data = result.result
+                            if(data['ret'] != "0001"){
+                                image_sha1 = null
+                                return
+                            }
+                            image_sha1 = data['image_sha1']
+                            $("#new_create").attr("disabled",false)
+                        }
+                })
+            $("#new_create").on('click', function (){
+                    var title = $("#title").val();
+                    if(title == ""){
+                        $("#alert_modal_body").html("请输入标题！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var address = $("#address").val();
+                    if(address == ""){
+                        $("#alert_modal_body").html("请输入地址！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var price = $("#maintenance_price").val()
+                    if(price == ""){
+                        $("#alert_modal_body").html("价格不能为空！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    if(isNaN(parseInt(price)) !=false){
+                        $("#alert_modal_body").html("请输入金额！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var phone_num = $("#phone_num").val();
+                    if(phone_num == ""){
+                        $("#alert_modal_body").html("请输入联系电话！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    if(isNaN(parseInt(phone_num)) != false){
+                        $("#alert_modal_body").html("联系电话必须是数字!");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var business_scope = $("#business_scope").val();
+                    if(business_scope == ""){
+                        $("#alert_modal_body").html("请输入主营范围！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    if(image_sha1 == null ){
+                        $("#alert_modal_body").html("请上传图片！");
+                        $("#alert_modal").modal("show");
+                        return
+                    }
+                    var data = {
+                        'info_type': 2,
+                        'title':title,
+                        'address':address,
+                        'phone_num':phone_num,
+                        'business_scope':business_scope,
+                        'image_sha1':image_sha1,
+                        'price':price
+                    }
+                    $.post("/gcustomer/ajax/create_service_advertisement/", data, function (data) {
+                        if(data['ret'] == "0001") {
+                            $("#alert_modal_body").html(data.info);
+                            $("#alert_modal").modal("show");
+                            $("#title").val("");
+                            $("#address").val("");
+                            $("#phone_num").val("");
+                            $("#business_scope").val("");
+                            $("#maintenance_price").val("");
+                            image_sha1 = null
+                            $("#new_create").attr("disabled",true)
+                        }
+                        else if(data['ret'] == "0000") {
+                            $("#alert_modal_body").html(data.info);
+                            $("#alert_modal").modal("show");
+                        }
+                    }, "json");
+            })
+            $("#modification").on('click', function () {
+                    if($(this).html() == "修改") {
+                        $("#the_maintenance_launch_detials").find("table").attr("contenteditable", "true");
+                        $("#the_maintenance_launch_detials").find("table").css("border","3px solid rgb(204,204,204)");
+                        $(this).html("确定");
+                    }
+                    else if ($(this).html() == "确定") {
+                        $("#the_maintenance_launch_detials").find("table").attr("contenteditable","false");
+                        $("#the_maintenance_launch_detials").find("table").css("border","1px solid rgb(204,204,204)");
+                        var info_id = $("#detail_info_id").html();
+                        var title = $("#detail_title").html();
+                        var address = $("#detail_address").html();
+                        var phone_num = $("#detail_phone_num").html();
+                        var content = $("#detail_content").html();
+                        var price = Number($("#detail_price").html());
+                        var data = {
+                            'info_type':2,
+                            'info_id':info_id,
+                            'title':title,
+                            'address':address,
+                            'phone_num':phone_num,
+                            'content':content,
+                            'price':price
+                        }
+                        $.post("/gcustomer/ajax/modify_detail_advertisement/", data, function (data) {
+                            if (data.ret == "0001") {
+                                $("#message").show();
+                                console.log(data);
+                            }
+                            else if(data.ret == "0000"){
+                                $("#alert_modal_body").html(data.info);
+                                $("#alert_modal").modal("show");
+                                console.log(data);
+                            }
+                        }, "json");
+                        $(this).html("修改");
+                    }
+            })
+            $("#cancel").on('click', function () {
+                $("#the_create_maintenance_launch").hide();
+                $("#the_maintenance_launch").show();
+                get_service_advertisement('');
+            });
+    })
+
+    function get_service_advertisement(keyword){
+            var data = {'info_type': 2,'keyword':keyword};
+            $.get("/gcustomer/ajax/get_service_advertisement/", data, function (data) {
+                if(data){
+                    $("#nonfuel_survey").empty();
+                    for(var i=0; i<data.obj.length; i++)
+                    {
+                        var ad = data.obj[i];
+                        $("#nonfuel_survey").append('<tr>\
+                            <td>'+(i+1)+'</td>\
+                            <td>'+ad.title+'</td>\
+                            <td>'+ad.create_time+'</td>\
+                            <td>'+ad.address+'</td>\
+                            <td>\
+                                <button onclick="detail_info(\''+ad.info_id+'\')">点击查看</button>\
+                                <button onclick="delete_record(\''+ad.info_id+'\')" style="margin-top:5px;">删除</button>\
+                            </td>\
+                        </tr>')
+                    }
+                    console.log(data);
+                }
+                else{
+                    console.log("error!");
+                }
+            }, "json");
+    }
+
+    function detail_info (info_id) {
+        var data = {'info_id':info_id};
+        $.post("/gcustomer/ajax/get_detail_advertisement/", data, function (data) {
+            if(data){
+                var title = data.obj.title;
+                var info_id = data.obj.info_id;
+                var create_time = data.obj.create_time;
+                var content = data.obj.content;
+                var address = data.obj.address;
+                var phone_num = data.obj.phone_num;
+                var price = data.obj.price;
+                $("#the_maintenance_launch").hide();
+                $("#the_maintenance_launch_detials").show();
+                $("#detail_info").empty();
+                $("#detail_info").append('<tr>\
+                        <td style="width:100px;">标题</td>\
+                        <td id=\"detail_title\">'+title+'</td>\
+                    </tr>\
+                    <tr style="display:none;">\
+                        <td id=\"detail_info_id\">'+info_id+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>创建时间</td>\
+                        <td id=\"detail_create_time\">'+create_time+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>地址</td>\
+                        <td id=\"detail_address\">'+address+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>价格</td>\
+                        <td id=\"detail_price\">'+price+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>联系电话：</td>\
+                        <td id=\"detail_phone_num\">'+phone_num+'</td>\
+                    </tr>\
+                    <tr>\
+                        <td>主营范围</td>\
+                        <td id=\"detail_content\">'+content+'</td>\
+                    </tr>\
+                ')
+                console.log(data);
+            }
+            else{
+                console.log("error!");
+            }
+        }, "json");
+    }
+
+    $(function(){
+        $("#get_maintenance_with_key_word").on('click',function(){
+                maintenane_keyword = $("#maintenane_keyword").val()
+                get_service_advertisement(maintenane_keyword)
+        })
+})
+
+    function get_back () {
+        if($("#modification").html() == '确定'){
+            $("#alert_modal_body").html("请确定修改！");
+            $("#alert_modal").modal("show");
+            return
+        }
+        $("#the_maintenance_launch_detials").hide();
+        $("#message").hide();
+        $("#the_maintenance_launch").show();
+        get_service_advertisement('');
+    }
+
+    function delete_record (info_id) {
+        var data = {'info_id':info_id};
+        if(confirm("确定要删除吗？")){
+            $.post("/gcustomer/ajax/delete_goods_advertisement/", data, function (data) {
+                if (data.ret == "0001") {
+                    console.log(data);
+                    get_service_advertisement('');
+                }
+                else {
+                    console.log("error");
+                }
+            }, "json");
+        } else {
+            return
+        }
+    }
+</script>
+{% endblock %}
