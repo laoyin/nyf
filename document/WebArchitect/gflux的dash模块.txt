@@ -1,0 +1,105 @@
+gflux的dash模块
+
+(一) report
+
+1. handle方法
+(1) 用户 登录检查
+#当前用户
+user = request.session.get('username',None)
+#未登陆
+if user is None:
+    return {'status':'NOT LOGIN'}
+
+(2) 获取表单数据（查询的条件）
+#实例化django内置Form对象
+form = self.Form(request.REQUEST)
+#更新filter值
+self.update_form_filters_by_user_name(user,form,request)
+form.full_clean()
+
+(3) 调用子类的report方法
+kwargs['form']=form
+result = self.report(request, *args, **kwargs)
+
+2. conditions构造过程  (sql语句的where条件)
+(1) self.cube.d 定义条件字段
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'barcode', 'cardnum', 'datehour', 'day', 'day_of_week', 'hour', 'location', 'loyalty', 'month', 'payment_type', 'pump_id', 'pump_type', 'quantity', 'site', 'trans_id', 'trans_type', 'week', 'year']
+
+(2) self  report实例的属性获取方法
+<gflux.apps.station.reports.PumpDailyTrendReport object at 0x7fc8213cec50>
+
+form = context['form'].cleaned_data
+self.site = form['site']
+self.payment_type = int(form['payment_type'])
+self.date = form['date']
+
+(3) 添加条件的方法
+conditions.append(self.cube.d.site == self.site) 添加==条件
+conditions.append(self.cube.d.datehour >= self.date) 添加比较条件
+conditions.append(or_(and_(
+                    self.cube.d.datehour >= self.start_date,
+                    self.cube.d.datehour < self.end_date+timedelta(days=1)
+                ),and_(
+                    self.cube.d.datehour >= self.tmp_start_date,
+                    self.cube.d.datehour < self.tmp_end_date+timedelta(days=1)
+                )))   添加or或and的条件
+
+(4) conditions的类型
+[<sqlalchemy.sql.elements.BinaryExpression object at 0x7fc81bf37e10>, <sqlalchemy.sql.elements.BinaryExpression object at 0x7fc82b450f90>, <sqlalchemy.sql.elements.BinaryExpression object at 0x7fc822772150>]
+
+3. 构造过程 (sql语句的的查询字段)
+(1) self
+<gflux.apps.station.cubes.TransCube object at 0x7fc821467cd0>
+
+(2) columns (查询字段)
+measures 如果没有设定查询字段，则查询所有字段
+if measures is None:
+            measures = self.measures.keys()
+
+(3) drilldown_columns (分组字段)
+
+(4) join_expr (多表查询字段)
+sql查询的表
+
+4. 构建sql语句   <sqlalchemy.sql.selectable.Select at 0x7fc81abf3a10; Select object>
+sql = select(columns).select_from(join_expr)  
+sql = sql.where(and_(*conditions))  
+sql = sql.group_by(*drilldown_columns)
+sql = sql.having(having)
+sql = sql.order_by(order)
+sql = sql.limit(limit)
+
+sql_params_dict = sql.compile().params
+{u'site_1': u'BJ_HD', u'datehour_1': datetime.date(2013, 4, 7), u'trans_type_1': 0, u'datehour_2': datetime.date(2013, 4, 8)}
+
+raw_sql=unicode(sql.compile(dialect=dialect))%sql_params_dict
+
+5. 缓存
+#set in cache
+try:
+    from gflux.util import json_encoder
+    cache.set(cache_key,json.dumps(results,default=json_encoder),settings.CUBES_MEMCACHED_TIMEOUT)
+except Exception,e:
+    pass
+
+#check cache
+cache_sha1=hashlib.sha1()
+cache_sha1.update(raw_sql)
+cache_key=cache_sha1.hexdigest()
+
+cache_value=cache.get(cache_key)
+
+if cache_value!=None:
+    try:
+        results=json.loads(cache_value)
+    except Exception,e:
+        results=[]
+
+6. build_result
+
+7. build_categories
+
+8. build_extra
+
+9. result 
+{'status': 'OK', 'extra': [], 'categories': ['0 - 1', '1 - 2', '2 - 3', '3 - 4', '4 - 5', '5 - 6', '6 - 7', '7 - 8', '8 - 9', '9 - 10', '10 - 11', '11 - 12', '12 - 13', '13 - 14', '14 - 15', '15 - 16', '16 - 17', '17 - 18', '18 - 19', '19 - 20', '20 - 21', '21 - 22', '22 - 23', '23 - 24'], 'dataset': [{'stacking': 'normal', 'type': 'area', 'data': [0, 0, 0, 0, 0, 0, 3.46, 76.92, 52.56, 294.11, 309.91, 15.0, 0, 46.98, 78.97, 51.55, 113.98, 19.23, 0, 0, 0, 0, 0, 0], 'name': u'92\u53f7\u6cb9'}, {'stacking': 'normal', 'type': 'area', 'data': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48.13, 0, 0, 0, 0, 36.1, 0, 57.76, 0, 0, 0, 0, 0, 0], 'name': u'95\u53f7\u6cb9'}, {'stacking': 'normal', 'type': 'area', 'data': [0, 0, 0, 0, 0, 0, 122.27, 0, 0, 0, 26.0, 0, 0, 0, 0, 51.48, 0, 0, 0, 0, 0, 0, 0, 0], 'name': u'0\u53f7\u8f66\u7528\u67f4\u6cb9'}]}
